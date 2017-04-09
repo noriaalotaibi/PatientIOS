@@ -13,10 +13,17 @@ class HospitalListCellTableViewCell: UITableViewCell {
     
     @IBOutlet weak var hospitalPicture: UIImageView!
     
-    @IBOutlet weak var hospitalName: UILabel!
+    @IBOutlet weak var hospitalN: UILabel!
 
     @IBOutlet weak var hospitalLocation: UILabel!
     @IBOutlet weak var hospitalType: UILabel!
+    
+    
+    var hospitalObject:HospitalDH = HospitalDH()
+    
+    var hospitalIndex:Int = 0
+    
+    var hospitalVC:HospotalListVC?
     
     override func awakeFromNib() {
         super.awakeFromNib()

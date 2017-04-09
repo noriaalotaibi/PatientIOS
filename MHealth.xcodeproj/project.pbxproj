@@ -14,6 +14,7 @@
 		29FF17641E6C12C7002FECA0 /* NewDoctorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FF17631E6C12C7002FECA0 /* NewDoctorTableViewController.swift */; };
 		433A49271E9A244700642266 /* HospitalListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433A49261E9A244700642266 /* HospitalListCellTableViewCell.swift */; };
 		433A49291E9A249000642266 /* HospitalListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433A49281E9A249000642266 /* HospitalListViewCell.xib */; };
+		433A492F1E9A32D900642266 /* HospotalListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433A492E1E9A32D900642266 /* HospotalListVC.swift */; };
 		437F36AC1E93D18E006AC55E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437F36AB1E93D18E006AC55E /* Alert.swift */; };
 		518EBB971E71849F0095F797 /* BloodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EBB961E71849F0095F797 /* BloodViewController.swift */; };
 		518EBB991E7184B30095F797 /* BloodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EBB981E7184B30095F797 /* BloodTableViewController.swift */; };
@@ -67,6 +68,7 @@
 		29FF17631E6C12C7002FECA0 /* NewDoctorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDoctorTableViewController.swift; sourceTree = "<group>"; };
 		433A49261E9A244700642266 /* HospitalListCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalListCellTableViewCell.swift; sourceTree = "<group>"; };
 		433A49281E9A249000642266 /* HospitalListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HospitalListViewCell.xib; sourceTree = "<group>"; };
+		433A492E1E9A32D900642266 /* HospotalListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospotalListVC.swift; sourceTree = "<group>"; };
 		437F36AB1E93D18E006AC55E /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		518EBB961E71849F0095F797 /* BloodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodViewController.swift; sourceTree = "<group>"; };
 		518EBB981E7184B30095F797 /* BloodTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodTableViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				518EBBAE1E718F540095F797 /* ResetPass.swift */,
 				433A49261E9A244700642266 /* HospitalListCellTableViewCell.swift */,
 				433A49281E9A249000642266 /* HospitalListViewCell.xib */,
+				433A492E1E9A32D900642266 /* HospotalListVC.swift */,
 			);
 			name = PatientVCs;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				29FF17601E6C126E002FECA0 /* NewDoctorProfileViewController.swift in Sources */,
 				518EBBB01E718F540095F797 /* langVC.swift in Sources */,
 				51EF73B81E7014D000706551 /* PatientContainer.swift in Sources */,
+				433A492F1E9A32D900642266 /* HospotalListVC.swift in Sources */,
 				52CC05181E6B4E1300BC93A9 /* Const.swift in Sources */,
 				51F5B19F1E6D357F0081F860 /* MyDoctorsCache.swift in Sources */,
 				51EF73B61E70130200706551 /* PatientDH.swift in Sources */,

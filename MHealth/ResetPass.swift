@@ -16,7 +16,7 @@ class ResetPass: UIViewController ,NetworkCaller {
     @IBAction func ResetPassButton(sender: AnyObject) {
         
         
-        
+        //add civil id civilid
         var resetPass = emailTF.text
         let networkManager:Networking = Networking()
         let values:[String:AnyObject] = ["email":resetPass!]
