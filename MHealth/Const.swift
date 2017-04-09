@@ -18,6 +18,8 @@ class Const: NSObject {
         static let PatientLogin:String = BASE + "/patient/login"
         static let ReportURL:String = BASE + "/report"
         static let ResetPassword:String = BASE + "/patient/reset"
+        static let Hospital:String = BASE + "/hospital"
+        
         
         
     }
