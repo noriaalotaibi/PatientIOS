@@ -18,14 +18,14 @@ class HospotalListVC: UITableViewController, NetworkCaller {
     func loadData(){
         
         
-        let hospitalId:Int = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.hospitalID) as! Int
+      //  let hospitalId:Int = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.hospitalID) as! Int
         
-        let url:String = Const.URLs.Hospital + "\(hospitalId)"
+        let url:String = Const.URLs.Hospital
         
         
         
         let networkManager:Networking = Networking()
-        SwiftSpinner.show(NSLocalizedString("Connecting...", comment: ""))
+       // SwiftSpinner.show(NSLocalizedString("Connecting...", comment: ""))
         
         networkManager.AMGetArrayData(url, params: [:], reqId: 1, caller: self)
         
@@ -34,11 +34,10 @@ class HospotalListVC: UITableViewController, NetworkCaller {
     
     
     func setArrayResponse(resp: NSArray, reqId: Int) {
-        SwiftSpinner.hide()
-        // loop on resp .. get each dictionary .. convert to object .. add to list manager
+               // loop on resp .. get each dictionary .. convert to object .. add to list manager
         
         print (resp)
-        list.myPatientsList.removeAllObjects()
+        list.hospitalList.removeAllObjects()
         for item in resp {
             
             let hosItem = item as! NSDictionary
@@ -102,7 +101,7 @@ class HospotalListVC: UITableViewController, NetworkCaller {
 
         // Configure the cell...
         
-        let cell:MyPatientTVCell = (tableView.dequeueReusableCellWithIdentifier("MyPatientTVCell") as? MyPatientTVCell)!
+     //   let cell:HospitalListCellTableViewCell = (tableView.dequeueReusableCellWithIdentifier("HospitalListCellTableViewCell ") as? HospitalListCellTableViewCell )!
         
         let hospital:HospitalDH = list.hospitalList.objectAtIndex(indexPath.row) as! HospitalDH
         
@@ -117,8 +116,28 @@ class HospotalListVC: UITableViewController, NetworkCaller {
         let hospitalAddress:String = hospital.hospitalAddress
         
         
+//        cell.hospitalN.text = hospitalName
+//        
+//        cell.hospitalLocation.text = hospitalAddress
+//        
+//        cell.HospitalType.text = hospitalType
+//        
+//        
+//        
+//        cell.hospitalObject = hospital
+//        cell.hospitalIndex = indexPath.row
+        
 
         return cell
+    }
+    
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        let cell:HospotalListVC = (tableView.dequeueReusableCellWithIdentifier("HospotalListVC") as? HospotalListVC)!
+        
+        
+      //  return cell.frame.size.height
     }
     
 

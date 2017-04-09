@@ -16,7 +16,7 @@ class HospitalListCellTableViewCell: UITableViewCell {
     @IBOutlet weak var hospitalN: UILabel!
 
     @IBOutlet weak var hospitalLocation: UILabel!
-    @IBOutlet weak var hospitalType: UILabel!
+    @IBOutlet weak var HospitalType: UILabel!
     
     
     var hospitalObject:HospitalDH = HospitalDH()
