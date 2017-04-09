@@ -55,6 +55,7 @@
 		52CC05181E6B4E1300BC93A9 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC05171E6B4E1300BC93A9 /* Const.swift */; };
 		52CC051A1E6B53D300BC93A9 /* PathsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC05191E6B53D300BC93A9 /* PathsManager.swift */; };
 		625258405D3A2BB46D2011A3 /* Pods_MHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDB312C5DB17542FF3D2128 /* Pods_MHealth.framework */; };
+		698FB7AD1E9A28580088238E /* HospitalDH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698FB7AC1E9A28580088238E /* HospitalDH.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		52CC05151E6B4A4100BC93A9 /* UserDH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDH.swift; sourceTree = "<group>"; };
 		52CC05171E6B4E1300BC93A9 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		52CC05191E6B53D300BC93A9 /* PathsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathsManager.swift; sourceTree = "<group>"; };
+		698FB7AC1E9A28580088238E /* HospitalDH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalDH.swift; sourceTree = "<group>"; };
 		8CDB312C5DB17542FF3D2128 /* Pods_MHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2E775B3980EE75173FA376 /* Pods-MHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHealth/Pods-MHealth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -245,6 +247,7 @@
 				51EF73B51E70130200706551 /* PatientDH.swift */,
 				51EF73B71E7014D000706551 /* PatientContainer.swift */,
 				51E6883D1E7081180036E6D5 /* PatientReportDH.swift */,
+				698FB7AC1E9A28580088238E /* HospitalDH.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				518EBBB51E718F540095F797 /* EditPersonalInfoVC.swift in Sources */,
 				29FF175E1E6C1250002FECA0 /* MyDoctorProfileViewController.swift in Sources */,
 				52CC05071E6B407E00BC93A9 /* Networking.swift in Sources */,
+				698FB7AD1E9A28580088238E /* HospitalDH.swift in Sources */,
 				52CC05101E6B413900BC93A9 /* DataHolder.swift in Sources */,
 				52CC05161E6B4A4100BC93A9 /* UserDH.swift in Sources */,
 				51EF73B41E6FEF8800706551 /* PatientReportViewController.swift in Sources */,
