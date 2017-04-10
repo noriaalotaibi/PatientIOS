@@ -20,15 +20,25 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller {
     @IBOutlet weak var PhoneNumLabel: UILabel!
     @IBOutlet weak var EmergencyNumLabel: UILabel!
     
+   
+    @IBAction func UpdateProfile(sender: AnyObject) {
+        
+        
+        print("user clicked update")
+        
+    }
+    
     @IBAction func ViewMedicalInfoButton(sender: AnyObject) {
+         print("user clicked More")
         
-//        let nextScreen:ViewMedicalInfoVC = self.storyboard?.instantiateViewControllerWithIdentifier("viewMedicalInfo") as! ViewMedicalInfoVC
-//        
-//        self.presentViewController(nextScreen, animated: true, completion: {})
+        //        let nextScreen:ViewMedicalInfoVC = self.storyboard?.instantiateViewControllerWithIdentifier("viewMedicalInfo") as! ViewMedicalInfoVC
+        //
+        //        self.presentViewController(nextScreen, animated: true, completion: {})
         
-     //   let nav:UINavigationController = self.navigationController!
+        //   let nav:UINavigationController = self.navigationController!
         
-      //  nav.pushViewController(nextScreen, animated: true)
+        //  nav.pushViewController(nextScreen, animated: true)
+ 
     }
     var patient:Patient?
     
@@ -68,6 +78,9 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller {
         let net:Networking = Networking()
         net.AMGetArrayData(Const.URLs.Patients, params: [:], reqId: 1, caller: self)
         
+        let Patient:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
+        
+        patient!.loadDictionary(Patient)
        
         
         FnameLabel?.text         = patient!.firstName

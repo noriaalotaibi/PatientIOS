@@ -79,12 +79,13 @@ class LoginVC: UIViewController, NetworkCaller {
             alert.show()
         }
         else {
-            let nextScreen:ViewPatientProfileVC = self.storyboard?.instantiateViewControllerWithIdentifier("ViewProfile") as! ViewPatientProfileVC
+            let nextScreen:UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as! UITabBarController
             var patient = Patient()
             let patientProfile:NSDictionary = resp.objectForKey("items") as! NSDictionary
             patient.loadDictionary(patientProfile)
-            nextScreen.patient = patient
-           
+            NSUserDefaults.standardUserDefaults().setValue(patientProfile, forKey: Const.UserDefaultsKeys.loggedinUser)
+            //nextScreen.patient = patient
+            
             self.presentViewController(nextScreen, animated: true, completion: {})
             
         }

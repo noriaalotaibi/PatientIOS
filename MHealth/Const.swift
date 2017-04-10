@@ -30,6 +30,9 @@ class Const: NSObject {
     
     struct UserDefaultsKeys {
         let langKey = "lang"
+        static let patientId = "patientId"
+        static let loggedinUser = "loggedinUser"
+        static let hospitalId = "hospitalId"
         
     }
 }
