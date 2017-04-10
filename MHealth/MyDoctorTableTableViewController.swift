@@ -43,12 +43,29 @@ class MyDoctorTableViewController: UITableViewController, NetworkCaller {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        
+        let curDoctor = MyDoctorsCache.myInstance().getDoctors()[indexPath.row]
 
         // Configure the cell...
+        let cellTypeIdentifier:String = "DoctorListTableViewCell";
         
-        let cell = UITableViewCell()
-        let curDoctor = MyDoctorsCache.myInstance().getDoctors()[indexPath.row]
-        cell.textLabel?.text = curDoctor.firstName;
+        
+        let nib:NSArray = NSBundle.mainBundle().loadNibNamed(cellTypeIdentifier, owner: self, options: nil)
+        
+        let cell = nib.firstObject as! DoctorListTableViewCell
+        cell.updateCellData(curDoctor)
+        
+        
+        /*cell.nameLabel.text = [tableData objectAtIndex:indexPath.row];
+        cell.thumbnailImageView.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
+        cell.prepTimeLabel.text = [prepTime objectAtIndex:indexPath.row];*/
+
+        
+        
+        /*
+        let doctorCell:DoctorListTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("DoctorListTableViewCell") as! DoctorListTableViewCell
+        
+        doctorCell.updateCellData(curDoctor);*/
         
         
         return cell

@@ -34,6 +34,8 @@
 		518EBBB91E718F540095F797 /* EditeMidicalInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EBBAD1E718F540095F797 /* EditeMidicalInfoVC.swift */; };
 		518EBBBA1E718F540095F797 /* ResetPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EBBAE1E718F540095F797 /* ResetPass.swift */; };
 		518EBBBC1E7190540095F797 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EBBBB1E7190540095F797 /* Patient.swift */; };
+		51BA460C1E9A91D4000E1753 /* DoctorListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA460A1E9A91D4000E1753 /* DoctorListTableViewCell.swift */; };
+		51BA460D1E9A91D4000E1753 /* DoctorListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51BA460B1E9A91D4000E1753 /* DoctorListTableViewCell.xib */; };
 		51E6883E1E7081180036E6D5 /* PatientReportDH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E6883D1E7081180036E6D5 /* PatientReportDH.swift */; };
 		51EF73B21E6FDD3F00706551 /* DoctorFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF73B11E6FDD3F00706551 /* DoctorFunctions.swift */; };
 		51EF73B41E6FEF8800706551 /* PatientReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF73B31E6FEF8800706551 /* PatientReportViewController.swift */; };
@@ -88,6 +90,8 @@
 		518EBBAD1E718F540095F797 /* EditeMidicalInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditeMidicalInfoVC.swift; sourceTree = "<group>"; };
 		518EBBAE1E718F540095F797 /* ResetPass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPass.swift; sourceTree = "<group>"; };
 		518EBBBB1E7190540095F797 /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		51BA460A1E9A91D4000E1753 /* DoctorListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorListTableViewCell.swift; sourceTree = "<group>"; };
+		51BA460B1E9A91D4000E1753 /* DoctorListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorListTableViewCell.xib; sourceTree = "<group>"; };
 		51E6883D1E7081180036E6D5 /* PatientReportDH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientReportDH.swift; sourceTree = "<group>"; };
 		51EF73B11E6FDD3F00706551 /* DoctorFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorFunctions.swift; sourceTree = "<group>"; };
 		51EF73B31E6FEF8800706551 /* PatientReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientReportViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +184,15 @@
 			name = DonorVCs;
 			sourceTree = "<group>";
 		};
+		51BA46091E9A91B8000E1753 /* CustomLists */ = {
+			isa = PBXGroup;
+			children = (
+				51BA460A1E9A91D4000E1753 /* DoctorListTableViewCell.swift */,
+				51BA460B1E9A91D4000E1753 /* DoctorListTableViewCell.xib */,
+			);
+			name = CustomLists;
+			sourceTree = "<group>";
+		};
 		52CC04E71E6B2F1F00BC93A9 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +230,7 @@
 		52CC05091E6B408800BC93A9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				51BA46091E9A91B8000E1753 /* CustomLists */,
 				518EBBA21E718D180095F797 /* DonorVCs */,
 				518EBBA11E718D020095F797 /* DoctorVCs */,
 				518EBBA01E718CE50095F797 /* PatientVCs */,
@@ -347,6 +361,7 @@
 			files = (
 				52CC04FE1E6B2F2600BC93A9 /* LaunchScreen.storyboard in Resources */,
 				52CC04FB1E6B2F2600BC93A9 /* Assets.xcassets in Resources */,
+				51BA460D1E9A91D4000E1753 /* DoctorListTableViewCell.xib in Resources */,
 				433A49291E9A249000642266 /* HospitalListViewCell.xib in Resources */,
 				52CC050C1E6B40FC00BC93A9 /* Podfile in Resources */,
 				52CC04F91E6B2F2500BC93A9 /* Main.storyboard in Resources */,
@@ -413,6 +428,7 @@
 				52CC05071E6B407E00BC93A9 /* Networking.swift in Sources */,
 				698FB7AD1E9A28580088238E /* HospitalDH.swift in Sources */,
 				52CC05101E6B413900BC93A9 /* DataHolder.swift in Sources */,
+				51BA460C1E9A91D4000E1753 /* DoctorListTableViewCell.swift in Sources */,
 				52CC05161E6B4A4100BC93A9 /* UserDH.swift in Sources */,
 				51EF73B41E6FEF8800706551 /* PatientReportViewController.swift in Sources */,
 				52CC05081E6B407E00BC93A9 /* OutputResult.swift in Sources */,
