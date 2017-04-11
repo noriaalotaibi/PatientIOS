@@ -143,17 +143,17 @@
             </objects>
             <point key="canvasLocation" x="327" y="1079"/>
         </scene>
-        <!--Blood-->
+        <!--Hospitals-->
         <scene sceneID="1tf-NQ-3Ex">
             <objects>
                 <navigationController id="oJa-Qw-FbX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Blood" id="1Rz-Dd-0uf"/>
+                    <tabBarItem key="tabBarItem" title="Hospitals" id="1Rz-Dd-0uf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="F2x-o4-Yf4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="aZ3-S2-6DN" kind="relationship" relationship="rootViewController" id="yQt-B4-PHt"/>
+                        <segue destination="eEQ-fm-foG" kind="relationship" relationship="rootViewController" id="RGG-BJ-Z9X"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iWu-tR-HDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1355,62 +1355,6 @@
             </objects>
             <point key="canvasLocation" x="1194" y="-1070"/>
         </scene>
-        <!--Blood View Controller-->
-        <scene sceneID="fLy-Gd-3en">
-            <objects>
-                <viewController id="aZ3-S2-6DN" customClass="BloodViewController" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YcF-R2-kXi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QGk-Ru-iOV">
-                                <rect key="frame" x="63" y="268" width="91" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView contentMode="scaleToFill" id="Xd6-pY-Hg1">
-                                <rect key="frame" x="0.0" y="309" width="320" height="136"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="aZ3-S2-6DN" id="oHS-zC-kSH"/>
-                                    <outlet property="delegate" destination="aZ3-S2-6DN" id="jGU-Pz-8wG"/>
-                                </connections>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8aZ-cV-8cj" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="52" y="475" width="216" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.2470588235" green="0.79215686269999996" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="16"/>
-                                <state key="normal" title="Find Donors">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="SearchDonorAction:" destination="aZ3-S2-6DN" eventType="touchUpInside" id="V3X-Rn-XLZ"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stethoscope-8 copy" id="j21-Au-E3c">
-                                <rect key="frame" x="103" y="88" width="115" height="145"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transfusion" highlightedImage="email" id="7QS-mk-ECI">
-                                <rect key="frame" x="10" y="256" width="45" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="qWA-EY-4ig"/>
-                    <connections>
-                        <outlet property="BloodTypePicker" destination="Xd6-pY-Hg1" id="qkx-Xm-UnM"/>
-                        <segue destination="eEQ-fm-foG" kind="push" id="GXg-tK-LWG"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IAC-x7-Kd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="458" y="1822"/>
-        </scene>
         <!--Hospital Profile-->
         <scene sceneID="LkF-GN-Cvh">
             <objects>
@@ -1540,17 +1484,17 @@
             </objects>
             <point key="canvasLocation" x="2698" y="2957"/>
         </scene>
-        <!--Blood Table View Controller-->
+        <!--Hospital Table View Controller-->
         <scene sceneID="mU3-uT-ljW">
             <objects>
-                <tableViewController storyboardIdentifier="BloodDonors" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eEQ-fm-foG" customClass="BloodTableViewController" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Hospitals" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eEQ-fm-foG" customClass="HospitalTableViewController" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" sectionHeaderHeight="28" sectionFooterHeight="28" id="MQ7-Iw-Fx9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="58" id="EVc-vM-cbG">
-                                <rect key="frame" x="0.0" y="28" width="320" height="58"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EVc-vM-cbG" id="Mqg-sZ-dcx">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
@@ -1713,76 +1657,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jv0-Ac-ppC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1455" y="1822"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="r8V-I5-dIa">
-            <objects>
-                <viewController id="Xs3-BA-W3o" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WEe-MW-asY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qUv-Lz-5pY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1962" y="2601"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="zgw-Vf-lik">
-            <objects>
-                <tableViewController id="fbf-bk-MEF" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jls-vn-3rb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jOg-Gr-S0R">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jOg-Gr-S0R" id="L5E-iO-dZn">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="fbf-bk-MEF" id="mHD-78-w8x"/>
-                            <outlet property="delegate" destination="fbf-bk-MEF" id="XrC-VF-rJY"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lFE-ds-ma9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2773" y="1871"/>
-        </scene>
-        <!--Hospital List-->
-        <scene sceneID="fHg-iK-AmT">
-            <objects>
-                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="sum-dr-MA6" customClass="HospitalList" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="FBW-IY-ctI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gIs-Ey-LiJ">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gIs-Ey-LiJ" id="S3u-ig-qA7">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="sum-dr-MA6" id="VjG-Ln-3NS"/>
-                            <outlet property="delegate" destination="sum-dr-MA6" id="NCE-lf-3BX"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0ru-9y-cIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3164" y="1413"/>
         </scene>
         <!--My Doctor Profile View Controller-->
         <scene sceneID="xpq-yA-M5s">

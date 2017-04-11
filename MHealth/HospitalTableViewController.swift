@@ -1,5 +1,5 @@
 //
-//  NewDoctorTableViewController.swift
+//  HospitalTableViewController.swift
 //  MHealth
 //
 //  Created by trn15 on 3/5/17.
@@ -8,8 +8,7 @@
 
 import UIKit
 
-
-class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
+class HospitalTableViewController: UITableViewController, NetworkCaller,  UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
     
     private var allDoctors:[DoctorDH] = [DoctorDH]()
     private var filteredDoctors:[DoctorDH] = [DoctorDH]()
@@ -17,15 +16,13 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISea
     let searchController = UISearchController(searchResultsController: nil)
     
     
-    //
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
-         //self.clearsSelectionOnViewWillAppear = false
-         self.tableView.separatorColor = UIColor.clearColor()
-         self.tableView.rowHeight = 125
+        //self.clearsSelectionOnViewWillAppear = false
+        self.tableView.separatorColor = UIColor.clearColor()
+        self.tableView.rowHeight = 125
         
         // Check Internet
         if (Networking.isInternetAvailable()) {
@@ -51,21 +48,21 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISea
         searchController.searchBar.scopeButtonTitles = ["Name", "Specialty"]
         searchController.searchBar.delegate = self
         
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if section == 0 {
@@ -82,10 +79,10 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISea
     {
         return "All Doctors"
     }
-
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
+        
         var curDoctor:DoctorDH = DoctorDH()
         
         if searchController.active && searchController.searchBar.text != "" {
@@ -93,7 +90,7 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISea
         } else {
             curDoctor = allDoctors[indexPath.row]
         }
-
+        
         // Configure the cell...
         let cellTypeIdentifier:String = "DoctorListTableViewCell";
         
@@ -154,9 +151,9 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISea
     // Custom Search Bar METHODS
     
     func filterContentForSearchText(searchText: String, scope: NSString = "Name") {
-
+        
         filteredDoctors = allDoctors.filter { doctor in
-
+            
             if (scope == searchController.searchBar.scopeButtonTitles![1]) {
                 return (doctor.specialtyId).lowercaseString.containsString(searchText.lowercaseString)
             }
@@ -175,6 +172,6 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISea
         filterContentForSearchText(searchController.searchBar.text!, scope: scope)
     }
     
- 
-
+    
+    
 }
