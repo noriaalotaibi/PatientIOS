@@ -21,6 +21,20 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, NetworkCal
     @IBOutlet weak var lNameTF: UITextField!
     @IBOutlet weak var CivilIDTF: UITextField!
     
+    @IBAction func textFieldEditing(sender: UITextField) {
+        // 6
+        let datePickerView:UIDatePicker = UIDatePicker()
+        
+        datePickerView.datePickerMode = UIDatePickerMode.Date
+        
+        sender.inputView = datePickerView
+        
+        datePickerView.addTarget(self, action: #selector(RegisterPersonalInfoVC.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+        
+    }
+
+    
+    @IBOutlet var dateTextField: UITextField!
     @IBOutlet weak var NationalityTF: UITextField!
     
     var year:Int = 0
@@ -113,15 +127,25 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, NetworkCal
 //        {
 //            picker2selection = DiabetesPickerOptions[row]
 //        }
-    }
     
+}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    func datePickerValueChanged(sender:UIDatePicker) {
+        
+        let dateFormatter = NSDateFormatter()
+        
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        
+        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+        
+        dateTextField.text = dateFormatter.stringFromDate(sender.date)
+        
+    }
     /*
     // MARK: - Navigation
 
