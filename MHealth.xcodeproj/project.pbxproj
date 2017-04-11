@@ -16,6 +16,8 @@
 		433A49291E9A249000642266 /* HospitalListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433A49281E9A249000642266 /* HospitalListViewCell.xib */; };
 		433A492F1E9A32D900642266 /* HospotalListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433A492E1E9A32D900642266 /* HospotalListVC.swift */; };
 		437F36AC1E93D18E006AC55E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437F36AB1E93D18E006AC55E /* Alert.swift */; };
+		513007D81E9CC5CE000892AA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 513007D71E9CC5CE000892AA /* SystemConfiguration.framework */; };
+		513007DA1E9CC64A000892AA /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513007D91E9CC64A000892AA /* Reach.swift */; };
 		518EBB971E71849F0095F797 /* BloodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EBB961E71849F0095F797 /* BloodViewController.swift */; };
 		518EBB991E7184B30095F797 /* BloodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EBB981E7184B30095F797 /* BloodTableViewController.swift */; };
 		518EBB9B1E7184C00095F797 /* DonorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EBB9A1E7184BF0095F797 /* DonorProfileViewController.swift */; };
@@ -72,6 +74,8 @@
 		433A49281E9A249000642266 /* HospitalListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HospitalListViewCell.xib; sourceTree = "<group>"; };
 		433A492E1E9A32D900642266 /* HospotalListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospotalListVC.swift; sourceTree = "<group>"; };
 		437F36AB1E93D18E006AC55E /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		513007D71E9CC5CE000892AA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		513007D91E9CC64A000892AA /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
 		518EBB961E71849F0095F797 /* BloodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodViewController.swift; sourceTree = "<group>"; };
 		518EBB981E7184B30095F797 /* BloodTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodTableViewController.swift; sourceTree = "<group>"; };
 		518EBB9A1E7184BF0095F797 /* DonorProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonorProfileViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				513007D81E9CC5CE000892AA /* SystemConfiguration.framework in Frameworks */,
 				625258405D3A2BB46D2011A3 /* Pods_MHealth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +198,13 @@
 			name = CustomLists;
 			sourceTree = "<group>";
 		};
+		51D90A2D1E9B78BF00D64580 /* CustomSearchBar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CustomSearchBar;
+			sourceTree = "<group>";
+		};
 		52CC04E71E6B2F1F00BC93A9 = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +242,7 @@
 		52CC05091E6B408800BC93A9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				51D90A2D1E9B78BF00D64580 /* CustomSearchBar */,
 				51BA46091E9A91B8000E1753 /* CustomLists */,
 				518EBBA21E718D180095F797 /* DonorVCs */,
 				518EBBA11E718D020095F797 /* DoctorVCs */,
@@ -247,6 +260,7 @@
 				52CC05051E6B407E00BC93A9 /* Networking.swift */,
 				52CC05061E6B407E00BC93A9 /* OutputResult.swift */,
 				52CC05171E6B4E1300BC93A9 /* Const.swift */,
+				513007D91E9CC64A000892AA /* Reach.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -284,6 +298,7 @@
 		B3F1570B851D19063A2234CC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				513007D71E9CC5CE000892AA /* SystemConfiguration.framework */,
 				8CDB312C5DB17542FF3D2128 /* Pods_MHealth.framework */,
 			);
 			name = Frameworks;
@@ -432,6 +447,7 @@
 				52CC05161E6B4A4100BC93A9 /* UserDH.swift in Sources */,
 				51EF73B41E6FEF8800706551 /* PatientReportViewController.swift in Sources */,
 				52CC05081E6B407E00BC93A9 /* OutputResult.swift in Sources */,
+				513007DA1E9CC64A000892AA /* Reach.swift in Sources */,
 				51F5B19D1E6D351A0081F860 /* DoctorDH.swift in Sources */,
 				518EBB971E71849F0095F797 /* BloodViewController.swift in Sources */,
 				52CC051A1E6B53D300BC93A9 /* PathsManager.swift in Sources */,

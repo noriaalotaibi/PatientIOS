@@ -35,11 +35,16 @@ class MyDoctorsCache: NSObject, NetworkCaller {
     override init() {
         // get doctors as array
         super.init()
-        let networkManager = Networking()
-        networkManager.logging = true
         
-        // get ids of doctors with invitation
-        networkManager.AMGetArrayData("http://34.196.107.188:8080/mHealthWS/ws/patientdrlink", params: [:], reqId: 1, caller: self)
+        if (Networking.isInternetAvailable()) {
+            let networkManager = Networking()
+            networkManager.logging = true
+        
+            // get ids of doctors with invitation
+            networkManager.AMGetArrayData("http://34.196.107.188:8080/mHealthWS/ws/patientdrlink", params: [:], reqId: 1, caller: self)
+        } else {
+            
+        }
         
         
     }

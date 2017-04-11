@@ -9,23 +9,65 @@
 import UIKit
 
 
-class NewDoctorTableViewController: UITableViewController, NetworkCaller {
+class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
     
     private var allDoctors:[DoctorDH] = [DoctorDH]()
+    private var filteredDoctors:[DoctorDH] = [DoctorDH]()
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    //
+    func alert(title: String, message: String) {
+        if let getModernAlert: AnyClass = NSClassFromString("UIAlertController") { // iOS 8
+            let myAlert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+            myAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(myAlert, animated: true, completion: nil)
+        } else { // iOS 7
+            let alert: UIAlertView = UIAlertView()
+            alert.delegate = self
+            
+            alert.title = title
+            alert.message = message
+            alert.addButtonWithTitle("OK")
+            
+            alert.show()
+        }
+    }
+    //
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+         //self.clearsSelectionOnViewWillAppear = false
+         self.tableView.separatorColor = UIColor.clearColor()
+         self.tableView.rowHeight = 125
+        
+        // Check Internet
+        if (Networking.isInternetAvailable()) {
+            let networkManager = Networking()
+            networkManager.logging = true
+            networkManager.AMGetArrayData("http://34.196.107.188:8080/mHealthWS/ws/doctor", params: [:], reqId: 1, caller: self)
+        } else {
+            
+        }
+        // --------------
+        
+        
+        // Search Bar
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        tableView.tableHeaderView?.backgroundColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
+        searchController.searchBar.backgroundColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
+        searchController.searchBar.tintColor = UIColor.whiteColor()
+        searchController.searchBar.barTintColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
+        searchController.searchBar.scopeButtonTitles = ["Name", "Specialty"]
+        searchController.searchBar.delegate = self
+        
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        let networkManager = Networking()
-        networkManager.logging = true
-        networkManager.AMGetArrayData("http://34.196.107.188:8080/mHealthWS/ws/doctor", params: [:], reqId: 1, caller: self)
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,40 +85,53 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if section == 0 {
+            if searchController.active && searchController.searchBar.text != "" {
+                return filteredDoctors.count
+            }
             return allDoctors.count
         }
         return 0
     }
+    
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    {
+        return "All Doctors"
+    }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
-        let cell: UITableViewCell = UITableViewCell()
-        let curDoctor = allDoctors[indexPath.row]
-        cell.textLabel?.text = curDoctor.firstName;
+        var curDoctor:DoctorDH = DoctorDH()
         
-        
+        if searchController.active && searchController.searchBar.text != "" {
+            curDoctor = filteredDoctors[indexPath.row]
+        } else {
+            curDoctor = allDoctors[indexPath.row]
+        }
+
         // Configure the cell...
-
+        let cellTypeIdentifier:String = "DoctorListTableViewCell";
+        
+        
+        let nib:NSArray = NSBundle.mainBundle().loadNibNamed(cellTypeIdentifier, owner: self, options: nil)
+        
+        let cell = nib.firstObject as! DoctorListTableViewCell
+        cell.updateCellData(curDoctor)
+        
         return cell
     }
     
-
-    
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0
-        {return "All Doctors:"}
-        
-        return ""
-    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let nextScreen:NewDoctorProfileViewController = self.storyboard?.instantiateViewControllerWithIdentifier("NewDoctorProfile") as! NewDoctorProfileViewController
         
-        nextScreen.newDoctor = allDoctors[indexPath.row]
-        
+        if searchController.active && searchController.searchBar.text != "" {
+            nextScreen.newDoctor = filteredDoctors[indexPath.row]
+        } else {
+            nextScreen.newDoctor = allDoctors[indexPath.row]
+        }
         
         
         let nav:UINavigationController = self.navigationController!
@@ -109,49 +164,33 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller {
         self.tableView.reloadData()
     }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    
+    
+    // Custom Search Bar METHODS
+    
+    func filterContentForSearchText(searchText: String, scope: NSString = "Name") {
+
+        filteredDoctors = allDoctors.filter { doctor in
+
+            if (scope == searchController.searchBar.scopeButtonTitles![1]) {
+                return (doctor.specialtyId).lowercaseString.containsString(searchText.lowercaseString)
+            }
+            else {
+                return
+                    (doctor.firstName+" "+doctor.lastName).lowercaseString.containsString(searchText.lowercaseString)
+            }
+        }
+        
+        tableView.reloadData()
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+ 
 
 }

@@ -8,15 +8,58 @@
 
 import UIKit
 
-class MyDoctorTableViewController: UITableViewController, NetworkCaller {
+class MyDoctorTableViewController: UITableViewController, NetworkCaller,  UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
     
     var cacheManager:MyDoctorsCache? = nil
+    private var filteredDoctors:[DoctorDH] = [DoctorDH]()
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    //
+    func alert(title: String, message: String) {
+        if let getModernAlert: AnyClass = NSClassFromString("UIAlertController") { // iOS 8
+            let myAlert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+            myAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(myAlert, animated: true, completion: nil)
+        } else { // iOS 7
+            let alert: UIAlertView = UIAlertView()
+            alert.delegate = self
+            
+            alert.title = title
+            alert.message = message
+            alert.addButtonWithTitle("OK")
+            
+            alert.show()
+        }
+    }
+    //
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         cacheManager = MyDoctorsCache.myInstance()
         cacheManager?.caller = self
+        
+        // Check Internet
+        if (Networking.isInternetAvailable()) {
+            // network requests managed in Cache; error message auto. displayed
+        }
+        // --------------
+        
+        self.tableView.rowHeight = 125
+        self.tableView.separatorColor = UIColor.clearColor()
+        
+        // Search Bar
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        tableView.tableHeaderView?.backgroundColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
+        searchController.searchBar.backgroundColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
+        searchController.searchBar.tintColor = UIColor.whiteColor()
+        searchController.searchBar.barTintColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
+        searchController.searchBar.scopeButtonTitles = ["Name", "Specialty"]
+        searchController.searchBar.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,17 +77,28 @@ class MyDoctorTableViewController: UITableViewController, NetworkCaller {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if (section == 0) {
-            let count = MyDoctorsCache.myInstance().getDoctors().count
-            return count
+            if searchController.active && searchController.searchBar.text != "" {
+                return filteredDoctors.count
+            }
+            return MyDoctorsCache.myInstance().getDoctors().count
         }
-        return 2
+        return 0
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    {
+        return "My Doctors"
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
         
-        let curDoctor = MyDoctorsCache.myInstance().getDoctors()[indexPath.row]
+        var curDoctor = DoctorDH()
+        if searchController.active && searchController.searchBar.text != "" {
+            curDoctor = filteredDoctors[indexPath.row]
+        } else {
+            curDoctor = MyDoctorsCache.myInstance().getDoctors()[indexPath.row]
+        }
 
         // Configure the cell...
         let cellTypeIdentifier:String = "DoctorListTableViewCell";
@@ -56,17 +110,6 @@ class MyDoctorTableViewController: UITableViewController, NetworkCaller {
         cell.updateCellData(curDoctor)
         
         
-        /*cell.nameLabel.text = [tableData objectAtIndex:indexPath.row];
-        cell.thumbnailImageView.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
-        cell.prepTimeLabel.text = [prepTime objectAtIndex:indexPath.row];*/
-
-        
-        
-        /*
-        let doctorCell:DoctorListTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("DoctorListTableViewCell") as! DoctorListTableViewCell
-        
-        doctorCell.updateCellData(curDoctor);*/
-        
         
         return cell
     }
@@ -75,7 +118,11 @@ class MyDoctorTableViewController: UITableViewController, NetworkCaller {
         
         let nextScreen:MyDoctorProfileViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MyDoctorProfile") as! MyDoctorProfileViewController
         
-        nextScreen.myDoctor = MyDoctorsCache.myInstance().getDoctors()[indexPath.row]
+        if searchController.active && searchController.searchBar.text != "" {
+            nextScreen.myDoctor = filteredDoctors[indexPath.row]
+        } else {
+            nextScreen.myDoctor = MyDoctorsCache.myInstance().getDoctors()[indexPath.row]
+        }
         
         
         
@@ -87,51 +134,6 @@ class MyDoctorTableViewController: UITableViewController, NetworkCaller {
         nav.pushViewController(nextScreen, animated: true)
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func setArrayResponse(resp: NSArray, reqId: Int) {
         self.tableView.reloadData()
@@ -140,5 +142,29 @@ class MyDoctorTableViewController: UITableViewController, NetworkCaller {
     func setDictResponse(resp: NSDictionary, reqId: Int) {
         self.tableView.reloadData()
     }
+    
+    // Custom Search Bar METHODS
+    
+    func filterContentForSearchText(searchText: String, scope: NSString = "Name") {
+        
+        filteredDoctors = MyDoctorsCache.myInstance().getDoctors().filter { doctor in
+            if (scope == searchController.searchBar.scopeButtonTitles![1]) {
+                return (doctor.specialtyId).lowercaseString.containsString(searchText.lowercaseString)
+            }
+            else {
+                return
+                    (doctor.firstName+" "+doctor.lastName).lowercaseString.containsString(searchText.lowercaseString)
+            }
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+    }
+
 
 }
