@@ -10,8 +10,8 @@ import UIKit
 
 class HospitalTableViewController: UITableViewController, NetworkCaller,  UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
     
-    private var allDoctors:[DoctorDH] = [DoctorDH]()
-    private var filteredDoctors:[DoctorDH] = [DoctorDH]()
+    private var allHospitals:[HospitalDH] = [HospitalDH]()
+    private var filteredHospitals:[HospitalDH] = [HospitalDH]()
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -28,7 +28,7 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
         if (Networking.isInternetAvailable()) {
             let networkManager = Networking()
             networkManager.logging = true
-            networkManager.AMGetArrayData("http://34.196.107.188:8080/mHealthWS/ws/doctor", params: [:], reqId: 1, caller: self)
+            networkManager.AMGetArrayData("http://34.196.107.188:8080/mHealthWS/ws/hospital", params: [:], reqId: 1, caller: self)
         } else {
             
         }
@@ -45,7 +45,7 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
         searchController.searchBar.backgroundColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
         searchController.searchBar.tintColor = UIColor.whiteColor()
         searchController.searchBar.barTintColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
-        searchController.searchBar.scopeButtonTitles = ["Name", "Specialty"]
+        searchController.searchBar.scopeButtonTitles = ["Public", "Private"]
         searchController.searchBar.delegate = self
         
         
@@ -67,9 +67,9 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
         // #warning Incomplete implementation, return the number of rows
         if section == 0 {
             if searchController.active && searchController.searchBar.text != "" {
-                return filteredDoctors.count
+                return filteredHospitals.count
             }
-            return allDoctors.count
+            return allHospitals.count
         }
         return 0
     }
@@ -77,28 +77,28 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
-        return "All Doctors"
+        return "Hospitals"
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var curDoctor:DoctorDH = DoctorDH()
+        var curHospital:HospitalDH = HospitalDH()
         
         if searchController.active && searchController.searchBar.text != "" {
-            curDoctor = filteredDoctors[indexPath.row]
+            curHospital = filteredHospitals[indexPath.row]
         } else {
-            curDoctor = allDoctors[indexPath.row]
+            curHospital = allHospitals[indexPath.row]
         }
         
         // Configure the cell...
-        let cellTypeIdentifier:String = "DoctorListTableViewCell";
+        let cellTypeIdentifier:String = "HospitalTableViewCell";
         
         
         let nib:NSArray = NSBundle.mainBundle().loadNibNamed(cellTypeIdentifier, owner: self, options: nil)
         
-        let cell = nib.firstObject as! DoctorListTableViewCell
-        cell.updateCellData(curDoctor)
+        let cell = nib.firstObject as! HospitalTableViewCell
+        cell.updateCellData(curHospital)
         
         return cell
     }
@@ -106,12 +106,12 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let nextScreen:NewDoctorProfileViewController = self.storyboard?.instantiateViewControllerWithIdentifier("NewDoctorProfile") as! NewDoctorProfileViewController
+        let nextScreen:HospitalProfile = self.storyboard?.instantiateViewControllerWithIdentifier("HospitalProfile") as! HospitalProfile
         
         if searchController.active && searchController.searchBar.text != "" {
-            nextScreen.newDoctor = filteredDoctors[indexPath.row]
+            nextScreen.hospital = filteredHospitals[indexPath.row]
         } else {
-            nextScreen.newDoctor = allDoctors[indexPath.row]
+            nextScreen.hospital = allHospitals[indexPath.row]
         }
         
         
@@ -134,13 +134,12 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
             print( resp )
             
             for i in 0..<resp.count {
-                let doctor:DoctorDH = DoctorDH()
+                let hospital:HospitalDH = HospitalDH()
                 
-                doctor.loadDictionary( resp.objectAtIndex(i) as! NSDictionary )
-                allDoctors.append(doctor)
+                hospital.loadDictionary( resp.objectAtIndex(i) as! NSDictionary )
+                allHospitals.append(hospital)
             }
             
-            print("My Doctors Set!")
         }
         self.tableView.reloadData()
     }
@@ -150,17 +149,19 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
     
     // Custom Search Bar METHODS
     
-    func filterContentForSearchText(searchText: String, scope: NSString = "Name") {
+    func filterContentForSearchText(searchText: String, scope: NSString = "Public") {
         
-        filteredDoctors = allDoctors.filter { doctor in
+        filteredHospitals = allHospitals.filter { hospital in
             
-            if (scope == searchController.searchBar.scopeButtonTitles![1]) {
-                return (doctor.specialtyId).lowercaseString.containsString(searchText.lowercaseString)
+            return (hospital.hospitalType).lowercaseString.containsString(scope as String)
+            
+            /*if (scope == searchController.searchBar.scopeButtonTitles![1]) {
+                return (hospital.hospitalType).lowercaseString.containsString(searchText.lowercaseString)
             }
             else {
                 return
                     (doctor.firstName+" "+doctor.lastName).lowercaseString.containsString(searchText.lowercaseString)
-            }
+            }*/
         }
         
         tableView.reloadData()
