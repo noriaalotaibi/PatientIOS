@@ -77,7 +77,7 @@ class Patient: NSObject , DataHolder {
     
     
     func loadDictionary(values: NSDictionary){
-   
+           
         self.firstName = values.valueForKey("firstName") as! String
        
         self.middleName = values.valueForKey("middleName") as! String

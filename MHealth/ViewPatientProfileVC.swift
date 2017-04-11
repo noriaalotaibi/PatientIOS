@@ -19,20 +19,31 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller {
     @IBOutlet weak var EmailLabel: UILabel!
     @IBOutlet weak var PhoneNumLabel: UILabel!
     @IBOutlet weak var EmergencyNumLabel: UILabel!
-    
-    @IBAction func ViewMedicalInfoButton(sender: AnyObject) {
-        
-//        let nextScreen:ViewMedicalInfoVC = self.storyboard?.instantiateViewControllerWithIdentifier("viewMedicalInfo") as! ViewMedicalInfoVC
-//        
-//        self.presentViewController(nextScreen, animated: true, completion: {})
-        
-     //   let nav:UINavigationController = self.navigationController!
-        
-      //  nav.pushViewController(nextScreen, animated: true)
-    }
-    var patient:Patient?
+    var patient=Patient()
     
     var newPatient:Patient = Patient()
+
+    
+   
+    @IBAction func UpdateProfile(sender: AnyObject) {
+        
+        
+         
+        
+    }
+    
+    @IBAction func ViewMedicalInfoButton(sender: AnyObject) {
+         print("user clicked More")
+        
+        //        let nextScreen:ViewMedicalInfoVC = self.storyboard?.instantiateViewControllerWithIdentifier("viewMedicalInfo") as! ViewMedicalInfoVC
+        //
+        //        self.presentViewController(nextScreen, animated: true, completion: {})
+        
+        //   let nav:UINavigationController = self.navigationController!
+        
+        //  nav.pushViewController(nextScreen, animated: true)
+ 
+    }
     
 //    var records:NSMutableArray = NSMutableArray()
 //    var index:Int = 0
@@ -68,18 +79,23 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller {
         let net:Networking = Networking()
         net.AMGetArrayData(Const.URLs.Patients, params: [:], reqId: 1, caller: self)
         
-       
+        let Patient:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
         
-        FnameLabel?.text         = patient!.firstName
-        CivilIdLabel?.text       = patient!.civilId
-        MnameLabel?.text    = patient?.middleName
-        LnameLabel?.text      = patient?.lastName
-        NationalityLabel?.text = patient?.nationality
-        GenderLabel?.text = patient?.gender
-        BirthDateLabel?.text = patient?.birthDate
-        EmailLabel?.text = patient?.email
-        PhoneNumLabel?.text = patient?.phone
-        EmergencyNumLabel?.text = patient?.emergencyNum
+     //   patient!.loadDictionary(Patient)
+        
+        patient.loadDictionary(Patient);
+        
+        FnameLabel?.text  = patient.firstName
+        CivilIdLabel?.text = patient.civilId
+        LnameLabel?.text      = patient.lastName
+        NationalityLabel?.text = patient.nationality
+        GenderLabel?.text = patient.gender
+        BirthDateLabel?.text = patient.birthDate
+        EmailLabel?.text = patient.email
+        PhoneNumLabel?.text = patient.phone
+        EmergencyNumLabel?.text = patient.emergencyNum
+        
+        
         
        // loadData()
         
