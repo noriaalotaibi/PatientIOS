@@ -13,7 +13,6 @@ class EditPersonalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerView
     @IBOutlet weak var GenderPicker: UIPickerView!
   
     @IBOutlet weak var FnameLB: UITextField!
-    @IBOutlet weak var MnameLB: UITextField!
     @IBOutlet weak var LnameLB: UITextField!
     @IBOutlet weak var CivilIDLB: UITextField!
  
@@ -26,44 +25,56 @@ class EditPersonalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerView
      weak var BirthDate: UIDatePicker!
    
     let genderPickerOptions = ["Female" , "Male"]
-  
+   
     
-    var patient:Patient?
+    var patient=Patient()
+    var newPatient=Patient()
     
     var records:NSMutableArray = NSMutableArray()
     
     @IBAction func UpdateButton(sender: AnyObject) {
         
+        var fname = FnameLB.text
+        var lname = LnameLB.text
+        var civilId = CivilIDLB.text
+        var email = EmailLB.text
+        var phoneNum = PhoneLB.text
+        var emergencyNum = EmergencyLB.text
+        var nationality = NationalityLB.text
+  //      var birthDate = BirthDateLB.text
+        
+        
         let networkManager:Networking = Networking()
-        let valuesDict = patient?.toDictionary()
+        patient.firstName=fname!
+        patient.lastName=lname!
+        patient.civilId=civilId!
+        patient.email=email!
+        patient.phone=phoneNum!
+        patient.email=emergencyNum!
+        patient.nationality=nationality!
         
-        networkManager.AMJSONArray(Const.URLs.Patients, httpMethod: "PUT", jsonData: valuesDict!, reqId: 1, caller: self)
+         let valuesDict = patient.toDictionary()
+        
+        //newPatient.password=password!
+      //  current.newPatient.gender=gender
+        print(valuesDict)
+        networkManager.AMJSONDictionary(Const.URLs.Patients + "/" + "\(patient.patientID)", httpMethod: "PUT", jsonData: valuesDict, reqId: 1, caller: self)
        
-        FnameLB?.text         = patient?.firstName
         
-        print(patient?.firstName)
-        CivilIDLB?.text       = patient?.civilId
-        MnameLB?.text     = patient?.middleName
-        LnameLB?.text    = patient?.lastName
-    
+        var alert = UIAlertView(title: "Success", message: "Updated", delegate: self, cancelButtonTitle: "OK")
+        alert.show()
         
         
         //   picker1selection.text      = patient.lastName
-        
-        EmailLB?.text     = patient?.email
-            
-        PasswordLB?.text     = patient?.password
-        PhoneLB?.text        = patient?.phone
-        EmergencyLB?.text      = patient?.emergencyNum
-        NationalityLB?.text   = patient?.nationality
         //birthdate
-         var gender = picker1selection
+        // var gender = picker1selection
         
         
 
     }
     
     func setArrayResponse(resp: NSArray, reqId: Int) {
+        print(resp)
         
     }
     
@@ -78,7 +89,30 @@ class EditPersonalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerView
 
         GenderPicker.dataSource = self
         GenderPicker.delegate = self
+    
+    let net:Networking = Networking()
+  //  net.AMGetArrayData(Const.URLs.Patients, params: [:], reqId: 1, caller: self)
+    
+    let Patient:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
   
+    print("patient json")
+    print(Patient)
+    patient.loadDictionary(Patient);
+    
+    
+    print("patient object")
+    print(patient)
+    
+    
+    FnameLB?.text  = patient.firstName
+    CivilIDLB?.text = patient.civilId
+    LnameLB?.text      = patient.lastName
+    NationalityLB?.text = patient.nationality
+ //   GenderLB?.text = patient.gender
+   // BirthDateLB?.text = patient.birthDate
+    EmailLB?.text = patient.email
+    PhoneLB?.text = patient.phone
+    EmergencyLB?.text = patient.emergencyNum
 
         // Do any additional setup after loading the view.
     }

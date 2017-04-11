@@ -33,6 +33,7 @@ class Const: NSObject {
         static let patientId = "patientId"
         static let loggedinUser = "loggedinUser"
         static let hospitalId = "hospitalId"
+        static let hospitalProfile = "hospitalProfile"
         
     }
 }

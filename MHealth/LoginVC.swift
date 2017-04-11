@@ -88,6 +88,8 @@ class LoginVC: UIViewController, NetworkCaller {
             
             self.presentViewController(nextScreen, animated: true, completion: {})
             
+
+            
         }
         
 //        let loginResult = resp.valueForKey("result") as! Bool

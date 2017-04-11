@@ -40,5 +40,14 @@ class HospitalListCellTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func updateCellData(hospital: HospitalDH) {
+        hospitalObject = hospital;
+        hospitalN.text = hospitalObject.hospitalName;
+        
+        HospitalType.text = hospitalObject.hospitalType;
+        hospitalLocation.text = hospitalObject.hospitalAddress;
+   
+    }
 
 }

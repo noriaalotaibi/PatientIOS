@@ -14,16 +14,12 @@ class ViewMedicalInfoVC: UIViewController , NetworkCaller {
     @IBOutlet weak var AsthmaLabel: UILabel!
     @IBOutlet weak var AllergiesLabel: UILabel!
     @IBOutlet weak var MedicationLabel: UILabel!
-
-    var patient:Patient?
     
-    func loadData() {
-        BloodTypeLabel?.text         = patient?.bloodType
-        DiabetesLabel?.text       =  "\(patient?.diabetes)"
-        AsthmaLabel?.text    =  "\(patient?.asthma)"
-        AllergiesLabel?.text      = patient?.allergies
-        MedicationLabel?.text = patient?.medication
-    }
+    var patient=Patient()
+    
+    var newPatient:Patient = Patient()
+    
+    
     
 
     override func viewDidLoad() {
@@ -31,7 +27,17 @@ class ViewMedicalInfoVC: UIViewController , NetworkCaller {
         let net:Networking = Networking()
         net.AMGetArrayData(Const.URLs.Patients, params: [:], reqId: 1, caller: self)
         
-        loadData()
+        let Patient:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
+        
+         patient.loadDictionary(Patient);
+        BloodTypeLabel?.text=patient.bloodType
+        DiabetesLabel?.text = "\(patient.diabetes)"
+        AsthmaLabel?.text = "\(patient.asthma)"
+        AllergiesLabel?.text = patient.allergies
+        MedicationLabel?.text = patient.medication
+        
+        
+        
         // Do any additional setup after loading the view.
     }
 

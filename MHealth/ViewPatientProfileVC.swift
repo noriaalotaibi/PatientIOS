@@ -19,12 +19,16 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller {
     @IBOutlet weak var EmailLabel: UILabel!
     @IBOutlet weak var PhoneNumLabel: UILabel!
     @IBOutlet weak var EmergencyNumLabel: UILabel!
+    var patient=Patient()
+    
+    var newPatient:Patient = Patient()
+
     
    
     @IBAction func UpdateProfile(sender: AnyObject) {
         
         
-        print("user clicked update")
+         
         
     }
     
@@ -40,9 +44,6 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller {
         //  nav.pushViewController(nextScreen, animated: true)
  
     }
-    var patient:Patient?
-    
-    var newPatient:Patient = Patient()
     
 //    var records:NSMutableArray = NSMutableArray()
 //    var index:Int = 0
@@ -80,19 +81,21 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller {
         
         let Patient:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
         
-        patient!.loadDictionary(Patient)
-       
+     //   patient!.loadDictionary(Patient)
         
-        FnameLabel?.text         = patient!.firstName
-        CivilIdLabel?.text       = patient!.civilId
-        MnameLabel?.text    = patient?.middleName
-        LnameLabel?.text      = patient?.lastName
-        NationalityLabel?.text = patient?.nationality
-        GenderLabel?.text = patient?.gender
-        BirthDateLabel?.text = patient?.birthDate
-        EmailLabel?.text = patient?.email
-        PhoneNumLabel?.text = patient?.phone
-        EmergencyNumLabel?.text = patient?.emergencyNum
+        patient.loadDictionary(Patient);
+        
+        FnameLabel?.text  = patient.firstName
+        CivilIdLabel?.text = patient.civilId
+        LnameLabel?.text      = patient.lastName
+        NationalityLabel?.text = patient.nationality
+        GenderLabel?.text = patient.gender
+        BirthDateLabel?.text = patient.birthDate
+        EmailLabel?.text = patient.email
+        PhoneNumLabel?.text = patient.phone
+        EmergencyNumLabel?.text = patient.emergencyNum
+        
+        
         
        // loadData()
         

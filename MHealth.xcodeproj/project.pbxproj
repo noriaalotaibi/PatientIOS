@@ -15,6 +15,10 @@
 		433A49271E9A244700642266 /* HospitalListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433A49261E9A244700642266 /* HospitalListCellTableViewCell.swift */; };
 		433A49291E9A249000642266 /* HospitalListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433A49281E9A249000642266 /* HospitalListViewCell.xib */; };
 		433A492F1E9A32D900642266 /* HospotalListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433A492E1E9A32D900642266 /* HospotalListVC.swift */; };
+		433A49331E9B5E4B00642266 /* HospitalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433A49321E9B5E4B00642266 /* HospitalList.swift */; };
+		433A49351E9B5EA600642266 /* HospitalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433A49341E9B5EA600642266 /* HospitalCache.swift */; };
+		433A49371E9B623500642266 /* HospitalListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433A49361E9B623500642266 /* HospitalListVC.swift */; };
+		433A49391E9B797100642266 /* HospitalProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433A49381E9B797100642266 /* HospitalProfile.swift */; };
 		437F36AC1E93D18E006AC55E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437F36AB1E93D18E006AC55E /* Alert.swift */; };
 		518EBB971E71849F0095F797 /* BloodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EBB961E71849F0095F797 /* BloodViewController.swift */; };
 		518EBB991E7184B30095F797 /* BloodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EBB981E7184B30095F797 /* BloodTableViewController.swift */; };
@@ -71,6 +75,10 @@
 		433A49261E9A244700642266 /* HospitalListCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalListCellTableViewCell.swift; sourceTree = "<group>"; };
 		433A49281E9A249000642266 /* HospitalListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HospitalListViewCell.xib; sourceTree = "<group>"; };
 		433A492E1E9A32D900642266 /* HospotalListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospotalListVC.swift; sourceTree = "<group>"; };
+		433A49321E9B5E4B00642266 /* HospitalList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalList.swift; sourceTree = "<group>"; };
+		433A49341E9B5EA600642266 /* HospitalCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalCache.swift; sourceTree = "<group>"; };
+		433A49361E9B623500642266 /* HospitalListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalListVC.swift; sourceTree = "<group>"; };
+		433A49381E9B797100642266 /* HospitalProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalProfile.swift; sourceTree = "<group>"; };
 		437F36AB1E93D18E006AC55E /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		518EBB961E71849F0095F797 /* BloodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodViewController.swift; sourceTree = "<group>"; };
 		518EBB981E7184B30095F797 /* BloodTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodTableViewController.swift; sourceTree = "<group>"; };
@@ -155,9 +163,10 @@
 				518EBBAC1E718F540095F797 /* ViewMedicalInfoVC.swift */,
 				518EBBAD1E718F540095F797 /* EditeMidicalInfoVC.swift */,
 				518EBBAE1E718F540095F797 /* ResetPass.swift */,
-				433A49261E9A244700642266 /* HospitalListCellTableViewCell.swift */,
-				433A49281E9A249000642266 /* HospitalListViewCell.xib */,
 				433A492E1E9A32D900642266 /* HospotalListVC.swift */,
+				433A49321E9B5E4B00642266 /* HospitalList.swift */,
+				433A49361E9B623500642266 /* HospitalListVC.swift */,
+				433A49381E9B797100642266 /* HospitalProfile.swift */,
 			);
 			name = PatientVCs;
 			sourceTree = "<group>";
@@ -187,7 +196,9 @@
 		51BA46091E9A91B8000E1753 /* CustomLists */ = {
 			isa = PBXGroup;
 			children = (
+				433A49261E9A244700642266 /* HospitalListCellTableViewCell.swift */,
 				51BA460A1E9A91D4000E1753 /* DoctorListTableViewCell.swift */,
+				433A49281E9A249000642266 /* HospitalListViewCell.xib */,
 				51BA460B1E9A91D4000E1753 /* DoctorListTableViewCell.xib */,
 			);
 			name = CustomLists;
@@ -265,6 +276,7 @@
 				51EF73B71E7014D000706551 /* PatientContainer.swift */,
 				51E6883D1E7081180036E6D5 /* PatientReportDH.swift */,
 				698FB7AC1E9A28580088238E /* HospitalDH.swift */,
+				433A49341E9B5EA600642266 /* HospitalCache.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -424,6 +436,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				518EBBB51E718F540095F797 /* EditPersonalInfoVC.swift in Sources */,
+				433A49351E9B5EA600642266 /* HospitalCache.swift in Sources */,
+				433A49331E9B5E4B00642266 /* HospitalList.swift in Sources */,
 				29FF175E1E6C1250002FECA0 /* MyDoctorProfileViewController.swift in Sources */,
 				52CC05071E6B407E00BC93A9 /* Networking.swift in Sources */,
 				698FB7AD1E9A28580088238E /* HospitalDH.swift in Sources */,
@@ -445,6 +459,7 @@
 				518EBB9F1E71898D0095F797 /* DonorCache.swift in Sources */,
 				518EBBB41E718F540095F797 /* RegisterPersonalInfoVC.swift in Sources */,
 				51E6883E1E7081180036E6D5 /* PatientReportDH.swift in Sources */,
+				433A49371E9B623500642266 /* HospitalListVC.swift in Sources */,
 				518EBBB11E718F540095F797 /* LoginVC.swift in Sources */,
 				518EBBB31E718F540095F797 /* RegisterMedicalInfoVC.swift in Sources */,
 				52CC04F41E6B2F2400BC93A9 /* AppDelegate.swift in Sources */,
@@ -464,6 +479,7 @@
 				51EF73B81E7014D000706551 /* PatientContainer.swift in Sources */,
 				433A492F1E9A32D900642266 /* HospotalListVC.swift in Sources */,
 				52CC05181E6B4E1300BC93A9 /* Const.swift in Sources */,
+				433A49391E9B797100642266 /* HospitalProfile.swift in Sources */,
 				51F5B19F1E6D357F0081F860 /* MyDoctorsCache.swift in Sources */,
 				51EF73B61E70130200706551 /* PatientDH.swift in Sources */,
 				518EBBB91E718F540095F797 /* EditeMidicalInfoVC.swift in Sources */,
