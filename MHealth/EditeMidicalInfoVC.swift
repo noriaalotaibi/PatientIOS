@@ -12,20 +12,33 @@ class EditeMidicalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     
     var picker1selection = ""
-    var picker2selection = ""
-    var picker3selection = ""
+    var diabetes:Int = 0
+    var asthma = 0
+    
+    @IBAction func DiabetesSegment(sender: AnyObject) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            
+            self.diabetes = 0
+            
+        }else if sender.selectedSegmentIndex == 1{
+            
+            self.diabetes = 1
+        }else if sender.selectedSegmentIndex == 2{
+            self.diabetes = 2
+        }
+    }
+    
+    
+   
     
     var records:NSMutableArray = NSMutableArray()
     var index:Int = 0
-    var patient:Patient?
+    var patient=Patient()
 
     
     let BloodTypePD = ["A+" , "A-" , "B+" , "B-","O+" , "O-", "AB+" , "AB-"]
     
-    
-    let DiabetesPickerOptions = ["Type One" ,"Type Two" , "No" ]
-    
-    let asthmaPickerOptions = ["Yes" , "No"]
     
     @IBOutlet weak var AllergiesUpdatedTF: UITextField!
 
@@ -33,34 +46,40 @@ class EditeMidicalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     @IBOutlet weak var BloodTypePicker: UIPickerView!
         ///
+    @IBAction func asthmaSegment(sender: AnyObject) {
+        if sender.selectedSegmentIndex == 0 {
+            
+            self.asthma = 0
+            
+        }else if sender.selectedSegmentIndex == 1{
+            
+            self.asthma = 1
+        }
+    
+    }
     @IBOutlet weak var diabetesPicker: UIPickerView!
     @IBOutlet weak var asthmaPicker: UIPickerView!
     
     @IBAction func SaveChangesButton(sender: AnyObject) {
             var bloodType = picker1selection
-            var diabeties = picker2selection
-            var asthma = picker3selection
+           
         //change
        //     var allergies =AllergiesUpdatedTF.text
         
         
-       var bd = patient!.bloodType = (bloodType)
-        var dia = patient!.diabetes = Int(diabeties)!
-       var asth = patient!.asthma = Int(asthma)!
-        var alle = patient!.allergies = (AllergiesUpdatedTF?.text)!
-        var med = patient!.medication = (MedicationsUpdatedTF.text)!
+        var medication = MedicationsUpdatedTF.text
+        var allergies = AllergiesUpdatedTF.text
+        var asthmaValue = asthma
+       
+        
+        
         
      let networkManager:Networking = Networking()
-     let valuesDict = patient?.toDictionary()
+     let valuesDict = patient.toDictionary()
         
-        networkManager.AMJSONArray(Const.URLs.Patients, httpMethod: "PUT", jsonData: valuesDict!, reqId: 1, caller: self)
-        //AMJSONDictionary(Const.URLs.Login, httpMethod: "POST", jsonData: values, reqId: 1, caller: self)
-
-     //   AMJSONAr
-//        
-//        //records.replaceObjectAtIndex(records[row], withObject: <#T##AnyObject#>)
-//        
-//       records.replaceObjectAtIndex(index, withObject: (patient?.toDictionary())!)
+        networkManager.AMJSONArray(Const.URLs.Patients, httpMethod: "PUT", jsonData: valuesDict, reqId: 1, caller: self)
+        
+    
     }
     func setArrayResponse(resp: NSArray, reqId: Int) {
         
@@ -75,14 +94,29 @@ class EditeMidicalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         super.viewDidLoad()
         BloodTypePicker.delegate = self
         BloodTypePicker.dataSource = self
-        diabetesPicker.delegate = self
-        diabetesPicker.dataSource = self
-        asthmaPicker.dataSource = self
-        asthmaPicker.delegate = self
         
-        asthmaPicker.tag = 3
-        diabetesPicker.tag = 2
-        BloodTypePicker.tag = 1
+        let net:Networking = Networking()
+        
+        
+        let Patient:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
+        
+        print("patient json")
+        print(Patient)
+        patient.loadDictionary(Patient);
+        
+        
+        print("patient object")
+        print(patient)
+        
+        
+        MedicationsUpdatedTF?.text  = patient.medication
+        AllergiesUpdatedTF.text = patient.allergies
+        asthma = patient.asthma
+        picker1selection = patient.bloodType
+        diabetes = patient.diabetes
+        
+        
+       
         // Do any additional setup after loading the view.
         
         
@@ -93,35 +127,18 @@ class EditeMidicalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         return 1
     }
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if(pickerView.tag == 1){
+     
             return BloodTypePD.count
-        }
-        else if (pickerView.tag == 2)
-        {
-            return DiabetesPickerOptions.count
-        }
-        else if (pickerView.tag == 3){
-            return asthmaPickerOptions.count
-        }
-        return 1
+    
+       
     }
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         
-        if(pickerView.tag == 1){
+  
             return BloodTypePD[row]
             
-            
-        }
-        if (pickerView.tag == 2)
-        {
-            return DiabetesPickerOptions[row]
-        }
-        if (pickerView.tag == 3){
-            return asthmaPickerOptions[row]
-        }
-        
-        return ""
+   
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -130,13 +147,7 @@ class EditeMidicalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             
             picker1selection =  BloodTypePD[row]
         }
-        if (pickerView.tag == 2)
-        {
-            picker2selection = DiabetesPickerOptions[row]
-        }
-        if (pickerView.tag == 3){
-            picker3selection = asthmaPickerOptions[row]
-        }
+  
     }
     
 

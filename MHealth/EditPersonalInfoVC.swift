@@ -8,11 +8,32 @@
 
 import UIKit
 
-class EditPersonalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource , NetworkCaller {
-   var picker1selection = ""
-    @IBOutlet weak var GenderPicker: UIPickerView!
-  
+class EditPersonalInfoVC: UIViewController , NetworkCaller {
+  var bDay=""
+    var gender:String = ""
+    @IBAction func GenderSegment(sender: AnyObject) {
+        if sender.selectedSegmentIndex == 0 {
+            
+            self.gender = "m"
+            
+        }else  {
+            
+            self.gender = "f"
+        }
+    }
+    @IBAction func textFieldEditing(sender: UITextField) {
+        let datePickerView:UIDatePicker = UIDatePicker()
+        
+        datePickerView.datePickerMode = UIDatePickerMode.Date
+        
+        
+        sender.inputView = datePickerView
+        
+        datePickerView.addTarget(self, action: #selector(EditPersonalInfoVC.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+    }
+
     @IBOutlet weak var FnameLB: UITextField!
+    @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var LnameLB: UITextField!
     @IBOutlet weak var CivilIDLB: UITextField!
  
@@ -21,10 +42,9 @@ class EditPersonalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerView
     @IBOutlet weak var PhoneLB: UITextField!
     @IBOutlet weak var EmergencyLB: UITextField!
     @IBOutlet weak var NationalityLB: UITextField!
-    @IBOutlet weak var BirthDateLB: UIDatePicker!
-     weak var BirthDate: UIDatePicker!
    
-    let genderPickerOptions = ["Female" , "Male"]
+   
+   
    
     
     var patient=Patient()
@@ -34,6 +54,8 @@ class EditPersonalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerView
     
     @IBAction func UpdateButton(sender: AnyObject) {
         
+        bDay = dateTextField.text!
+        
         var fname = FnameLB.text
         var lname = LnameLB.text
         var civilId = CivilIDLB.text
@@ -41,7 +63,7 @@ class EditPersonalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerView
         var phoneNum = PhoneLB.text
         var emergencyNum = EmergencyLB.text
         var nationality = NationalityLB.text
-  //      var birthDate = BirthDateLB.text
+        var password = PasswordLB.text
         
         
         let networkManager:Networking = Networking()
@@ -49,9 +71,12 @@ class EditPersonalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerView
         patient.lastName=lname!
         patient.civilId=civilId!
         patient.email=email!
+        patient.dateOfBirth=bDay
+        patient.gender=gender
         patient.phone=phoneNum!
-        patient.email=emergencyNum!
+        patient.emergencyNum=emergencyNum!
         patient.nationality=nationality!
+        patient.password=password!
         
          let valuesDict = patient.toDictionary()
         
@@ -64,13 +89,6 @@ class EditPersonalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerView
         var alert = UIAlertView(title: "Success", message: "Updated", delegate: self, cancelButtonTitle: "OK")
         alert.show()
         
-        
-        //   picker1selection.text      = patient.lastName
-        //birthdate
-        // var gender = picker1selection
-        
-        
-
     }
     
     func setArrayResponse(resp: NSArray, reqId: Int) {
@@ -87,8 +105,7 @@ class EditPersonalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerView
    override func viewDidLoad() {
         super.viewDidLoad()
 
-        GenderPicker.dataSource = self
-        GenderPicker.delegate = self
+    
     
     let net:Networking = Networking()
   //  net.AMGetArrayData(Const.URLs.Patients, params: [:], reqId: 1, caller: self)
@@ -105,45 +122,19 @@ class EditPersonalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerView
     
     
     FnameLB?.text  = patient.firstName
+    dateTextField.text = patient.dateOfBirth
     CivilIDLB?.text = patient.civilId
     LnameLB?.text      = patient.lastName
     NationalityLB?.text = patient.nationality
- //   GenderLB?.text = patient.gender
-   // BirthDateLB?.text = patient.birthDate
+   PasswordLB.text = patient.password
     EmailLB?.text = patient.email
     PhoneLB?.text = patient.phone
     EmergencyLB?.text = patient.emergencyNum
+    gender=patient.gender
 
         // Do any additional setup after loading the view.
     }
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
-        return genderPickerOptions.count
-        
-    }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return genderPickerOptions[row]
-        
-    }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        
-        if(pickerView.tag == 1){
-            
-            picker1selection =  genderPickerOptions[row]
-        }
-        //        if (pickerView.tag == 2)
-        //        {
-        //            picker2selection = DiabetesPickerOptions[row]
-        //        }
-    }
-   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -151,7 +142,17 @@ class EditPersonalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerView
     }
     
     
-    
+    func datePickerValueChanged(sender:UIDatePicker) {
+        
+        let dateFormatter = NSDateFormatter()
+        
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        
+        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+        
+        dateTextField.text = dateFormatter.stringFromDate(sender.date)
+        //        Reg1VC.current.newPatient.birthDate = bDay;
+    }
 
     /*
     // MARK: - Navigation

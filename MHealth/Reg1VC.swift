@@ -6,6 +6,7 @@ class Reg1VC: UIViewController , NetworkCaller {
 
     struct current {
         static var newPatient:Patient = Patient()}
+    
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var confirmPassTF: UITextField!
