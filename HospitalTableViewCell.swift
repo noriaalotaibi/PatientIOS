@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SDWebImage
 
-class HospitalTableViewCell: UITableViewCell {
+class HospitalTableViewCell: UITableViewCell{
 
     @IBOutlet weak var hospitalPicture: UIImageView!
     
@@ -21,6 +21,8 @@ class HospitalTableViewCell: UITableViewCell {
     
     @IBOutlet weak var distance: UILabel!
     
+    var latitude:Float = 0.0
+    var longitude:Float = 0.0
     
     var hospitalObject:HospitalDH = HospitalDH()
     
@@ -43,14 +45,38 @@ class HospitalTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func updateCellData(hospital: HospitalDH) {
+    func updateCellData(hospital: HospitalDH, latitude:Double, longitude:Double) {
         hospitalObject = hospital;
         HospitalType.text = hospitalObject.hospitalType;
         hospitalN.text = hospitalObject.hospitalName;
         hospitalPicture.sd_setImageWithURL( NSURL(string: hospitalObject.hospitalLogoURL), placeholderImage: UIImage(named: "hospital-1"))
         hospitalLocation.text = hospitalObject.hospitalAddress;
-        distance.text = "N/A";
+        let d:Double = distance(latitude, lon1: longitude, lat2: hospital.hospitalAlt, lon2: hospital.hospitalLang)
+        distance.text = String(format: "%.2f KM", d)
         
     }
     
+    func distance(lat1:Double, lon1:Double, lat2:Double, lon2:Double) -> Double {
+        let theta = lon1 - lon2
+        var dist = sin(deg2rad(lat1)) * sin(deg2rad(lat2)) + cos(deg2rad(lat1)) * cos(deg2rad(lat2)) * cos(deg2rad(theta))
+        dist = acos(dist)
+        dist = rad2deg(dist)
+        dist = dist * 60 * 1.1515
+
+        dist = dist * 1.609344
+
+//        if (unit == "K") {
+//            dist = dist * 1.609344
+//        }
+//        else if (unit == "N") {
+//            dist = dist * 0.8684
+//        }
+        return dist
+    }
+    func rad2deg(rad:Double) -> Double {
+        return rad * 180.0 / M_PI
+    }
+    func deg2rad(deg:Double) -> Double {
+        return deg * M_PI / 180
+    }
 }

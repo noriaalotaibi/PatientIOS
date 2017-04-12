@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import CoreLocation
 
-class HospitalTableViewController: UITableViewController, NetworkCaller,  UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
+
+class HospitalTableViewController: UITableViewController, NetworkCaller,  UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate,CLLocationManagerDelegate {
     
     private var allHospitals:[HospitalDH] = [HospitalDH]()
     private var filteredHospitals:[HospitalDH] = [HospitalDH]()
     
     let searchController = UISearchController(searchResultsController: nil)
     
+    let locationManager:CLLocationManager = CLLocationManager()
+    var latitude:Double = 0.0
+    var longitude:Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +54,41 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
         searchController.searchBar.delegate = self
         
         
+        // Location Service
+        
+        let locManager = CLLocationManager()
+        locManager.requestWhenInUseAuthorization()
+        
+        if (CLLocationManager.locationServicesEnabled()) {
+            self.locationManager.delegate = self
+            self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            self.locationManager.requestWhenInUseAuthorization()
+            self.locationManager.startUpdatingLocation()
+        }
+       
     }
     
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+       
+        print("location didFailWithError")
+    }
+
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        print("didUpdateLocation:")
+        
+        let locationArray = locations as NSArray
+        let locationObj = locationArray.lastObject as! CLLocation
+        let coord = locationObj.coordinate
+        
+        
+        self.latitude = coord.latitude
+        self.longitude = coord.longitude
+        self.locationManager.stopUpdatingLocation()
+        
+        print("lat: \(self.latitude)")
+        print("long: \(self.longitude)")
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -98,7 +136,7 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
         let nib:NSArray = NSBundle.mainBundle().loadNibNamed(cellTypeIdentifier, owner: self, options: nil)
         
         let cell = nib.firstObject as! HospitalTableViewCell
-        cell.updateCellData(curHospital)
+        cell.updateCellData(curHospital,latitude: self.latitude,longitude: self.longitude)
         
         return cell
     }
