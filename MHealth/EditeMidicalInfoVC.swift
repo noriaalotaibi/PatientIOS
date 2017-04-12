@@ -12,20 +12,18 @@ class EditeMidicalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     
     var picker1selection = ""
-    var diabetes:Int = 0
-    var asthma = 0
+    var diabetes:Bool = false
+    var asthma:Bool = false
     
     @IBAction func DiabetesSegment(sender: AnyObject) {
         
         if sender.selectedSegmentIndex == 0 {
             
-            self.diabetes = 0
+            self.diabetes = false
             
         }else if sender.selectedSegmentIndex == 1{
             
-            self.diabetes = 1
-        }else if sender.selectedSegmentIndex == 2{
-            self.diabetes = 2
+            self.diabetes = true
         }
     }
     
@@ -49,11 +47,11 @@ class EditeMidicalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBAction func asthmaSegment(sender: AnyObject) {
         if sender.selectedSegmentIndex == 0 {
             
-            self.asthma = 0
+            self.asthma = false
             
         }else if sender.selectedSegmentIndex == 1{
             
-            self.asthma = 1
+            self.asthma = true
         }
     
     }
@@ -61,12 +59,9 @@ class EditeMidicalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBOutlet weak var asthmaPicker: UIPickerView!
     
     @IBAction func SaveChangesButton(sender: AnyObject) {
-            var bloodType = picker1selection
-           
-        //change
-       //     var allergies =AllergiesUpdatedTF.text
         
-        
+        var bloodType = picker1selection
+        var diabetesValue = diabetes
         var medication = MedicationsUpdatedTF.text
         var allergies = AllergiesUpdatedTF.text
         var asthmaValue = asthma
@@ -77,8 +72,11 @@ class EditeMidicalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDa
      let networkManager:Networking = Networking()
      let valuesDict = patient.toDictionary()
         
-        networkManager.AMJSONArray(Const.URLs.Patients, httpMethod: "PUT", jsonData: valuesDict, reqId: 1, caller: self)
+        networkManager.AMJSONDictionary(Const.URLs.Patients + "/" + "\(patient.patientID)", httpMethod: "PUT", jsonData: valuesDict, reqId: 1, caller: self)
         
+        
+        var alert = UIAlertView(title: "Success", message: "Updated", delegate: self, cancelButtonTitle: "OK")
+        alert.show()
     
     }
     func setArrayResponse(resp: NSArray, reqId: Int) {

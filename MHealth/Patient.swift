@@ -12,7 +12,7 @@ class Patient: NSObject , DataHolder {
 
     
     var firstName:String = ""
-    var middleName:String = ""
+    var middleName:String = " "
     var lastName:String = ""
     
     var email:String = ""
@@ -24,8 +24,8 @@ class Patient: NSObject , DataHolder {
     var emergencyNum:String = ""
     var nationality:String = ""
     var bloodType:String = ""
-    var diabetes:Int = 0
-    var asthma:Int = 0
+    var diabetes:Bool = false
+    var asthma:Bool = false
     var medication:String = ""
     var allergies:String = ""
     var patientID:Int = 0
@@ -33,8 +33,8 @@ class Patient: NSObject , DataHolder {
     
     var dateOfBirth:String = ""
     var deleted:Int = 0
-    var imageUrl:String = ""
-    var status:Bool = false
+    var imageUrl:String = " "
+    var status:Bool = true
 
     //dateOfBirth
     //deleted
@@ -95,9 +95,9 @@ class Patient: NSObject , DataHolder {
         
         self.medication = values.valueForKey("medications") as! String
         
-        self.asthma = values.valueForKey("asthma") as! Int
+        self.asthma = values.valueForKey("asthma") as! Bool
         
-        self.diabetes = values.valueForKey("diabetes") as! Int
+        self.diabetes = values.valueForKey("diabetes") as! Bool
         
         self.bloodType = values.valueForKey("bloodType") as! String
         

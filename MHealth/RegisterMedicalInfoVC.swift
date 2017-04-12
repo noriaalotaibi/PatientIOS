@@ -11,10 +11,12 @@ import UIKit
 class RegisterMedicalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource, NetworkCaller {
 
     
-    var picker1selection = ""
-   var diabetes = 0
-var asthma = 0
+    var picker1selection = "A+"
+    var diabetes:Bool = false
+    var asthma:Bool = false
     
+    let networkManager:Networking = Networking()
+
     
     @IBOutlet weak var DiabetesSegment: UISegmentedControl!
     
@@ -23,13 +25,11 @@ var asthma = 0
         
         if sender.selectedSegmentIndex == 0 {
             
-            self.diabetes = 0
+            self.diabetes = false
             
         }else if sender.selectedSegmentIndex == 1{
             
-            self.diabetes = 1
-        }else if sender.selectedSegmentIndex == 2{
-            self.diabetes = 2
+            self.diabetes = true
         }
     }
     
@@ -39,11 +39,11 @@ var asthma = 0
     @IBAction func AsthmaSegment(sender: AnyObject) {
         if sender.selectedSegmentIndex == 0 {
             
-            self.asthma = 0
+            self.asthma = false
             
         }else if sender.selectedSegmentIndex == 1{
             
-            self.asthma = 1
+            self.asthma = true
         }
     }
       @IBOutlet weak var BloodTypePicker: UIPickerView!
@@ -70,7 +70,7 @@ var asthma = 0
         
         var btSelectedValue = BloodTypePD
         var bloodType=picker1selection
-        
+        var asthmaValue=asthma
         var diabetesValue = diabetes
         var allergies=allergiesTF.text
         var medication=medicationTF.text
@@ -79,19 +79,28 @@ var asthma = 0
         
         Reg1VC.current.newPatient.bloodType=bloodType
      //   Reg1VC.current.newPatient.diabetes = (diabetes)
-        Reg1VC.current.newPatient.asthma = (asthma)
-        Reg1VC.current.newPatient.diabetes = diabetesValue
+        Reg1VC.current.newPatient.asthma = asthmaValue
+     
+        Reg1VC.current.newPatient.diabetes=diabetesValue
         Reg1VC.current.newPatient.allergies=allergies!
         Reg1VC.current.newPatient.medication=medication!
         
         
+        Reg1VC.current.newPatient.imageUrl=" "
+        Reg1VC.current.newPatient.middleName=" "
+
+
         
         
-        let networkManager:Networking = Networking()
-        let values = Reg1VC.current.newPatient.toDictionary()
+        let dic:NSDictionary = Reg1VC.current.newPatient.toDictionary()
+        let values:NSMutableDictionary = dic.mutableCopy() as! NSMutableDictionary
+        values.removeObjectForKey("patientId")
+        
+        print("values")
         print(values)
-       networkManager.AMJSONDictionary(Const.URLs.Patients, httpMethod: "POST", jsonData: values, reqId: 1, caller: self)
+        networkManager.AMJSONDictionary(Const.URLs.Patients, httpMethod: "POST", jsonData: values, reqId: 1, caller: self)
         
+
     }
     
     
@@ -102,7 +111,7 @@ var asthma = 0
     }
     
     func setDictResponse(resp: NSDictionary, reqId: Int) {
-        
+        print("resp:")
         print(resp)
     }
     

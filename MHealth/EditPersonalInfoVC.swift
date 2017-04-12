@@ -54,7 +54,7 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
     
     @IBAction func UpdateButton(sender: AnyObject) {
         
-        bDay = dateTextField.text!
+      //  bDay = dateTextField.text!
         
         var fname = FnameLB.text
         var lname = LnameLB.text
@@ -152,6 +152,16 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         
         dateTextField.text = dateFormatter.stringFromDate(sender.date)
         //        Reg1VC.current.newPatient.birthDate = bDay;
+        
+        let date = sender.date
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day , .Month , .Year], fromDate: date)
+        
+        let year =  components.year
+        let month = components.month
+        let day = components.day
+        
+        self.bDay = "\(year)-\(month)-\(day)"
     }
 
     /*

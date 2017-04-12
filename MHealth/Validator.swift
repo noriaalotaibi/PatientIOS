@@ -24,6 +24,7 @@ class Validator: NSObject {
         
     }
     
+     
     
     
     func isPasswordSame(password: String , confirmPassword : String) -> Bool {

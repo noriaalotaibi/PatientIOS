@@ -5,7 +5,9 @@ import UIKit
 class Reg1VC: UIViewController , NetworkCaller {
 
     struct current {
-        static var newPatient:Patient = Patient()}
+        static var newPatient:Patient = Patient()
+    
+    }
     
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
@@ -14,7 +16,7 @@ class Reg1VC: UIViewController , NetworkCaller {
     
     @IBOutlet weak var genderSegment: UISegmentedControl!
     @IBOutlet weak var registrationStatus: UILabel!
-     var gender:String=""
+     var gender:String="m"
    
     @IBAction func registerGender(sender: AnyObject) {
         
@@ -32,23 +34,34 @@ class Reg1VC: UIViewController , NetworkCaller {
     
     @IBAction func Register1Button(sender: AnyObject) {
         
-      nextButton.enabled = false
+       nextButton.enabled = false
         
         var email = emailTF.text
         var password = passwordTF.text
         var confirmPass = confirmPassTF.text
         
         
+        if password != confirmPass{
+            
+           
+            var alert = UIAlertView(title: "Password", message: "Password do not match", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            
+             nextButton.enabled = true
+        }
         
-          
         current.newPatient.email=email!
         current.newPatient.password=password!
         current.newPatient.gender=gender
         
+        
         let networkManager:Networking = Networking()
         let values = current.newPatient.toDictionary()
-        //            networkManager.AMJSONDictionary(Const.URLs.Patients, httpMethod: "POST", jsonData: values, reqId: 1, caller: self)
+        
+        print("request values: ")
         print(values)
+                    networkManager.AMJSONDictionary(Const.URLs.Patients, httpMethod: "POST", jsonData: values, reqId: 1, caller: self)
+        //print(values)
   
         
         //            let nextScreen:RegisterPersonalInfoVC = self.storyboard?.instantiateViewControllerWithIdentifier("PatientInfo") as! RegisterPersonalInfoVC
@@ -65,22 +78,10 @@ class Reg1VC: UIViewController , NetworkCaller {
     }
 
     func setDictResponse(resp: NSDictionary, reqId: Int) {
-        //
-        //       current.newPatient = Patient()
-        //        current.newPatient.loadDictionary(resp)
-        //        print(resp)
-        //
-        //        var patient = Patient()
-        //        patient.loadDictionary(resp)
+       print("response")
+        print(resp)
         
         
-//        nextButton.enabled = true
-//        
-//        print(resp)
-//        if resp.allKeys.count > 0 {
-//            var alert = UIAlertView(title: "Invalid", message: "Can't register right now", delegate: self, cancelButtonTitle: "OK")
-//            alert.show()
-            // self.presentViewController(alert, animated: true, completion: nil)
         }
     
     
@@ -98,7 +99,6 @@ class Reg1VC: UIViewController , NetworkCaller {
         // Dispose of any resources that can be recreated.
         
     }
-    
     
     
     

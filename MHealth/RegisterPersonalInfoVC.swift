@@ -8,8 +8,9 @@
 
 import UIKit
 
-class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, NetworkCaller {
+class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
 
+    let networkManeger:Networking = Networking()
     
     var bDay=""
     @IBOutlet weak var fNameTF: UITextField!
@@ -30,7 +31,7 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, NetworkCal
         
         sender.inputView = datePickerView
         
-datePickerView.addTarget(self, action: #selector(RegisterPersonalInfoVC.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+        datePickerView.addTarget(self, action: #selector(RegisterPersonalInfoVC.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
 
     }
 
@@ -45,14 +46,14 @@ datePickerView.addTarget(self, action: #selector(RegisterPersonalInfoVC.datePick
     
     @IBAction func reg2Button(sender: AnyObject) {
         
-        bDay = dateTextField.text!
-        
         var fname = fNameTF.text
-         var lname = lNameTF.text
+        var lname = lNameTF.text
         var nationality = NationalityTF.text
         var civilId = CivilIDTF.text
         var phone = PhoneNumberTF.text
         var emergency = EmergencyNumberTF.text
+        var deleted:Int=0
+        var status:Bool=true
         
         
         Reg1VC.current.newPatient.firstName=fname!
@@ -62,18 +63,12 @@ datePickerView.addTarget(self, action: #selector(RegisterPersonalInfoVC.datePick
         Reg1VC.current.newPatient.nationality=nationality!
         Reg1VC.current.newPatient.phone=phone!
         Reg1VC.current.newPatient.emergencyNum=emergency!
+        Reg1VC.current.newPatient.deleted=deleted
+        Reg1VC.current.newPatient.status=status
+        
         
         
        
-        
-        let networkManager:Networking = Networking()
-        let values = Reg1VC.current.newPatient.toDictionary()
-       
-   // var values:[String:AnyObject] = ["firstName":fname!, "birthDate":Bday!, "lastName":lname!, "nationality":nationality!, "civilId":civilId!, "emergencyNumber":emergency!, "phoneNumber":phone!]
-     
-        
-        
-        
         }
         
         
@@ -86,16 +81,6 @@ datePickerView.addTarget(self, action: #selector(RegisterPersonalInfoVC.datePick
         // Do any additional setup after loading the view.
         
         
-    }
-    
-    func setArrayResponse(resp: NSArray, reqId: Int) {
-        
-    }
-    
-    func setDictResponse(resp: NSDictionary, reqId: Int) {
-        print()
-        
-        print(resp)
     }
     
    
@@ -113,7 +98,19 @@ datePickerView.addTarget(self, action: #selector(RegisterPersonalInfoVC.datePick
         
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
         
+        
         dateTextField.text = dateFormatter.stringFromDate(sender.date)
+        
+        let date = sender.date
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day , .Month , .Year], fromDate: date)
+        
+        let year =  components.year
+        let month = components.month
+        let day = components.day
+        
+        self.bDay = "\(year)-\(month)-\(day)"
+        
 //        Reg1VC.current.newPatient.birthDate = bDay;
     }
     /*

@@ -14,7 +14,10 @@
 		29FF17641E6C12C7002FECA0 /* NewDoctorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FF17631E6C12C7002FECA0 /* NewDoctorTableViewController.swift */; };
 		433A49351E9B5EA600642266 /* HospitalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433A49341E9B5EA600642266 /* HospitalCache.swift */; };
 		433A49391E9B797100642266 /* HospitalProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433A49381E9B797100642266 /* HospitalProfile.swift */; };
+		4341DC881E9E2C5C001172A1 /* gifFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4341DC871E9E2C5C001172A1 /* gifFramework.swift */; };
 		437F36AC1E93D18E006AC55E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437F36AB1E93D18E006AC55E /* Alert.swift */; };
+		4399ED621E9E2F0700EE6766 /* heart.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4399ED611E9E2F0700EE6766 /* heart.gif */; };
+		4399ED651E9E38A900EE6766 /* heart.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4399ED641E9E38A900EE6766 /* heart.mp4 */; };
 		511FE9391E9D507C009EA3C0 /* HospitalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FE9371E9D507C009EA3C0 /* HospitalTableViewCell.swift */; };
 		511FE93A1E9D507C009EA3C0 /* HospitalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 511FE9381E9D507C009EA3C0 /* HospitalTableViewCell.xib */; };
 		513007D81E9CC5CE000892AA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 513007D71E9CC5CE000892AA /* SystemConfiguration.framework */; };
@@ -72,7 +75,10 @@
 		29FF17631E6C12C7002FECA0 /* NewDoctorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDoctorTableViewController.swift; sourceTree = "<group>"; };
 		433A49341E9B5EA600642266 /* HospitalCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalCache.swift; sourceTree = "<group>"; };
 		433A49381E9B797100642266 /* HospitalProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalProfile.swift; sourceTree = "<group>"; };
+		4341DC871E9E2C5C001172A1 /* gifFramework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gifFramework.swift; sourceTree = "<group>"; };
 		437F36AB1E93D18E006AC55E /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		4399ED611E9E2F0700EE6766 /* heart.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = heart.gif; sourceTree = "<group>"; };
+		4399ED641E9E38A900EE6766 /* heart.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = heart.mp4; sourceTree = "<group>"; };
 		511FE9371E9D507C009EA3C0 /* HospitalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HospitalTableViewCell.swift; path = ../HospitalTableViewCell.swift; sourceTree = "<group>"; };
 		511FE9381E9D507C009EA3C0 /* HospitalTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HospitalTableViewCell.xib; path = ../HospitalTableViewCell.xib; sourceTree = "<group>"; };
 		513007D71E9CC5CE000892AA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -225,6 +231,7 @@
 		52CC04F21E6B2F2400BC93A9 /* MHealth */ = {
 			isa = PBXGroup;
 			children = (
+				4341DC871E9E2C5C001172A1 /* gifFramework.swift */,
 				52CC050E1E6B411100BC93A9 /* Utils */,
 				52CC050D1E6B410B00BC93A9 /* Entities */,
 				52CC050A1E6B40A800BC93A9 /* Networking */,
@@ -232,6 +239,7 @@
 				52CC04F31E6B2F2400BC93A9 /* AppDelegate.swift */,
 				52CC04F71E6B2F2500BC93A9 /* Main.storyboard */,
 				52CC04FA1E6B2F2600BC93A9 /* Assets.xcassets */,
+				4399ED611E9E2F0700EE6766 /* heart.gif */,
 				52CC04FC1E6B2F2600BC93A9 /* LaunchScreen.storyboard */,
 				52CC04FF1E6B2F2600BC93A9 /* Info.plist */,
 			);
@@ -286,6 +294,7 @@
 		52CC050E1E6B411100BC93A9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4399ED641E9E38A900EE6766 /* heart.mp4 */,
 				52CC05191E6B53D300BC93A9 /* PathsManager.swift */,
 				52CC05111E6B41C400BC93A9 /* Validator.swift */,
 				437F36AB1E93D18E006AC55E /* Alert.swift */,
@@ -378,8 +387,10 @@
 				52CC04FB1E6B2F2600BC93A9 /* Assets.xcassets in Resources */,
 				51BA460D1E9A91D4000E1753 /* DoctorListTableViewCell.xib in Resources */,
 				52CC050C1E6B40FC00BC93A9 /* Podfile in Resources */,
+				4399ED651E9E38A900EE6766 /* heart.mp4 in Resources */,
 				511FE93A1E9D507C009EA3C0 /* HospitalTableViewCell.xib in Resources */,
 				52CC04F91E6B2F2500BC93A9 /* Main.storyboard in Resources */,
+				4399ED621E9E2F0700EE6766 /* heart.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +466,7 @@
 				51EF73B21E6FDD3F00706551 /* DoctorFunctions.swift in Sources */,
 				518EBBBA1E718F540095F797 /* ResetPass.swift in Sources */,
 				518EBBB61E718F540095F797 /* Reg1VC.swift in Sources */,
+				4341DC881E9E2C5C001172A1 /* gifFramework.swift in Sources */,
 				52CC04F61E6B2F2400BC93A9 /* ViewController.swift in Sources */,
 				52CC05121E6B41C400BC93A9 /* Validator.swift in Sources */,
 				518EBB9F1E71898D0095F797 /* DonorCache.swift in Sources */,
