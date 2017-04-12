@@ -19,6 +19,8 @@ class HospitalTableViewCell: UITableViewCell {
     @IBOutlet weak var hospitalLocation: UILabel!
     @IBOutlet weak var HospitalType: UILabel!
     
+    @IBOutlet weak var distance: UILabel!
+    
     
     var hospitalObject:HospitalDH = HospitalDH()
     
@@ -47,6 +49,7 @@ class HospitalTableViewCell: UITableViewCell {
         hospitalN.text = hospitalObject.hospitalName;
         hospitalPicture.sd_setImageWithURL( NSURL(string: hospitalObject.hospitalLogoURL), placeholderImage: UIImage(named: "hospital-1"))
         hospitalLocation.text = hospitalObject.hospitalAddress;
+        distance.text = "N/A";
         
     }
     

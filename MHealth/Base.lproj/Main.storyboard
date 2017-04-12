@@ -1482,7 +1482,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KW4-ie-T1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2698" y="2957"/>
+            <point key="canvasLocation" x="2542" y="2887"/>
         </scene>
         <!--Hospital Table View Controller-->
         <scene sceneID="mU3-uT-ljW">

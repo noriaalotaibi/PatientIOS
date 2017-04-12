@@ -1,17 +1,18 @@
 //
-//  HospitalTableViewController.swift
+//  ReportTableViewController.swift
 //  MHealth
 //
-//  Created by trn15 on 3/5/17.
+//  Created by Shamlan Al-Roumi on 4/12/17.
 //  Copyright © 2017 PIFSS. All rights reserved.
-//
+// http://34.196.107.188:8081/MhealthWeb/webresources/patientreport/
 
 import UIKit
 
-class HospitalTableViewController: UITableViewController, NetworkCaller,  UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
+class ReportTableViewController: UITableViewController, NetworkCaller,  UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
+
     
-    private var allHospitals:[HospitalDH] = [HospitalDH]()
-    private var filteredHospitals:[HospitalDH] = [HospitalDH]()
+    private var allReports:[PatientReportDH] = [PatientReportDH]()
+    private var filteredReports:[PatientReportDH] = [PatientReportDH]()
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -28,7 +29,7 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
         if (Networking.isInternetAvailable()) {
             let networkManager = Networking()
             networkManager.logging = true
-            networkManager.AMGetArrayData("http://34.196.107.188:8080/mHealthWS/ws/hospital", params: [:], reqId: 1, caller: self)
+            networkManager.AMGetArrayData("http://34.196.107.188:8081/MhealthWeb/webresources/patientreport/", params: [:], reqId: 1, caller: self)
         } else {
             
         }
@@ -45,7 +46,7 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
         searchController.searchBar.backgroundColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
         searchController.searchBar.tintColor = UIColor.whiteColor()
         searchController.searchBar.barTintColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
-        searchController.searchBar.scopeButtonTitles = ["Public", "Private"]
+        searchController.searchBar.scopeButtonTitles = ["Report Name", "Doctor"]
         searchController.searchBar.delegate = self
         
         
@@ -67,9 +68,9 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
         // #warning Incomplete implementation, return the number of rows
         if section == 0 {
             if searchController.active && searchController.searchBar.text != "" {
-                return filteredHospitals.count
+                return filteredReports.count
             }
-            return allHospitals.count
+            return allReports.count
         }
         return 0
     }
@@ -77,28 +78,28 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
-        return "Hospitals"
+        return "Reports"
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var curHospital:HospitalDH = HospitalDH()
+        var curReport:PatientReportDH = PatientReportDH()
         
         if searchController.active && searchController.searchBar.text != "" {
-            curHospital = filteredHospitals[indexPath.row]
+            curReport = filteredReports[indexPath.row]
         } else {
-            curHospital = allHospitals[indexPath.row]
+            curReport = allReports[indexPath.row]
         }
         
         // Configure the cell...
-        let cellTypeIdentifier:String = "HospitalTableViewCell";
+        let cellTypeIdentifier:String = "ReportTableViewCell";
         
         
         let nib:NSArray = NSBundle.mainBundle().loadNibNamed(cellTypeIdentifier, owner: self, options: nil)
         
-        let cell = nib.firstObject as! HospitalTableViewCell
-        cell.updateCellData(curHospital)
+        let cell = nib.firstObject as! ReportTableViewCell
+        cell.updateCellData(curReport)
         
         return cell
     }
@@ -106,12 +107,12 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let nextScreen:HospitalProfile = self.storyboard?.instantiateViewControllerWithIdentifier("HospitalProfile") as! HospitalProfile
+        /*let nextScreen:ReportProfile = self.storyboard?.instantiateViewControllerWithIdentifier("ReportProfile") as! ReportProfile
         
         if searchController.active && searchController.searchBar.text != "" {
-            nextScreen.hospital = filteredHospitals[indexPath.row]
+            nextScreen.hospital = filteredReports[indexPath.row]
         } else {
-            nextScreen.hospital = allHospitals[indexPath.row]
+            nextScreen.hospital = allReports[indexPath.row]
         }
         
         
@@ -120,7 +121,7 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
         //nextScreen.parent = self
         
         
-        nav.pushViewController(nextScreen, animated: true)
+        nav.pushViewController(nextScreen, animated: true)*/
     }
     
     
@@ -134,10 +135,10 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
             print( resp )
             
             for i in 0..<resp.count {
-                let hospital:HospitalDH = HospitalDH()
+                let report:PatientReportDH = PatientReportDH()
                 
-                hospital.loadDictionary( resp.objectAtIndex(i) as! NSDictionary )
-                allHospitals.append(hospital)
+                report.loadDictionary( resp.objectAtIndex(i) as! NSDictionary )
+                allReports.append(report)
             }
             
         }
@@ -149,11 +150,15 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
     
     // Custom Search Bar METHODS
     
-    func filterContentForSearchText(searchText: String, scope: NSString = "Public") {
+    func filterContentForSearchText(searchText: String, scope: NSString = "Report Name") {
         
-        filteredHospitals = allHospitals.filter { hospital in
+        filteredReports = allReports.filter { report in
             
-            return (hospital.hospitalType).lowercaseString == scope.lowercaseString
+            if (scope == "Report Name") {
+                return searchText.lowercaseString.containsString(report.name.lowercaseString)
+            } else {
+                return searchText.lowercaseString.containsString(report.timestamp)
+            }
             
         }
         
@@ -167,5 +172,8 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
     }
     
     
-    
+
+
+ 
+
 }
