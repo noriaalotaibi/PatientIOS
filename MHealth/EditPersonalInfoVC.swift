@@ -82,6 +82,7 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         
         //newPatient.password=password!
       //  current.newPatient.gender=gender
+        print("values for update")
         print(valuesDict)
         networkManager.AMJSONDictionary(Const.URLs.Patients + "/" + "\(patient.patientID)", httpMethod: "PUT", jsonData: valuesDict, reqId: 1, caller: self)
        
@@ -97,7 +98,7 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
     }
     
     func setDictResponse(resp: NSDictionary, reqId: Int) {
-        
+        print("response: ")
         print(resp)
     }
     
@@ -131,7 +132,7 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
     PhoneLB?.text = patient.phone
     EmergencyLB?.text = patient.emergencyNum
     gender=patient.gender
-
+self.bDay = patient.dateOfBirth
         // Do any additional setup after loading the view.
     }
     

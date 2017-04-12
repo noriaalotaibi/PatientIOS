@@ -67,10 +67,18 @@ class EditeMidicalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         var asthmaValue = asthma
        
         
+        let modifiedPatient:Patient = Patient()
+            modifiedPatient.loadDictionary(patient.toDictionary())
+        
+        modifiedPatient.bloodType = bloodType
+        modifiedPatient.diabetes=diabetesValue
+        modifiedPatient.asthma=asthmaValue
+        modifiedPatient.allergies=allergies!
+        modifiedPatient.medication=medication!
         
         
      let networkManager:Networking = Networking()
-     let valuesDict = patient.toDictionary()
+     let valuesDict = modifiedPatient.toDictionary()
         
         networkManager.AMJSONDictionary(Const.URLs.Patients + "/" + "\(patient.patientID)", httpMethod: "PUT", jsonData: valuesDict, reqId: 1, caller: self)
         
@@ -141,10 +149,9 @@ class EditeMidicalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        if(pickerView.tag == 1){
-            
+ 
             picker1selection =  BloodTypePD[row]
-        }
+        
   
     }
     
