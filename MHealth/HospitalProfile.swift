@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HospitalProfile: UIViewController {
 
@@ -30,7 +31,8 @@ class HospitalProfile: UIViewController {
         HospitalEmail.text=hospital.hospitalEmail
         HospitalType.text=hospital.hospitalType
         HospitalPhoneNum.text=hospital.hospitalPhone
-       // HospitalImage=hospital.hospitalLogoURL
+        HospitalImage.sd_setImageWithURL( NSURL(string: hospital.hospitalLogoURL), placeholderImage: UIImage(named: "hospital-1"))
+        //HospitalSpeciality.text = hospital.hospitalSpecilityId
         HospitalWorkingHours.text=hospital.hospitalWorkingHours
         HospitalAddress.text=hospital.hospitalAddress
         HospitalAdditionalInfo.text=hospital.hospitalExtrainfo

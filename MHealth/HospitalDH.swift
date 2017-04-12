@@ -9,26 +9,26 @@
 import Foundation
 class HospitalDH: NSObject, DataHolder {
     
-    public var hospitalId:Int = 0
-    public var hospitalName:String = ""
-    public var hospitalWebsite:String = ""
-    public var hospitalLogoURL:String = ""
-    public var hospitalAddress:String = ""
-    public var hospitalWorkingHours:String = ""
-    public var hospitalExtrainfo:String = ""
-    public var hospitalType:String = ""
+     var hospitalId:Int = 0
+     var hospitalName:String = ""
+     var hospitalWebsite:String = ""
+     var hospitalLogoURL:String = ""
+     var hospitalAddress:String = ""
+     var hospitalWorkingHours:String = ""
+     var hospitalExtrainfo:String = ""
+     var hospitalType:String = ""
     
-    public var hospitalSpecilityId:Int = 0
+     var hospitalSpecilityId:Int = 0
     
-    public var hospitalFax:String = ""
+     var hospitalFax:String = ""
     
-    public var hospitalEmail:String = ""
+     var hospitalEmail:String = ""
     
-    public var hospitalPhone:String = ""
+     var hospitalPhone:String = ""
     
-    public var hospitalLang:String = ""
+     var hospitalLang:Double = 0.0
     
-    public var hospitalAlt:String = ""
+     var hospitalAlt:Double = 0.0
     
  
     
@@ -83,8 +83,9 @@ class HospitalDH: NSObject, DataHolder {
         
          self.hospitalEmail = values.valueForKey("email") as! String
          self.hospitalPhone = values.valueForKey("phone") as! String
-         self.hospitalLang = values.valueForKey("hospitalLang") as! String
-         self.hospitalAlt = values.valueForKey("hospitalAlt") as! String
+        
+         self.hospitalLang = Double(values.valueForKey("hospitalLang") as! String)!
+         self.hospitalAlt = Double(values.valueForKey("hospitalAlt") as! String)!
         
         //self.gender = values.valueForKey("location") as! Character
         

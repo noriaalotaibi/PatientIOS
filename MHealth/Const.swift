@@ -19,9 +19,7 @@ class Const: NSObject {
         static let ReportURL:String = BASE + "/report"
         static let ResetPassword:String = BASE + "/patient/reset"
         static let Hospital:String = BASE + "/hospital"
-        
-        
-        
+                
     }
     
     struct Files {

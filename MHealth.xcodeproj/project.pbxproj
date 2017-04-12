@@ -22,6 +22,9 @@
 		511FE93A1E9D507C009EA3C0 /* HospitalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 511FE9381E9D507C009EA3C0 /* HospitalTableViewCell.xib */; };
 		513007D81E9CC5CE000892AA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 513007D71E9CC5CE000892AA /* SystemConfiguration.framework */; };
 		513007DA1E9CC64A000892AA /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513007D91E9CC64A000892AA /* Reach.swift */; };
+		516247D81E9DF3E100450FC6 /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516247D61E9DF3E100450FC6 /* ReportTableViewCell.swift */; };
+		516247D91E9DF3E100450FC6 /* ReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516247D71E9DF3E100450FC6 /* ReportTableViewCell.xib */; };
+		516247DD1E9E019300450FC6 /* ReportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516247DC1E9E019200450FC6 /* ReportTableViewController.swift */; };
 		518EBB991E7184B30095F797 /* HospitalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EBB981E7184B30095F797 /* HospitalTableViewController.swift */; };
 		518EBB9B1E7184C00095F797 /* DonorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EBB9A1E7184BF0095F797 /* DonorProfileViewController.swift */; };
 		518EBB9E1E71898D0095F797 /* DonorDH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EBB9C1E71898D0095F797 /* DonorDH.swift */; };
@@ -83,6 +86,9 @@
 		511FE9381E9D507C009EA3C0 /* HospitalTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HospitalTableViewCell.xib; path = ../HospitalTableViewCell.xib; sourceTree = "<group>"; };
 		513007D71E9CC5CE000892AA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		513007D91E9CC64A000892AA /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
+		516247D61E9DF3E100450FC6 /* ReportTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
+		516247D71E9DF3E100450FC6 /* ReportTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportTableViewCell.xib; sourceTree = "<group>"; };
+		516247DC1E9E019200450FC6 /* ReportTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportTableViewController.swift; sourceTree = "<group>"; };
 		518EBB981E7184B30095F797 /* HospitalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalTableViewController.swift; sourceTree = "<group>"; };
 		518EBB9A1E7184BF0095F797 /* DonorProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonorProfileViewController.swift; sourceTree = "<group>"; };
 		518EBB9C1E71898D0095F797 /* DonorDH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonorDH.swift; sourceTree = "<group>"; };
@@ -186,6 +192,7 @@
 		518EBBA21E718D180095F797 /* DonorVCs */ = {
 			isa = PBXGroup;
 			children = (
+				516247DC1E9E019200450FC6 /* ReportTableViewController.swift */,
 				518EBB981E7184B30095F797 /* HospitalTableViewController.swift */,
 				518EBB9A1E7184BF0095F797 /* DonorProfileViewController.swift */,
 			);
@@ -199,6 +206,8 @@
 				511FE9381E9D507C009EA3C0 /* HospitalTableViewCell.xib */,
 				51BA460A1E9A91D4000E1753 /* DoctorListTableViewCell.swift */,
 				51BA460B1E9A91D4000E1753 /* DoctorListTableViewCell.xib */,
+				516247D61E9DF3E100450FC6 /* ReportTableViewCell.swift */,
+				516247D71E9DF3E100450FC6 /* ReportTableViewCell.xib */,
 			);
 			name = CustomLists;
 			sourceTree = "<group>";
@@ -462,6 +471,7 @@
 				513007DA1E9CC64A000892AA /* Reach.swift in Sources */,
 				51F5B19D1E6D351A0081F860 /* DoctorDH.swift in Sources */,
 				52CC051A1E6B53D300BC93A9 /* PathsManager.swift in Sources */,
+				516247DD1E9E019300450FC6 /* ReportTableViewController.swift in Sources */,
 				518EBBB81E718F540095F797 /* ViewMedicalInfoVC.swift in Sources */,
 				51EF73B21E6FDD3F00706551 /* DoctorFunctions.swift in Sources */,
 				518EBBBA1E718F540095F797 /* ResetPass.swift in Sources */,
@@ -473,6 +483,7 @@
 				518EBBB41E718F540095F797 /* RegisterPersonalInfoVC.swift in Sources */,
 				51E6883E1E7081180036E6D5 /* PatientReportDH.swift in Sources */,
 				518EBBB11E718F540095F797 /* LoginVC.swift in Sources */,
+				516247D81E9DF3E100450FC6 /* ReportTableViewCell.swift in Sources */,
 				518EBBB31E718F540095F797 /* RegisterMedicalInfoVC.swift in Sources */,
 				52CC04F41E6B2F2400BC93A9 /* AppDelegate.swift in Sources */,
 				518EBB9E1E71898D0095F797 /* DonorDH.swift in Sources */,
