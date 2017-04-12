@@ -13,6 +13,8 @@ class ResetPass: UIViewController ,NetworkCaller {
     @IBOutlet weak var emailTF: UITextField!
     
     
+    @IBOutlet weak var CivilidTF: UITextField!
+    
     @IBAction func ResetPassButton(sender: AnyObject) {
         
         

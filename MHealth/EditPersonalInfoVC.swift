@@ -64,19 +64,30 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         var emergencyNum = EmergencyLB.text
         var nationality = NationalityLB.text
         var password = PasswordLB.text
+        let modifiedPatient:Patient = Patient()
+        modifiedPatient.loadDictionary(patient.toDictionary())
+        
+        modifiedPatient.firstName = fname!
+        modifiedPatient.lastName=lname!
+        modifiedPatient.civilId=civilId!
+        modifiedPatient.email=email!
+        modifiedPatient.phone=phoneNum!
+        modifiedPatient.emergencyNum=emergencyNum!
+        modifiedPatient.nationality=nationality!
+        modifiedPatient.password=password!
         
         
         let networkManager:Networking = Networking()
-        patient.firstName=fname!
-        patient.lastName=lname!
-        patient.civilId=civilId!
-        patient.email=email!
-        patient.dateOfBirth=bDay
-        patient.gender=gender
-        patient.phone=phoneNum!
-        patient.emergencyNum=emergencyNum!
-        patient.nationality=nationality!
-        patient.password=password!
+//        patient.firstName=fname!
+//        patient.lastName=lname!
+//        patient.civilId=civilId!
+//        patient.email=email!
+//        patient.dateOfBirth=bDay
+//        patient.gender=gender
+//        patient.phone=phoneNum!
+//        patient.emergencyNum=emergencyNum!
+//        patient.nationality=nationality!
+//        patient.password=password!
         
          let valuesDict = patient.toDictionary()
         
