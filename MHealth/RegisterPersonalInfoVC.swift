@@ -10,8 +10,8 @@ import UIKit
 
 class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, NetworkCaller {
 
-
     
+    var bDay=""
     @IBOutlet weak var fNameTF: UITextField!
     
     @IBOutlet weak var mNameTF: UITextField!
@@ -20,6 +20,7 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, NetworkCal
     
     @IBOutlet weak var lNameTF: UITextField!
     @IBOutlet weak var CivilIDTF: UITextField!
+     @IBOutlet var dateTextField: UITextField!
     
     @IBAction func textFieldEditing(sender: UITextField) {
         // 6
@@ -29,18 +30,13 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, NetworkCal
         
         sender.inputView = datePickerView
         
-        datePickerView.addTarget(self, action: #selector(RegisterPersonalInfoVC.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
-        
+datePickerView.addTarget(self, action: #selector(RegisterPersonalInfoVC.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+
     }
 
     
-    @IBOutlet var dateTextField: UITextField!
+   
     @IBOutlet weak var NationalityTF: UITextField!
-    
-    var year:Int = 0
-    var month:Int = 0
-    var day:Int = 0
-    
     
   
     
@@ -49,53 +45,39 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, NetworkCal
     
     @IBAction func reg2Button(sender: AnyObject) {
         
-        
-        
-       // self.RegNextButtonOutlet.enabled=false
-        if year == 0 || month == 0 || day == 0{
-            
-            let alert:UIAlertController = Alert().getAlert(NSLocalizedString("Error", comment: ""), msg: NSLocalizedString("Please insert birthday", comment: ""))
-            
-            self.presentViewController(alert, animated: true, completion: nil)
-            
-            
-            
-          //  self.RegNextButtonOutlet.enabled = true
-            
-            return
-            
-            
-            
-        }
-        
-        
+        bDay = dateTextField.text!
         
         var fname = fNameTF.text
-        var mname = mNameTF.text
-        var lname = lNameTF.text
+         var lname = lNameTF.text
         var nationality = NationalityTF.text
         var civilId = CivilIDTF.text
-       // var Bday = day
-        
         var phone = PhoneNumberTF.text
         var emergency = EmergencyNumberTF.text
-      
-       
         
         
         Reg1VC.current.newPatient.firstName=fname!
-        Reg1VC.current.newPatient.middleName=mname!
         Reg1VC.current.newPatient.lastName=lname!
+        Reg1VC.current.newPatient.dateOfBirth=bDay
         Reg1VC.current.newPatient.civilId=civilId!
         Reg1VC.current.newPatient.nationality=nationality!
         Reg1VC.current.newPatient.phone=phone!
         Reg1VC.current.newPatient.emergencyNum=emergency!
-   
-
-       let networkManager:Networking = Networking()
-        let values:[String:AnyObject] = ["firstName":fname!, "middleName":mname!, "lastName":lname!, "nationality":nationality!, "civilId":civilId!, "emergencyNumber":emergency!, "phoneNumber":phone!]
-            
-    }
+        
+        
+       
+        
+        let networkManager:Networking = Networking()
+        let values = Reg1VC.current.newPatient.toDictionary()
+       
+   // var values:[String:AnyObject] = ["firstName":fname!, "birthDate":Bday!, "lastName":lname!, "nationality":nationality!, "civilId":civilId!, "emergencyNumber":emergency!, "phoneNumber":phone!]
+     
+        
+        
+        
+        }
+        
+        
+    
  
     
     override func viewDidLoad() {
@@ -111,24 +93,12 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, NetworkCal
     }
     
     func setDictResponse(resp: NSDictionary, reqId: Int) {
+        print()
         
         print(resp)
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-    return 1
-    }
-    
-         func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    
-        
-        
-//        if (pickerView.tag == 2)
-//        {
-//            picker2selection = DiabetesPickerOptions[row]
-//        }
-    
-}
+   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -144,7 +114,7 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, NetworkCal
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
         
         dateTextField.text = dateFormatter.stringFromDate(sender.date)
-        
+//        Reg1VC.current.newPatient.birthDate = bDay;
     }
     /*
     // MARK: - Navigation

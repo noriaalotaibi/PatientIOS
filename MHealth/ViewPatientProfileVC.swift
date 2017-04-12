@@ -90,7 +90,7 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller {
         LnameLabel?.text      = patient.lastName
         NationalityLabel?.text = patient.nationality
         GenderLabel?.text = patient.gender
-        BirthDateLabel?.text = patient.birthDate
+        BirthDateLabel?.text = patient.dateOfBirth
         EmailLabel?.text = patient.email
         PhoneNumLabel?.text = patient.phone
         EmergencyNumLabel?.text = patient.emergencyNum

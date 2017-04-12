@@ -12,16 +12,52 @@ class RegisterMedicalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerV
 
     
     var picker1selection = ""
-    var picker2selection = ""
-    var picker3selection = ""
+   var diabetes = 0
+var asthma = 0
     
+    
+    @IBOutlet weak var DiabetesSegment: UISegmentedControl!
+    
+    
+    @IBAction func DiabetesSelection(sender: AnyObject) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            
+            self.diabetes = 0
+            
+        }else if sender.selectedSegmentIndex == 1{
+            
+            self.diabetes = 1
+        }else if sender.selectedSegmentIndex == 2{
+            self.diabetes = 2
+        }
+    }
+    
+    
+    @IBOutlet weak var AsthmaSegment: UISegmentedControl!
+    
+    @IBAction func AsthmaSegment(sender: AnyObject) {
+        if sender.selectedSegmentIndex == 0 {
+            
+            self.asthma = 0
+            
+        }else if sender.selectedSegmentIndex == 1{
+            
+            self.asthma = 1
+        }
+    }
       @IBOutlet weak var BloodTypePicker: UIPickerView!
-    
+        var btPickerSelected:Int = 0
      let BloodTypePD = ["A+" , "A-" , "B+" , "B-","O+" , "O-", "AB+" , "AB-"]
+    
+    
+    
     
     @IBOutlet weak var DiabetesPicker: UIPickerView!
     
     let DiabetesPickerOptions = ["Type One" ,"Type Two" , "No" ]
+    
+    let asthmaPickerOptions = ["Yes" , "No"]
     
     
     @IBOutlet weak var allergiesTF: UITextField!
@@ -32,19 +68,22 @@ class RegisterMedicalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerV
     
     @IBAction func Reg3Button(sender: AnyObject) {
         
+        var btSelectedValue = BloodTypePD
         var bloodType=picker1selection
-        var diabetes=picker2selection
-        var asthma=picker3selection
         
+        var diabetesValue = diabetes
         var allergies=allergiesTF.text
         var medication=medicationTF.text
+      
         
         
         Reg1VC.current.newPatient.bloodType=bloodType
-        Reg1VC.current.newPatient.diabetes = Int(diabetes)!
-        Reg1VC.current.newPatient.asthma = Int(asthma)!
+     //   Reg1VC.current.newPatient.diabetes = (diabetes)
+        Reg1VC.current.newPatient.asthma = (asthma)
+        Reg1VC.current.newPatient.diabetes = diabetesValue
         Reg1VC.current.newPatient.allergies=allergies!
         Reg1VC.current.newPatient.medication=medication!
+        
         
         
         
@@ -55,9 +94,8 @@ class RegisterMedicalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerV
         
     }
     
-    @IBOutlet weak var AsthmaPicker: UIPickerView!
     
-    let asthmaPickerOptions = ["Yes" , "No"]
+    
     
     func setArrayResponse(resp: NSArray, reqId: Int) {
         
@@ -72,66 +110,29 @@ class RegisterMedicalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerV
         super.viewDidLoad()
             BloodTypePicker.delegate = self
             BloodTypePicker.dataSource = self
-            DiabetesPicker.delegate = self
-            DiabetesPicker.dataSource = self
-            AsthmaPicker.delegate = self
-            AsthmaPicker.dataSource = self
         
-            AsthmaPicker.tag = 3
-            DiabetesPicker.tag = 2
-            BloodTypePicker.tag = 1
-    
-    }
+     }
     
         func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
             return 1
         }
         func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-            if(pickerView.tag == 1){
+          
                return BloodTypePD.count
-            }
-           else if (pickerView.tag == 2)
-                {
-                    return DiabetesPickerOptions.count
-                }
-            else if (pickerView.tag == 3){
-                  return asthmaPickerOptions.count
-            }
-            return 1
     }
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
        
-        
-        if(pickerView.tag == 1){
-            return BloodTypePD[row]
-            
-            
-        }
-        if (pickerView.tag == 2)
-        {
-            return DiabetesPickerOptions[row]
-        }
-        if (pickerView.tag == 3){
-             return asthmaPickerOptions[row]
-        }
-        
-        return ""
+        return BloodTypePD[row]
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        if(pickerView.tag == 1){
-            
+    
+           
             picker1selection =  BloodTypePD[row]
+            
         }
-        if (pickerView.tag == 2)
-        {
-            picker2selection = DiabetesPickerOptions[row]
-        }
-        if (pickerView.tag == 3){
-            picker3selection = asthmaPickerOptions[row]
-        }
-    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -17,7 +17,7 @@ class Patient: NSObject , DataHolder {
     
     var email:String = ""
     var civilId:String = ""
-    var birthDate:String = ""
+   
     var gender:String = ""
     var password:String = ""
     var phone:String = ""
@@ -49,7 +49,7 @@ class Patient: NSObject , DataHolder {
         values.setValue(middleName, forKey: "middleName")
         values.setValue(lastName, forKey: "lastName")
         values.setValue(email, forKey: "email")
-        values.setValue(birthDate, forKey: "dateOfBirth")
+      
         values.setValue(password, forKey: "password")
         values.setValue(gender, forKey: "gender")
         values.setValue(phone, forKey: "phoneNumber")
@@ -86,8 +86,7 @@ class Patient: NSObject , DataHolder {
         
         self.email = values.valueForKey("email") as! String
         
-        self.birthDate = values.valueForKey("dateOfBirth") as! String
-        
+               
         self.password = values.valueForKey("password") as! String
         
         self.gender = values.valueForKey("gender") as! String
