@@ -8,6 +8,7 @@
 
 import UIKit
 import SystemConfiguration
+import Foundation
 import Alamofire
 import SwiftyJSON
 import ObjectMapper
@@ -20,6 +21,7 @@ protocol NetworkCaller{
 class Networking: NSObject {
     var logging: Bool = false
     func AMJSONDictionary(url:String, httpMethod:String, jsonData:NSObject, reqId:Int, caller:NetworkCaller?) -> OutputResult{
+        
         let request = NSMutableURLRequest(URL: NSURL(string: url)!)
         request.HTTPMethod = httpMethod
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -52,6 +54,8 @@ class Networking: NSObject {
     }
     
     func AMJSONArray(url:String, httpMethod:String, jsonData:NSObject, reqId:Int, caller:NetworkCaller?) -> OutputResult{
+        
+        
         let request = NSMutableURLRequest(URL: NSURL(string: url)!)
         request.HTTPMethod = httpMethod
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -97,6 +101,7 @@ class Networking: NSObject {
     
     func AMPostDictData(url:String, params:[String:AnyObject], reqId:Int, caller:NetworkCaller?)-> OutputResult{
         
+        
         var result:OutputResult = OutputResult(status: true)
         Alamofire.request(.POST, url, parameters: params).validate().responseJSON { response in
             
@@ -122,6 +127,7 @@ class Networking: NSObject {
     
     
     func AMGetArrayData(url:String, params:[String:AnyObject], reqId:Int, caller:NetworkCaller?)-> OutputResult{
+        
         
         var result:OutputResult = OutputResult(status: true)
         Alamofire.request(.GET, url, parameters: params).validate().responseJSON { response in
@@ -153,6 +159,7 @@ class Networking: NSObject {
     
     func AMGetDictData(url:String, params:[String:AnyObject], reqId:Int, caller:NetworkCaller?)-> OutputResult{
         
+        
         var result:OutputResult = OutputResult(status: true)
         Alamofire.request(.GET, url, parameters: params).validate().responseJSON { response in
             let outData = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
@@ -183,6 +190,7 @@ class Networking: NSObject {
     
     func AMPostArrayData(url:String, params:[String:AnyObject], reqId:Int, caller:NetworkCaller?)-> OutputResult{
         
+        
         var result:OutputResult = OutputResult(status: true)
         Alamofire.request(.POST, url, parameters: params).validate().responseJSON { response in
             
@@ -205,4 +213,16 @@ class Networking: NSObject {
         }
         return result
     }
+    
+    static func isInternetAvailable() -> Bool
+    {
+        let myStatus = Reach().connectionStatus()
+        if !(myStatus.description == ReachabilityStatus.Offline.description) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+
 }

@@ -1,5 +1,5 @@
 //
-//  MyDoctorTableTableViewController.swift
+//  HospitalTableViewController.swift
 //  MHealth
 //
 //  Created by trn15 on 3/5/17.
@@ -8,48 +8,35 @@
 
 import UIKit
 
-class MyDoctorTableViewController: UITableViewController, NetworkCaller,  UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
+class HospitalTableViewController: UITableViewController, NetworkCaller,  UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
     
-    var cacheManager:MyDoctorsCache? = nil
-    private var filteredDoctors:[DoctorDH] = [DoctorDH]()
+    private var allHospitals:[HospitalDH] = [HospitalDH]()
+    private var filteredHospitals:[HospitalDH] = [HospitalDH]()
     
     let searchController = UISearchController(searchResultsController: nil)
     
-    //
-    func alert(title: String, message: String) {
-        if let getModernAlert: AnyClass = NSClassFromString("UIAlertController") { // iOS 8
-            let myAlert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-            myAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            self.presentViewController(myAlert, animated: true, completion: nil)
-        } else { // iOS 7
-            let alert: UIAlertView = UIAlertView()
-            alert.delegate = self
-            
-            alert.title = title
-            alert.message = message
-            alert.addButtonWithTitle("OK")
-            
-            alert.show()
-        }
-    }
-    //
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        cacheManager = MyDoctorsCache.myInstance()
-        cacheManager?.caller = self
+        
+        // Uncomment the following line to preserve selection between presentations
+        //self.clearsSelectionOnViewWillAppear = false
+        self.tableView.separatorColor = UIColor.clearColor()
+        self.tableView.rowHeight = 125
         
         // Check Internet
         if (Networking.isInternetAvailable()) {
-            // network requests managed in Cache; error message auto. displayed
+            let networkManager = Networking()
+            networkManager.logging = true
+            networkManager.AMGetArrayData("http://34.196.107.188:8080/mHealthWS/ws/hospital", params: [:], reqId: 1, caller: self)
+        } else {
+            
         }
         // --------------
         
-        self.tableView.rowHeight = 125
-        self.tableView.separatorColor = UIColor.clearColor()
         
         // Search Bar
+        
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
@@ -58,72 +45,74 @@ class MyDoctorTableViewController: UITableViewController, NetworkCaller,  UISear
         searchController.searchBar.backgroundColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
         searchController.searchBar.tintColor = UIColor.whiteColor()
         searchController.searchBar.barTintColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
-        searchController.searchBar.scopeButtonTitles = ["Name", "Specialty"]
+        searchController.searchBar.scopeButtonTitles = ["Public", "Private"]
         searchController.searchBar.delegate = self
+        
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if (section == 0) {
+        if section == 0 {
             if searchController.active && searchController.searchBar.text != "" {
-                return filteredDoctors.count
+                return filteredHospitals.count
             }
-            return MyDoctorsCache.myInstance().getDoctors().count
+            return allHospitals.count
         }
         return 0
     }
     
+    
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
-        return "My Doctors"
+        return "Hospitals"
     }
-
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var curDoctor = DoctorDH()
+        var curHospital:HospitalDH = HospitalDH()
+        
         if searchController.active && searchController.searchBar.text != "" {
-            curDoctor = filteredDoctors[indexPath.row]
+            curHospital = filteredHospitals[indexPath.row]
         } else {
-            curDoctor = MyDoctorsCache.myInstance().getDoctors()[indexPath.row]
+            curHospital = allHospitals[indexPath.row]
         }
-
+        
         // Configure the cell...
-        let cellTypeIdentifier:String = "DoctorListTableViewCell";
+        let cellTypeIdentifier:String = "HospitalTableViewCell";
         
         
         let nib:NSArray = NSBundle.mainBundle().loadNibNamed(cellTypeIdentifier, owner: self, options: nil)
         
-        let cell = nib.firstObject as! DoctorListTableViewCell
-        cell.updateCellData(curDoctor)
-        
-        
+        let cell = nib.firstObject as! HospitalTableViewCell
+        cell.updateCellData(curHospital)
         
         return cell
     }
     
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let nextScreen:MyDoctorProfileViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MyDoctorProfile") as! MyDoctorProfileViewController
+        let nextScreen:HospitalProfile = self.storyboard?.instantiateViewControllerWithIdentifier("HospitalProfile") as! HospitalProfile
         
         if searchController.active && searchController.searchBar.text != "" {
-            nextScreen.myDoctor = filteredDoctors[indexPath.row]
+            nextScreen.hospital = filteredHospitals[indexPath.row]
         } else {
-            nextScreen.myDoctor = MyDoctorsCache.myInstance().getDoctors()[indexPath.row]
+            nextScreen.hospital = allHospitals[indexPath.row]
         }
-        
         
         
         let nav:UINavigationController = self.navigationController!
@@ -135,26 +124,44 @@ class MyDoctorTableViewController: UITableViewController, NetworkCaller,  UISear
     }
     
     
-    func setArrayResponse(resp: NSArray, reqId: Int) {
+    func setDictResponse(resp:NSDictionary, reqId:Int) {
         self.tableView.reloadData()
     }
     
-    func setDictResponse(resp: NSDictionary, reqId: Int) {
+    func setArrayResponse(resp:NSArray, reqId:Int) {
+        // set doctors
+        if (reqId == 1) {
+            print( resp )
+            
+            for i in 0..<resp.count {
+                let hospital:HospitalDH = HospitalDH()
+                
+                hospital.loadDictionary( resp.objectAtIndex(i) as! NSDictionary )
+                allHospitals.append(hospital)
+            }
+            
+        }
         self.tableView.reloadData()
     }
+    
+    
+    
     
     // Custom Search Bar METHODS
     
-    func filterContentForSearchText(searchText: String, scope: NSString = "Name") {
+    func filterContentForSearchText(searchText: String, scope: NSString = "Public") {
         
-        filteredDoctors = MyDoctorsCache.myInstance().getDoctors().filter { doctor in
-            if (scope == searchController.searchBar.scopeButtonTitles![1]) {
-                return (doctor.specialtyId).lowercaseString.containsString(searchText.lowercaseString)
+        filteredHospitals = allHospitals.filter { hospital in
+            
+            return (hospital.hospitalType).lowercaseString.containsString(scope as String)
+            
+            /*if (scope == searchController.searchBar.scopeButtonTitles![1]) {
+                return (hospital.hospitalType).lowercaseString.containsString(searchText.lowercaseString)
             }
             else {
                 return
                     (doctor.firstName+" "+doctor.lastName).lowercaseString.containsString(searchText.lowercaseString)
-            }
+            }*/
         }
         
         tableView.reloadData()
@@ -165,6 +172,7 @@ class MyDoctorTableViewController: UITableViewController, NetworkCaller,  UISear
         let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
         filterContentForSearchText(searchController.searchBar.text!, scope: scope)
     }
-
-
+    
+    
+    
 }

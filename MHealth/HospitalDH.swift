@@ -18,7 +18,7 @@ class HospitalDH: NSObject, DataHolder {
     public var hospitalExtrainfo:String = ""
     public var hospitalType:String = ""
     
-    public var hospitalSpecilityId:String = ""
+    public var hospitalSpecilityId:Int = 0
     
     public var hospitalFax:String = ""
     
@@ -41,26 +41,25 @@ class HospitalDH: NSObject, DataHolder {
         values.setValue(hospitalName, forKey: "hospitalName")
         
         values.setValue(hospitalWebsite, forKey: "hospitalWebsite")
-        values.setValue(hospitalLogoURL, forKey: "hospitalLogoURL")
+        //values.setValue(hospitalLogoURL, forKey: "logoUrl")
         
-        values.setValue(hospitalAddress, forKey: "hospitalAddress")
-        values.setValue(hospitalWorkingHours, forKey: "hospitalWorkingHours")
-        values.setValue(hospitalExtrainfo, forKey: "hospitalExtrainfo")
+        values.setValue(hospitalAddress, forKey: "address")
+        values.setValue(hospitalWorkingHours, forKey: "workingHours")
+        values.setValue(hospitalExtrainfo, forKey: "extraInfo")
         
-        values.setValue(hospitalType, forKey: "hospitalType")
+        values.setValue(hospitalType, forKey: "type")
         
-        values.setValue(hospitalSpecilityId, forKey: "hospitalSpecilityId")
+        values.setValue(hospitalSpecilityId, forKey: "specialityId")
         
         
-        values.setValue(hospitalFax, forKey: "hospitalFax")
+        values.setValue(hospitalFax, forKey: "fax")
         
-        values.setValue(hospitalEmail, forKey: "hospitalEmail")
+        values.setValue(hospitalEmail, forKey: "email")
         
-        values.setValue(hospitalPhone, forKey: "hospitalPhone")
+        values.setValue(hospitalPhone, forKey: "phone")
         
         values.setValue(hospitalLang, forKey: "hospitalLang")
         values.setValue(hospitalAlt, forKey: "hospitalAlt")
-        //values.setValue(gender, forKey: "gender")
         
         return values
     }
@@ -71,19 +70,19 @@ class HospitalDH: NSObject, DataHolder {
         self.hospitalId = values.valueForKey("hospitalId") as! Int
         
         self.hospitalName = values.valueForKey("hospitalName") as! String
-        self.hospitalWebsite = values.valueForKey("hospitalWebsite") as! String
-        self.hospitalLogoURL = values.valueForKey("hospitalLogoURL") as! String
-        self.hospitalAddress = values.valueForKey("hospitalAddress") as! String
-        self.hospitalWorkingHours = values.valueForKey("hospitalWorkingHours") as! String
-        self.hospitalExtrainfo = values.valueForKey("hospitalExtrainfo") as! String
+        self.hospitalWebsite = values.valueForKey("webSite") as! String
+        //self.hospitalLogoURL = values.valueForKey("logoUrl") as! String
+        self.hospitalAddress = values.valueForKey("address") as! String
+        self.hospitalWorkingHours = values.valueForKey("workingHours") as! String
+        self.hospitalExtrainfo = values.valueForKey("extraInfo") as! String
         
-        self.hospitalType = values.valueForKey("hospitalType") as! String
-        self.hospitalSpecilityId = values.valueForKey("hospitalSpecilityId") as! String
+        self.hospitalType = values.valueForKey("type") as! String
+        self.hospitalSpecilityId = values.valueForKey("specialityId") as! Int
         
-        self.hospitalFax = values.valueForKey("hospitalFax") as! String
+        self.hospitalFax = values.valueForKey("fax") as! String
         
-         self.hospitalEmail = values.valueForKey("hospitalEmail") as! String
-         self.hospitalPhone = values.valueForKey("hospitalPhone") as! String
+         self.hospitalEmail = values.valueForKey("email") as! String
+         self.hospitalPhone = values.valueForKey("phone") as! String
          self.hospitalLang = values.valueForKey("hospitalLang") as! String
          self.hospitalAlt = values.valueForKey("hospitalAlt") as! String
         

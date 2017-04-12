@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HospitalProfile: UIViewController, NetworkCaller {
+class HospitalProfile: UIViewController {
 
     @IBOutlet weak var HospitalAdditionalInfo: UILabel!
     @IBOutlet weak var HospitalEmail: UILabel!
@@ -25,15 +25,6 @@ class HospitalProfile: UIViewController, NetworkCaller {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        testHospital()
-        
-        
-        let net:Networking = Networking()
-        net.AMGetArrayData(Const.URLs.Hospital, params: [:], reqId: 1, caller: self)
-        
-       let Hospital:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.hospitalProfile) as! NSDictionary
-        
-        hospital.loadDictionary(Hospital)
         
         HospitalName.text=hospital.hospitalName
         HospitalEmail.text=hospital.hospitalEmail
@@ -49,15 +40,7 @@ class HospitalProfile: UIViewController, NetworkCaller {
         // Do any additional setup after loading the view.
     }
     
-    func setArrayResponse(resp: NSArray, reqId: Int) {
-        // print(resp)
-    }
-    
-    func setDictResponse(resp: NSDictionary, reqId: Int) {
-       
-        //
-        
-    }
+
 
 
     override func didReceiveMemoryWarning() {
@@ -65,23 +48,6 @@ class HospitalProfile: UIViewController, NetworkCaller {
         // Dispose of any resources that can be recreated.
     }
     
-    func testHospital(){
-        
-        var hospital:NSDictionary = NSDictionary()
-        var name:String = ""
-        
-        
-        NSUserDefaults.standardUserDefaults().setValue(hospital, forKey: Const.UserDefaultsKeys.hospitalId)
-    
-    }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
