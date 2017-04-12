@@ -33,7 +33,7 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
         if (Networking.isInternetAvailable()) {
             let networkManager = Networking()
             networkManager.logging = true
-            networkManager.AMGetArrayData("http://34.196.107.188:8080/mHealthWS/ws/hospital", params: [:], reqId: 1, caller: self)
+            networkManager.AMGetArrayData(Const.URLs.Hospital, params: [:], reqId: 1, caller: self)
         } else {
             
         }
