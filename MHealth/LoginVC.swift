@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import VideoSplashKit
 
-class LoginVC: UIViewController, NetworkCaller {
+class LoginVC: VideoSplashViewController , NetworkCaller {
 
+    @IBAction func ForgetPassword(sender: AnyObject) {
+    }
     @IBOutlet weak var UsernameTF: UITextField!
     
     @IBOutlet weak var PasswordTF: UITextField!
@@ -114,13 +117,25 @@ class LoginVC: UIViewController, NetworkCaller {
         
     }
     
-    @IBAction func ResetPasswordButton(sender: AnyObject) {
-    }
+ 
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        let url = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("heart", ofType: "mp4")!)
+        
+        self.videoFrame = view.frame
+        self.fillMode = .ResizeAspectFill
+        self.alwaysRepeat = true
+        self.sound = true
+        self.startTime = 0.0
+        self.duration = 10.0
+        self.alpha = 0.7
+        self.backgroundColor = UIColor.whiteColor()
+        self.contentURL = url
+        self.restartForeground = true
+        
+
 
         // Do any additional setup after loading the view.
     }

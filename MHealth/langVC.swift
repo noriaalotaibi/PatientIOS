@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import VideoSplashKit
 
-class langVC: VideoSplashViewController {
+
+class langVC: UIViewController {
     @IBAction func ArabicButton(sender: AnyObject) {
         NSUserDefaults.standardUserDefaults().setObject(["ar"], forKey: "AppleLanguages")
         
@@ -40,18 +40,7 @@ class langVC: VideoSplashViewController {
         super.viewDidLoad()
 
 
-        let url = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("heart", ofType: "mp4")!)
-        
-        self.videoFrame = view.frame
-        self.fillMode = .ResizeAspectFill
-        self.alwaysRepeat = true
-        self.sound = true
-        self.startTime = 0.0
-        self.duration = 10.0
-        self.alpha = 0.7
-        self.backgroundColor = UIColor.whiteColor()
-        self.contentURL = url
-        self.restartForeground = true
+    
         
 
         // Do any additional setup after loading the view.
