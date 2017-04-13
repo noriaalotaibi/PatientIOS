@@ -55,7 +55,9 @@ class PatientReportViewController: UIViewController, NetworkCaller {
         callerManager?.callerReport = self
         
         
-        
+        bloodPressureSegment.selectedSegmentIndex = 1
+        heartBeatSegment.selectedSegmentIndex = 1
+        sugarLevelSegment.selectedSegmentIndex = 1
         
     }
 

@@ -2067,7 +2067,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zTt-Z3-9M4"/>
+                    <navigationItem key="navigationItem" id="zTt-Z3-9M4">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Yof-Vt-KYi">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LeF-ae-Q3B">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendPatientReport:" destination="CEB-ki-ZHg" eventType="touchUpInside" id="q4z-OP-27g"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="bloodPressureSegment" destination="6e0-g0-ZgV" id="Kea-Tn-V9v"/>
