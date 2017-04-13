@@ -47,8 +47,6 @@ class ReportTableViewCell: UITableViewCell {
         
         let date:NSString = (report.timestamp as NSString).substringToIndex(10)
         
-        //cell.titleViewLabel.text = arrayNews[indexPath.row].title as NSString
-        
         timeStamp.text = date as String
         
 
