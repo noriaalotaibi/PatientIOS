@@ -115,7 +115,11 @@ class Patient: NSObject , DataHolder {
         
         self.deleted = values.valueForKey("deleted") as! Int
 
-        self.imageUrl = values.valueForKey("imageUrl") as! String
+        if (values.valueForKey("imageUrl") != nil) {
+            self.imageUrl = values.valueForKey("imageUrl") as! String
+        } else {
+            self.imageUrl = ""
+        }
 
         self.status = values.valueForKey("status") as! Bool
 
