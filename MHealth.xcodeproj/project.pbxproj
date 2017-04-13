@@ -66,6 +66,8 @@
 		52CC051A1E6B53D300BC93A9 /* PathsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC05191E6B53D300BC93A9 /* PathsManager.swift */; };
 		625258405D3A2BB46D2011A3 /* Pods_MHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDB312C5DB17542FF3D2128 /* Pods_MHealth.framework */; };
 		698FB7AD1E9A28580088238E /* HospitalDH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698FB7AC1E9A28580088238E /* HospitalDH.swift */; };
+		DEDC642C1E9F774B004F108C /* MyReportCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC642A1E9F774B004F108C /* MyReportCommentsViewController.swift */; };
+		DEDC642D1E9F774B004F108C /* MyReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC642B1E9F774B004F108C /* MyReportViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +135,8 @@
 		698FB7AC1E9A28580088238E /* HospitalDH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalDH.swift; sourceTree = "<group>"; };
 		8CDB312C5DB17542FF3D2128 /* Pods_MHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2E775B3980EE75173FA376 /* Pods-MHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHealth/Pods-MHealth.debug.xcconfig"; sourceTree = "<group>"; };
+		DEDC642A1E9F774B004F108C /* MyReportCommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyReportCommentsViewController.swift; sourceTree = "<group>"; };
+		DEDC642B1E9F774B004F108C /* MyReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyReportViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,7 +195,6 @@
 		518EBBA21E718D180095F797 /* DonorVCs */ = {
 			isa = PBXGroup;
 			children = (
-				516247DC1E9E019200450FC6 /* ReportTableViewController.swift */,
 				518EBB981E7184B30095F797 /* HospitalTableViewController.swift */,
 				518EBB9A1E7184BF0095F797 /* DonorProfileViewController.swift */,
 			);
@@ -257,6 +260,7 @@
 		52CC05091E6B408800BC93A9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC642E1E9F778A004F108C /* Report */,
 				51D90A2D1E9B78BF00D64580 /* CustomSearchBar */,
 				51BA46091E9A91B8000E1753 /* CustomLists */,
 				518EBBA21E718D180095F797 /* DonorVCs */,
@@ -328,6 +332,16 @@
 				20300A90085D875DF02F3899 /* Pods-MHealth.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DEDC642E1E9F778A004F108C /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC642A1E9F774B004F108C /* MyReportCommentsViewController.swift */,
+				DEDC642B1E9F774B004F108C /* MyReportViewController.swift */,
+				516247DC1E9E019200450FC6 /* ReportTableViewController.swift */,
+			);
+			name = Report;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -487,6 +501,7 @@
 				52CC04F41E6B2F2400BC93A9 /* AppDelegate.swift in Sources */,
 				518EBB9E1E71898D0095F797 /* DonorDH.swift in Sources */,
 				518EBBAF1E718F540095F797 /* EmergencyCV.swift in Sources */,
+				DEDC642C1E9F774B004F108C /* MyReportCommentsViewController.swift in Sources */,
 				29FF17621E6C12A5002FECA0 /* MyDoctorTableTableViewController.swift in Sources */,
 				437F36AC1E93D18E006AC55E /* Alert.swift in Sources */,
 				518EBBB21E718F540095F797 /* ViewProfileVC.swift in Sources */,
@@ -502,6 +517,7 @@
 				52CC05181E6B4E1300BC93A9 /* Const.swift in Sources */,
 				433A49391E9B797100642266 /* HospitalProfile.swift in Sources */,
 				511FE9391E9D507C009EA3C0 /* HospitalTableViewCell.swift in Sources */,
+				DEDC642D1E9F774B004F108C /* MyReportViewController.swift in Sources */,
 				51F5B19F1E6D357F0081F860 /* MyDoctorsCache.swift in Sources */,
 				51EF73B61E70130200706551 /* PatientDH.swift in Sources */,
 				518EBBB91E718F540095F797 /* EditeMidicalInfoVC.swift in Sources */,
