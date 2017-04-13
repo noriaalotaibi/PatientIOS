@@ -12,7 +12,6 @@ class MyReportViewController: UITableViewController {
     
     //var parentVC:ReportsTVC?
     //var parentVC2:PatientProfileVC?
-    
     var currentIndex = 0
     
     var currentPatientReport:PatientReportDH?
