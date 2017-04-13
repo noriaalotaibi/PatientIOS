@@ -24,7 +24,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Untitleddd" translatesAutoresizingMaskIntoConstraints="NO" id="Knq-5z-zEy">
-                        <rect key="frame" x="105" y="83" width="28" height="29"/>
+                        <rect key="frame" x="105" y="83" width="28" height="30"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hZ-BV-4UC">
                         <rect key="frame" x="291" y="87" width="57" height="21"/>
