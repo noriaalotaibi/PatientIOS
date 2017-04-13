@@ -23,7 +23,7 @@ class ResetPass: UIViewController ,NetworkCaller {
         let networkManager:Networking = Networking()
         let values:[String:AnyObject] = ["email":resetPass!]
         
-         networkManager.AMJSONDictionary(Const.URLs.ResetPassword, httpMethod: "POST", jsonData: values, reqId: 0, caller: self)
+        networkManager.AMJSONDictionary(Const.URLs.ResetPassword, httpMethod: "POST", jsonData: values, reqId: 0, caller: self)
         
     }
     override func viewDidLoad() {
