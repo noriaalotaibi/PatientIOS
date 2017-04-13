@@ -997,6 +997,11 @@
                                 <rect key="frame" x="17" y="268" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kgz-3e-SEd">
+                                <rect key="frame" x="322" y="71" width="38" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="logout-512"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -2397,6 +2402,7 @@
         <image name="id-card" width="64" height="64"/>
         <image name="info" width="64" height="64"/>
         <image name="inhalator" width="64" height="64"/>
+        <image name="logout-512" width="512" height="512"/>
         <image name="magnifying-glass (1)" width="64" height="64"/>
         <image name="magnifying-glass(1)" width="200" height="203"/>
         <image name="map" width="64" height="64"/>
