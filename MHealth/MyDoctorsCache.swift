@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Whisper
 
 class MyDoctorsCache: NSObject, NetworkCaller {
     
@@ -43,7 +44,7 @@ class MyDoctorsCache: NSObject, NetworkCaller {
             // get ids of doctors with invitation
             networkManager.AMGetArrayData("http://34.196.107.188:8080/mHealthWS/ws/patientdrlink", params: [:], reqId: 1, caller: self)
         } else {
-            
+
         }
         
         

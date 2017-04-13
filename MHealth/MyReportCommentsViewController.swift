@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import Whisper
 
 class MyReportCommentsViewController: UIViewController, UITextViewDelegate  {
 

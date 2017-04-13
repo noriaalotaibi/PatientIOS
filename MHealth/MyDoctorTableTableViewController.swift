@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Whisper
 
 class MyDoctorTableViewController: UITableViewController, NetworkCaller,  UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
     
@@ -43,6 +44,10 @@ class MyDoctorTableViewController: UITableViewController, NetworkCaller,  UISear
         // Check Internet
         if (Networking.isInternetAvailable()) {
             // network requests managed in Cache; error message auto. displayed
+        } else {
+            let message = Message(title: "No Internet Connection", textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
         }
         // --------------
         

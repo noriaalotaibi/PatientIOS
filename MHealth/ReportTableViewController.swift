@@ -7,6 +7,7 @@
 // http://34.196.107.188:8081/MhealthWeb/webresources/patientreport/
 
 import UIKit
+import Whisper
 
 class ReportTableViewController: UITableViewController, NetworkCaller,  UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
 
@@ -31,7 +32,9 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
             networkManager.logging = true
             networkManager.AMGetArrayData("http://34.196.107.188:8081/MhealthWeb/webresources/patientreport/", params: [:], reqId: 1, caller: self)
         } else {
-            
+            let message = Message(title: "No Internet Connection", textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
         }
         // --------------
         

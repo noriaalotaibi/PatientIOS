@@ -6,6 +6,7 @@ PODS:
   - SDWebImage/Core (3.8.2)
   - SwiftyJSON (2.3.2)
   - VideoSplashKit (1.1.0)
+  - Whisper (2.1)
 
 DEPENDENCIES:
   - Alamofire (~> 3.1.4)
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - SDWebImage (~> 3.8)
   - SwiftyJSON (~> 2.3.2)
   - VideoSplashKit
+  - Whisper (~> 2.0)
 
 SPEC CHECKSUMS:
   Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
@@ -20,7 +22,8 @@ SPEC CHECKSUMS:
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   VideoSplashKit: 0aa63d0bb37c5bd357de3e6a2a13dea5acad4d66
+  Whisper: 18b574de21a089c0d664b115f26e0d9ccbbadbab
 
-PODFILE CHECKSUM: 0b4ecfb0c63cfc3c8b1ee730e17274741647b530
+PODFILE CHECKSUM: 3057efd24ae6fd1370ad2f94d4ef29d1bfa9743f
 
 COCOAPODS: 1.2.0

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Whisper
 
 
 class HospitalTableViewController: UITableViewController, NetworkCaller,  UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate,CLLocationManagerDelegate {
@@ -35,7 +36,9 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
             networkManager.logging = true
             networkManager.AMGetArrayData(Const.URLs.Hospital, params: [:], reqId: 1, caller: self)
         } else {
-            
+            let message = Message(title: "No Internet Connection", textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
         }
         // --------------
         
