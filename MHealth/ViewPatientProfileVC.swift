@@ -89,7 +89,12 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller {
         CivilIdLabel?.text = patient.civilId
         LnameLabel?.text      = patient.lastName
         NationalityLabel?.text = patient.nationality
-        GenderLabel?.text = patient.gender
+        if patient.gender.characters.first == "f" || patient.gender.characters.first == "F" {
+            GenderLabel?.text = "Female"
+        }else{
+            GenderLabel?.text = "Male"
+        }
+        
         BirthDateLabel?.text = patient.dateOfBirth
         EmailLabel?.text = patient.email
         PhoneNumLabel?.text = patient.phone
