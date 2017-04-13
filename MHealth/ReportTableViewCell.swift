@@ -12,11 +12,11 @@ class ReportTableViewCell: UITableViewCell {
 
     @IBOutlet weak var img: UIImageView!
     
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var doctorName: UILabel!
     
     @IBOutlet weak var timeStamp: UILabel!
     
-    @IBOutlet weak var doctotrName: UILabel!
+    @IBOutlet weak var status: UILabel!
     
     var reportData:PatientReportDH = PatientReportDH()
     
@@ -43,7 +43,12 @@ class ReportTableViewCell: UITableViewCell {
     func updateCellData(report: PatientReportDH) {
         reportData = report;
         
-        name.text = report.name
+        doctorName.text = report.name
+        if (report.drcomment == "" || report.drcomment.isEmpty) {
+            status.text = "Pending Response"
+        } else {
+            status.text = "Replied"
+        }
         
         let date:NSString = (report.timestamp as NSString).substringToIndex(10)
         
