@@ -8,35 +8,35 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="125" id="KGk-i7-Jjw" customClass="ReportTableViewCell" customModule="MHealth" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="384" height="125"/>
+            <rect key="frame" x="0.0" y="0.0" width="392" height="125"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="384" height="124"/>
+                <rect key="frame" x="0.0" y="0.0" width="392" height="124"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="painn" translatesAutoresizingMaskIntoConstraints="NO" id="cMk-qC-CSD">
-                        <rect key="frame" x="20" y="22" width="72" height="72"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="painn" translatesAutoresizingMaskIntoConstraints="NO" id="rc0-Kz-EgK">
+                        <rect key="frame" x="22" y="23" width="72" height="72"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TimeStamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJk-9M-MWX">
-                        <rect key="frame" x="126" y="80" width="106" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TimeStamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agI-Bv-IPZ">
+                        <rect key="frame" x="128" y="81" width="106" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Calendar" translatesAutoresizingMaskIntoConstraints="NO" id="ya0-a9-lpE">
-                        <rect key="frame" x="111" y="56" width="16" height="16"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Calendar" translatesAutoresizingMaskIntoConstraints="NO" id="hXC-bZ-9j8">
+                        <rect key="frame" x="113" y="57" width="16" height="16"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Report Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hdj-Wz-DEQ">
-                        <rect key="frame" x="111" y="22" width="225" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Report Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMd-dp-CIc">
+                        <rect key="frame" x="113" y="23" width="225" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="doctorIcon1" translatesAutoresizingMaskIntoConstraints="NO" id="LHs-oX-9Mc">
-                        <rect key="frame" x="247" y="56" width="16" height="16"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="doctorIcon1" translatesAutoresizingMaskIntoConstraints="NO" id="kFP-DT-ooB">
+                        <rect key="frame" x="249" y="57" width="16" height="16"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Doctor Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWK-OV-h0u">
-                        <rect key="frame" x="261" y="80" width="106" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Doctor Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08p-BP-CW2">
+                        <rect key="frame" x="263" y="81" width="106" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -44,12 +44,12 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="doctotrName" destination="iWK-OV-h0u" id="9WA-uU-CSD"/>
-                <outlet property="img" destination="cMk-qC-CSD" id="GBl-hz-Hnz"/>
-                <outlet property="name" destination="Hdj-Wz-DEQ" id="jGv-RK-yY6"/>
-                <outlet property="timeStamp" destination="kJk-9M-MWX" id="Wcw-UD-RV8"/>
+                <outlet property="doctotrName" destination="08p-BP-CW2" id="O3p-m3-v0h"/>
+                <outlet property="img" destination="rc0-Kz-EgK" id="jCv-j2-GzM"/>
+                <outlet property="name" destination="cMd-dp-CIc" id="yJr-ea-IH3"/>
+                <outlet property="timeStamp" destination="agI-Bv-IPZ" id="obP-gE-RL5"/>
             </connections>
-            <point key="canvasLocation" x="455" y="302.5"/>
+            <point key="canvasLocation" x="175" y="194.5"/>
         </tableViewCell>
     </objects>
     <resources>

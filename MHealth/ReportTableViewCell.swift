@@ -2,7 +2,7 @@
 //  ReportTableViewCell.swift
 //  MHealth
 //
-//  Created by Shamlan Al-Roumi on 4/12/17.
+//  Created by Shamlan Al-Roumi on 4/13/17.
 //  Copyright © 2017 PIFSS. All rights reserved.
 //
 
@@ -42,9 +42,10 @@ class ReportTableViewCell: UITableViewCell {
     
     func updateCellData(report: PatientReportDH) {
         reportData = report;
-
+        
         name.text = report.name
         timeStamp.text = report.timestamp
     }
+
     
 }
