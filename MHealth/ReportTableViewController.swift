@@ -46,7 +46,7 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
         searchController.searchBar.backgroundColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
         searchController.searchBar.tintColor = UIColor.whiteColor()
         searchController.searchBar.barTintColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
-        searchController.searchBar.scopeButtonTitles = ["Doctor Name", "Date"]
+        //searchController.searchBar.scopeButtonTitles = ["Doctor Name"]
         searchController.searchBar.delegate = self
         
         
@@ -154,11 +154,12 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
         
         filteredReports = allReports.filter { report in
             
-            if (scope == searchController.searchBar.scopeButtonTitles![0]) {
+            return searchText.lowercaseString.containsString(report.name.lowercaseString)
+            /*if (scope == searchController.searchBar.scopeButtonTitles![0]) {
                 return searchText.lowercaseString.containsString(report.name.lowercaseString)
             } else {
-                return searchText.lowercaseString.containsString(report.timestamp.lowercaseString)
-            }
+                return true
+            }*/
             
         }
         
@@ -167,8 +168,8 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         let searchBar = searchController.searchBar
-        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+        //let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchController.searchBar.text!)
     }
     
     
