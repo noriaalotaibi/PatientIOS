@@ -17,8 +17,6 @@ class MyReportViewController: UITableViewController {
     
     var currentPatientReport:PatientReportDH?
     
-    
-    
     var reportTitles:[String] = [NSLocalizedString("Blood pressure", comment: ""),
                                  NSLocalizedString("Heart rate", comment: ""),
                                  NSLocalizedString("Sugar level", comment: ""),
