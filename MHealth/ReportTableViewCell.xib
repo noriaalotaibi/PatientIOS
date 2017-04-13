@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
@@ -14,33 +13,33 @@
                 <rect key="frame" x="0.0" y="0.0" width="384" height="124"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="painn" translatesAutoresizingMaskIntoConstraints="NO" id="cMk-qC-CSD">
-                        <rect key="frame" x="20" y="22" width="72" height="72"/>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TimeStamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJk-9M-MWX">
-                        <rect key="frame" x="126" y="80" width="106" height="21"/>
+                        <rect key="frame" x="124" y="84" width="106" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Calendar" translatesAutoresizingMaskIntoConstraints="NO" id="ya0-a9-lpE">
-                        <rect key="frame" x="111" y="56" width="16" height="16"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="valentines-day" translatesAutoresizingMaskIntoConstraints="NO" id="ya0-a9-lpE">
+                        <rect key="frame" x="92" y="82" width="24" height="23"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Report Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hdj-Wz-DEQ">
-                        <rect key="frame" x="111" y="22" width="225" height="21"/>
+                        <rect key="frame" x="116" y="26" width="225" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="doctorIcon1" translatesAutoresizingMaskIntoConstraints="NO" id="LHs-oX-9Mc">
-                        <rect key="frame" x="247" y="56" width="16" height="16"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="doctor" translatesAutoresizingMaskIntoConstraints="NO" id="LHs-oX-9Mc">
+                        <rect key="frame" x="229" y="82" width="24" height="23"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Doctor Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWK-OV-h0u">
-                        <rect key="frame" x="261" y="80" width="106" height="21"/>
+                        <rect key="frame" x="261" y="84" width="106" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="medical-result" translatesAutoresizingMaskIntoConstraints="NO" id="cMk-qC-CSD">
+                        <rect key="frame" x="8" y="26" width="72" height="72"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -53,8 +52,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Calendar" width="50" height="50"/>
-        <image name="doctorIcon1" width="30" height="30"/>
-        <image name="painn" width="243" height="207"/>
+        <image name="doctor" width="64" height="64"/>
+        <image name="medical-result" width="64" height="64"/>
+        <image name="valentines-day" width="64" height="64"/>
     </resources>
 </document>
