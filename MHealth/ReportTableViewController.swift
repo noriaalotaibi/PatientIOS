@@ -107,12 +107,12 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        /*let nextScreen:ReportProfile = self.storyboard?.instantiateViewControllerWithIdentifier("ReportProfile") as! ReportProfile
+        let nextScreen:MyReportViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MyReport") as! MyReportViewController
         
         if searchController.active && searchController.searchBar.text != "" {
-            nextScreen.hospital = filteredReports[indexPath.row]
+            nextScreen.currentPatientReport = filteredReports[indexPath.row]
         } else {
-            nextScreen.hospital = allReports[indexPath.row]
+            nextScreen.currentPatientReport = allReports[indexPath.row]
         }
         
         
@@ -121,7 +121,7 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
         //nextScreen.parent = self
         
         
-        nav.pushViewController(nextScreen, animated: true)*/
+        nav.pushViewController(nextScreen, animated: true)
     }
     
     
