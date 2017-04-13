@@ -23,7 +23,6 @@
 		513007D81E9CC5CE000892AA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 513007D71E9CC5CE000892AA /* SystemConfiguration.framework */; };
 		513007DA1E9CC64A000892AA /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513007D91E9CC64A000892AA /* Reach.swift */; };
 		516247D81E9DF3E100450FC6 /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516247D61E9DF3E100450FC6 /* ReportTableViewCell.swift */; };
-		516247D91E9DF3E100450FC6 /* ReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516247D71E9DF3E100450FC6 /* ReportTableViewCell.xib */; };
 		516247DD1E9E019300450FC6 /* ReportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516247DC1E9E019200450FC6 /* ReportTableViewController.swift */; };
 		518EBB991E7184B30095F797 /* HospitalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EBB981E7184B30095F797 /* HospitalTableViewController.swift */; };
 		518EBB9B1E7184C00095F797 /* DonorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EBB9A1E7184BF0095F797 /* DonorProfileViewController.swift */; };
@@ -448,7 +447,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
