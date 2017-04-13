@@ -56,7 +56,11 @@ class PatientReportDH: NSObject, DataHolder {
     }
     
     func loadDictionary(values: NSDictionary) {
-        self.name = values.valueForKey("name") as! String
+        if (values.valueForKey("name") != nil) {
+            self.name = values.valueForKey("name") as! String
+        } else {
+            self.name = ""
+        }
         
         self.bloodPressure = values.valueForKey("bloodPressure") as! String
         self.comments = values.valueForKey("comments") as! String
@@ -78,7 +82,11 @@ class PatientReportDH: NSObject, DataHolder {
         self.reportId = values.valueForKey("reportId") as! Int
         self.sugarLevel = values.valueForKey("sugarLevel") as! String
         
-        self.timestamp = values.valueForKey("timestamp") as! String
+        if (values.valueForKey("timestamp") != nil) {
+            self.timestamp = values.valueForKey("timestamp") as! String
+        } else {
+            self.timestamp = ""
+        }
         
     }
     
