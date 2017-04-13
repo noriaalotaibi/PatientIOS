@@ -10,39 +10,30 @@ import UIKit
 
 class PatientReportViewController: UIViewController, NetworkCaller {
     
+    var myDoctor:DoctorDH = DoctorDH()
+    
     var callerManager:DoctorFunctions? = nil
 
     @IBOutlet weak var bloodPressureSegment: UISegmentedControl!
     @IBOutlet weak var heartBeatSegment: UISegmentedControl!
     @IBOutlet weak var sugarLevelSegment: UISegmentedControl!
     
-    @IBAction func bloodPressureChange(sender: UISegmentedControl) {
-    }
-    
-    @IBAction func heartBeatRateChange(sender: UISegmentedControl) {
-    }
-    
-    
-    @IBAction func sugarLevelChange(sender: UISegmentedControl) {
-    }
-    
     
     @IBOutlet weak var patientComments: UITextView!
     
     @IBOutlet weak var painLocation: UITextField!
     
-    @IBAction func feverChange(sender: UISwitch) {
-    }
     
-    @IBAction func nauseousChange(sender: UISwitch) {
-    }
+    @IBOutlet weak var feverSwitch: UISwitch!
+    @IBOutlet weak var nauseousSwitch: UISwitch!
+    @IBOutlet weak var headacheSwitch: UISwitch!
+    @IBOutlet weak var dizzinessSwitch: UISwitch!
     
-    @IBAction func headacheChange(sender: UISwitch) {
-    }
     
-    @IBAction func dizzinessChange(sender: UISwitch) {
-    }
+    @IBOutlet weak var coughingSwitch: UISwitch!
+
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
     
     
@@ -77,24 +68,78 @@ class PatientReportViewController: UIViewController, NetworkCaller {
         
         let newReport:PatientReportDH = PatientReportDH()
         
-        newReport.bloodPressure = ""//High low natural
-        newReport.comments = ""
-        newReport.coughing = "" //YES NO
-        newReport.dizziness = ""
-        newReport.drId = 0 //
+        if self.bloodPressureSegment.selectedSegmentIndex == 0 {
+            newReport.bloodPressure = "High"
+        }else if self.bloodPressureSegment.selectedSegmentIndex == 1 {
+            newReport.bloodPressure = "Moderate"
+        }else{
+            newReport.bloodPressure = "Low"
+        }
+        
+        newReport.comments = self.patientComments.text
+        
+        if self.coughingSwitch.selected == true {
+            newReport.coughing = "YES"
+        }else{
+            newReport.coughing = "NO"
+        }
+        
+        
+        if self.dizzinessSwitch.selected == true {
+            newReport.dizziness = "YES"
+        }else{
+            newReport.dizziness = "NO"
+        }
+        
+        
+        newReport.drId = myDoctor.drId 
         newReport.drcomment = ""
-        newReport.fever = ""//YES NO
-        newReport.headache = "" //YES NO
-        newReport.heartbeatRate = ""//High low moderate
-        newReport.nauseous = ""//NO YES
-//        if painLocation.text == "" {
-//            newReport.pain = false
-//            newReport.painlocation = ""
-//        }else{
-//            newReport.pain = true
-//            newReport.painlocation = ""
-//        }
-        newReport.sugarLevel = "" //High Low Medium
+        
+        if self.feverSwitch.selected == true {
+            newReport.fever = "YES"
+        }else{
+            newReport.fever = "NO"
+        }
+        
+        if self.headacheSwitch.selected == true {
+            newReport.headache = "YES"
+        }else{
+            newReport.headache = "NO"
+        }
+        
+        if self.heartBeatSegment.selectedSegmentIndex == 0 {
+            newReport.heartbeatRate = "High"
+        }else if self.heartBeatSegment.selectedSegmentIndex == 1 {
+            newReport.heartbeatRate = "Moderate"
+        }else{
+            newReport.heartbeatRate = "Low"
+        }
+        
+        if self.nauseousSwitch.selected == true {
+            newReport.nauseous = "YES"
+        }else{
+            newReport.nauseous = "NO"
+        }
+        
+        
+        if self.painLocation.text == "" {
+            newReport.pain = false
+            newReport.painlocation = ""
+        }else{
+            newReport.pain = true
+            newReport.painlocation = self.painLocation.text!
+        }
+        
+        if self.sugarLevelSegment.selectedSegmentIndex == 0 {
+            newReport.sugarLevel = "High"
+        }else if self.sugarLevelSegment.selectedSegmentIndex == 1 {
+            newReport.sugarLevel = "Moderate"
+        }else{
+            newReport.sugarLevel = "Low"
+        }
+        
+        
+        
         newReport.patientId = patient.patientID
         
         let rDic:NSDictionary = newReport.toDictionary()
