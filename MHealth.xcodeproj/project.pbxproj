@@ -16,6 +16,7 @@
 		433A49391E9B797100642266 /* HospitalProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433A49381E9B797100642266 /* HospitalProfile.swift */; };
 		4341DC881E9E2C5C001172A1 /* gifFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4341DC871E9E2C5C001172A1 /* gifFramework.swift */; };
 		437F36AC1E93D18E006AC55E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437F36AB1E93D18E006AC55E /* Alert.swift */; };
+		438C5D761E9F7F3000B3F60B /* Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C5D751E9F7F3000B3F60B /* Customization.swift */; };
 		4399ED621E9E2F0700EE6766 /* heart.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4399ED611E9E2F0700EE6766 /* heart.gif */; };
 		4399ED651E9E38A900EE6766 /* heart.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4399ED641E9E38A900EE6766 /* heart.mp4 */; };
 		511FE9391E9D507C009EA3C0 /* HospitalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FE9371E9D507C009EA3C0 /* HospitalTableViewCell.swift */; };
@@ -82,6 +83,7 @@
 		433A49381E9B797100642266 /* HospitalProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalProfile.swift; sourceTree = "<group>"; };
 		4341DC871E9E2C5C001172A1 /* gifFramework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gifFramework.swift; sourceTree = "<group>"; };
 		437F36AB1E93D18E006AC55E /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		438C5D751E9F7F3000B3F60B /* Customization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customization.swift; sourceTree = "<group>"; };
 		4399ED611E9E2F0700EE6766 /* heart.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = heart.gif; sourceTree = "<group>"; };
 		4399ED641E9E38A900EE6766 /* heart.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = heart.mp4; sourceTree = "<group>"; };
 		511FE9371E9D507C009EA3C0 /* HospitalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HospitalTableViewCell.swift; path = ../HospitalTableViewCell.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				4399ED641E9E38A900EE6766 /* heart.mp4 */,
 				52CC05191E6B53D300BC93A9 /* PathsManager.swift */,
 				52CC05111E6B41C400BC93A9 /* Validator.swift */,
+				438C5D751E9F7F3000B3F60B /* Customization.swift */,
 				437F36AB1E93D18E006AC55E /* Alert.swift */,
 				52CC05131E6B41EC00BC93A9 /* Printer.swift */,
 				51EF73B11E6FDD3F00706551 /* DoctorFunctions.swift */,
@@ -488,6 +491,7 @@
 				52CC051A1E6B53D300BC93A9 /* PathsManager.swift in Sources */,
 				516247DD1E9E019300450FC6 /* ReportTableViewController.swift in Sources */,
 				518EBBB81E718F540095F797 /* ViewMedicalInfoVC.swift in Sources */,
+				438C5D761E9F7F3000B3F60B /* Customization.swift in Sources */,
 				51EF73B21E6FDD3F00706551 /* DoctorFunctions.swift in Sources */,
 				518EBBBA1E718F540095F797 /* ResetPass.swift in Sources */,
 				518EBBB61E718F540095F797 /* Reg1VC.swift in Sources */,
