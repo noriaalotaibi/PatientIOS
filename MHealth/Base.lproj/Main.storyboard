@@ -2093,11 +2093,11 @@
                                         <rect key="frame" x="253" y="402" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </switch>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_blood_Pressure" id="g6S-MB-z6Q">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bpiconnn" id="g6S-MB-z6Q">
                                         <rect key="frame" x="8" y="12" width="45" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-stethoscope-png-0" id="uai-cb-qdR">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardiogram" id="uai-cb-qdR">
                                         <rect key="frame" x="10" y="74" width="45" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -2379,6 +2379,8 @@
     <resources>
         <image name="Passwordd" width="50" height="50"/>
         <image name="Untitleddd" width="64" height="64"/>
+        <image name="bpiconnn" width="170" height="159"/>
+        <image name="cardiogram" width="64" height="64"/>
         <image name="clock (1)" width="64" height="64"/>
         <image name="diabetes" width="243" height="180"/>
         <image name="dizziness" width="64" height="64"/>
@@ -2391,9 +2393,7 @@
         <image name="genders" width="64" height="64"/>
         <image name="gendersss" width="64" height="64"/>
         <image name="headache" width="64" height="64"/>
-        <image name="heart-stethoscope-png-0" width="2001" height="1501"/>
         <image name="hospital-3" width="64" height="64"/>
-        <image name="icon_blood_Pressure" width="446" height="446"/>
         <image name="id-card" width="64" height="64"/>
         <image name="info" width="64" height="64"/>
         <image name="inhalator" width="64" height="64"/>
