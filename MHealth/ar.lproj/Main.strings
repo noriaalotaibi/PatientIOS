@@ -1,0 +1,528 @@
+
+/* Class = "UILabel"; text = "a"; ObjectID = "0UI-VR-MM2"; */
+"0UI-VR-MM2.text" = "a";
+
+/* Class = "UILabel"; text = "Additional Information:"; ObjectID = "0XS-40-F3X"; */
+"0XS-40-F3X.text" = "Additional Information:";
+
+/* Class = "UILabel"; text = "a"; ObjectID = "1Ny-GT-0Gc"; */
+"1Ny-GT-0Gc.text" = "a";
+
+/* Class = "UITabBarItem"; title = "Hospitals"; ObjectID = "1Rz-Dd-0uf"; */
+"1Rz-Dd-0uf.title" = "Hospitals";
+
+/* Class = "UILabel"; text = "Address:"; ObjectID = "1up-Ei-yas"; */
+"1up-Ei-yas.text" = "Address:";
+
+/* Class = "UIButton"; normalTitle = "Medical info"; ObjectID = "2Cy-SK-iRo"; */
+"2Cy-SK-iRo.normalTitle" = "Medical info";
+
+/* Class = "UIButton"; normalTitle = "Update Profile"; ObjectID = "2MF-ZI-wQu"; */
+"2MF-ZI-wQu.normalTitle" = "Update Profile";
+
+/* Class = "UILabel"; text = "Blood Pressure:"; ObjectID = "2ah-ab-MRF"; */
+"2ah-ab-MRF.text" = "Blood Pressure:";
+
+/* Class = "UIButton"; normalTitle = "Send Contact Request"; ObjectID = "2vk-Jh-t7I"; */
+"2vk-Jh-t7I.normalTitle" = "Send Contact Request";
+
+/* Class = "UITextField"; placeholder = "Specify Location"; ObjectID = "3jn-k3-dXo"; */
+"3jn-k3-dXo.placeholder" = "Specify Location";
+
+/* Class = "UILabel"; text = "Asthma:"; ObjectID = "4Fq-DD-Wdr"; */
+"4Fq-DD-Wdr.text" = "Asthma:";
+
+/* Class = "UILabel"; text = "Medication:"; ObjectID = "5Pv-Dz-X6s"; */
+"5Pv-Dz-X6s.text" = "Medication:";
+
+/* Class = "UILabel"; text = "Name:"; ObjectID = "5xZ-Xg-qrL"; */
+"5xZ-Xg-qrL.text" = "Name:";
+
+/* Class = "UILabel"; text = "Hospital Name"; ObjectID = "6SV-ab-vSE"; */
+"6SV-ab-vSE.text" = "Hospital Name";
+
+/* Class = "UISegmentedControl"; 6e0-g0-ZgV.segmentTitles[0] = "High"; ObjectID = "6e0-g0-ZgV"; */
+"6e0-g0-ZgV.segmentTitles[0]" = "High";
+
+/* Class = "UISegmentedControl"; 6e0-g0-ZgV.segmentTitles[1] = "Moderate"; ObjectID = "6e0-g0-ZgV"; */
+"6e0-g0-ZgV.segmentTitles[1]" = "Moderate";
+
+/* Class = "UISegmentedControl"; 6e0-g0-ZgV.segmentTitles[2] = "Low"; ObjectID = "6e0-g0-ZgV"; */
+"6e0-g0-ZgV.segmentTitles[2]" = "Low";
+
+/* Class = "UILabel"; text = "Nationality:"; ObjectID = "73J-Mo-SIA"; */
+"73J-Mo-SIA.text" = "Nationality:";
+
+/* Class = "UILabel"; text = "Patient Comment:"; ObjectID = "78h-Ia-AKr"; */
+"78h-Ia-AKr.text" = "Patient Comment:";
+
+/* Class = "UILabel"; text = "Emergency"; ObjectID = "7NP-Vt-a7w"; */
+"7NP-Vt-a7w.text" = "Emergency";
+
+/* Class = "UITextField"; placeholder = "example@gmail.com"; ObjectID = "7NW-jl-XKv"; */
+"7NW-jl-XKv.placeholder" = "example@gmail.com";
+
+/* Class = "UIButton"; normalTitle = "Save "; ObjectID = "7jM-5R-cag"; */
+"7jM-5R-cag.normalTitle" = "Save ";
+
+/* Class = "UILabel"; text = "Blood Type:"; ObjectID = "8PK-Mt-wNW"; */
+"8PK-Mt-wNW.text" = "Blood Type:";
+
+/* Class = "UILabel"; text = "Nationality:"; ObjectID = "8ek-kn-aJB"; */
+"8ek-kn-aJB.text" = "Nationality:";
+
+/* Class = "UILabel"; text = "Phone number"; ObjectID = "8lb-BD-DbF"; */
+"8lb-BD-DbF.text" = "Phone number";
+
+/* Class = "UILabel"; text = "Family"; ObjectID = "94h-le-AAa"; */
+"94h-le-AAa.text" = "Family";
+
+/* Class = "UITextField"; placeholder = "Nationality"; ObjectID = "Aaw-v6-6ql"; */
+"Aaw-v6-6ql.placeholder" = "Nationality";
+
+/* Class = "UILabel"; text = "Allergies:"; ObjectID = "Bu6-c1-V3A"; */
+"Bu6-c1-V3A.text" = "Allergies:";
+
+/* Class = "UINavigationItem"; title = "All Doctors"; ObjectID = "CEe-6u-EDY"; */
+"CEe-6u-EDY.title" = "All Doctors";
+
+/* Class = "UILabel"; text = "Fever:"; ObjectID = "CLY-Xc-B4a"; */
+"CLY-Xc-B4a.text" = "Fever:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "CtI-dl-Twh"; */
+"CtI-dl-Twh.text" = "Label";
+
+/* Class = "UILabel"; text = "Dizziness"; ObjectID = "D4H-Jh-7bJ"; */
+"D4H-Jh-7bJ.text" = "Dizziness";
+
+/* Class = "UILabel"; text = "Hospital:"; ObjectID = "DUK-Yq-Jgx"; */
+"DUK-Yq-Jgx.text" = "Hospital:";
+
+/* Class = "UILabel"; text = "a"; ObjectID = "EHq-br-YQh"; */
+"EHq-br-YQh.text" = "a";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "FEK-4E-F9j"; */
+"FEK-4E-F9j.normalTitle" = "Save";
+
+/* Class = "UITextField"; placeholder = "Civil ID"; ObjectID = "Fqc-Iy-5Qz"; */
+"Fqc-Iy-5Qz.placeholder" = "Civil ID";
+
+/* Class = "UILabel"; text = "Email:"; ObjectID = "Frr-oQ-Ri7"; */
+"Frr-oQ-Ri7.text" = "Email:";
+
+/* Class = "UILabel"; text = "Patient Profile:"; ObjectID = "Fso-Ma-gRo"; */
+"Fso-Ma-gRo.text" = "Patient Profile:";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "GIh-GY-9Sb"; */
+"GIh-GY-9Sb.placeholder" = "Email";
+
+/* Class = "UISegmentedControl"; GP4-4g-YLx.segmentTitles[0] = "No "; ObjectID = "GP4-4g-YLx"; */
+"GP4-4g-YLx.segmentTitles[0]" = "No ";
+
+/* Class = "UISegmentedControl"; GP4-4g-YLx.segmentTitles[1] = "Yes"; ObjectID = "GP4-4g-YLx"; */
+"GP4-4g-YLx.segmentTitles[1]" = "Yes";
+
+/* Class = "UILabel"; text = "a"; ObjectID = "Hpd-Ne-mtZ"; */
+"Hpd-Ne-mtZ.text" = "a";
+
+/* Class = "UILabel"; text = "Heartbeat Rate:"; ObjectID = "I2q-eS-nbT"; */
+"I2q-eS-nbT.text" = "Heartbeat Rate:";
+
+/* Class = "UITabBarItem"; title = "Emergency"; ObjectID = "IeE-Kc-IlR"; */
+"IeE-Kc-IlR.title" = "Emergency";
+
+/* Class = "UISegmentedControl"; Imv-UH-MDh.segmentTitles[0] = "Male"; ObjectID = "Imv-UH-MDh"; */
+"Imv-UH-MDh.segmentTitles[0]" = "Male";
+
+/* Class = "UISegmentedControl"; Imv-UH-MDh.segmentTitles[1] = "Female"; ObjectID = "Imv-UH-MDh"; */
+"Imv-UH-MDh.segmentTitles[1]" = "Female";
+
+/* Class = "UIButton"; normalTitle = "Update Profile"; ObjectID = "Ioe-iP-vQU"; */
+"Ioe-iP-vQU.normalTitle" = "Update Profile";
+
+/* Class = "UILabel"; text = "Birth Date:"; ObjectID = "IsG-aX-aA9"; */
+"IsG-aX-aA9.text" = "Birth Date:";
+
+/* Class = "UILabel"; text = "Hospital:"; ObjectID = "Jlg-Te-csL"; */
+"Jlg-Te-csL.text" = "Hospital:";
+
+/* Class = "UIButton"; normalTitle = "Call Donor"; ObjectID = "JmQ-UF-c6Z"; */
+"JmQ-UF-c6Z.normalTitle" = "Call Donor";
+
+/* Class = "UILabel"; text = "Civil ID"; ObjectID = "KlV-Y4-T6b"; */
+"KlV-Y4-T6b.text" = "Civil ID";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "KsA-JS-Dcw"; */
+"KsA-JS-Dcw.text" = "Label";
+
+/* Class = "UILabel"; text = "Nationality"; ObjectID = "L4h-jC-FiR"; */
+"L4h-jC-FiR.text" = "Nationality";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "L5L-kE-1w6"; */
+"L5L-kE-1w6.placeholder" = "Last Name";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "LZK-M0-eiP"; */
+"LZK-M0-eiP.text" = "Label";
+
+/* Class = "UILabel"; text = "Doctor Comment:"; ObjectID = "Lhu-i9-yh0"; */
+"Lhu-i9-yh0.text" = "Doctor Comment:";
+
+/* Class = "UILabel"; text = "Birth Date"; ObjectID = "MRa-SU-Tku"; */
+"MRa-SU-Tku.text" = "Birth Date";
+
+/* Class = "UILabel"; text = "Email:"; ObjectID = "Myi-JF-tqe"; */
+"Myi-JF-tqe.text" = "Email:";
+
+/* Class = "UITabBarItem"; title = "Doctor"; ObjectID = "NPf-ZA-pxf"; */
+"NPf-ZA-pxf.title" = "Doctor";
+
+/* Class = "UILabel"; text = "Email:"; ObjectID = "Oa6-5A-xau"; */
+"Oa6-5A-xau.text" = "Email:";
+
+/* Class = "UILabel"; text = "Password:"; ObjectID = "PKY-2f-zcn"; */
+"PKY-2f-zcn.text" = "Password:";
+
+/* Class = "UILabel"; text = "Specialty:"; ObjectID = "PjK-K3-Hpw"; */
+"PjK-K3-Hpw.text" = "Specialty:";
+
+/* Class = "UILabel"; text = "Last Name:"; ObjectID = "Qez-ic-dAS"; */
+"Qez-ic-dAS.text" = "Last Name:";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "RYf-6n-ojl"; */
+"RYf-6n-ojl.normalTitle" = "Register";
+
+/* Class = "UILabel"; text = "Civil ID:"; ObjectID = "Ruc-Fw-90p"; */
+"Ruc-Fw-90p.text" = "Civil ID:";
+
+/* Class = "UISegmentedControl"; Rxf-cV-jh9.segmentTitles[0] = "No "; ObjectID = "Rxf-cV-jh9"; */
+"Rxf-cV-jh9.segmentTitles[0]" = "No ";
+
+/* Class = "UISegmentedControl"; Rxf-cV-jh9.segmentTitles[1] = "Yes"; ObjectID = "Rxf-cV-jh9"; */
+"Rxf-cV-jh9.segmentTitles[1]" = "Yes";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "S9O-H6-Gxk"; */
+"S9O-H6-Gxk.title" = "Item";
+
+/* Class = "UILabel"; text = "a"; ObjectID = "SFi-kM-tY4"; */
+"SFi-kM-tY4.text" = "a";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Sfz-zg-GRE"; */
+"Sfz-zg-GRE.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "TFc-ei-UJp"; */
+"TFc-ei-UJp.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "First Name"; ObjectID = "TK3-gM-qpX"; */
+"TK3-gM-qpX.placeholder" = "First Name";
+
+/* Class = "UILabel"; text = "Headache"; ObjectID = "TTF-Bs-Zlo"; */
+"TTF-Bs-Zlo.text" = "Headache";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "URo-vJ-vgb"; */
+"URo-vJ-vgb.placeholder" = "Password";
+
+/* Class = "UITextField"; text = "1234567N"; ObjectID = "URo-vJ-vgb"; */
+"URo-vJ-vgb.text" = "1234567N";
+
+/* Class = "UILabel"; text = "Coughing:"; ObjectID = "VBe-4S-k6o"; */
+"VBe-4S-k6o.text" = "Coughing:";
+
+/* Class = "UILabel"; text = "Count Down"; ObjectID = "VLH-IZ-Owu"; */
+"VLH-IZ-Owu.text" = "Count Down";
+
+/* Class = "UILabel"; text = "Asthma:"; ObjectID = "VhL-vs-w1N"; */
+"VhL-vs-w1N.text" = "Asthma:";
+
+/* Class = "UISegmentedControl"; ViH-g7-c9J.segmentTitles[0] = "High"; ObjectID = "ViH-g7-c9J"; */
+"ViH-g7-c9J.segmentTitles[0]" = "High";
+
+/* Class = "UISegmentedControl"; ViH-g7-c9J.segmentTitles[1] = "Moderate"; ObjectID = "ViH-g7-c9J"; */
+"ViH-g7-c9J.segmentTitles[1]" = "Moderate";
+
+/* Class = "UISegmentedControl"; ViH-g7-c9J.segmentTitles[2] = "Low"; ObjectID = "ViH-g7-c9J"; */
+"ViH-g7-c9J.segmentTitles[2]" = "Low";
+
+/* Class = "UILabel"; text = "Gender"; ObjectID = "XHk-CB-Ibb"; */
+"XHk-CB-Ibb.text" = "Gender";
+
+/* Class = "UILabel"; text = "Medication:"; ObjectID = "XhO-Jt-M3z"; */
+"XhO-Jt-M3z.text" = "Medication:";
+
+/* Class = "UIButton"; normalTitle = "English"; ObjectID = "XtS-cS-tZg"; */
+"XtS-cS-tZg.normalTitle" = "English";
+
+/* Class = "UILabel"; text = "Specialty:"; ObjectID = "YZB-cx-eqt"; */
+"YZB-cx-eqt.text" = "Specialty:";
+
+/* Class = "UILabel"; text = "Email:"; ObjectID = "YaA-W1-kaS"; */
+"YaA-W1-kaS.text" = "Email:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Ymc-Ms-4z1"; */
+"Ymc-Ms-4z1.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "ZIp-5O-tse"; */
+"ZIp-5O-tse.placeholder" = "Phone Number";
+
+/* Class = "UITextField"; placeholder = "Emergency Number"; ObjectID = "ZJc-QX-lFS"; */
+"ZJc-QX-lFS.placeholder" = "Emergency Number";
+
+/* Class = "UILabel"; text = "civil ID:"; ObjectID = "ZND-30-Ikb"; */
+"ZND-30-Ikb.text" = "civil ID:";
+
+/* Class = "UITextField"; placeholder = "username"; ObjectID = "ZNV-MS-uWc"; */
+"ZNV-MS-uWc.placeholder" = "username";
+
+/* Class = "UITextField"; text = "patient@gmail.com"; ObjectID = "ZNV-MS-uWc"; */
+"ZNV-MS-uWc.text" = "patient@gmail.com";
+
+/* Class = "UIButton"; normalTitle = "Forget password?"; ObjectID = "ZqV-TD-jp7"; */
+"ZqV-TD-jp7.normalTitle" = "Forget password?";
+
+/* Class = "UILabel"; text = "Diabetes:"; ObjectID = "ZtM-AP-fBl"; */
+"ZtM-AP-fBl.text" = "Diabetes:";
+
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "a4M-1q-eZN"; */
+"a4M-1q-eZN.placeholder" = "Confirm Password";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "aIz-2S-5u3"; */
+"aIz-2S-5u3.text" = "Label";
+
+/* Class = "UILabel"; text = "Diabetes:"; ObjectID = "apm-Yi-1GC"; */
+"apm-Yi-1GC.text" = "Diabetes:";
+
+/* Class = "UILabel"; text = "Hospital"; ObjectID = "b1X-aV-qLX"; */
+"b1X-aV-qLX.text" = "Hospital";
+
+/* Class = "UILabel"; text = "a"; ObjectID = "bik-pg-Jvt"; */
+"bik-pg-Jvt.text" = "a";
+
+/* Class = "UILabel"; text = "Hospital Type"; ObjectID = "brj-UL-Rbj"; */
+"brj-UL-Rbj.text" = "Hospital Type";
+
+/* Class = "UILabel"; text = "Sugar Level:"; ObjectID = "bvD-QS-nhr"; */
+"bvD-QS-nhr.text" = "Sugar Level:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cXb-mC-CsB"; */
+"cXb-mC-CsB.text" = "Label";
+
+/* Class = "UILabel"; text = "Working Hours:"; ObjectID = "cwd-B0-ZI4"; */
+"cwd-B0-ZI4.text" = "Working Hours:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dvZ-gm-C5R"; */
+"dvZ-gm-C5R.text" = "Label";
+
+/* Class = "UILabel"; text = "Blood type:"; ObjectID = "e4H-HW-erM"; */
+"e4H-HW-erM.text" = "Blood type:";
+
+/* Class = "UILabel"; text = "Please choose a langauge"; ObjectID = "eJh-7G-wsY"; */
+"eJh-7G-wsY.text" = "Please choose a langauge";
+
+/* Class = "UITextField"; placeholder = "Allergies"; ObjectID = "eXt-kq-0Fn"; */
+"eXt-kq-0Fn.placeholder" = "Allergies";
+
+/* Class = "UILabel"; text = "Asthma:"; ObjectID = "fJA-ae-BJS"; */
+"fJA-ae-BJS.text" = "Asthma:";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "fhj-Km-Nxg"; */
+"fhj-Km-Nxg.normalTitle" = "Next";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "fkx-PF-0Ll"; */
+"fkx-PF-0Ll.normalTitle" = "Register";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fnb-rZ-EEo"; */
+"fnb-rZ-EEo.text" = "Label";
+
+/* Class = "UISegmentedControl"; gPc-lO-YDQ.segmentTitles[0] = "High"; ObjectID = "gPc-lO-YDQ"; */
+"gPc-lO-YDQ.segmentTitles[0]" = "High";
+
+/* Class = "UISegmentedControl"; gPc-lO-YDQ.segmentTitles[1] = "Moderate"; ObjectID = "gPc-lO-YDQ"; */
+"gPc-lO-YDQ.segmentTitles[1]" = "Moderate";
+
+/* Class = "UISegmentedControl"; gPc-lO-YDQ.segmentTitles[2] = "Low"; ObjectID = "gPc-lO-YDQ"; */
+"gPc-lO-YDQ.segmentTitles[2]" = "Low";
+
+/* Class = "UISegmentedControl"; gf9-qf-JO8.segmentTitles[0] = "No"; ObjectID = "gf9-qf-JO8"; */
+"gf9-qf-JO8.segmentTitles[0]" = "No";
+
+/* Class = "UISegmentedControl"; gf9-qf-JO8.segmentTitles[1] = "Yes"; ObjectID = "gf9-qf-JO8"; */
+"gf9-qf-JO8.segmentTitles[1]" = "Yes";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hsh-Cn-fOx"; */
+"hsh-Cn-fOx.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Date of Birth"; ObjectID = "i0O-5y-Vwb"; */
+"i0O-5y-Vwb.placeholder" = "Date of Birth";
+
+/* Class = "UILabel"; text = "Emergency Num:"; ObjectID = "i21-sy-PiA"; */
+"i21-sy-PiA.text" = "Emergency Num:";
+
+/* Class = "UILabel"; text = "Doctors"; ObjectID = "iIa-A6-xy9"; */
+"iIa-A6-xy9.text" = "Doctors";
+
+/* Class = "UILabel"; text = "Emergency number"; ObjectID = "j4L-BX-yKK"; */
+"j4L-BX-yKK.text" = "Emergency number";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "jm6-0z-748"; */
+"jm6-0z-748.title" = "Profile";
+
+/* Class = "UILabel"; text = "Blood Type:"; ObjectID = "kIW-ta-hVR"; */
+"kIW-ta-hVR.text" = "Blood Type:";
+
+/* Class = "UILabel"; text = "Diabetes:"; ObjectID = "kId-Wa-Syb"; */
+"kId-Wa-Syb.text" = "Diabetes:";
+
+/* Class = "UIButton"; normalTitle = "Send Report"; ObjectID = "kNG-k6-7bb"; */
+"kNG-k6-7bb.normalTitle" = "Send Report";
+
+/* Class = "UITextField"; placeholder = "Medications"; ObjectID = "kTn-3h-Nek"; */
+"kTn-3h-Nek.placeholder" = "Medications";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "kgz-3e-SEd"; */
+"kgz-3e-SEd.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "العربية"; ObjectID = "lBy-Kc-XLa"; */
+"lBy-Kc-XLa.normalTitle" = "العربية";
+
+/* Class = "UISegmentedControl"; ltJ-cV-aJJ.segmentTitles[0] = "Male"; ObjectID = "ltJ-cV-aJJ"; */
+"ltJ-cV-aJJ.segmentTitles[0]" = "Male";
+
+/* Class = "UISegmentedControl"; ltJ-cV-aJJ.segmentTitles[1] = "Female"; ObjectID = "ltJ-cV-aJJ"; */
+"ltJ-cV-aJJ.segmentTitles[1]" = "Female";
+
+/* Class = "UILabel"; text = "General used"; ObjectID = "lwh-Q0-O8n"; */
+"lwh-Q0-O8n.text" = "General used";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "m6M-3C-W53"; */
+"m6M-3C-W53.text" = "Label";
+
+/* Class = "UILabel"; text = "Nauseous"; ObjectID = "mKv-Yf-5Eg"; */
+"mKv-Yf-5Eg.text" = "Nauseous";
+
+/* Class = "UILabel"; text = "Comments"; ObjectID = "mOh-a5-Czn"; */
+"mOh-a5-Czn.text" = "Comments";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "nP2-iQ-gYE"; */
+"nP2-iQ-gYE.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "njp-vB-QTv"; */
+"njp-vB-QTv.text" = "Label";
+
+/* Class = "UISegmentedControl"; oTi-xa-3m4.segmentTitles[0] = "No"; ObjectID = "oTi-xa-3m4"; */
+"oTi-xa-3m4.segmentTitles[0]" = "No";
+
+/* Class = "UISegmentedControl"; oTi-xa-3m4.segmentTitles[1] = "Yes"; ObjectID = "oTi-xa-3m4"; */
+"oTi-xa-3m4.segmentTitles[1]" = "Yes";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "oVm-hJ-lhp"; */
+"oVm-hJ-lhp.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "onW-1m-lw5"; */
+"onW-1m-lw5.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ost-yX-m2K"; */
+"ost-yX-m2K.text" = "Label";
+
+/* Class = "UILabel"; text = "Donor name:"; ObjectID = "p2l-c8-1fW"; */
+"p2l-c8-1fW.text" = "Donor name:";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "p6F-gY-PoT"; */
+"p6F-gY-PoT.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "a"; ObjectID = "p70-Ze-Zes"; */
+"p70-Ze-Zes.text" = "a";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "phC-4X-TA6"; */
+"phC-4X-TA6.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "pjQ-9K-9EI"; */
+"pjQ-9K-9EI.normalTitle" = "Cancel";
+
+/* Class = "UINavigationItem"; title = "Root View Controller"; ObjectID = "pxx-ES-A0N"; */
+"pxx-ES-A0N.title" = "Root View Controller";
+
+/* Class = "UILabel"; text = "Allergies:"; ObjectID = "qPk-Cd-MDo"; */
+"qPk-Cd-MDo.text" = "Allergies:";
+
+/* Class = "UILabel"; text = "Medical Information:"; ObjectID = "qTR-0Y-jy8"; */
+"qTR-0Y-jy8.text" = "Medical Information:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qhR-Ec-fnf"; */
+"qhR-Ec-fnf.text" = "Label";
+
+/* Class = "UILabel"; text = "Gender:"; ObjectID = "qk0-9L-14E"; */
+"qk0-9L-14E.text" = "Gender:";
+
+/* Class = "UILabel"; text = "Phone Number:"; ObjectID = "qvw-df-PpK"; */
+"qvw-df-PpK.text" = "Phone Number:";
+
+/* Class = "UILabel"; text = "Gender:"; ObjectID = "r0y-tC-7Ih"; */
+"r0y-tC-7Ih.text" = "Gender:";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "rMH-k4-EvH"; */
+"rMH-k4-EvH.normalTitle" = "Submit";
+
+/* Class = "UILabel"; text = "Blood Type:"; ObjectID = "rVD-Tx-lB0"; */
+"rVD-Tx-lB0.text" = "Blood Type:";
+
+/* Class = "UITabBarItem"; title = "My Reports"; ObjectID = "rbh-TU-cTP"; */
+"rbh-TU-cTP.title" = "My Reports";
+
+/* Class = "UILabel"; text = "Speciality:"; ObjectID = "rbw-w0-R7k"; */
+"rbw-w0-R7k.text" = "Speciality:";
+
+/* Class = "UIViewController"; title = "My Report Comments"; ObjectID = "rgo-5x-YFG"; */
+"rgo-5x-YFG.title" = "My Report Comments";
+
+/* Class = "UILabel"; text = "a"; ObjectID = "ruB-08-6gN"; */
+"ruB-08-6gN.text" = "a";
+
+/* Class = "UILabel"; text = "a"; ObjectID = "s3i-hG-lq8"; */
+"s3i-hG-lq8.text" = "a";
+
+/* Class = "UITableViewController"; title = "Reports Table View"; ObjectID = "scO-cW-Yax"; */
+"scO-cW-Yax.title" = "Reports Table View";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "svF-ag-qlu"; */
+"svF-ag-qlu.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Send Report"; ObjectID = "t8y-1Z-9AR"; */
+"t8y-1Z-9AR.normalTitle" = "Send Report";
+
+/* Class = "UILabel"; text = "Request Status"; ObjectID = "teq-fC-JeT"; */
+"teq-fC-JeT.text" = "Request Status";
+
+/* Class = "UILabel"; text = "Phone Number:"; ObjectID = "uDe-PI-OHT"; */
+"uDe-PI-OHT.text" = "Phone Number:";
+
+/* Class = "UITextField"; placeholder = "Civil ID"; ObjectID = "uM6-3j-v85"; */
+"uM6-3j-v85.placeholder" = "Civil ID";
+
+/* Class = "UINavigationItem"; title = "My Doctors"; ObjectID = "vWN-Dy-VEm"; */
+"vWN-Dy-VEm.title" = "My Doctors";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "vaY-Ry-lMj"; */
+"vaY-Ry-lMj.normalTitle" = "Login";
+
+/* Class = "UILabel"; text = "First Name:"; ObjectID = "voi-H5-rsO"; */
+"voi-H5-rsO.text" = "First Name:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "wZW-bD-Z4C"; */
+"wZW-bD-Z4C.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "wzc-QL-leD"; */
+"wzc-QL-leD.text" = "Label";
+
+/* Class = "UILabel"; text = "Name:"; ObjectID = "x4G-XB-wER"; */
+"x4G-XB-wER.text" = "Name:";
+
+/* Class = "UINavigationItem"; title = "Doctor Reply"; ObjectID = "yE0-0u-xuQ"; */
+"yE0-0u-xuQ.title" = "Doctor Reply";
+
+/* Class = "UILabel"; text = "Pain Location (optional):"; ObjectID = "yHR-Yq-eSg"; */
+"yHR-Yq-eSg.text" = "Pain Location (optional):";
+
+/* Class = "UIBarButtonItem"; title = "+"; ObjectID = "yZJ-E1-qQV"; */
+"yZJ-E1-qQV.title" = "+";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ypl-MD-xJW"; */
+"ypl-MD-xJW.text" = "Label";

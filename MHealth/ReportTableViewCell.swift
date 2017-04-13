@@ -45,9 +45,15 @@ class ReportTableViewCell: UITableViewCell {
         
         doctorName.text = report.name
         if (report.drcomment == "" || report.drcomment.isEmpty) {
-            status.text = "Pending Response"
+            // loooooooooooooook
+            // hereeeeeeeeeeeeeeeeeeeeeee
+            status.text = NSLocalizedString("Pending Response", comment: "")
+            
+            
         } else {
-            status.text = "Replied"
+            status.text = NSLocalizedString("Replied", comment: "")
+
+            
         }
         
         let date:NSString = (report.timestamp as NSString).substringToIndex(10)

@@ -1,0 +1,11 @@
+/* 
+  Localization.strings
+  MHealth
+
+  Created by Abrar Al-Failakawi on 4/13/17.
+  Copyright © 2017 PIFSS. All rights reserved.
+*/
+"Pending Response" = "Pending Response";
+"Replied" = "Replied";
+"No Internet Connection" = "No Internet Connection";
+"Public" = "Public";

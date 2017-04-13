@@ -17,6 +17,7 @@
 		4341DC881E9E2C5C001172A1 /* gifFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4341DC871E9E2C5C001172A1 /* gifFramework.swift */; };
 		437F36AC1E93D18E006AC55E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437F36AB1E93D18E006AC55E /* Alert.swift */; };
 		438C5D761E9F7F3000B3F60B /* Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C5D751E9F7F3000B3F60B /* Customization.swift */; };
+		438C5D7D1E9FB0DE00B3F60B /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 438C5D7F1E9FB0DE00B3F60B /* Localization.strings */; };
 		4399ED621E9E2F0700EE6766 /* heart.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4399ED611E9E2F0700EE6766 /* heart.gif */; };
 		4399ED651E9E38A900EE6766 /* heart.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4399ED641E9E38A900EE6766 /* heart.mp4 */; };
 		511FE9391E9D507C009EA3C0 /* HospitalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FE9371E9D507C009EA3C0 /* HospitalTableViewCell.swift */; };
@@ -84,6 +85,10 @@
 		4341DC871E9E2C5C001172A1 /* gifFramework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gifFramework.swift; sourceTree = "<group>"; };
 		437F36AB1E93D18E006AC55E /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		438C5D751E9F7F3000B3F60B /* Customization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customization.swift; sourceTree = "<group>"; };
+		438C5D791E9FB05A00B3F60B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		438C5D7A1E9FB05A00B3F60B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		438C5D7E1E9FB0DE00B3F60B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localization.strings; sourceTree = "<group>"; };
+		438C5D801E9FB0E700B3F60B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localization.strings; sourceTree = "<group>"; };
 		4399ED611E9E2F0700EE6766 /* heart.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = heart.gif; sourceTree = "<group>"; };
 		4399ED641E9E38A900EE6766 /* heart.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = heart.mp4; sourceTree = "<group>"; };
 		511FE9371E9D507C009EA3C0 /* HospitalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HospitalTableViewCell.swift; path = ../HospitalTableViewCell.swift; sourceTree = "<group>"; };
@@ -256,6 +261,7 @@
 				4399ED611E9E2F0700EE6766 /* heart.gif */,
 				52CC04FC1E6B2F2600BC93A9 /* LaunchScreen.storyboard */,
 				52CC04FF1E6B2F2600BC93A9 /* Info.plist */,
+				438C5D7F1E9FB0DE00B3F60B /* Localization.strings */,
 			);
 			path = MHealth;
 			sourceTree = "<group>";
@@ -416,6 +422,7 @@
 				52CC050C1E6B40FC00BC93A9 /* Podfile in Resources */,
 				4399ED651E9E38A900EE6766 /* heart.mp4 in Resources */,
 				511FE93A1E9D507C009EA3C0 /* HospitalTableViewCell.xib in Resources */,
+				438C5D7D1E9FB0DE00B3F60B /* Localization.strings in Resources */,
 				52CC04F91E6B2F2500BC93A9 /* Main.storyboard in Resources */,
 				4399ED621E9E2F0700EE6766 /* heart.gif in Resources */,
 			);
@@ -534,10 +541,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		438C5D7F1E9FB0DE00B3F60B /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				438C5D7E1E9FB0DE00B3F60B /* ar */,
+				438C5D801E9FB0E700B3F60B /* Base */,
+			);
+			name = Localization.strings;
+			sourceTree = "<group>";
+		};
 		52CC04F71E6B2F2500BC93A9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				52CC04F81E6B2F2500BC93A9 /* Base */,
+				438C5D791E9FB05A00B3F60B /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -546,6 +563,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				52CC04FD1E6B2F2600BC93A9 /* Base */,
+				438C5D7A1E9FB05A00B3F60B /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

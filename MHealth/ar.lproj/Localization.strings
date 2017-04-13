@@ -1,0 +1,9 @@
+/* 
+  Localization.strings
+  MHealth
+
+  Created by Abrar Al-Failakawi on 4/13/17.
+  Copyright © 2017 PIFSS. All rights reserved.
+*/
+"Pending Response" = "جاري الرد";
+"Replied" = "تم الرد";
