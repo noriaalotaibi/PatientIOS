@@ -50,7 +50,7 @@ class PatientReportViewController: UIViewController, NetworkCaller {
         heartBeatSegment.selectedSegmentIndex = 1
         sugarLevelSegment.selectedSegmentIndex = 1
      
-        scrollView.contentSize.height = self.view.frame.size.height + 20
+        scrollView.contentSize.height = self.view.frame.size.height + 50
         
     }
 
