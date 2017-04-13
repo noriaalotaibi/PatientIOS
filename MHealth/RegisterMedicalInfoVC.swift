@@ -86,8 +86,8 @@ class RegisterMedicalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerV
         Reg1VC.current.newPatient.medication=medication!
         
         
-        Reg1VC.current.newPatient.imageUrl=" "
-        Reg1VC.current.newPatient.middleName=" "
+        Reg1VC.current.newPatient.imageUrl=""
+        Reg1VC.current.newPatient.middleName=""
 
 
         
