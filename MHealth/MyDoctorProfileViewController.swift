@@ -17,6 +17,22 @@ class MyDoctorProfileViewController: UIViewController {
     @IBOutlet weak var labelSpecialty: UILabel!
     @IBOutlet weak var labelLocation: UILabel!
     
+    @IBAction func sendReport(sender: UIButton) {
+        
+        
+        let nextScreen:PatientReportViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CaseReport") as! PatientReportViewController
+        
+        nextScreen.myDoctor = self.myDoctor
+        
+        let nav:UINavigationController = self.navigationController!
+        
+        //nextScreen.parent = self
+        
+        
+        nav.pushViewController(nextScreen, animated: true)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
