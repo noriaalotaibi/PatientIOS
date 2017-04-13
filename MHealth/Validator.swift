@@ -23,7 +23,17 @@ class Validator: NSObject {
         return emailTest.evaluateWithObject(testStr)
         
     }
+
     
+    func validateEmail (email:String) -> Bool
+    {
+    
+        if email == ""{
+        
+            return false
+        }
+        return true
+    }
      
     
     

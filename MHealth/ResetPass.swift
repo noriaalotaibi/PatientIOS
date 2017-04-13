@@ -10,6 +10,9 @@ import UIKit
 
 class ResetPass: UIViewController ,NetworkCaller {
 
+    
+    
+    let networkManager:Networking = Networking()
     @IBOutlet weak var emailTF: UITextField!
     
     
@@ -19,11 +22,26 @@ class ResetPass: UIViewController ,NetworkCaller {
         
         
         //add civil id civilid
-        var resetPass = emailTF.text
-        let networkManager:Networking = Networking()
-        let values:[String:AnyObject] = ["email":resetPass!]
+       // var resetPass = emailTF.text
+        let email:String = emailTF.text!
+        let civil:String = CivilidTF.text!
         
-        networkManager.AMJSONDictionary(Const.URLs.ResetPassword, httpMethod: "POST", jsonData: values, reqId: 0, caller: self)
+        
+      //  let values:[String:AnyObject] = ["email":resetPass!]
+        
+//        networkManager.AMJSONDictionary(Const.URLs.ResetPassword, httpMethod: "POST", jsonData: values, reqId: 0, caller: self)
+
+        
+        
+        if !Validator().validateEmail(email)
+        {
+            print("please enter a valid email")
+            return
+        }
+        
+        networkManager.AMJSONDictionary(Const.URLs.ResetPassword, httpMethod: "POST", jsonData: ["username":email, "civilid":civil], reqId: 3, caller: self)
+        
+        
         
     }
     override func viewDidLoad() {
@@ -43,7 +61,28 @@ class ResetPass: UIViewController ,NetworkCaller {
     }
     
     func setDictResponse(resp: NSDictionary, reqId: Int) {
+     
+        if (resp.valueForKey("errorMsgEn") == nil){
+            
+            print("Error Connection to server Error")
+            
+            return
+        }
         
+        
+        let responseMessage:String = resp.valueForKey("errorMsgEn") as! String
+        
+        if responseMessage != "Done"
+        {
+            print("Invalid email address")
+            
+            return
+        }
+        else
+        {
+            print("password is sent")
+
+        }
     }
     
 
