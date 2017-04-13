@@ -35,7 +35,7 @@ class PatientReportViewController: UIViewController, NetworkCaller {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    
+    let networkManager:Networking = Networking()
     
     
     override func viewDidLoad() {
@@ -61,6 +61,16 @@ class PatientReportViewController: UIViewController, NetworkCaller {
     
     @IBAction func sendPatientReport(sender: AnyObject) {
         
+        
+        if patientComments.text == "" {
+            let alertControlle:UIAlertController = UIAlertController(title: "Error", message: "Comment can't be empty", preferredStyle: .Alert)
+            
+            let action:UIAlertAction =  UIAlertAction(title: "OK", style: .Cancel, handler: { (UIAlertAction) in
+            })
+            alertControlle.addAction(action)
+            self.presentViewController(alertControlle, animated: true, completion: nil)
+            return;
+        }
         
         let patientDic:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
         
@@ -151,23 +161,39 @@ class PatientReportViewController: UIViewController, NetworkCaller {
         reportDic.removeObjectForKey("timestamp")
         reportDic.removeObjectForKey("reportId")
         
-        
-        
+        print("request body:")
+        print(reportDic)
+        networkManager.AMJSONDictionary(Const.URLs.PatientReport, httpMethod: "POST", jsonData: reportDic, reqId: 0, caller: self)
         
     }
 
     func setArrayResponse(resp: NSArray, reqId: Int) {
-        let alertControlle:UIAlertController = UIAlertController(title: "Success", message: "Patient report was sent sucessfully", preferredStyle: .Alert)
         
-        let action:UIAlertAction =  UIAlertAction(title: "OK", style: .Cancel, handler: { (UIAlertAction) in
-            self.navigationController?.popViewControllerAnimated(true)
-        })
-        alertControlle.addAction(action)
-        self.presentViewController(alertControlle, animated: true, completion: nil)
+        
     }
     
     func setDictResponse(resp: NSDictionary, reqId: Int) {
         
+        print("response send report")
+        print(resp)
+        if resp.count == 0 {
+            let alertControlle:UIAlertController = UIAlertController(title: "Success", message: "Patient report was sent sucessfully", preferredStyle: .Alert)
+            
+            let action:UIAlertAction =  UIAlertAction(title: "OK", style: .Cancel, handler: { (UIAlertAction) in
+                self.navigationController?.popViewControllerAnimated(true)
+            })
+            alertControlle.addAction(action)
+            self.presentViewController(alertControlle, animated: true, completion: nil)
+            
+            
+        }else{
+            let alertControlle:UIAlertController = UIAlertController(title: "Failed", message: "Patient report failed to sent", preferredStyle: .Alert)
+            
+            let action:UIAlertAction =  UIAlertAction(title: "OK", style: .Cancel, handler: { (UIAlertAction) in
+            })
+            alertControlle.addAction(action)
+            self.presentViewController(alertControlle, animated: true, completion: nil)
+        }
     }
 
 }

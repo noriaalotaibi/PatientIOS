@@ -81,6 +81,23 @@ class PatientReportDH: NSObject, DataHolder {
         self.timestamp = values.valueForKey("timestamp") as! String
         
     }
+    
+    func toArray()->NSArray{
+        
+        let valuesArray = NSMutableArray()
+        valuesArray.addObject(bloodPressure)
+        valuesArray.addObject(heartbeatRate)
+        valuesArray.addObject(sugarLevel)
+        valuesArray.addObject(fever)
+        valuesArray.addObject(coughing)
+        valuesArray.addObject(dizziness)
+        valuesArray.addObject(nauseous)
+        valuesArray.addObject(headache)
+        valuesArray.addObject("\(pain)")
+        valuesArray.addObject(painlocation)
+        return valuesArray
+        
+    }
 
 
 }
