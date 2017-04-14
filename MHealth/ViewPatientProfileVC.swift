@@ -23,7 +23,8 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
     
     
     var patient=Patient()
-    
+    let networkManager:Networking = Networking()
+
     var newPatient:Patient = Patient()
 
     @IBOutlet weak var patientImage: UIImageView!
@@ -95,10 +96,9 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
             //SwiftSpinner.show(NSLocalizedString("Uploading...", comment: ""))
             
             
-            // networkManager.AMJSONDictionary(Const.URLs.Doctor, httpMethod: "POST", jsonData: drDict, reqId: 1, caller: self)
             let params:[String:AnyObject] = ["appID": "patient" , "imgData": strBase64]
             
-            //networkManager.AMPostDictData(Const.URLs.UploadImage, params: params, reqId: 1, caller: self)
+            networkManager.AMPostDictData(Const.URLs.UploadImage, params: params, reqId: 1, caller: self)
         }
         
     }
