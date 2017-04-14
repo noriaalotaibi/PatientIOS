@@ -21,7 +21,8 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
     @IBOutlet weak var PhoneNumLabel: UILabel!
     @IBOutlet weak var EmergencyNumLabel: UILabel!
     
-    
+    var updatedPatient:Patient?
+
     var patient=Patient()
     let networkManager:Networking = Networking()
 
@@ -98,7 +99,7 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
             
             let params:[String:AnyObject] = ["appID": "patient" , "imgData": strBase64]
             
-            networkManager.AMPostDictData(Const.URLs.UploadImage, params: params, reqId: 1, caller: self)
+            networkManager.AMPostDictData(Const.URLs.UploadImage, params: params, reqId: 5, caller: self)
         }
         
     }
@@ -175,6 +176,11 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
         EmergencyNumLabel?.text = patient.emergencyNum
         
         
+        if Validator().verifyUrl(patient.imageUrl)
+        {
+            let url:NSURL = NSURL(string: patient.imageUrl)!
+            self.patientImage.sd_setImageWithURL(url, placeholderImage: UIImage(named: "profileImage"))
+        }
         
        // loadData()
         
@@ -187,13 +193,85 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
     }
     
     func setDictResponse(resp: NSDictionary, reqId: Int) {
-//        records = NSMutableArray()
-//        records.addObjectsFromArray(resp as! [AnyObject])
-//        FnameLabel?.text = records.valueForKey("firstName") as! String
-//        
+
+        if reqId == 5 {
+            if (resp.valueForKey("errorMsgEn") != nil) {
+                let result:String = resp.valueForKey("errorMsgEn") as! String
+                if result.lowercaseString == "Done".lowercaseString{
+                    let alertControlle:UIAlertController = UIAlertController(title: "Image Upload", message: "Upload successful", preferredStyle: .Alert)
+                    
+                    //UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+                    let action:UIAlertAction =  UIAlertAction(title: NSLocalizedString( "OK", comment: ""), style: .Cancel, handler: { (UIAlertAction) in
+                        let imgPath:String = resp.valueForKey("imgPath") as! String
+                        self.UpdatePatientProfileImage(imgPath)
+                    })
+                    alertControlle.addAction(action)
+                    self.presentViewController(alertControlle, animated: true, completion: nil)
+                }else{
+                    let alert:UIAlertController = Alert().getAlert(NSLocalizedString("Error", comment: ""), msg: NSLocalizedString("Can't upload image right now", comment: ""))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+            }
+        }else if reqId == 6{
+            
+            if (resp.valueForKey("errorMsgEn") == nil){
+                let alert:UIAlertController = Alert().getAlert(NSLocalizedString("Error", comment: ""), msg: NSLocalizedString("Can't update profile right now", comment: ""))
+                self.presentViewController(alert, animated: true, completion: nil)
+                return
+                //alert
+            }
+            
+            let responseMessage:String = resp.valueForKey("errorMsgEn") as! String
+            
+            if responseMessage != "Done" {
+                
+                let alert:UIAlertController = Alert().getAlert(NSLocalizedString("Error", comment: ""), msg: NSLocalizedString("Can't update profile right now", comment: ""))
+                
+                self.presentViewController(alert, animated: true, completion: nil)
+                
+                return
+            }
+            
+            
+            let alert:UIAlertController = Alert().getAlert(NSLocalizedString("Updated", comment: ""), msg: NSLocalizedString("Profile is updated", comment: ""))
+            
+            
+            NSUserDefaults.standardUserDefaults().setObject(updatedPatient!.toDictionary(), forKey: Const.UserDefaultsKeys.loggedinUser)
+            
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
         
     }
 
+    func UpdatePatientProfileImage(imgPath:String) {
+        
+        
+        let patientDic:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
+        
+        //   patient!.loadDictionary(Patient)
+        let newPatient:Patient = Patient()
+        newPatient.loadDictionary(patientDic);
+
+        newPatient.imageUrl = imgPath
+        
+        let url:String = Const.URLs.Patients + "/" + "\(patient.patientID)"
+        
+        self.updatedPatient = newPatient;
+        
+        let reach = Reach()
+        
+        print ("Connection status!!!!!!!:")
+        if reach.connectionStatus().description == ReachabilityStatus.Offline.description{
+            let message = Message(title: "No Internet Connection", textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
+        }else{
+           // SwiftSpinner.show(NSLocalizedString("Connecting...", comment: ""))
+            networkManager.AMJSONDictionary(url, httpMethod: "PUT", jsonData: newPatient.toDictionary(), reqId: 6, caller: self)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
