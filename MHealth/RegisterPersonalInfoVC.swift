@@ -55,6 +55,45 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
         var deleted:Int=0
         var status:Bool=true
         
+        if fname == ""  {
+            
+            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            
+            return
+        }
+            
+        else if lname == ""  {
+            
+            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            return
+        }
+            
+        else if nationality == ""  {
+            
+            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            return
+        }
+        else if emergency == ""  {
+            
+            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            return
+        }
+        else  if phone == ""  {
+            
+            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            return
+        }
+        else if  civilId == "" {
+            
+            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            return
+        }
         
         Reg1VC.current.newPatient.firstName=fname!
         Reg1VC.current.newPatient.lastName=lname!
