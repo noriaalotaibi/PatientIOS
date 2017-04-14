@@ -24,6 +24,14 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller {
     var newPatient:Patient = Patient()
 
     
+    @IBAction func logoutButton(sender: UIButton) {
+        
+        
+    }
+    @IBAction func editPatientPhoto(sender: UIButton) {
+        
+        
+    }
    
     @IBAction func UpdateProfile(sender: AnyObject) {
         
