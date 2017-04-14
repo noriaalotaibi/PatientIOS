@@ -116,7 +116,6 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
   
    override func viewDidLoad() {
         super.viewDidLoad()
-
     
     
     let net:Networking = Networking()
@@ -145,6 +144,14 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
     gender=patient.gender
 self.bDay = patient.dateOfBirth
         // Do any additional setup after loading the view.
+    
+    // Painter
+    
+    let painter:AYPainter = AYPainter()
+    painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+    painter.paint(self.view)
+    
+    // END Painter
     }
     
 

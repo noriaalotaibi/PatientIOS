@@ -147,8 +147,6 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
         super.viewDidLoad()
         
         
-        
-        
       //  patient.convFromDictionary(records.objectAtIndex(index) as! NSDictionary)
         
         let net:Networking = Networking()
@@ -184,7 +182,14 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
         
        // loadData()
         
-        // Do any additional setup after loading the view.
+        
+        // Painter
+        
+        let painter:AYPainter = AYPainter()
+        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+        painter.paint(self.view)
+        
+        // END Painter
     }
     
     

@@ -12,6 +12,15 @@ class ViewProfileVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Painter
+        
+        let painter:AYPainter = AYPainter()
+        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+        painter.paint(self.view)
+        
+        // END Painter
+        
 
         // Do any additional setup after loading the view.
     }

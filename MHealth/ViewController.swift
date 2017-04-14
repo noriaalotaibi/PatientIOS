@@ -12,6 +12,16 @@ class ViewController: UIViewController, NetworkCaller {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // Painter
+        
+        let painter:AYPainter = AYPainter()
+        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+        painter.paint(self.view)
+        
+        // END Painter
+        
         Networking().AMJSONArray(Const.URLs.EditStatus,
                                  httpMethod: "PUT",
                                  jsonData: ["donationId":1,"status":"iOS Again !!"],

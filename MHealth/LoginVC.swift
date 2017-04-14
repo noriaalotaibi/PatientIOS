@@ -122,6 +122,8 @@ class LoginVC: VideoSplashViewController , NetworkCaller {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         let url = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("heart", ofType: "mp4")!)
         
         self.videoFrame = view.frame
@@ -135,6 +137,14 @@ class LoginVC: VideoSplashViewController , NetworkCaller {
         self.contentURL = url
         self.restartForeground = true
         
+        
+        // Painter
+        
+        let painter:AYPainter = AYPainter()
+        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+        painter.paint(self.view)
+        
+        // END Painter
 
 
         // Do any additional setup after loading the view.

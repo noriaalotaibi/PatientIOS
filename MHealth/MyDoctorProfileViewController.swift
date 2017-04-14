@@ -36,11 +36,20 @@ class MyDoctorProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         labelName.text = myDoctor.firstName
         labelSpecialty.text = myDoctor.specialtyId
         labelLocation.text = myDoctor.location
 
-        // Do any additional setup after loading the view.
+        
+        // Painter
+        
+        let painter:AYPainter = AYPainter()
+        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+        painter.paint(self.view)
+        
+        // END Painter
+        
     }
 
     override func didReceiveMemoryWarning() {

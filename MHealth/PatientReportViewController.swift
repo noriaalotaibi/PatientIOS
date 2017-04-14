@@ -40,6 +40,7 @@ class PatientReportViewController: UIViewController, NetworkCaller {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
         callerManager = DoctorFunctions.myInstance()
@@ -51,6 +52,16 @@ class PatientReportViewController: UIViewController, NetworkCaller {
         sugarLevelSegment.selectedSegmentIndex = 1
      
         scrollView.contentSize.height = self.view.frame.size.height + 50
+        
+        
+        // Painter
+        
+        let painter:AYPainter = AYPainter()
+        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+        painter.paint(self.view)
+        
+        // END Painter
+        
         
     }
 

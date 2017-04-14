@@ -34,6 +34,7 @@ class MyReportViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         let button1 = UIBarButtonItem(image: nil, style: .Plain, target: self, action: #selector(openReplyController))
         button1.title = NSLocalizedString("View Reply", comment: "")
         
@@ -48,6 +49,14 @@ class MyReportViewController: UITableViewController {
         if (self.currentPatientReport?.pain) == true {
             reportTitles.append(NSLocalizedString("Pain location", comment: ""))
         }
+        
+        // Painter
+        
+        let painter:AYPainter = AYPainter()
+        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+        painter.paint(self.view)
+        
+        // END Painter
         
     }
     

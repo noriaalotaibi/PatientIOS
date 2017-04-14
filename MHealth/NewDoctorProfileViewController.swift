@@ -28,6 +28,16 @@ class NewDoctorProfileViewController: UIViewController, NetworkCaller {
         
         callerManager = DoctorFunctions.myInstance()
         callerManager?.callerInvitation = self
+        
+        
+        // Painter
+        
+        let painter:AYPainter = AYPainter()
+        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+        painter.paint(self.view)
+        
+        // END Painter
+        
     }
 
     override func didReceiveMemoryWarning() {

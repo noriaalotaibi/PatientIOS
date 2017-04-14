@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>mainColor</key>
+	<string>FFFFFF</string>
+	<key>secondaryColor</key>
+	<string>00FF00</string>
+	<key>extraColor</key>
+	<string>FFFFFF</string>
+	<key>tfBackgroundColor</key>
+	<string>FF0000</string>
+	<key>viewColor</key>
+	<string>00FF00</string>
+	<key>labelColor</key>
+	<string>FFFFF</string>
+	<key>titleFontName</key>
+	<string>Noteworthy-Bold</string>
+	<key>titleFontSize</key>
+	<string>20</string>
+	<key>fontName</key>
+	<string>Noteworthy</string>
+	<key>fontSize</key>
+	<string>15</string>
+</dict>
+</plist>

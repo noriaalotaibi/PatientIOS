@@ -23,6 +23,7 @@ class MyReportCommentsViewController: UIViewController, UITextViewDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -44,6 +45,14 @@ class MyReportCommentsViewController: UIViewController, UITextViewDelegate  {
         self.patientCommentBox.text = self.currentReport?.comments
         self.RecommendationBox.text = self.currentReport?.drcomment
         RecommendationBox.delegate = self
+        
+        // Painter
+        
+        let painter:AYPainter = AYPainter()
+        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+        painter.paint(self.view)
+        
+        // END Painter
         
     }
     

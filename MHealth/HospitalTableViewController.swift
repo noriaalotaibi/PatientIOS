@@ -49,12 +49,11 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
-        tableView.tableHeaderView?.backgroundColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
-        searchController.searchBar.backgroundColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
-        searchController.searchBar.tintColor = UIColor.whiteColor()
-        searchController.searchBar.barTintColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
+
         searchController.searchBar.scopeButtonTitles = [NSLocalizedString("Public", comment: ""),  NSLocalizedString("Private", comment: "")]
         searchController.searchBar.delegate = self
+        
+        
         
         
         // Location Service
@@ -68,6 +67,14 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
             self.locationManager.requestWhenInUseAuthorization()
             self.locationManager.startUpdatingLocation()
         }
+        
+        // Painter
+        
+        let painter:AYPainter = AYPainter()
+        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+        painter.paint(self.view)
+        
+        // END Painter
        
     }
     

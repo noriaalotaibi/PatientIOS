@@ -120,6 +120,13 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
 
         // Do any additional setup after loading the view.
         
+        // Painter
+        
+        let painter:AYPainter = AYPainter()
+        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+        painter.paint(self.view)
+        
+        // END Painter
         
     }
     

@@ -117,8 +117,17 @@ class RegisterMedicalInfoVC: UIViewController , UIPickerViewDelegate , UIPickerV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
             BloodTypePicker.delegate = self
             BloodTypePicker.dataSource = self
+        
+        // Painter
+        
+        let painter:AYPainter = AYPainter()
+        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+        painter.paint(self.view)
+        
+        // END Painter
         
      }
     

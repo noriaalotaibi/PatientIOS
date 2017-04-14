@@ -24,6 +24,8 @@ class ViewMedicalInfoVC: UIViewController , NetworkCaller {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         let net:Networking = Networking()
         net.AMGetArrayData(Const.URLs.Patients, params: [:], reqId: 1, caller: self)
         
@@ -39,6 +41,14 @@ class ViewMedicalInfoVC: UIViewController , NetworkCaller {
         
         
         // Do any additional setup after loading the view.
+        
+        // Painter
+        
+        let painter:AYPainter = AYPainter()
+        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+        painter.paint(self.view)
+        
+        // END Painter
     }
 
     override func didReceiveMemoryWarning() {

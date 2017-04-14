@@ -44,6 +44,14 @@ class DonorProfileViewController: UIViewController {
         
         Nationality.text = Donor.nationality
         
+        // Painter
+        
+        let painter:AYPainter = AYPainter()
+        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+        painter.paint(self.view)
+        
+        // END Painter
+        
         
     
     }

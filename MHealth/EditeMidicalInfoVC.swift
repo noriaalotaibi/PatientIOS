@@ -98,6 +98,8 @@ class EditeMidicalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         BloodTypePicker.delegate = self
         BloodTypePicker.dataSource = self
         
@@ -125,7 +127,13 @@ class EditeMidicalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDa
        
         // Do any additional setup after loading the view.
         
+        // Painter
         
+        let painter:AYPainter = AYPainter()
+        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+        painter.paint(self.view)
+        
+        // END Painter
         
     }
     
