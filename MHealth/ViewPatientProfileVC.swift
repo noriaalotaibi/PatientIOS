@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Whisper
 
-class ViewPatientProfileVC: UIViewController, NetworkCaller {
+class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     @IBOutlet weak var LnameLabel: UILabel!
     @IBOutlet weak var FnameLabel: UILabel!
     @IBOutlet weak var MnameLabel: UILabel!
@@ -19,26 +20,91 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller {
     @IBOutlet weak var EmailLabel: UILabel!
     @IBOutlet weak var PhoneNumLabel: UILabel!
     @IBOutlet weak var EmergencyNumLabel: UILabel!
+    
+    
     var patient=Patient()
     
     var newPatient:Patient = Patient()
 
+    @IBOutlet weak var patientImage: UIImageView!
     
     @IBAction func logoutButton(sender: UIButton) {
-        
+        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: Const.UserDefaultsKeys.patientId)
+        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: Const.UserDefaultsKeys.loggedinUser)
+        self.dismissViewControllerAnimated(true) {
+            
+        }
         
     }
     @IBAction func editPatientPhoto(sender: UIButton) {
+        let alertController = UIAlertController(title: "Upload Image", message: "Choose one of the two options", preferredStyle: .ActionSheet)
         
+        let CameraRollAction = UIAlertAction(title: "Camera roll", style: .Default, handler: {(action: UIAlertAction) -> Void in
+            print("Camera Roll")
+            
+            let imagePicker:UIImagePickerController = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+            
+        })
+        
+        let CameraAction = UIAlertAction(title: "Take photo", style: .Default, handler: {(action: UIAlertAction) -> Void in
+            print("Camera ")
+            let imagePicker:UIImagePickerController = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+            
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        })
+        
+        let CancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {(action: UIAlertAction) -> Void in
+            print("Cancel")
+        })
+        
+        alertController.addAction(CameraAction)
+        alertController.addAction(CameraRollAction)
+        alertController.addAction(CancelAction)
+        
+        self.presentViewController(alertController, animated: true, completion: { _ in })
+        
+        print ("Button clicked")
         
     }
-   
-    @IBAction func UpdateProfile(sender: AnyObject) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        
+        //Encode base64
+        let imageData = UIImagePNGRepresentation(image)
+
+        
+        let strBase64:String = imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+
         
         
-         
+        self.patientImage.image = image
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        let reach = Reach()
+        if reach.connectionStatus().description == ReachabilityStatus.Offline.description{
+            let message = Message(title: "No Internet Connection", textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
+        }else{
+            //SwiftSpinner.show(NSLocalizedString("Uploading...", comment: ""))
+            
+            
+            // networkManager.AMJSONDictionary(Const.URLs.Doctor, httpMethod: "POST", jsonData: drDict, reqId: 1, caller: self)
+            let params:[String:AnyObject] = ["appID": "patient" , "imgData": strBase64]
+            
+            //networkManager.AMPostDictData(Const.URLs.UploadImage, params: params, reqId: 1, caller: self)
+        }
         
     }
+    
+
+    @IBAction func UpdateProfile(sender: AnyObject) {}
     
     @IBAction func ViewMedicalInfoButton(sender: AnyObject) {
          print("user clicked More")
