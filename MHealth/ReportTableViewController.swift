@@ -32,7 +32,8 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
             networkManager.logging = true
             networkManager.AMGetArrayData("http://34.196.107.188:8081/MhealthWeb/webresources/patientreport/", params: [:], reqId: 1, caller: self)
         } else {
-            let message = Message(title: "No Internet Connection", textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            //askk
+            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         }
@@ -152,7 +153,7 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
     
     
     // Custom Search Bar METHODS
-    
+    //askk
     func filterContentForSearchText(searchText: String, scope: NSString = "Doctor Name") {
         
         filteredReports = allReports.filter { report in

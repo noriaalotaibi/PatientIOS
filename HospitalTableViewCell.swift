@@ -52,9 +52,7 @@ class HospitalTableViewCell: UITableViewCell{
         hospitalPicture.sd_setImageWithURL( NSURL(string: hospitalObject.hospitalLogoURL), placeholderImage: UIImage(named: "hospital-1"))
         hospitalLocation.text = hospitalObject.hospitalAddress;
         let d:Double = distance(latitude, lon1: longitude, lat2: hospital.hospitalAlt, lon2: hospital.hospitalLang)
-        distance.text = String(format: "%.2f KM", d)
-        
-    }
+        distance.text = String(format:NSLocalizedString("%.2f KM", comment: "") , d);     }
     
     func distance(lat1:Double, lon1:Double, lat2:Double, lon2:Double) -> Double {
         let theta = lon1 - lon2

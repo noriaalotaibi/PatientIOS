@@ -46,7 +46,7 @@ class NewDoctorProfileViewController: UIViewController, NetworkCaller {
     }
     
     func setArrayResponse(resp: NSArray, reqId: Int) {
-        let alertControlle:UIAlertController = UIAlertController(title: "Success", message: "Invitation was sent sucessfully", preferredStyle: .Alert)
+        let alertControlle:UIAlertController = UIAlertController(title:NSLocalizedString("Success", comment: "") , message: NSLocalizedString("Invitation was sent sucessfully", comment: ""), preferredStyle: .Alert)
         
         let action:UIAlertAction =  UIAlertAction(title: "OK", style: .Cancel, handler: { (UIAlertAction) in
             self.navigationController?.popViewControllerAnimated(true)

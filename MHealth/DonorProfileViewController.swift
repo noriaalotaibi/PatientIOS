@@ -35,11 +35,11 @@ class DonorProfileViewController: UIViewController {
         CivilId.text = Donor.civilId
         if Donor.gender == "M"
         {
-        Gender.text = "Male"
+        Gender.text = NSLocalizedString("Male", comment: "")
         } else if Donor.gender == "F" {
-            Gender.text = "Female"
+            Gender.text = NSLocalizedString("Female", comment: "")
         } else {
-            Gender.text = "Wrong"
+            Gender.text = NSLocalizedString("Wrong", comment: "")
         }
         
         Nationality.text = Donor.nationality

@@ -34,7 +34,7 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISea
             networkManager.logging = true
             networkManager.AMGetArrayData("http://34.196.107.188:8080/mHealthWS/ws/doctor", params: [:], reqId: 1, caller: self)
         } else {
-            let message = Message(title: "No Internet Connection", textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         }
@@ -51,7 +51,7 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISea
         searchController.searchBar.backgroundColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
         searchController.searchBar.tintColor = UIColor.whiteColor()
         searchController.searchBar.barTintColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
-        searchController.searchBar.scopeButtonTitles = ["Name", "Specialty"]
+        searchController.searchBar.scopeButtonTitles = [NSLocalizedString("Name", comment: ""), NSLocalizedString("Specialty", comment: "")]
         searchController.searchBar.delegate = self
         
 

@@ -20,7 +20,7 @@ class MyDoctorTableViewController: UITableViewController, NetworkCaller,  UISear
     func alert(title: String, message: String) {
         if let getModernAlert: AnyClass = NSClassFromString("UIAlertController") { // iOS 8
             let myAlert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-            myAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            myAlert.addAction(UIAlertAction(title:NSLocalizedString("OK", comment: "") , style: .Default, handler: nil))
             self.presentViewController(myAlert, animated: true, completion: nil)
         } else { // iOS 7
             let alert: UIAlertView = UIAlertView()
@@ -28,7 +28,7 @@ class MyDoctorTableViewController: UITableViewController, NetworkCaller,  UISear
             
             alert.title = title
             alert.message = message
-            alert.addButtonWithTitle("OK")
+            alert.addButtonWithTitle(NSLocalizedString("OK", comment: ""))
             
             alert.show()
         }
@@ -45,7 +45,7 @@ class MyDoctorTableViewController: UITableViewController, NetworkCaller,  UISear
         if (Networking.isInternetAvailable()) {
             // network requests managed in Cache; error message auto. displayed
         } else {
-            let message = Message(title: "No Internet Connection", textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            let message = Message(title:NSLocalizedString("No Internet Connection", comment: "") , textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         }
@@ -63,7 +63,7 @@ class MyDoctorTableViewController: UITableViewController, NetworkCaller,  UISear
         searchController.searchBar.backgroundColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
         searchController.searchBar.tintColor = UIColor.whiteColor()
         searchController.searchBar.barTintColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75)
-        searchController.searchBar.scopeButtonTitles = ["Name", "Specialty"]
+        searchController.searchBar.scopeButtonTitles = [NSLocalizedString("Name", comment: ""), NSLocalizedString("Specialty", comment: "")]
         searchController.searchBar.delegate = self
     }
 

@@ -95,6 +95,7 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
             return
         }
         
+        
         Reg1VC.current.newPatient.firstName=fname!
         Reg1VC.current.newPatient.lastName=lname!
         Reg1VC.current.newPatient.dateOfBirth=bDay

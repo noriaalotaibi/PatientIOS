@@ -63,9 +63,9 @@ class PatientReportViewController: UIViewController, NetworkCaller {
         
         
         if patientComments.text == "" {
-            let alertControlle:UIAlertController = UIAlertController(title: "Error", message: "Comment can't be empty", preferredStyle: .Alert)
+            let alertControlle:UIAlertController = UIAlertController(title:NSLocalizedString("Error", comment: "") , message:NSLocalizedString("Comment can't be empty", comment: "") , preferredStyle: .Alert)
             
-            let action:UIAlertAction =  UIAlertAction(title: "OK", style: .Cancel, handler: { (UIAlertAction) in
+            let action:UIAlertAction =  UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .Cancel, handler: { (UIAlertAction) in
             })
             alertControlle.addAction(action)
             self.presentViewController(alertControlle, animated: true, completion: nil)
@@ -81,26 +81,26 @@ class PatientReportViewController: UIViewController, NetworkCaller {
         let newReport:PatientReportDH = PatientReportDH()
         
         if self.bloodPressureSegment.selectedSegmentIndex == 0 {
-            newReport.bloodPressure = "High"
+            newReport.bloodPressure = NSLocalizedString("High", comment: "")
         }else if self.bloodPressureSegment.selectedSegmentIndex == 1 {
-            newReport.bloodPressure = "Moderate"
+            newReport.bloodPressure = NSLocalizedString("Moderate", comment: "")
         }else{
-            newReport.bloodPressure = "Low"
+            newReport.bloodPressure =  NSLocalizedString("Low", comment: "")
         }
         
         newReport.comments = self.patientComments.text
         
         if self.coughingSwitch.selected == true {
-            newReport.coughing = "YES"
+            newReport.coughing = NSLocalizedString("YES", comment: "")
         }else{
-            newReport.coughing = "NO"
+            newReport.coughing = NSLocalizedString("NO", comment: "")
         }
         
         
         if self.dizzinessSwitch.selected == true {
-            newReport.dizziness = "YES"
+            newReport.dizziness = NSLocalizedString("YES", comment: "")
         }else{
-            newReport.dizziness = "NO"
+            newReport.dizziness = NSLocalizedString("NO", comment: "")
         }
         
         
@@ -108,29 +108,29 @@ class PatientReportViewController: UIViewController, NetworkCaller {
         newReport.drcomment = ""
         
         if self.feverSwitch.selected == true {
-            newReport.fever = "YES"
+            newReport.fever = NSLocalizedString("YES", comment: "")
         }else{
-            newReport.fever = "NO"
+            newReport.fever = NSLocalizedString("NO", comment: "")
         }
         
         if self.headacheSwitch.selected == true {
-            newReport.headache = "YES"
+            newReport.headache = NSLocalizedString("YES", comment: "")
         }else{
-            newReport.headache = "NO"
+            newReport.headache = NSLocalizedString("NO", comment: "")
         }
         
         if self.heartBeatSegment.selectedSegmentIndex == 0 {
-            newReport.heartbeatRate = "High"
+            newReport.heartbeatRate =  NSLocalizedString("High", comment: "")
         }else if self.heartBeatSegment.selectedSegmentIndex == 1 {
-            newReport.heartbeatRate = "Moderate"
+            newReport.heartbeatRate = NSLocalizedString("Moderate", comment: "")
         }else{
-            newReport.heartbeatRate = "Low"
+            newReport.heartbeatRate = NSLocalizedString("Low", comment: "")
         }
         
         if self.nauseousSwitch.selected == true {
-            newReport.nauseous = "YES"
+            newReport.nauseous = NSLocalizedString("YES", comment: "")
         }else{
-            newReport.nauseous = "NO"
+            newReport.nauseous = NSLocalizedString("NO", comment: "")
         }
         
         
@@ -143,11 +143,11 @@ class PatientReportViewController: UIViewController, NetworkCaller {
         }
         
         if self.sugarLevelSegment.selectedSegmentIndex == 0 {
-            newReport.sugarLevel = "High"
+            newReport.sugarLevel = NSLocalizedString("High", comment: "")
         }else if self.sugarLevelSegment.selectedSegmentIndex == 1 {
-            newReport.sugarLevel = "Moderate"
+            newReport.sugarLevel = NSLocalizedString("Moderate", comment: "")
         }else{
-            newReport.sugarLevel = "Low"
+            newReport.sugarLevel = NSLocalizedString("Low", comment: "")
         }
         
         
@@ -177,9 +177,9 @@ class PatientReportViewController: UIViewController, NetworkCaller {
         print("response send report")
         print(resp)
         if resp.count == 0 {
-            let alertControlle:UIAlertController = UIAlertController(title: "Success", message: "Patient report was sent sucessfully", preferredStyle: .Alert)
+            let alertControlle:UIAlertController = UIAlertController(title: NSLocalizedString("Success", comment: ""), message: NSLocalizedString("Patient report was sent sucessfully", comment: ""), preferredStyle: .Alert)
             
-            let action:UIAlertAction =  UIAlertAction(title: "OK", style: .Cancel, handler: { (UIAlertAction) in
+            let action:UIAlertAction =  UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .Cancel, handler: { (UIAlertAction) in
                 self.navigationController?.popViewControllerAnimated(true)
             })
             alertControlle.addAction(action)
@@ -187,9 +187,9 @@ class PatientReportViewController: UIViewController, NetworkCaller {
             
             
         }else{
-            let alertControlle:UIAlertController = UIAlertController(title: "Failed", message: "Patient report failed to sent", preferredStyle: .Alert)
+            let alertControlle:UIAlertController = UIAlertController(title: NSLocalizedString("Failed", comment: ""), message: NSLocalizedString("Patient report failed to sent", comment: ""), preferredStyle: .Alert)
             
-            let action:UIAlertAction =  UIAlertAction(title: "OK", style: .Cancel, handler: { (UIAlertAction) in
+            let action:UIAlertAction =  UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .Cancel, handler: { (UIAlertAction) in
             })
             alertControlle.addAction(action)
             self.presentViewController(alertControlle, animated: true, completion: nil)
