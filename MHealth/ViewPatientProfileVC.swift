@@ -144,6 +144,8 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
 
    
     override func viewDidLoad() {
+        var current_lan = NSUserDefaults.standardUserDefaults().valueForKey("AppleLanguages");
+        
         super.viewDidLoad()
         
         
