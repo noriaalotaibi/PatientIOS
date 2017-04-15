@@ -8,13 +8,77 @@
 
 import UIKit
 
-class EditeMidicalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource , NetworkCaller{
+class EditeMidicalInfoVC: UIViewController, NetworkCaller{
     
     
     var picker1selection = ""
     var diabetes:Bool = false
     var asthma:Bool = false
     
+    @IBOutlet var BloodtypeSelection: [UIButton]!
+    
+    @IBAction func BloodTypeButton(sender: UIButton) {
+        
+        
+        if sender.tag==1{
+            picker1selection="A+"
+        }
+            
+        else if sender.tag==2{
+            picker1selection="A-"
+        }
+            
+        else if sender.tag==3{
+            picker1selection="B+"
+        }
+            
+        else if sender.tag==4{
+            picker1selection="B-"
+        }
+            
+        else if sender.tag==5{
+            picker1selection="O+"
+        }
+            
+        else if sender.tag==6{
+            picker1selection="O-"
+        }
+            
+        else if sender.tag==7{
+            picker1selection="AB+"
+        }
+            
+        else {
+            picker1selection="AB-"
+        }
+        
+        setSelectedBloodTypeButton(sender.tag)
+        
+    }
+    
+    func setSelectedBloodTypeButton(tag:Int){
+        
+        for button in BloodtypeSelection {
+            if button.tag == tag {
+                
+                button.layer.borderColor = UIColor.redColor().colorWithAlphaComponent(1.0).CGColor
+                button.layer.borderWidth = 1.0
+                //The rounded corner part, where you specify your view's corner radius:
+                button.layer.cornerRadius = 5;
+                button.clipsToBounds = true;
+                button.alpha = 1.0
+                
+            }else{
+                
+                button.layer.borderColor = UIColor.grayColor().colorWithAlphaComponent(0.5).CGColor
+                button.layer.borderWidth = 1.0
+                //The rounded corner part, where you specify your view's corner radius:
+                button.layer.cornerRadius = 5;
+                button.clipsToBounds = true;
+                button.alpha = 0.5
+            }
+        }
+    }
     @IBAction func DiabetesSegment(sender: AnyObject) {
         
         if sender.selectedSegmentIndex == 0 {
@@ -35,7 +99,7 @@ class EditeMidicalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     var patient=Patient()
 
     
-    let BloodTypePD = ["A+" , "A-" , "B+" , "B-","O+" , "O-", "AB+" , "AB-"]
+    
     
     
     @IBOutlet weak var AllergiesUpdatedTF: UITextField!
@@ -98,10 +162,9 @@ class EditeMidicalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setSelectedBloodTypeButton(1)
         
-        
-        BloodTypePicker.delegate = self
-        BloodTypePicker.dataSource = self
+       
         
         let net:Networking = Networking()
         
@@ -129,39 +192,15 @@ class EditeMidicalInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         // Painter
         
-        let painter:AYPainter = AYPainter()
-        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
-        painter.paint(self.view)
+//        let painter:AYPainter = AYPainter()
+//        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+//        painter.paint(self.view)
         
         // END Painter
         
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-     
-            return BloodTypePD.count
     
-       
-    }
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        
-  
-            return BloodTypePD[row]
-            
-   
-    }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
- 
-            picker1selection =  BloodTypePD[row]
-        
-  
-    }
     
 
     override func didReceiveMemoryWarning() {

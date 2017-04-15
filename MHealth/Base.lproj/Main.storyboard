@@ -265,59 +265,6 @@
             </objects>
             <point key="canvasLocation" x="775.5" y="1106.5"/>
         </scene>
-        <!--LangVC-->
-        <scene sceneID="qMw-4D-Hbv">
-            <objects>
-                <viewController id="z58-9w-UoU" customClass="langVC" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="V2L-Qf-4sc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XtS-cS-tZg">
-                                <rect key="frame" x="34" y="491" width="145" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.2470588235" green="0.79215686269999996" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="16"/>
-                                <state key="normal" title="English">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="EnglishButton:" destination="z58-9w-UoU" eventType="touchUpInside" id="VHC-h5-FBa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lBy-Kc-XLa">
-                                <rect key="frame" x="195" y="491" width="145" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.2470588235" green="0.79215686269999996" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="16"/>
-                                <state key="normal" title="العربية">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="ArabicButton:" destination="z58-9w-UoU" eventType="touchUpInside" id="N3c-HD-W6h"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a langauge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eJh-7G-wsY">
-                                <rect key="frame" x="34" y="87" width="306" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="international_languages (1)" id="TdF-a5-2ss">
-                                <rect key="frame" x="70" y="194" width="235" height="219"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Kzy-BN-WbX"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0MX-43-bBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3940" y="1631"/>
-        </scene>
         <!--LoginVC-->
         <scene sceneID="cl3-T0-BYJ">
             <objects>
@@ -330,7 +277,7 @@
                                 <rect key="frame" x="68" y="286" width="242" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="patient@gmail.com" placeholder="username" minimumFontSize="17" id="ZNV-MS-uWc">
                                 <rect key="frame" x="68" y="233" width="242" height="30"/>
@@ -364,7 +311,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZqV-TD-jp7">
-                                <rect key="frame" x="185" y="373" width="175" height="30"/>
+                                <rect key="frame" x="100" y="576" width="175" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                 <state key="normal" title="Forget password?">
@@ -1061,14 +1008,6 @@
                                 <rect key="frame" x="17" y="268" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kgz-3e-SEd">
-                                <rect key="frame" x="322" y="71" width="38" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="logout-512"/>
-                                <connections>
-                                    <action selector="logoutButton:" destination="HS8-aE-rcw" eventType="touchUpInside" id="Ncf-Ns-Vfo"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8Xv-dt-xth">
                                 <rect key="frame" x="47" y="208" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1080,7 +1019,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QbM-fK-z9F"/>
+                    <navigationItem key="navigationItem" id="QbM-fK-z9F">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="gMh-3I-kik">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LPZ-pK-IBQ">
+                                <rect key="frame" x="16" y="2" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="settings"/>
+                                <connections>
+                                    <segue destination="YPn-3f-OU2" kind="push" id="imi-uW-Nff"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Pet-Gg-sKh">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kgz-3e-SEd">
+                                <rect key="frame" x="321" y="0.0" width="38" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="logout-1"/>
+                                <connections>
+                                    <action selector="logoutButton:" destination="HS8-aE-rcw" eventType="touchUpInside" id="Ncf-Ns-Vfo"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="BirthDateLabel" destination="bik-pg-Jvt" id="oV9-37-chM"/>
                         <outlet property="CivilIdLabel" destination="p70-Ze-Zes" id="V52-bn-yrc"/>
@@ -1096,7 +1056,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecm-76-WTS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="528.5" y="-1132.5"/>
+            <point key="canvasLocation" x="522.5" y="-1093.5"/>
         </scene>
         <!--View Medical InfoVC-->
         <scene sceneID="Acx-WU-WVx">
@@ -1277,14 +1237,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" id="en1-RZ-5ny">
-                                <rect key="frame" x="230" y="513" width="133" height="30"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="dXr-Tt-Sos" id="QGF-cc-4yJ"/>
-                                    <outlet property="delegate" destination="dXr-Tt-Sos" id="Xzg-2P-3qB"/>
-                                </connections>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8PK-Mt-wNW">
                                 <rect key="frame" x="44" y="87" width="146" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1354,45 +1306,69 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9Fr-xl-Zyb">
-                                <rect key="frame" x="29" y="113" width="45" height="40"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9Fr-xl-Zyb">
+                                <rect key="frame" x="29" y="113" width="36" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="a_plus"/>
+                                <connections>
+                                    <action selector="BloodTypeButton:" destination="dXr-Tt-Sos" eventType="touchUpInside" id="Nhh-qI-sL6"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TVo-cX-QGH">
-                                <rect key="frame" x="98" y="113" width="45" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="a_minus"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="riG-eo-EIQ">
-                                <rect key="frame" x="183" y="113" width="45" height="40"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="riG-eo-EIQ">
+                                <rect key="frame" x="183" y="113" width="36" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="b_plus"/>
+                                <connections>
+                                    <action selector="BloodTypeButton:" destination="dXr-Tt-Sos" eventType="touchUpInside" id="Mnf-6M-tNl"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TFW-Mp-fBS">
-                                <rect key="frame" x="29" y="161" width="45" height="40"/>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TFW-Mp-fBS">
+                                <rect key="frame" x="29" y="166" width="36" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="o_plus"/>
+                                <connections>
+                                    <action selector="BloodTypeButton:" destination="dXr-Tt-Sos" eventType="touchUpInside" id="qed-Jm-9TV"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MyP-YO-WY2">
-                                <rect key="frame" x="98" y="161" width="45" height="40"/>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MyP-YO-WY2">
+                                <rect key="frame" x="102" y="166" width="36" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="o_minus"/>
+                                <connections>
+                                    <action selector="BloodTypeButton:" destination="dXr-Tt-Sos" eventType="touchUpInside" id="Cfk-xE-Z23"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Llj-I4-dfY">
-                                <rect key="frame" x="183" y="161" width="45" height="40"/>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Llj-I4-dfY">
+                                <rect key="frame" x="183" y="166" width="36" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="ab_plus"/>
+                                <connections>
+                                    <action selector="BloodTypeButton:" destination="dXr-Tt-Sos" eventType="touchUpInside" id="MuJ-4P-3m1"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CjU-Up-DgP">
-                                <rect key="frame" x="262" y="161" width="45" height="40"/>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CjU-Up-DgP">
+                                <rect key="frame" x="262" y="166" width="36" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="ab_minus"/>
+                                <connections>
+                                    <action selector="BloodTypeButton:" destination="dXr-Tt-Sos" eventType="touchUpInside" id="KSL-jd-n7W"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3ih-uf-H7d">
-                                <rect key="frame" x="262" y="113" width="45" height="40"/>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3ih-uf-H7d">
+                                <rect key="frame" x="262" y="113" width="36" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="b_minus"/>
+                                <connections>
+                                    <action selector="BloodTypeButton:" destination="dXr-Tt-Sos" eventType="touchUpInside" id="Zar-6O-cY4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TVo-cX-QGH">
+                                <rect key="frame" x="102" y="113" width="36" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="a_minus"/>
+                                <connections>
+                                    <action selector="BloodTypeButton:" destination="dXr-Tt-Sos" eventType="touchUpInside" id="xqg-cx-pxw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1400,8 +1376,15 @@
                     <navigationItem key="navigationItem" id="vhn-th-EBC"/>
                     <connections>
                         <outlet property="AllergiesUpdatedTF" destination="6PW-wR-n3o" id="FsL-UJ-TAM"/>
-                        <outlet property="BloodTypePicker" destination="en1-RZ-5ny" id="kIJ-3y-MUt"/>
                         <outlet property="MedicationsUpdatedTF" destination="2N7-J1-7SF" id="MtK-Oz-V9j"/>
+                        <outletCollection property="BloodtypeSelection" destination="9Fr-xl-Zyb" collectionClass="NSMutableArray" id="PlR-TF-xFQ"/>
+                        <outletCollection property="BloodtypeSelection" destination="TVo-cX-QGH" collectionClass="NSMutableArray" id="RuD-DB-cb7"/>
+                        <outletCollection property="BloodtypeSelection" destination="riG-eo-EIQ" collectionClass="NSMutableArray" id="XWY-CY-PbF"/>
+                        <outletCollection property="BloodtypeSelection" destination="3ih-uf-H7d" collectionClass="NSMutableArray" id="rbg-66-iap"/>
+                        <outletCollection property="BloodtypeSelection" destination="TFW-Mp-fBS" collectionClass="NSMutableArray" id="yMU-v9-agU"/>
+                        <outletCollection property="BloodtypeSelection" destination="MyP-YO-WY2" collectionClass="NSMutableArray" id="yP7-b7-lBa"/>
+                        <outletCollection property="BloodtypeSelection" destination="Llj-I4-dfY" collectionClass="NSMutableArray" id="0Yr-EY-NT8"/>
+                        <outletCollection property="BloodtypeSelection" destination="CjU-Up-DgP" collectionClass="NSMutableArray" id="DuA-Fh-Cwo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TSG-n1-pAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2496,6 +2479,59 @@
             </objects>
             <point key="canvasLocation" x="5.5" y="3263.5"/>
         </scene>
+        <!--LangVC-->
+        <scene sceneID="Mt0-Cd-a7j">
+            <objects>
+                <viewController id="YPn-3f-OU2" customClass="langVC" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3lz-za-CFv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FZZ-2d-CgU">
+                                <rect key="frame" x="34" y="491" width="145" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.2470588235" green="0.79215686269999996" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="16"/>
+                                <state key="normal" title="English">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="EnglishButton:" destination="YPn-3f-OU2" eventType="touchUpInside" id="iLy-vk-QDn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mGQ-MJ-jAr">
+                                <rect key="frame" x="195" y="491" width="145" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.2470588235" green="0.79215686269999996" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="16"/>
+                                <state key="normal" title="العربية">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ArabicButton:" destination="YPn-3f-OU2" eventType="touchUpInside" id="gYz-IF-MXg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a langauge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eKA-lz-Or1">
+                                <rect key="frame" x="34" y="87" width="306" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="international_languages (1)" id="ICJ-Eu-iWo">
+                                <rect key="frame" x="70" y="194" width="235" height="219"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CCv-oc-x2i"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ut5-7T-MKw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="19.5" y="-1353.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Passwordd" width="50" height="50"/>
@@ -2525,7 +2561,7 @@
         <image name="info" width="64" height="64"/>
         <image name="inhalator" width="64" height="64"/>
         <image name="international_languages (1)" width="320" height="277"/>
-        <image name="logout-512" width="512" height="512"/>
+        <image name="logout-1" width="64" height="64"/>
         <image name="magnifying-glass (1)" width="64" height="64"/>
         <image name="map" width="64" height="64"/>
         <image name="medicine" width="64" height="64"/>
@@ -2537,6 +2573,7 @@
         <image name="password" width="64" height="64"/>
         <image name="patiet2" width="64" height="64"/>
         <image name="profileImage" width="200" height="203"/>
+        <image name="settings" width="64" height="64"/>
         <image name="siren" width="64" height="64"/>
         <image name="telephone-3" width="64" height="64"/>
         <image name="transfusion" width="64" height="64"/>

@@ -5,13 +5,13 @@
 	<key>mainColor</key>
 	<string>FFFFFF</string>
 	<key>secondaryColor</key>
-	<string>00FF00</string>
+	<string>22BB55</string>
 	<key>extraColor</key>
 	<string>FFFFFF</string>
 	<key>tfBackgroundColor</key>
-	<string>FF0000</string>
+	<string>222222</string>
 	<key>viewColor</key>
-	<string>00FF00</string>
+	<string>aaaaaa</string>
 	<key>labelColor</key>
 	<string>FFFFF</string>
 	<key>titleFontName</key>
