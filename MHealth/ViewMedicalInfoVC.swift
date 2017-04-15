@@ -39,7 +39,6 @@ class ViewMedicalInfoVC: UIViewController , NetworkCaller {
         MedicationLabel?.text = patient.medication
         
         
-        
         // Do any additional setup after loading the view.
         
         // Painter

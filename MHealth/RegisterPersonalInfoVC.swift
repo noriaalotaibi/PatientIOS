@@ -46,6 +46,8 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
     
     @IBAction func reg2Button(sender: AnyObject) {
         
+        var valid = true
+        
         var fname = fNameTF.text
         var lname = lNameTF.text
         var nationality = NationalityTF.text
@@ -60,6 +62,7 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
             var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
+            valid = false
             return
         }
             
@@ -67,6 +70,8 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
             
             var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
             alert.show()
+            
+            valid = false
             return
         }
             
@@ -74,24 +79,32 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
             
             var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
             alert.show()
+            
+            valid = false
             return
         }
         else if emergency == ""  {
             
             var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
             alert.show()
+            
+            valid = false
             return
         }
         else  if phone == ""  {
             
             var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
             alert.show()
+            
+            valid = false
             return
         }
         else if  civilId == "" {
             
             var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
             alert.show()
+            
+            valid = false
             return
         }
         
@@ -105,6 +118,13 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
         Reg1VC.current.newPatient.emergencyNum=emergency!
         Reg1VC.current.newPatient.deleted=deleted
         Reg1VC.current.newPatient.status=status
+        
+        
+        if (valid) {
+            let next:RegisterMedicalInfoVC = self.storyboard?.instantiateViewControllerWithIdentifier("RegisterMedicalInfo") as! RegisterMedicalInfoVC
+        
+            self.navigationController?.pushViewController(next, animated: true)
+        }
         
         
         

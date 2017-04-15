@@ -34,7 +34,9 @@ class Reg1VC: UIViewController , NetworkCaller {
     
     @IBAction func Register1Button(sender: AnyObject) {
         
-       nextButton.enabled = false
+        var valid = true
+        
+       //nextButton.enabled = true
         
         var email = emailTF.text
         var password = passwordTF.text
@@ -47,15 +49,16 @@ class Reg1VC: UIViewController , NetworkCaller {
             var alert = UIAlertView(title: "Email", message: "Please enter a valid email", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
+            valid = false
+            
         }
 
         if password != confirmPass{
             
-           
             var alert = UIAlertView(title: "Password", message: "Password do not match", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
-             nextButton.enabled = true
+            valid = false
         }
         
         current.newPatient.email=email!
@@ -71,12 +74,11 @@ class Reg1VC: UIViewController , NetworkCaller {
                     networkManager.AMJSONDictionary(Const.URLs.Patients, httpMethod: "POST", jsonData: values, reqId: 1, caller: self)
         //print(values)
   
+        if (valid) {
+            let reply:RegisterPersonalInfoVC = self.storyboard?.instantiateViewControllerWithIdentifier("RegisterPersonalInfo") as! RegisterPersonalInfoVC
         
-        //            let nextScreen:RegisterPersonalInfoVC = self.storyboard?.instantiateViewControllerWithIdentifier("PatientInfo") as! RegisterPersonalInfoVC
-        
-        
-        
-        // self.presentViewController(nextScreen, animated: true, completion: {})
+            self.navigationController?.pushViewController(reply, animated: true)
+        }
     }
     
     

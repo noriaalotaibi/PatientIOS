@@ -64,9 +64,7 @@ class MyReportViewController: UITableViewController {
         print("open Reply controleer")
         
         let reply:MyReportCommentsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MyReportComments") as! MyReportCommentsViewController
-        
-        //reply.parentVC = self
-        
+    
         reply.currentReport = self.currentPatientReport
         reply.reportIndex = self.currentIndex
         self.navigationController?.pushViewController(reply, animated: true)

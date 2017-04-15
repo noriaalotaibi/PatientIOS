@@ -13,11 +13,8 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
     var gender:String = ""
     @IBAction func GenderSegment(sender: AnyObject) {
         if sender.selectedSegmentIndex == 0 {
-            
             self.gender = "m"
-            
         }else  {
-            
             self.gender = "f"
         }
     }

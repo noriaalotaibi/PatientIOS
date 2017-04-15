@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="i4y-dx-2IP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="i4y-dx-2IP">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -338,7 +338,7 @@
         <!--Reg1VC-->
         <scene sceneID="luT-sK-eq8">
             <objects>
-                <viewController id="oCR-2N-sup" customClass="Reg1VC" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterBegin" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oCR-2N-sup" customClass="Reg1VC" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a3n-ed-q8d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -410,7 +410,6 @@
                                 </state>
                                 <connections>
                                     <action selector="Register1Button:" destination="oCR-2N-sup" eventType="touchUpInside" id="hm4-cP-hXZ"/>
-                                    <segue destination="pRr-C5-0KL" kind="push" id="T52-AX-i6Y"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -424,11 +423,12 @@
                         <outlet property="nextButton" destination="nP2-iQ-gYE" id="gjc-Zg-npf"/>
                         <outlet property="passwordTF" destination="p6F-gY-PoT" id="9E4-8s-Cbt"/>
                         <outlet property="registrationStatus" destination="Oua-CZ-rRL" id="OwX-ZJ-hQw"/>
+                        <segue destination="pRr-C5-0KL" kind="push" id="4Ss-ca-BOu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93C-oe-PaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2952.5" y="739.5"/>
+            <point key="canvasLocation" x="-2958.5" y="781.5"/>
         </scene>
         <!--Reset Pass-->
         <scene sceneID="Avt-PJ-69z">
@@ -491,7 +491,7 @@
         <!--Register Medical InfoVC-->
         <scene sceneID="KXO-lK-4bW">
             <objects>
-                <viewController id="qMJ-hS-Wca" customClass="RegisterMedicalInfoVC" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterMedicalInfo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qMJ-hS-Wca" customClass="RegisterMedicalInfoVC" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gfT-Kb-MGl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -675,7 +675,7 @@
         <!--Register Personal InfoVC-->
         <scene sceneID="Yhw-LH-gB6">
             <objects>
-                <viewController storyboardIdentifier="PatientInfo" id="pRr-C5-0KL" customClass="RegisterPersonalInfoVC" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterPersonalInfo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pRr-C5-0KL" customClass="RegisterPersonalInfoVC" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mBp-a4-0Na">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -704,7 +704,6 @@
                                         </state>
                                         <connections>
                                             <action selector="reg2Button:" destination="pRr-C5-0KL" eventType="touchUpInside" id="qxP-2Z-euM"/>
-                                            <segue destination="qMJ-hS-Wca" kind="push" id="Ljb-aV-ape"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mhealth" id="lbQ-62-zXb">
@@ -792,6 +791,7 @@
                         <outlet property="dateTextField" destination="i0O-5y-Vwb" id="y3F-sj-MFD"/>
                         <outlet property="fNameTF" destination="TK3-gM-qpX" id="Yv6-Oy-Fl8"/>
                         <outlet property="lNameTF" destination="L5L-kE-1w6" id="LK6-rL-vRN"/>
+                        <segue destination="qMJ-hS-Wca" kind="push" id="tRn-C1-hnE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7l6-v5-ciY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1768,7 +1768,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="58" id="EVc-vM-cbG">
-                                <rect key="frame" x="0.0" y="92" width="375" height="58"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EVc-vM-cbG" id="Mqg-sZ-dcx">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
@@ -2351,7 +2351,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aJH-zr-KMF">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aJH-zr-KMF" id="XXa-Sc-fGW">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
