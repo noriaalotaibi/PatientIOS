@@ -73,6 +73,55 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         modifiedPatient.nationality=nationality!
         modifiedPatient.password=password!
         
+        if fname == ""  {
+            
+            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            
+            
+            return
+        }
+            
+        else if lname == ""  {
+            
+            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            
+            
+            return
+        }
+            
+        else if nationality == ""  {
+            
+            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            
+                         return
+        }
+        else if emergencyNum == ""  {
+            
+            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            
+            
+            return
+        }
+        else  if phoneNum == ""  {
+            
+            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            
+            
+            return
+        }
+        else if  civilId == "" && civilId!.characters.count < 8{
+            
+            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            
+            
+            return
+        }
         
         let networkManager:Networking = Networking()
 //        patient.firstName=fname!

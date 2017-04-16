@@ -175,6 +175,16 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller {
     
     func setDictResponse(resp: NSDictionary, reqId: Int) {
         print("resp:")
+        
+        let nextScreen:UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as! UITabBarController
+        var patient = Patient()
+        let patientProfile:NSDictionary = resp.objectForKey("items") as! NSDictionary
+        patient.loadDictionary(patientProfile)
+        NSUserDefaults.standardUserDefaults().setValue(patientProfile, forKey: Const.UserDefaultsKeys.loggedinUser)
+        //nextScreen.patient = patient
+        
+        self.presentViewController(nextScreen, animated: true, completion: {})
+
         print(resp)
     }
     
@@ -182,6 +192,9 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller {
         super.viewDidLoad()
         
         setSelectedBloodTypeButton(1)
+        
+        
+
         
         // Painter
         
