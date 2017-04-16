@@ -177,15 +177,26 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
     print("patient object")
     print(patient)
     
+    FnameLB?.text  = patient.firstName
+    dateTextField.text = patient.dateOfBirth
+    CivilIDLB?.text = patient.civilId
+    LnameLB?.text      = patient.lastName
+    NationalityLB?.text = patient.nationality
+    PasswordLB.text = patient.password
+    EmailLB?.text = patient.email
+    PhoneLB?.text = patient.phone
+    EmergencyLB?.text = patient.emergencyNum
+    gender=patient.gender
+    self.bDay = patient.dateOfBirth
     
     
         // Do any additional setup after loading the view.
     
     // Painter
     
-    let painter:AYPainter = AYPainter()
-    painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
-    painter.paint(self.view)
+//    let painter:AYPainter = AYPainter()
+//    painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+//    painter.paint(self.view)
     
     // END Painter
     }
@@ -219,8 +230,7 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         self.bDay = "\(year)-\(month)-\(day)"
     }
     override func viewDidAppear(animated: Bool) {
-        <#code#>
-        
+    
         
     }
 
