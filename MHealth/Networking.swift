@@ -29,6 +29,11 @@ class Networking: NSObject {
         var result:OutputResult = OutputResult(status: true)
         Alamofire.request(request)
             .responseJSON { response in
+                
+                if self.logging {
+                    let outMessage = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
+                    print(outMessage)
+                }
                 switch response.result {
                 case .Failure(let error):
                     print(error)

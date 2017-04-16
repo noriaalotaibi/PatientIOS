@@ -148,6 +148,7 @@ class EditeMidicalInfoVC: UIViewController, NetworkCaller{
         
         print("request:")
         print(valuesDict)
+        networkManager.logging = true
         networkManager.AMJSONDictionary(Const.URLs.Patients + "/" + "\(patient.patientID)", httpMethod: "PUT", jsonData: valuesDict, reqId: 1, caller: self)
     
     }
