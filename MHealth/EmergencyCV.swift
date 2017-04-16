@@ -126,10 +126,10 @@ class EmergencyCV: UIViewController , NetworkCaller {
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(timerAction), userInfo: nil , repeats: true)
         
         // Painter
-        
-        let painter:AYPainter = AYPainter()
-        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
-        painter.paint(self.view)
+//        
+//        let painter:AYPainter = AYPainter()
+//        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+//        painter.paint(self.view)
         
         // END Painter
         
