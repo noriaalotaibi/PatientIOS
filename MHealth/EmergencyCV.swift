@@ -94,7 +94,7 @@ class EmergencyCV: UIViewController , NetworkCaller {
         
         
         
-        Label.text = "Emergency Case Canceled"
+        Label.text = NSLocalizedString("Emergency Case Canceled", comment: "")
         
         
         
@@ -149,13 +149,13 @@ class EmergencyCV: UIViewController , NetworkCaller {
             
             
             
-            Label.text = "\(counter)"
+            Label.text = NSLocalizedString("\(counter)", comment: "")
             
         }
             
         else{
             
-            Label.text = "Sending Report .."
+            Label.text = NSLocalizedString( "Sending Report ..", comment: "")
             
             let patientId:Int = 0
             
@@ -177,7 +177,7 @@ class EmergencyCV: UIViewController , NetworkCaller {
                 
                 doctors = 1}
             
-            let values = ["family":family , "hospital":hospital , "doctors":doctors]
+            let values = [NSLocalizedString( "family", comment: ""):family ,NSLocalizedString( "hospital", comment: "") :hospital , NSLocalizedString("doctors" , comment: ""):doctors]
             
             Networking().AMGetArrayData(Const.URLs.ReportURL, params: values, reqId: 0 , caller: self)
             

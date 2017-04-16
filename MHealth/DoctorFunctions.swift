@@ -31,15 +31,12 @@ class DoctorFunctions: NSObject, NetworkCaller {
         
     }
     
-    func sendInvitationRequest(patient: PatientDH, doctor: DoctorDH) {
+    func sendInvitationRequest(patient: Patient, doctor: DoctorDH) {
         let networkManager = Networking()
         networkManager.logging = true
         
-        let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .ShortStyle, timeStyle: .ShortStyle)
         
-        print("Curent time: \(timestamp)")
-        
-        let data: NSDictionary = ["patientId": patient.id, "doctorId": doctor.drId, "status": 0]
+        let data: NSDictionary = ["patientId": patient.patientID, "drId": doctor.drId, "status": 0]
         //"addingTime": timestamp
         
         networkManager.AMJSONArray("http://34.196.107.188:8080/mHealthWS/ws/patientdrlink", httpMethod: "POST", jsonData: data, reqId: 2, caller: self)
@@ -61,8 +58,10 @@ class DoctorFunctions: NSObject, NetworkCaller {
     func setArrayResponse(resp: NSArray, reqId: Int) {
         if (reqId == 1) {
             self.callerReport?.setArrayResponse(resp, reqId: reqId)
+            print(resp)
         } else if (reqId == 2) {
             self.callerInvitation?.setArrayResponse(resp, reqId: reqId)
+            print(resp)
         }
     }
 

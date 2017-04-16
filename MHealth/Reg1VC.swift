@@ -36,8 +36,6 @@ class Reg1VC: UIViewController , NetworkCaller {
         
         var valid = true
         
-       //nextButton.enabled = true
-        
         var email = emailTF.text
         var password = passwordTF.text
         var confirmPass = confirmPassTF.text
@@ -60,6 +58,7 @@ class Reg1VC: UIViewController , NetworkCaller {
             
             valid = false
         }
+        
         
         current.newPatient.email=email!
         current.newPatient.password=password!
@@ -129,25 +128,5 @@ class Reg1VC: UIViewController , NetworkCaller {
         
     }
 
-    
-    
-    
-    /*
-     
-     // MARK: - Navigation
-     
-     
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     
-     // Get the new view controller using segue.destinationViewController.
-     
-     // Pass the selected object to the new view controller.
-     
-     }
-     
-     */
     
 }
