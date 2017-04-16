@@ -61,6 +61,7 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         var emergencyNum = EmergencyLB.text
         var nationality = NationalityLB.text
         var password = PasswordLB.text
+        
         let modifiedPatient:Patient = Patient()
         modifiedPatient.loadDictionary(patient.toDictionary())
         
@@ -124,18 +125,9 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         }
         
         let networkManager:Networking = Networking()
-//        patient.firstName=fname!
-//        patient.lastName=lname!
-//        patient.civilId=civilId!
-//        patient.email=email!
-//        patient.dateOfBirth=bDay
-//        patient.gender=gender
-//        patient.phone=phoneNum!
-//        patient.emergencyNum=emergencyNum!
-//        patient.nationality=nationality!
-//        patient.password=password!
+
         
-         let valuesDict = patient.toDictionary()
+         let valuesDict = modifiedPatient.toDictionary()
         
         //newPatient.password=password!
       //  current.newPatient.gender=gender
@@ -146,6 +138,9 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         
         var alert = UIAlertView(title: "Success", message: "Updated", delegate: self, cancelButtonTitle: "OK")
         alert.show()
+        
+        
+       
         
     }
     
