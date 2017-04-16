@@ -200,12 +200,6 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller {
         super.viewDidLoad()
         
         setSelectedBloodTypeButton(1)
-        
-        if (!Networking.isInternetAvailable()) {
-            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
-            Whisper(message, to: self.navigationController!, action: .Show)
-            Silent(self.navigationController!, after: 3.0)
-        }
 
         
         // Painter
@@ -217,6 +211,14 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller {
         // END Painter
         
      }
+    
+    override func viewDidAppear(animated: Bool) {
+        if (!Networking.isInternetAvailable()) {
+            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
+        }
+    }
     
     
     

@@ -27,13 +27,6 @@ class ViewMedicalInfoVC: UIViewController , NetworkCaller {
         super.viewDidLoad()
         
         
-        
-        if (!Networking.isInternetAvailable()) {
-            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
-            Whisper(message, to: self.navigationController!, action: .Show)
-            Silent(self.navigationController!, after: 3.0)
-        }
-        
         // Painter
         
         let painter:AYPainter = AYPainter()
@@ -52,6 +45,12 @@ class ViewMedicalInfoVC: UIViewController , NetworkCaller {
         AsthmaLabel?.text = "\(patient.asthma)"
         AllergiesLabel?.text = patient.allergies
         MedicationLabel?.text = patient.medication
+        
+            if (!Networking.isInternetAvailable()) {
+                let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+                Whisper(message, to: self.navigationController!, action: .Show)
+                Silent(self.navigationController!, after: 3.0)
+            }
         
     }
     override func didReceiveMemoryWarning() {

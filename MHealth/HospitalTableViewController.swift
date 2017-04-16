@@ -30,18 +30,6 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
         self.tableView.separatorColor = UIColor.clearColor()
         self.tableView.rowHeight = 125
         
-        // Check Internet
-        if (Networking.isInternetAvailable()) {
-            let networkManager = Networking()
-            networkManager.logging = true
-            networkManager.AMGetArrayData(Const.URLs.Hospital, params: [:], reqId: 1, caller: self)
-        } else {
-            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
-            Whisper(message, to: self.navigationController!, action: .Show)
-            Silent(self.navigationController!, after: 3.0)
-        }
-        // --------------
-        
         
         // Search Bar
         
@@ -74,8 +62,21 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
         painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
         painter.paint(self.view)
         
-        // END Painter
        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        // Check Internet
+        if (Networking.isInternetAvailable()) {
+            let networkManager = Networking()
+            networkManager.logging = true
+            networkManager.AMGetArrayData(Const.URLs.Hospital, params: [:], reqId: 1, caller: self)
+        } else {
+            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
+        }
+        // --------------
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {

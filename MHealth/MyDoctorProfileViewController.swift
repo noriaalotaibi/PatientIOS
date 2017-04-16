@@ -41,12 +41,6 @@ class MyDoctorProfileViewController: UIViewController {
         labelName.text = myDoctor.firstName
         labelSpecialty.text = myDoctor.specialtyId
         labelLocation.text = myDoctor.location
-
-        if (!Networking.isInternetAvailable()) {
-            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
-            Whisper(message, to: self.navigationController!, action: .Show)
-            Silent(self.navigationController!, after: 3.0)
-        }
         
         // Painter
         
@@ -56,6 +50,14 @@ class MyDoctorProfileViewController: UIViewController {
         
         // END Painter
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if (!Networking.isInternetAvailable()) {
+            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -38,13 +38,6 @@ class HospitalProfile: UIViewController {
         HospitalWorkingHours.text=hospital.hospitalWorkingHours
         HospitalAddress.text=hospital.hospitalAddress
         HospitalAdditionalInfo.text=hospital.hospitalExtrainfo
-        
-
-        if (!Networking.isInternetAvailable()) {
-            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
-            Whisper(message, to: self.navigationController!, action: .Show)
-            Silent(self.navigationController!, after: 3.0)
-        }
 
         
         // Painter
@@ -54,6 +47,14 @@ class HospitalProfile: UIViewController {
         painter.paint(self.view)
         
         // END Painter
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if (!Networking.isInternetAvailable()) {
+            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
+        }
     }
     
 

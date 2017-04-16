@@ -26,19 +26,6 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
         self.tableView.separatorColor = UIColor.clearColor()
         self.tableView.rowHeight = 125
         
-        // Check Internet
-        if (Networking.isInternetAvailable()) {
-            let networkManager = Networking()
-            networkManager.logging = true
-            networkManager.AMGetArrayData("http://34.196.107.188:8081/MhealthWeb/webresources/patientreport/", params: [:], reqId: 1, caller: self)
-        } else {
-            //askk
-            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
-            Whisper(message, to: self.navigationController!, action: .Show)
-            Silent(self.navigationController!, after: 3.0)
-        }
-        // --------------
-        
         
         // Search Bar
         
@@ -60,6 +47,21 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
         
         
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        // Check Internet
+        if (Networking.isInternetAvailable()) {
+            let networkManager = Networking()
+            networkManager.logging = true
+            networkManager.AMGetArrayData("http://34.196.107.188:8081/MhealthWeb/webresources/patientreport/", params: [:], reqId: 1, caller: self)
+        } else {
+            //askk
+            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
+        }
+        // --------------
     }
     
     override func didReceiveMemoryWarning() {

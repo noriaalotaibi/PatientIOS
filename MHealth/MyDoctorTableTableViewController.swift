@@ -42,14 +42,7 @@ class MyDoctorTableViewController: UITableViewController, NetworkCaller,  UISear
         cacheManager = MyDoctorsCache.myInstance()
         cacheManager?.caller = self
         
-        // Check Internet
-        if (Networking.isInternetAvailable()) {
-            // network requests managed in Cache; error message auto. displayed
-        } else {
-            let message = Message(title:NSLocalizedString("No Internet Connection", comment: "") , textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
-            Whisper(message, to: self.navigationController!, action: .Show)
-            Silent(self.navigationController!, after: 3.0)
-        }
+
         // --------------
         
         self.tableView.rowHeight = 125
@@ -72,6 +65,14 @@ class MyDoctorTableViewController: UITableViewController, NetworkCaller,  UISear
         
         // END Painter
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if (!Networking.isInternetAvailable()) {
+            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
+        }
     }
 
     override func didReceiveMemoryWarning() {
