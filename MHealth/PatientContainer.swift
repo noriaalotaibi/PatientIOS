@@ -18,7 +18,6 @@ class PatientContainer: NSObject {
     static func getInstance() -> PatientContainer { return singleton }
     
     override init() {
-        loggedInPatient.id = 4
     }
     
     // to use...   PatientContainer.getInstance().loggedInPatient
