@@ -99,10 +99,12 @@ class EditeMidicalInfoVC: UIViewController, NetworkCaller{
     var patient=Patient()
 
     
+    @IBOutlet weak var DiabetesOutlet: UISegmentedControl!
     
     
     
     @IBOutlet weak var AllergiesUpdatedTF: UITextField!
+    @IBOutlet weak var AsthmaOutlet: UISegmentedControl!
 
     @IBOutlet weak var MedicationsUpdatedTF: UITextField!
     
@@ -181,7 +183,8 @@ class EditeMidicalInfoVC: UIViewController, NetworkCaller{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setSelectedBloodTypeButton(1)
+       var blood = 0
+        
         
        
         
@@ -198,12 +201,59 @@ class EditeMidicalInfoVC: UIViewController, NetworkCaller{
         print("patient object")
         print(patient)
         
+        if patient.bloodType == "A+"{
+            blood = 1
+        }
+            
+        else if patient.bloodType == "A-"{
+            blood = 2
+        }
+            
+        else if patient.bloodType == "B+"{
+            blood = 3
+        }
+        else if patient.bloodType == "B-"{
+            blood = 4
+        }
+            
+        else if patient.bloodType == "O+"{
+            blood = 5
+        }
+            
+        else if patient.bloodType == "O-"{
+            blood = 6
+        }
+            
+        else if patient.bloodType == "AB+"{
+            blood = 7
+        }
+            
+        else {
+            blood=8
+        }
         
+         if patient.asthma == false{
+            AsthmaOutlet.selectedSegmentIndex=0
+        }
+         else {
+        
+            AsthmaOutlet.selectedSegmentIndex=1
+        }
+        
+        if patient.asthma == false{
+            DiabetesOutlet.selectedSegmentIndex=0
+        }
+        else {
+            
+            DiabetesOutlet.selectedSegmentIndex=1
+        }
+        
+        setSelectedBloodTypeButton(blood)
         MedicationsUpdatedTF?.text  = patient.medication
         AllergiesUpdatedTF.text = patient.allergies
-        asthma = patient.asthma
+        
         picker1selection = patient.bloodType
-        diabetes = patient.diabetes
+       // diabetes = patient.diabetes
         
         
        
