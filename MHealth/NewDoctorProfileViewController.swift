@@ -56,8 +56,8 @@ class NewDoctorProfileViewController: UIViewController, NetworkCaller {
         
         patient.loadDictionary(patientDic);
         
-        
-        DoctorFunctions.myInstance().sendInvitationRequest(PatientContainer.getInstance().loggedInPatient, doctor: newDoctor)
+        print (newDoctor.drId)
+        DoctorFunctions.myInstance().sendInvitationRequest(patient, doctor: newDoctor)
     }
     // Response in case of invitation sent
     

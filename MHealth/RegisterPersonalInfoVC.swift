@@ -106,7 +106,18 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
             valid = false
             return
         }
-        
+        else if Validator().validatePhoneNumber(phone) {
+            var alert = UIAlertView(title: "Phone Number", message: "Invalid Phone Number", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            
+            valid = false
+        }
+        else if Validator().validateEmergencyPhoneNumber(emergency) {
+            var alert = UIAlertView(title: "Phone Number", message: "Invalid Phone Number", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            
+            valid = false
+        }
         
         Reg1VC.current.newPatient.firstName=fname!
         Reg1VC.current.newPatient.lastName=lname!

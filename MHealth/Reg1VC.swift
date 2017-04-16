@@ -59,6 +59,7 @@ class Reg1VC: UIViewController , NetworkCaller {
             valid = false
         }
         
+        
         current.newPatient.email=email!
         current.newPatient.password=password!
         current.newPatient.gender=gender
@@ -127,25 +128,5 @@ class Reg1VC: UIViewController , NetworkCaller {
         
     }
 
-    
-    
-    
-    /*
-     
-     // MARK: - Navigation
-     
-     
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     
-     // Get the new view controller using segue.destinationViewController.
-     
-     // Pass the selected object to the new view controller.
-     
-     }
-     
-     */
     
 }
