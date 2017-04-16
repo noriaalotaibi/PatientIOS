@@ -10,7 +10,7 @@ import UIKit
 
 class EditeMidicalInfoVC: UIViewController, NetworkCaller{
     
-    
+    var valuesDict:NSDictionary = NSDictionary()
     var picker1selection = ""
     var diabetes:Bool = false
     var asthma:Bool = false
@@ -142,13 +142,11 @@ class EditeMidicalInfoVC: UIViewController, NetworkCaller{
         
         
      let networkManager:Networking = Networking()
-     let valuesDict = modifiedPatient.toDictionary()
+    valuesDict =  modifiedPatient.toDictionary()
         
+        print("request:")
+        print(valuesDict)
         networkManager.AMJSONDictionary(Const.URLs.Patients + "/" + "\(patient.patientID)", httpMethod: "PUT", jsonData: valuesDict, reqId: 1, caller: self)
-        
-        
-        var alert = UIAlertView(title: "Success", message: "Updated", delegate: self, cancelButtonTitle: "OK")
-        alert.show()
     
     }
     func setArrayResponse(resp: NSArray, reqId: Int) {
@@ -158,6 +156,27 @@ class EditeMidicalInfoVC: UIViewController, NetworkCaller{
     func setDictResponse(resp: NSDictionary, reqId: Int) {
         
         print(resp)
+        
+        let loginError:Int = resp.valueForKey("errorCode") as! Int
+        print(loginError)
+        
+        
+        if loginError == 200 {
+            
+            print(loginError)
+            
+            NSUserDefaults.standardUserDefaults().setValue(valuesDict, forKey: Const.UserDefaultsKeys.loggedinUser)
+            
+            var alert = UIAlertView(title: "Updated", message: "Profile updates", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+        }
+        else {
+            
+            var alert = UIAlertView(title: "Error", message: "Profile updates", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            
+        }
+
     }
 
     override func viewDidLoad() {

@@ -10,6 +10,7 @@ import UIKit
 
 class EditPersonalInfoVC: UIViewController , NetworkCaller {
   var bDay=""
+    var valuesDict:NSDictionary = NSDictionary()
     var gender:String = ""
     @IBAction func GenderSegment(sender: AnyObject) {
         if sender.selectedSegmentIndex == 0 {
@@ -75,8 +76,7 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         modifiedPatient.password=password!
         
         if fname == ""  {
-            
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+         var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
             alert.show()
             
             
@@ -85,7 +85,7 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
             
         else if lname == ""  {
             
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+             var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
             alert.show()
             
             
@@ -94,14 +94,14 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
             
         else if nationality == ""  {
             
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+             var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
             alert.show()
             
                          return
         }
         else if emergencyNum == ""  {
             
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
             alert.show()
             
             
@@ -109,15 +109,14 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         }
         else  if phoneNum == ""  {
             
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
             alert.show()
             
             
             return
         }
         else if  civilId == "" && civilId!.characters.count < 8{
-            
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+   var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
             alert.show()
             
             
@@ -127,7 +126,7 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         let networkManager:Networking = Networking()
 
         
-         let valuesDict = modifiedPatient.toDictionary()
+     valuesDict =  modifiedPatient.toDictionary()
         
         //newPatient.password=password!
       //  current.newPatient.gender=gender
@@ -136,10 +135,12 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         networkManager.AMJSONDictionary(Const.URLs.Patients + "/" + "\(patient.patientID)", httpMethod: "PUT", jsonData: valuesDict, reqId: 1, caller: self)
        
         
-        var alert = UIAlertView(title: "Success", message: "Updated", delegate: self, cancelButtonTitle: "OK")
-        alert.show()
+//        var alert = UIAlertView(title: "Success", message: "Updated", delegate: self, cancelButtonTitle: "OK")
+//        alert.show()
         
+      //  trgytgtgtggtgt
         
+       
        
         
     }
@@ -152,6 +153,28 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
     func setDictResponse(resp: NSDictionary, reqId: Int) {
         print("response: ")
         print(resp)
+        
+        
+        let loginError:Int = resp.valueForKey("errorCode") as! Int
+        print(loginError)
+        
+        
+        if loginError == 200 {
+            
+            print(loginError)
+            
+             NSUserDefaults.standardUserDefaults().setValue(valuesDict, forKey: Const.UserDefaultsKeys.loggedinUser)
+            
+            var alert = UIAlertView(title: NSLocalizedString("Updated", comment: ""), message: NSLocalizedString("Profile updated", comment: ""), delegate: self, cancelButtonTitle: NSLocalizedString("OK", comment: ""))
+            alert.show()
+        }
+        else {
+            
+            var alert = UIAlertView(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("Failed to update the profile", comment: ""), delegate: self, cancelButtonTitle: NSLocalizedString("OK", comment: ""))
+            alert.show()
+            
+        }
+       
     }
     
   

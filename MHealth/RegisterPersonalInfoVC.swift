@@ -73,7 +73,7 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
             return
         }
         else if !( Validator().validatePhoneNumber(phone) ) {
-            var alert = UIAlertView(title: "Phone Number", message: "Invalid Phone Number", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("Phone Number", comment: ""), message: NSLocalizedString("Invalid Phone Number", comment: "") , delegate: self, cancelButtonTitle: NSLocalizedString("OK", comment: ""))
             alert.show()
             
             valid = false
@@ -98,15 +98,16 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
         
         if (valid) {
             let next:RegisterMedicalInfoVC = self.storyboard?.instantiateViewControllerWithIdentifier("RegisterMedicalInfo") as! RegisterMedicalInfoVC
-        
+            
             self.navigationController?.pushViewController(next, animated: true)
         }
         
         
         
-       
-        }
         
+    }
+    
+    
         
     
  
