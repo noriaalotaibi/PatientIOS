@@ -36,8 +36,6 @@ class Reg1VC: UIViewController , NetworkCaller {
         
         var valid = true
         
-       //nextButton.enabled = true
-        
         var email = emailTF.text
         var password = passwordTF.text
         var confirmPass = confirmPassTF.text

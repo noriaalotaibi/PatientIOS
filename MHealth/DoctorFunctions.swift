@@ -61,8 +61,10 @@ class DoctorFunctions: NSObject, NetworkCaller {
     func setArrayResponse(resp: NSArray, reqId: Int) {
         if (reqId == 1) {
             self.callerReport?.setArrayResponse(resp, reqId: reqId)
+            print(resp)
         } else if (reqId == 2) {
             self.callerInvitation?.setArrayResponse(resp, reqId: reqId)
+            print(resp)
         }
     }
 

@@ -47,6 +47,16 @@ class NewDoctorProfileViewController: UIViewController, NetworkCaller {
     
     @IBAction func sendInvitationRequest(sender: AnyObject) {
         
+        let patientDic:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
+        
+        let patient:Patient = Patient()
+        patient.loadDictionary(patientDic);
+        
+        //   patient!.loadDictionary(Patient)
+        
+        patient.loadDictionary(patientDic);
+        
+        
         DoctorFunctions.myInstance().sendInvitationRequest(PatientContainer.getInstance().loggedInPatient, doctor: newDoctor)
     }
     // Response in case of invitation sent

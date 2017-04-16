@@ -58,7 +58,6 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
         var status:Bool=true
         
         if fname == ""  {
-            
             var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
