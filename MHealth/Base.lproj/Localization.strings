@@ -58,3 +58,10 @@
 "Please fill all the missing fields" = "Please fill all the missing fields";
 "Email" = "Email";
 "Please enter a valid email" = "Please enter a valid email";
+
+
+"Phone Number" = "Phone Number";
+"Invalid Phone Number" = "Invalid Phone Number";
+"Failed to update the profile" = "Failed to update the profile";
+"Profile updated" = "Profile updated";
+
