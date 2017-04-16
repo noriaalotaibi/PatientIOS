@@ -26,17 +26,6 @@ class ViewMedicalInfoVC: UIViewController , NetworkCaller {
         super.viewDidLoad()
         
         
-        let net:Networking = Networking()
-        net.AMGetArrayData(Const.URLs.Patients, params: [:], reqId: 1, caller: self)
-        
-        let Patient:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
-        
-         patient.loadDictionary(Patient);
-        BloodTypeLabel?.text=patient.bloodType
-        DiabetesLabel?.text = "\(patient.diabetes)"
-        AsthmaLabel?.text = "\(patient.asthma)"
-        AllergiesLabel?.text = patient.allergies
-        MedicationLabel?.text = patient.medication
         
         
         // Do any additional setup after loading the view.
@@ -50,6 +39,17 @@ class ViewMedicalInfoVC: UIViewController , NetworkCaller {
         // END Painter
     }
 
+    override func viewDidAppear(animated: Bool) {
+        let Patient:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
+        
+        patient.loadDictionary(Patient);
+        BloodTypeLabel?.text=patient.bloodType
+        DiabetesLabel?.text = "\(patient.diabetes)"
+        AsthmaLabel?.text = "\(patient.asthma)"
+        AllergiesLabel?.text = patient.allergies
+        MedicationLabel?.text = patient.medication
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

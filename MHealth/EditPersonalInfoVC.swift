@@ -10,6 +10,7 @@ import UIKit
 
 class EditPersonalInfoVC: UIViewController , NetworkCaller {
   var bDay=""
+    var valuesDict:NSDictionary = NSDictionary()
     var gender:String = ""
     @IBAction func GenderSegment(sender: AnyObject) {
         if sender.selectedSegmentIndex == 0 {
@@ -127,7 +128,7 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         let networkManager:Networking = Networking()
 
         
-         let valuesDict = modifiedPatient.toDictionary()
+     valuesDict =  modifiedPatient.toDictionary()
         
         //newPatient.password=password!
       //  current.newPatient.gender=gender
@@ -136,10 +137,12 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         networkManager.AMJSONDictionary(Const.URLs.Patients + "/" + "\(patient.patientID)", httpMethod: "PUT", jsonData: valuesDict, reqId: 1, caller: self)
        
         
-        var alert = UIAlertView(title: "Success", message: "Updated", delegate: self, cancelButtonTitle: "OK")
-        alert.show()
+//        var alert = UIAlertView(title: "Success", message: "Updated", delegate: self, cancelButtonTitle: "OK")
+//        alert.show()
         
+      //  trgytgtgtggtgt
         
+       
        
         
     }
@@ -152,6 +155,28 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
     func setDictResponse(resp: NSDictionary, reqId: Int) {
         print("response: ")
         print(resp)
+        
+        
+        let loginError:Int = resp.valueForKey("errorCode") as! Int
+        print(loginError)
+        
+        
+        if loginError == 200 {
+            
+            print(loginError)
+            
+             NSUserDefaults.standardUserDefaults().setValue(valuesDict, forKey: Const.UserDefaultsKeys.loggedinUser)
+            
+            var alert = UIAlertView(title: "Updatedd", message: "Profile updates", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+        }
+        else {
+            
+            var alert = UIAlertView(title: "Error", message: "Profile updates", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            
+        }
+       
     }
     
   

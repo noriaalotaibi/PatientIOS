@@ -144,43 +144,43 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
 
    
     override func viewDidLoad() {
-        var current_lan = NSUserDefaults.standardUserDefaults().valueForKey("AppleLanguages");
+     //   var current_lan = NSUserDefaults.standardUserDefaults().valueForKey("AppleLanguages");
         
         super.viewDidLoad()
         
         
-      //  patient.convFromDictionary(records.objectAtIndex(index) as! NSDictionary)
+   
         
-        let net:Networking = Networking()
-        net.AMGetArrayData(Const.URLs.Patients, params: [:], reqId: 1, caller: self)
-        
-        let Patient:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
-        
-     //   patient!.loadDictionary(Patient)
-        
-        patient.loadDictionary(Patient);
-        
-        FnameLabel?.text  = patient.firstName
-        CivilIdLabel?.text = patient.civilId
-        LnameLabel?.text      = patient.lastName
-        NationalityLabel?.text = patient.nationality
-        if patient.gender.characters.first == "f" || patient.gender.characters.first == "F" {
-            GenderLabel?.text = "Female"
-        }else{
-            GenderLabel?.text = "Male"
-        }
-        
-        BirthDateLabel?.text = patient.dateOfBirth
-        EmailLabel?.text = patient.email
-        PhoneNumLabel?.text = patient.phone
-        EmergencyNumLabel?.text = patient.emergencyNum
-        
-        
-        if Validator().verifyUrl(patient.imageUrl)
-        {
-            let url:NSURL = NSURL(string: patient.imageUrl)!
-            self.patientImage.sd_setImageWithURL(url, placeholderImage: UIImage(named: "profileImage"))
-        }
+//        let net:Networking = Networking()
+//        net.AMGetArrayData(Const.URLs.Patients, params: [:], reqId: 1, caller: self)
+//        
+//        let Patient:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
+//        
+//     
+//        
+//        patient.loadDictionary(Patient);
+//        
+//        FnameLabel?.text  = patient.firstName
+//        CivilIdLabel?.text = patient.civilId
+//        LnameLabel?.text      = patient.lastName
+//        NationalityLabel?.text = patient.nationality
+//        if patient.gender.characters.first == "f" || patient.gender.characters.first == "F" {
+//            GenderLabel?.text = "Female"
+//        }else{
+//            GenderLabel?.text = "Male"
+//        }
+//        
+//        BirthDateLabel?.text = patient.dateOfBirth
+//        EmailLabel?.text = patient.email
+//        PhoneNumLabel?.text = patient.phone
+//        EmergencyNumLabel?.text = patient.emergencyNum
+//        
+//        
+//        if Validator().verifyUrl(patient.imageUrl)
+//        {
+//            let url:NSURL = NSURL(string: patient.imageUrl)!
+//            self.patientImage.sd_setImageWithURL(url, placeholderImage: UIImage(named: "profileImage"))
+//        }
         
        // loadData()
         
@@ -277,6 +277,51 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
            // SwiftSpinner.show(NSLocalizedString("Connecting...", comment: ""))
             networkManager.AMJSONDictionary(url, httpMethod: "PUT", jsonData: newPatient.toDictionary(), reqId: 6, caller: self)
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        let net:Networking = Networking()
+        net.AMGetArrayData(Const.URLs.Patients, params: [:], reqId: 1, caller: self)
+        
+        let Patient:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
+        
+        //   patient!.loadDictionary(Patient)
+        
+        patient.loadDictionary(Patient);
+        
+        FnameLabel?.text  = patient.firstName
+        CivilIdLabel?.text = patient.civilId
+        LnameLabel?.text      = patient.lastName
+        NationalityLabel?.text = patient.nationality
+        if patient.gender.characters.first == "f" || patient.gender.characters.first == "F" {
+            GenderLabel?.text = "Female"
+        }else{
+            GenderLabel?.text = "Male"
+        }
+        
+        BirthDateLabel?.text = patient.dateOfBirth
+        EmailLabel?.text = patient.email
+        PhoneNumLabel?.text = patient.phone
+        EmergencyNumLabel?.text = patient.emergencyNum
+        
+        
+        if Validator().verifyUrl(patient.imageUrl)
+        {
+            let url:NSURL = NSURL(string: patient.imageUrl)!
+            self.patientImage.sd_setImageWithURL(url, placeholderImage: UIImage(named: "profileImage"))
+        }
+        
+        // loadData()
+        
+        
+        // Painter
+        
+        let painter:AYPainter = AYPainter()
+        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+        painter.paint(self.view)
+
+        
     }
     
     override func didReceiveMemoryWarning() {
