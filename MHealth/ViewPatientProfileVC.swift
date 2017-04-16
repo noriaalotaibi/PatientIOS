@@ -163,6 +163,13 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
         }
         
 
+        if (!Networking.isInternetAvailable()) {
+            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
+        }
+        
+        // PAINTER
         
         let painter:AYPainter = AYPainter()
         painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))

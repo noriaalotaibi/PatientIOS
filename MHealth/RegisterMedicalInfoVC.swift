@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Whisper
 
 class RegisterMedicalInfoVC: UIViewController , NetworkCaller {
 
@@ -193,7 +194,11 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller {
         
         setSelectedBloodTypeButton(1)
         
-        
+        if (!Networking.isInternetAvailable()) {
+            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
+        }
 
         
         // Painter

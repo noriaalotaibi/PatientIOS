@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Whisper
 
 class ResetPass: UIViewController ,NetworkCaller {
 
@@ -49,6 +50,11 @@ class ResetPass: UIViewController ,NetworkCaller {
 
         // Do any additional setup after loading the view.
         
+        if (!Networking.isInternetAvailable()) {
+            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
+        }
         
         // Painter
         

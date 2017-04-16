@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Whisper
 
 class MyDoctorProfileViewController: UIViewController {
     
@@ -41,6 +42,11 @@ class MyDoctorProfileViewController: UIViewController {
         labelSpecialty.text = myDoctor.specialtyId
         labelLocation.text = myDoctor.location
 
+        if (!Networking.isInternetAvailable()) {
+            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
+        }
         
         // Painter
         

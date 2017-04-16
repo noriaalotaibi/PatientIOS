@@ -8,6 +8,7 @@
 
 import UIKit
 import VideoSplashKit
+import Whisper
 
 class LoginVC: VideoSplashViewController , NetworkCaller {
 
@@ -136,6 +137,12 @@ class LoginVC: VideoSplashViewController , NetworkCaller {
         self.backgroundColor = UIColor.whiteColor()
         self.contentURL = url
         self.restartForeground = true
+        
+        if (!Networking.isInternetAvailable()) {
+            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
+        }
         
         
         // Painter

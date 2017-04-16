@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Whisper
 
 class ViewMedicalInfoVC: UIViewController , NetworkCaller {
     @IBOutlet weak var BloodTypeLabel: UILabel!
@@ -27,8 +28,11 @@ class ViewMedicalInfoVC: UIViewController , NetworkCaller {
         
         
         
-        
-        // Do any additional setup after loading the view.
+        if (!Networking.isInternetAvailable()) {
+            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
+        }
         
         // Painter
         
@@ -63,16 +67,5 @@ class ViewMedicalInfoVC: UIViewController , NetworkCaller {
         
     }
     
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

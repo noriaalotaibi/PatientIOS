@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Whisper
 
 
 class langVC: UIViewController {
@@ -38,6 +39,12 @@ class langVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (!Networking.isInternetAvailable()) {
+            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
+        }
 
         // Painter
         
