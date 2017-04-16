@@ -112,6 +112,7 @@ class Validator: NSObject {
         
         //var civilIdRegex = NSRegularExpression.init(pattern: regex, options: nil)
         
+        return true
     }
     
 }
