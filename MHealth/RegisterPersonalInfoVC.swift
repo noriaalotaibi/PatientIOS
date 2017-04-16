@@ -57,50 +57,16 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
         var deleted:Int=0
         var status:Bool=true
         
-        if fname == ""  {
+        if fname == "" || lname == "" || nationality == "" || civilId == "" || phone == ""  {
             var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
             valid = false
             return
         }
+        else if  !( Validator().validateCivilId(civilId) ) {
             
-        else if lname == ""  {
-            
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
-            
-            valid = false
-            return
-        }
-            
-        else if nationality == ""  {
-            
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
-            
-            valid = false
-            return
-        }
-        /*else if emergency == ""  {
-            
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
-            
-            valid = false
-            return
-        }*/
-        else  if phone == ""  {
-            
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
-            
-            valid = false
-            return
-        }
-        else if  civilId == "" && civilId!.characters.count < 8{
-            
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: "Civil ID", message: "Invalid Civil ID", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
             valid = false
@@ -113,7 +79,7 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
             valid = false
         }
         else if !( Validator().validateEmergencyPhoneNumber(emergency) ) {
-            var alert = UIAlertView(title: "Phone Number", message: "Invalid Phone Number", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: "Emergency Phone Number", message: "Invalid Emergency Phone Number", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
             valid = false

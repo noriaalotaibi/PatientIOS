@@ -99,4 +99,19 @@ class Validator: NSObject {
         return true
     }
     
+    func validateCivilId(civilId: NSString?) -> Bool {
+        if (civilId == nil) {
+            return false
+        }
+        
+        let civilIdStr = civilId!
+        
+        if (civilIdStr.length <= 8 || civilIdStr == "" ) {
+            return false
+        }
+        
+        //var civilIdRegex = NSRegularExpression.init(pattern: regex, options: nil)
+        
+    }
+    
 }
