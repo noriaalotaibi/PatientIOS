@@ -151,41 +151,18 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
         
    
         
-//        let net:Networking = Networking()
-//        net.AMGetArrayData(Const.URLs.Patients, params: [:], reqId: 1, caller: self)
-//        
-//        let Patient:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
-//        
-//     
-//        
-//        patient.loadDictionary(Patient);
-//        
-//        FnameLabel?.text  = patient.firstName
-//        CivilIdLabel?.text = patient.civilId
-//        LnameLabel?.text      = patient.lastName
-//        NationalityLabel?.text = patient.nationality
-//        if patient.gender.characters.first == "f" || patient.gender.characters.first == "F" {
-//            GenderLabel?.text = "Female"
-//        }else{
-//            GenderLabel?.text = "Male"
-//        }
-//        
-//        BirthDateLabel?.text = patient.dateOfBirth
-//        EmailLabel?.text = patient.email
-//        PhoneNumLabel?.text = patient.phone
-//        EmergencyNumLabel?.text = patient.emergencyNum
-//        
-//        
-//        if Validator().verifyUrl(patient.imageUrl)
-//        {
-//            let url:NSURL = NSURL(string: patient.imageUrl)!
-//            self.patientImage.sd_setImageWithURL(url, placeholderImage: UIImage(named: "profileImage"))
-//        }
+    
+        let Patient:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
         
-       // loadData()
+        patient.loadDictionary(Patient);
+        if Validator().verifyUrl(patient.imageUrl)
+        {
+            let url:NSURL = NSURL(string: patient.imageUrl)!
+            self.patientImage.sd_setImageWithURL(url, placeholderImage: UIImage(named: "profileImage"))
+            
+        }
         
-        
-        // Painter
+
         
         let painter:AYPainter = AYPainter()
         painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
@@ -245,6 +222,12 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
             
             NSUserDefaults.standardUserDefaults().setObject(updatedPatient!.toDictionary(), forKey: Const.UserDefaultsKeys.loggedinUser)
             
+            if Validator().verifyUrl(updatedPatient!.imageUrl)
+            {
+                let url:NSURL = NSURL(string: updatedPatient!.imageUrl)!
+                self.patientImage.sd_setImageWithURL(url, placeholderImage: UIImage(named: "profileImage"))
+                
+            }
             
             self.presentViewController(alert, animated: true, completion: nil)
         }
@@ -306,11 +289,7 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
         EmergencyNumLabel?.text = patient.emergencyNum
         
         
-        if Validator().verifyUrl(patient.imageUrl)
-        {
-            let url:NSURL = NSURL(string: patient.imageUrl)!
-            self.patientImage.sd_setImageWithURL(url, placeholderImage: UIImage(named: "profileImage"))
-        }
+        
         
         // loadData()
         
