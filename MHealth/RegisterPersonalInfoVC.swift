@@ -56,9 +56,9 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
         var emergency = EmergencyNumberTF.text
         var deleted:Int=0
         var status:Bool=true
-        
+        //NSLocalizedString("Comment can't be empty", comment: "")
         if fname == ""  {
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
             alert.show()
             
             valid = false
@@ -67,7 +67,7 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
             
         else if lname == ""  {
             
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
             alert.show()
             
             valid = false
@@ -76,23 +76,25 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
             
         else if nationality == ""  {
             
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
+
             alert.show()
             
             valid = false
             return
         }
-        /*else if emergency == ""  {
-            
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
-            
-            valid = false
-            return
-        }*/
+            /*else if emergency == ""  {
+             
+             var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+             alert.show()
+             
+             valid = false
+             return
+             }*/
         else  if phone == ""  {
             
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
+
             alert.show()
             
             valid = false
@@ -100,20 +102,20 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
         }
         else if  civilId == "" && civilId!.characters.count < 8{
             
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
             alert.show()
             
             valid = false
             return
         }
         else if !( Validator().validatePhoneNumber(phone) ) {
-            var alert = UIAlertView(title: "Phone Number", message: "Invalid Phone Number", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("Phone Number", comment: ""), message: NSLocalizedString("Invalid Phone Number", comment: "") , delegate: self, cancelButtonTitle: NSLocalizedString("OK", comment: ""))
             alert.show()
             
             valid = false
         }
         else if !( Validator().validateEmergencyPhoneNumber(emergency) ) {
-            var alert = UIAlertView(title: "Phone Number", message: "Invalid Phone Number", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("Phone Number", comment: ""), message: NSLocalizedString("Invalid Phone Number", comment: "") , delegate: self, cancelButtonTitle: NSLocalizedString("OK", comment: ""))
             alert.show()
             
             valid = false
@@ -132,15 +134,16 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
         
         if (valid) {
             let next:RegisterMedicalInfoVC = self.storyboard?.instantiateViewControllerWithIdentifier("RegisterMedicalInfo") as! RegisterMedicalInfoVC
-        
+            
             self.navigationController?.pushViewController(next, animated: true)
         }
         
         
         
-       
-        }
         
+    }
+    
+    
         
     
  

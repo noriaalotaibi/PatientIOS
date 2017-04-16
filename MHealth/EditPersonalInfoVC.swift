@@ -76,8 +76,7 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         modifiedPatient.password=password!
         
         if fname == ""  {
-            
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+         var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
             alert.show()
             
             
@@ -86,7 +85,7 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
             
         else if lname == ""  {
             
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+             var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
             alert.show()
             
             
@@ -95,14 +94,14 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
             
         else if nationality == ""  {
             
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+             var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
             alert.show()
             
                          return
         }
         else if emergencyNum == ""  {
             
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
             alert.show()
             
             
@@ -110,15 +109,14 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         }
         else  if phoneNum == ""  {
             
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
             alert.show()
             
             
             return
         }
         else if  civilId == "" && civilId!.characters.count < 8{
-            
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+   var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
             alert.show()
             
             
@@ -167,12 +165,12 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
             
              NSUserDefaults.standardUserDefaults().setValue(valuesDict, forKey: Const.UserDefaultsKeys.loggedinUser)
             
-            var alert = UIAlertView(title: "Updatedd", message: "Profile updates", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("Updated", comment: ""), message: NSLocalizedString("Profile updated", comment: ""), delegate: self, cancelButtonTitle: NSLocalizedString("OK", comment: ""))
             alert.show()
         }
         else {
             
-            var alert = UIAlertView(title: "Error", message: "Profile updates", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("Failed to update the profile", comment: ""), delegate: self, cancelButtonTitle: NSLocalizedString("OK", comment: ""))
             alert.show()
             
         }
