@@ -45,15 +45,17 @@ class LoginVC: VideoSplashViewController , NetworkCaller {
         let networkManager:Networking = Networking()
         networkManager.logging = true
  
-        networkManager.AMJSONDictionary(Const.URLs.PatientLogin, httpMethod: "POST", jsonData: values, reqId: 0, caller: self)
-        PatientContainer.getInstance().loggedInPatient.email = username
-        PatientContainer.getInstance().loggedInPatient.password = password!
-       // PatientContainer.getInstance().loggedInPatient.patientID = patientID
-        
-       
-        
-        
-        
+        if (Networking.isInternetAvailable()) {
+            networkManager.AMJSONDictionary(Const.URLs.PatientLogin, httpMethod: "POST", jsonData: values, reqId: 0, caller: self)
+            PatientContainer.getInstance().loggedInPatient.email = username
+            PatientContainer.getInstance().loggedInPatient.password = password!
+            // PatientContainer.getInstance().loggedInPatient.patientID = patientID
+        }
+        else {
+            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
+        }
         
 
         
