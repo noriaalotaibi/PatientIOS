@@ -82,14 +82,14 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
             valid = false
             return
         }
-        else if emergency == ""  {
+        /*else if emergency == ""  {
             
             var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
             valid = false
             return
-        }
+        }*/
         else  if phone == ""  {
             
             var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
@@ -106,13 +106,13 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
             valid = false
             return
         }
-        else if Validator().validatePhoneNumber(phone) {
+        else if !( Validator().validatePhoneNumber(phone) ) {
             var alert = UIAlertView(title: "Phone Number", message: "Invalid Phone Number", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
             valid = false
         }
-        else if Validator().validateEmergencyPhoneNumber(emergency) {
+        else if !( Validator().validateEmergencyPhoneNumber(emergency) ) {
             var alert = UIAlertView(title: "Phone Number", message: "Invalid Phone Number", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             

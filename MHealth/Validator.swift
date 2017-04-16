@@ -57,12 +57,14 @@ class Validator: NSObject {
         return false
     }
     
-    func validatePhoneNumber(phoneNumber: NSInteger?) -> Bool {
-        var phoneNumberString:NSString = ""
+    func validatePhoneNumber(phoneNumber: NSString?) -> Bool {
         
-        if (phoneNumber != nil && phoneNumber != 0) {
-            phoneNumberString = String(phoneNumber)
+        print("PhoneNumber :\(phoneNumber)")
+        if (phoneNumber == nil || phoneNumber == "") {
+            return false
         }
+        
+        let phoneNumberString = phoneNumber!
         
         // has extension? length must be  5 + 8/9
         if phoneNumberString.substringToIndex(1) == "00"  {
@@ -78,12 +80,13 @@ class Validator: NSObject {
         return true
     }
     
-    func validateEmergencyPhoneNumber(phoneNumber: NSInteger?) -> Bool {
-        var phoneNumberString:NSString = ""
+    func validateEmergencyPhoneNumber(phoneNumber: NSString?) -> Bool {
         
-        if (phoneNumber != nil && phoneNumber != 0) {
-            phoneNumberString = String(phoneNumber)
+        if (phoneNumber == nil) {
+            return false
         }
+        
+        let phoneNumberString = phoneNumber!
         
         
         if (phoneNumberString == "") { // empty phone number, valid
