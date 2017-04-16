@@ -58,7 +58,8 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
         var status:Bool=true
         
         if fname == "" || lname == "" || nationality == "" || civilId == "" || phone == ""  {
-            var alert = UIAlertView(title: "empty fields", message: "Please fill all the missing fields", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("Empty Fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
+            
             alert.show()
             
             valid = false
@@ -66,7 +67,7 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
         }
         else if  !( Validator().validateCivilId(civilId) ) {
             
-            var alert = UIAlertView(title: "Civil ID", message: "Invalid Civil ID", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("Civil ID", comment: ""), message: NSLocalizedString("Invalid Civil ID", comment: ""), delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
             valid = false
@@ -79,7 +80,7 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
             valid = false
         }
         else if !( Validator().validateEmergencyPhoneNumber(emergency) ) {
-            var alert = UIAlertView(title: "Emergency Phone Number", message: "Invalid Emergency Phone Number", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("Phone Number", comment: ""), message: NSLocalizedString("Invalid Phone Number", comment: "") , delegate: self, cancelButtonTitle: NSLocalizedString("OK", comment: ""))
             alert.show()
             
             valid = false
@@ -98,17 +99,11 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
         
         if (valid) {
             let next:RegisterMedicalInfoVC = self.storyboard?.instantiateViewControllerWithIdentifier("RegisterMedicalInfo") as! RegisterMedicalInfoVC
-            
+        
             self.navigationController?.pushViewController(next, animated: true)
         }
         
-        
-        
-        
     }
-    
-    
-        
     
  
     
@@ -154,17 +149,8 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
         let day = components.day
         
         self.bDay = "\(year)-\(month)-\(day)"
-        
-//        Reg1VC.current.newPatient.birthDate = bDay;
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
+    
 }
