@@ -37,8 +37,8 @@ class LoginVC: VideoSplashViewController , NetworkCaller {
         // Send username and password to service for verification
         
         
-        let values:[String:AnyObject] = ["username":username!, "password":password!]
-        // 
+        let values:[String:AnyObject] = [NSLocalizedString( "username", comment: ""):username!, NSLocalizedString( "password", comment: ""):password!]
+        // NSLocalizedString( "Sending Report ..", comment: "")
         
         print(username)
         let networkManager:Networking = Networking()
@@ -78,7 +78,7 @@ class LoginVC: VideoSplashViewController , NetworkCaller {
         
            print(loginError)
             
-            var alert = UIAlertView(title: "Invalid", message: "Invalid Password or Username", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title:NSLocalizedString("Invalid", comment: "") , message: NSLocalizedString("Invalid Password or Username" , comment: ""), delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "") )
             alert.show()
         }
         else {

@@ -334,7 +334,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gTW-BD-hCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3459.5" y="689.5"/>
+            <point key="canvasLocation" x="-3335.5" y="739.5"/>
         </scene>
         <!--Reg1VC-->
         <scene sceneID="luT-sK-eq8">
@@ -429,7 +429,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93C-oe-PaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2958.5" y="781.5"/>
+            <point key="canvasLocation" x="-2914.5" y="739.5"/>
         </scene>
         <!--Reset Pass-->
         <scene sceneID="Avt-PJ-69z">
@@ -534,6 +534,7 @@
                                 </state>
                                 <connections>
                                     <action selector="Reg3Button:" destination="qMJ-hS-Wca" eventType="touchUpInside" id="QMZ-Kc-8FF"/>
+                                    <segue destination="xV2-1i-4Sj" kind="push" id="7VU-0g-jxo"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifying-glass (1)" id="LQ0-T5-KZg">
@@ -671,7 +672,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzP-am-olK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1974.5" y="739.5"/>
+            <point key="canvasLocation" x="-2052.5" y="739.5"/>
         </scene>
         <!--Register Personal InfoVC-->
         <scene sceneID="Yhw-LH-gB6">
@@ -2574,4 +2575,7 @@
         <image name="transfusion" width="64" height="64"/>
         <image name="valentines-day" width="64" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="7VU-0g-jxo"/>
+    </inferredMetricsTieBreakers>
 </document>
