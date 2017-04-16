@@ -169,14 +169,14 @@ class EditeMidicalInfoVC: UIViewController, NetworkCaller{
             
             NSUserDefaults.standardUserDefaults().setValue(valuesDict, forKey: Const.UserDefaultsKeys.loggedinUser)
             
-            var alert = UIAlertView(title: "Updated", message: "Profile updates", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("Updated" , comment: ""), message: NSLocalizedString("Profile updates" , comment: ""), delegate: self, cancelButtonTitle: NSLocalizedString("OK" , comment: ""))
             alert.show()
         }
         else {
             
-            var alert = UIAlertView(title: "Error", message: "Profile updates", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: NSLocalizedString("Error" , comment: ""), message: NSLocalizedString("Profile updates" , comment: ""), delegate: self, cancelButtonTitle:NSLocalizedString("OK" , comment: "") )
             alert.show()
-            
+            //NSLocalizedString("Updated" , comment: "")
         }
 
     }

@@ -57,3 +57,8 @@
 "Please fill all the missing fields" = "يرجى اكمال الحقول الفارغة";
 "Please enter a valid email" = "يرجى ادخال بريد الكتروني صحيح";
 "Email" = "البريد الالكتروني";
+
+"Phone Number" = "رقم الهاتف";
+"Invalid Phone Number" = "رقم الهاتف غير صحيح";
+"Failed to update the profile" = " الملف الشخصيفشلت عملية تحديث";
+"Profile updated" = "تم تحديث الملف الشخصي";
