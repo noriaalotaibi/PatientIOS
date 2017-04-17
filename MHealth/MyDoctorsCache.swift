@@ -40,58 +40,39 @@ class MyDoctorsCache: NSObject, NetworkCaller {
         if (Networking.isInternetAvailable()) {
             let networkManager = Networking()
             networkManager.logging = true
-        
-            // get ids of doctors with invitation
-            networkManager.AMGetArrayData("http://34.196.107.188:8080/mHealthWS/ws/patientdrlink", params: [:], reqId: 1, caller: self)
-        } else {
-
+            
+            let loggedInPatient = Patient()
+            let patient:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
+            
+            loggedInPatient.loadDictionary(patient);
+            var ID = loggedInPatient.patientID
+            // testing
+            ID = 2
+            //
+            networkManager.AMGetArrayData("http://34.196.107.188:8081/MhealthWeb/webresources/patient/accepteddoctor/\(ID)", params: [:], reqId: 1, caller: self)
         }
         
         
     }
     
     func setDictResponse(resp:NSDictionary, reqId:Int) {
-        if (reqId >= 2) {
-            let doctor:DoctorDH = DoctorDH()
-            doctor.loadDictionary( resp )
-            self.addDoctor( doctor )
-            if reqId == 1+doctorsCount{
-                caller?.setDictResponse(resp, reqId: reqId)
-            }
-        }
        
     }
     
     func setArrayResponse(resp:NSArray, reqId:Int) {
         
-        // patient linked ids response
+        // set doctors
         if (reqId == 1) {
-            let myDoctorsIds:NSMutableArray = NSMutableArray()
-            for id in resp {
-                
-                let linkedDoctorDictionary:NSDictionary = id as! NSDictionary
-                let patientId:Int = linkedDoctorDictionary.valueForKey("patientId") as! Int
-                let doctorId:Int = linkedDoctorDictionary.valueForKey("drId") as! Int
-                let status:Int = linkedDoctorDictionary.valueForKey("status") as! Int
-                if (patientId == PatientContainer.getInstance().loggedInPatient.id && status == 1) {
-                    myDoctorsIds.addObject(doctorId)
-                }
-            }
-            doctorsCount = myDoctorsIds.count
-            for i in 0 ..< myDoctorsIds.count{
-                let d = myDoctorsIds.objectAtIndex(i) as! Int
-                //print(d)
-
-                let path = "http://34.196.107.188:8080/mHealthWS/ws/doctor/\(d)"
-                //print(path)
-                let networkManager = Networking()
-                networkManager.logging = true
-                networkManager.AMGetDictData(path, params: [:], reqId: 2+i, caller: self)
-            }
+            print( resp )
             
+            for i in 0..<resp.count {
+                let doctor:DoctorDH = DoctorDH()
+                doctor.loadDictionary( resp.objectAtIndex(i) as! NSDictionary )
+                self.addDoctor(doctor)
+            }
             
         }
-        
+        self.caller?.setArrayResponse(resp, reqId: reqId)
     }
     
 

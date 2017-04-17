@@ -24,7 +24,6 @@ class DoctorDH: NSObject, DataHolder {
     
     var gender:Character = "M"
     
-    
     // for post
     func toDictionary() -> NSDictionary {
         let values:NSMutableDictionary = NSMutableDictionary()

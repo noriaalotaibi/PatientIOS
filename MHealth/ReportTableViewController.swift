@@ -54,7 +54,19 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
         if (Networking.isInternetAvailable()) {
             let networkManager = Networking()
             networkManager.logging = true
-            networkManager.AMGetArrayData("http://34.196.107.188:8081/MhealthWeb/webresources/patientreport/", params: [:], reqId: 1, caller: self)
+            
+            // Logged in Patient
+            let loggedInPatient:Patient = Patient()
+            let patient:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
+            
+            loggedInPatient.loadDictionary(patient);
+            
+            // Logged in patient doctor IDs
+            for doctor in MyDoctorsCache.myInstance().getDoctors() {
+                let data: NSDictionary = ["patientId": loggedInPatient.patientID, "drId": doctor.drId]
+                
+                networkManager.AMJSONArray("http://34.196.107.188:8080/mHealthWS/ws/getpatientreport/", httpMethod: "POST", jsonData: data, reqId: 1, caller: self)
+            }
         } else {
             //askk
             let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
@@ -138,6 +150,15 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
     
     
     func setDictResponse(resp:NSDictionary, reqId:Int) {
+        if (reqId == 1) {
+            print( resp )
+            
+            let report:PatientReportDH = PatientReportDH()
+            report.loadDictionary(resp)
+            allReports.append(report)
+            
+        }
+        
         self.tableView.reloadData()
     }
     
