@@ -76,54 +76,37 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         modifiedPatient.nationality=nationality!
         modifiedPatient.password=password!
         
-        if fname == ""  {
-         var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
-            alert.show()
-            
-            
-            return
-        }
-            
-        else if lname == ""  {
-            
-             var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
-            alert.show()
-            
-            
-            return
-        }
-            
-        else if nationality == ""  {
-            
-             var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
-            alert.show()
-            
-                         return
-        }
-        else if emergencyNum == ""  {
-            
-            var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
-            alert.show()
-            
-            
-            return
-        }
-        else  if phoneNum == ""  {
-            
-            var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
-            alert.show()
-            
-            
-            return
-        }
-        else if  civilId == "" && civilId!.characters.count < 8{
-   var alert = UIAlertView(title: NSLocalizedString("empty fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
-            alert.show()
-            
-            
-            return
-        }
+        var valid = true
         
+        if fname == "" || lname == "" || nationality == "" || civilId == "" || phoneNum == ""  {
+            var alert = UIAlertView(title: NSLocalizedString("Empty Fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
+            
+            alert.show()
+            
+            valid = false
+            return
+        }
+        else if  !( Validator().validateCivilId(civilId) ) {
+            
+            var alert = UIAlertView(title: NSLocalizedString("Civil ID", comment: ""), message: NSLocalizedString("Invalid Civil ID", comment: ""), delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            
+            valid = false
+            return
+        }
+        else if !( Validator().validatePhoneNumber(phoneNum) ) {
+            var alert = UIAlertView(title: NSLocalizedString("Phone Number", comment: ""), message: NSLocalizedString("Invalid Phone Number", comment: "") , delegate: self, cancelButtonTitle: NSLocalizedString("OK", comment: ""))
+            alert.show()
+            
+            valid = false
+        }
+        else if !( Validator().validateEmergencyPhoneNumber(emergencyNum) ) {
+            var alert = UIAlertView(title: NSLocalizedString("Phone Number", comment: ""), message: NSLocalizedString("Invalid Phone Number", comment: "") , delegate: self, cancelButtonTitle: NSLocalizedString("OK", comment: ""))
+            alert.show()
+            
+            valid = false
+        }
+
         let networkManager:Networking = Networking()
 
         
@@ -131,9 +114,14 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         
         //newPatient.password=password!
       //  current.newPatient.gender=gender
-        print("values for update")
-        print(valuesDict)
-        networkManager.AMJSONDictionary(Const.URLs.Patients + "/" + "\(patient.patientID)", httpMethod: "PUT", jsonData: valuesDict, reqId: 1, caller: self)
+        
+        if (valid) {
+            print("values for update")
+            print(valuesDict)
+            networkManager.AMJSONDictionary(Const.URLs.Patients + "/" + "\(patient.patientID)", httpMethod: "PUT", jsonData: valuesDict, reqId: 1, caller: self)
+        } else {
+            return
+        }
        
         
 //        var alert = UIAlertView(title: "Success", message: "Updated", delegate: self, cancelButtonTitle: "OK")
