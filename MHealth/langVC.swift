@@ -14,6 +14,8 @@ class langVC: UIViewController {
     @IBAction func ArabicButton(sender: AnyObject) {
         NSUserDefaults.standardUserDefaults().setObject(["ar"], forKey: "AppleLanguages")
         
+        var alert = UIAlertView(title: NSLocalizedString("Language" , comment: ""), message: NSLocalizedString("Language has been changed into Arabic" , comment: ""), delegate: self, cancelButtonTitle:NSLocalizedString("OK" , comment: "") )
+        alert.show()
 
     }
     
@@ -22,7 +24,8 @@ class langVC: UIViewController {
     @IBAction func EnglishButton(sender: AnyObject) {
         
           NSUserDefaults.standardUserDefaults().setObject(["en"], forKey: "AppleLanguages")
-        
+        var alert = UIAlertView(title: NSLocalizedString("Language" , comment: ""), message: NSLocalizedString("Language has been changed into English" , comment: ""), delegate: self, cancelButtonTitle:NSLocalizedString("OK" , comment: "") )
+        alert.show()
 //        let userDefaults =  NSUserDefaults.standardUserDefaults()
 //        if sender.tag == 1
 //        {
