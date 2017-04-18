@@ -36,7 +36,7 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
 
     }
 
-    
+     
    
     @IBOutlet weak var NationalityTF: UITextField!
     

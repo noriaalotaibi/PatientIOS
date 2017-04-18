@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="i4y-dx-2IP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="i4y-dx-2IP">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -61,7 +61,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cd1-VT-7XR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="528.5" y="483.5"/>
+            <point key="canvasLocation" x="1115.5" y="483.5"/>
         </scene>
         <!--All Doctors-->
         <scene sceneID="5sR-F3-azM">
@@ -93,7 +93,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6kN-xj-1H0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="967.5" y="483.5"/>
+            <point key="canvasLocation" x="1554.5" y="483.5"/>
         </scene>
         <!--Doctor-->
         <scene sceneID="oEJ-KE-O68">
@@ -110,7 +110,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAU-Se-By6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-130.5" y="483.5"/>
+            <point key="canvasLocation" x="456.5" y="483.5"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Bd2-N6-r5u">
@@ -144,7 +144,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="evk-Gl-bz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-130.5" y="1238.5"/>
+            <point key="canvasLocation" x="456.5" y="1238.5"/>
         </scene>
         <!--Hospitals-->
         <scene sceneID="1tf-NQ-3Ex">
@@ -264,14 +264,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBb-Q9-Ovo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="775.5" y="1106.5"/>
+            <point key="canvasLocation" x="1362.5" y="1106.5"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="cl3-T0-BYJ">
             <objects>
-                <viewController id="xV2-1i-4Sj" customClass="LoginVC" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginPage" id="xV2-1i-4Sj" customClass="LoginVC" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9nT-sy-zKY" customClass="login">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234567N" placeholder="Password" minimumFontSize="17" id="URo-vJ-vgb">
@@ -308,7 +308,7 @@
                                 </state>
                                 <connections>
                                     <action selector="RegisterButton:" destination="xV2-1i-4Sj" eventType="touchUpInside" id="xge-R0-tDz"/>
-                                    <segue destination="oCR-2N-sup" kind="push" id="xsp-eQ-EHW"/>
+                                    <segue destination="wUV-1U-2Ab" kind="modal" id="xsp-eQ-EHW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZqV-TD-jp7">
@@ -341,7 +341,7 @@
             <objects>
                 <viewController storyboardIdentifier="RegisterBegin" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oCR-2N-sup" customClass="Reg1VC" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a3n-ed-q8d">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" id="GIh-GY-9Sb">
@@ -429,7 +429,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93C-oe-PaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2914.5" y="739.5"/>
+            <point key="canvasLocation" x="-1865.5" y="711.5"/>
         </scene>
         <!--Reset Pass-->
         <scene sceneID="Avt-PJ-69z">
@@ -494,7 +494,7 @@
             <objects>
                 <viewController storyboardIdentifier="RegisterMedicalInfo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qMJ-hS-Wca" customClass="RegisterMedicalInfoVC" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gfT-Kb-MGl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asthma:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fJA-ae-BJS">
@@ -534,7 +534,6 @@
                                 </state>
                                 <connections>
                                     <action selector="Reg3Button:" destination="qMJ-hS-Wca" eventType="touchUpInside" id="QMZ-Kc-8FF"/>
-                                    <segue destination="xV2-1i-4Sj" kind="push" id="7VU-0g-jxo"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifying-glass (1)" id="LQ0-T5-KZg">
@@ -672,18 +671,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzP-am-olK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2052.5" y="739.5"/>
+            <point key="canvasLocation" x="-2011.5" y="1552.5"/>
         </scene>
         <!--Register Personal InfoVC-->
         <scene sceneID="Yhw-LH-gB6">
             <objects>
                 <viewController storyboardIdentifier="RegisterPersonalInfo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pRr-C5-0KL" customClass="RegisterPersonalInfoVC" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mBp-a4-0Na">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="gpU-93-yHJ">
-                                <rect key="frame" x="0.0" y="56" width="332" height="576"/>
+                                <rect key="frame" x="0.0" y="56" width="387" height="675"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fhj-Km-Nxg">
@@ -792,7 +791,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7l6-v5-ciY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2485.5" y="739.5"/>
+            <point key="canvasLocation" x="-1436.5" y="711.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="fEg-YE-xN6">
@@ -1766,7 +1765,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="58" id="EVc-vM-cbG">
-                                <rect key="frame" x="0.0" y="28" width="375" height="58"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EVc-vM-cbG" id="Mqg-sZ-dcx">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
@@ -2022,7 +2021,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j03-oL-Dvh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1981.5" y="483.5"/>
+            <point key="canvasLocation" x="2568.5" y="483.5"/>
         </scene>
         <!--New Doctor Profile View Controller-->
         <scene sceneID="ba3-kk-dYF">
@@ -2121,7 +2120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wxM-Ps-glz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1489.5" y="483.5"/>
+            <point key="canvasLocation" x="2076.5" y="483.5"/>
         </scene>
         <!--Patient Report View Controller-->
         <scene sceneID="dFl-6K-Cgf">
@@ -2337,7 +2336,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EHr-aK-FCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2461.5" y="459.5"/>
+            <point key="canvasLocation" x="3048" y="459"/>
         </scene>
         <!--Reports Table View-->
         <scene sceneID="qGF-YU-Qfu">
@@ -2349,7 +2348,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aJH-zr-KMF">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aJH-zr-KMF" id="XXa-Sc-fGW">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -2530,6 +2529,24 @@
             </objects>
             <point key="canvasLocation" x="19.5" y="-1353.5"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="D1o-Il-R2Z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wUV-1U-2Ab" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bn5-JB-vlx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oCR-2N-sup" kind="relationship" relationship="rootViewController" id="5L1-sy-29p"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ldb-EA-7n8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2452.5" y="711.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Passwordd" width="50" height="50"/>
@@ -2577,7 +2594,4 @@
         <image name="transfusion" width="64" height="64"/>
         <image name="valentines-day" width="64" height="64"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="7VU-0g-jxo"/>
-    </inferredMetricsTieBreakers>
 </document>

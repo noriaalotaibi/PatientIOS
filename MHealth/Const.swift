@@ -21,7 +21,7 @@ class Const: NSObject {
         static let Hospital:String = BASE + "/hospital"
         
         static let PatientReport:String = BASE + "/patientreport"
-        static let UploadImage:String = "http://34.196.107.188:8081/MhealthWeb/addimg"
+        static let UploadImage:String = "http://34.196.107.188:8081/MhealthWeb/addimgtogallery"
 
     }
     
