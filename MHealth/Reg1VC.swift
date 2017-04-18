@@ -41,7 +41,7 @@ class Reg1VC: UIViewController , NetworkCaller {
         var confirmPass = confirmPassTF.text
         
         
-        if !validateEmail(email!){
+        if !(Validator().validateEmail(email!)){
             
             
             var alert = UIAlertView(title: "Email", message: "Please enter a valid email", delegate: self, cancelButtonTitle: "OK")
@@ -54,6 +54,13 @@ class Reg1VC: UIViewController , NetworkCaller {
         if password != confirmPass{
             
             var alert = UIAlertView(title: "Password", message: "Password do not match", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            
+            valid = false
+        }
+        
+        if !(Validator().validatePassword(password)) {
+            var alert = UIAlertView(title: "Password", message: "Password is invalid, minimum of 8 characters", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
             valid = false
