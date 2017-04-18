@@ -77,7 +77,8 @@ class Reg1VC: UIViewController , NetworkCaller {
         
         print("request values: ")
         print(values)
-                    networkManager.AMJSONDictionary(Const.URLs.Patients, httpMethod: "POST", jsonData: values, reqId: 1, caller: self)
+        networkManager.AMJSONDictionary(Const.URLs.Patients, httpMethod: "POST", jsonData: values, reqId: 1, caller: self)
+        
         //print(values)
   
         if (valid) {

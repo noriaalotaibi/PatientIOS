@@ -68,14 +68,20 @@ class NewDoctorProfileViewController: UIViewController, NetworkCaller {
 
         // Send Invitation Request
         
-        let networkManager = Networking()
-        networkManager.logging = true
-        
-        
         let data: NSDictionary = ["drId": newDoctor.drId, "patientId": patient.patientID, "status": 0]
         //"addingTime": timestamp
         
-        networkManager.AMJSONArray("http://34.196.107.188:8081/MhealthWeb/webresources/patient/patientdrlink", httpMethod: "POST", jsonData: data, reqId: 2, caller: self)
+        if (Networking.isInternetAvailable()) {
+            let networkManager = Networking()
+            networkManager.logging = true
+            
+            networkManager.AMPostDictData("http://34.196.107.188:8081/MhealthWeb/webresources/patientdrlink/", params: [:], reqId: 2, caller: self)
+        } else {
+            let message = Message(title:NSLocalizedString("No Internet Connection", comment: "") , textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
+        }
+        
         
     }
     // Response in case of invitation sent

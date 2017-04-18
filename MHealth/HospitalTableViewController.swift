@@ -39,7 +39,7 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
 
-        searchController.searchBar.scopeButtonTitles = [NSLocalizedString("Public", comment: ""),  NSLocalizedString("Private", comment: "")]
+        searchController.searchBar.scopeButtonTitles = [NSLocalizedString("All", comment: ""),  NSLocalizedString("Public", comment: ""), NSLocalizedString("Private", comment: "")]
         searchController.searchBar.delegate = self
         
         
@@ -206,11 +206,20 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
     
     // Custom Search Bar METHODS
     
-    func filterContentForSearchText(searchText: String, scope: NSString = "Public") {
+    func filterContentForSearchText(searchText: String, scope: NSString = "All") {
         
         filteredHospitals = allHospitals.filter { hospital in
+            if scope == searchController.searchBar.scopeButtonTitles![0] {
+                return hospital.hospitalName.lowercaseString.containsString(searchText)
+            } else if scope == searchController.searchBar.scopeButtonTitles![1] {
+                return hospital.hospitalName.lowercaseString.containsString(searchText)
+                && hospital.hospitalType == searchController.searchBar.scopeButtonTitles![1]
+            } else if scope == searchController.searchBar.scopeButtonTitles![2] {
+                return hospital.hospitalName.lowercaseString.containsString(searchText)
+                    && hospital.hospitalType == searchController.searchBar.scopeButtonTitles![2]
+            }
             
-            return (hospital.hospitalType).lowercaseString == scope.lowercaseString
+            return true
             
         }
         

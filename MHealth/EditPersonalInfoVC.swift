@@ -116,11 +116,14 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         //newPatient.password=password!
       //  current.newPatient.gender=gender
         
-        if (valid) {
+        if (Networking.isInternetAvailable() && valid) {
             print("values for update")
             print(valuesDict)
             networkManager.AMJSONDictionary(Const.URLs.Patients + "/" + "\(patient.patientID)", httpMethod: "PUT", jsonData: valuesDict, reqId: 1, caller: self)
         } else {
+            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            Whisper(message, to: self.navigationController!, action: .Show)
+            Silent(self.navigationController!, after: 3.0)
             return
         }
        

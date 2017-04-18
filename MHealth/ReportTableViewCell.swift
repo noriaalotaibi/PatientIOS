@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ReportTableViewCell: UITableViewCell {
 
@@ -43,6 +44,8 @@ class ReportTableViewCell: UITableViewCell {
     func updateCellData(report: PatientReportDH) {
         reportData = report;
         
+        
+        
         doctorName.text = report.name
         if (report.drcomment == "" || report.drcomment.isEmpty) {
             // loooooooooooooook
@@ -55,6 +58,8 @@ class ReportTableViewCell: UITableViewCell {
 
             
         }
+        
+        img.sd_setImageWithURL( NSURL(string: report.imageURL), placeholderImage: UIImage(named: "medical-result"))
         
         let date:NSString = (report.timestamp as NSString).substringToIndex(10)
         

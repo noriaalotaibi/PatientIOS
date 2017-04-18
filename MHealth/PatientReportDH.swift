@@ -28,6 +28,7 @@ class PatientReportDH: NSObject, DataHolder {
     var reportId:Int = 0
     var sugarLevel:String = ""
     var timestamp:String = ""
+    var imageURL:String = ""
     
     
     func toDictionary() -> NSDictionary {
@@ -52,6 +53,7 @@ class PatientReportDH: NSObject, DataHolder {
         
         values.setValue(sugarLevel, forKey: "sugarLevel")
         values.setValue(timestamp, forKey: "timestamp")
+        values.setValue(imageURL, forKey: "imageUrl")
         return values
     }
     
@@ -81,6 +83,7 @@ class PatientReportDH: NSObject, DataHolder {
         self.patientId = values.valueForKey("patientId") as! Int
         self.reportId = values.valueForKey("reportId") as! Int
         self.sugarLevel = values.valueForKey("sugarLevel") as! String
+        self.imageURL = values.valueForKey("imageUrl") as! String
         
         if (values.valueForKey("timestamp") != nil) {
             self.timestamp = values.valueForKey("timestamp") as! String

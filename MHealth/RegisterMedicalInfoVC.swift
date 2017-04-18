@@ -165,11 +165,8 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller {
         
         if (Networking.isInternetAvailable()) {
             networkManager.AMJSONDictionary(Const.URLs.Patients, httpMethod: "POST", jsonData: values, reqId: 1, caller: self)
-            
-//            let next:LoginVC = self.storyboard?.instantiateViewControllerWithIdentifier("loginPage") as! LoginVC
-//            
-//            self.presentViewController(next, animated: true, completion: {})
-            
+
+            self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
             
         } else {
             let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
@@ -177,7 +174,6 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller {
             Silent(self.navigationController!, after: 3.0)
         }
         
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
         
 
     }

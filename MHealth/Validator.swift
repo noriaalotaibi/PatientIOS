@@ -66,13 +66,14 @@ class Validator: NSObject {
         
         let phoneNumberString = phoneNumber!
         
-        // has extension? length must be  5 + 8/9
-        if phoneNumberString.substringToIndex(1) == "00"  {
-            if !( phoneNumberString.length == 12 || phoneNumberString.length == 11) {
+        // has extension? length must be  5 + 8 (Kuwait) /9 (Other)
+        if phoneNumberString.substringToIndex(2) == "00"  {
+            if !( phoneNumberString.length == 13 || phoneNumberString.length == 14) {
                 return false
             }
         } else {
-            if !( phoneNumberString.length == 8 || phoneNumberString.length == 9) {
+            // Default kuwaiti number
+            if !( phoneNumberString.length == 8) {
                 return false
             }
         }
