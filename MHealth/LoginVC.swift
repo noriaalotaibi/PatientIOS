@@ -155,6 +155,8 @@ class LoginVC: VideoSplashViewController , NetworkCaller {
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        super.viewDidAppear(true)
         if (!Networking.isInternetAvailable()) {
             let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
