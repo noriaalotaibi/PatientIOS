@@ -165,11 +165,19 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller {
         
         if (Networking.isInternetAvailable()) {
             networkManager.AMJSONDictionary(Const.URLs.Patients, httpMethod: "POST", jsonData: values, reqId: 1, caller: self)
+            
+//            let next:LoginVC = self.storyboard?.instantiateViewControllerWithIdentifier("loginPage") as! LoginVC
+//            
+//            self.presentViewController(next, animated: true, completion: {})
+            
+            
         } else {
             let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         }
+        
+        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
         
 
     }
@@ -183,10 +191,30 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller {
     
     func setDictResponse(resp: NSDictionary, reqId: Int) {
         print("resp:")
+       print(resp)
         
+        let registerationStatus:Int = resp.valueForKey("errorCode") as! Int
+        print(registerationStatus)
+        
+        
+        if registerationStatus == 200 {
+            
+            print(registerationStatus)
+            
+           // NSUserDefaults.standardUserDefaults().setValue(valuesDict, forKey: Const.UserDefaultsKeys.loggedinUser)
+            
+            var alert = UIAlertView(title: NSLocalizedString("Register" , comment: ""), message: NSLocalizedString("Done" , comment: ""), delegate: self, cancelButtonTitle: NSLocalizedString("OK" , comment: ""))
+            alert.show()
+        }
+        else {
+            
+            var alert = UIAlertView(title: NSLocalizedString("Error" , comment: ""), message: NSLocalizedString("no complete" , comment: ""), delegate: self, cancelButtonTitle:NSLocalizedString("OK" , comment: "") )
+            alert.show()
+            //NSLocalizedString("Updated" , comment: "")
+        }
 
         
-        print(resp)
+        
     }
     
     override func viewDidLoad() {
