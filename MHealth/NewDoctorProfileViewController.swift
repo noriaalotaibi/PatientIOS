@@ -65,22 +65,44 @@ class NewDoctorProfileViewController: UIViewController, NetworkCaller {
         patient.loadDictionary(patientDic);
         
         print (newDoctor.drId)
-        DoctorFunctions.myInstance().sendInvitationRequest(patient, doctor: newDoctor)
+
+        // Send Invitation Request
+        
+        let networkManager = Networking()
+        networkManager.logging = true
+        
+        
+        let data: NSDictionary = ["drId": newDoctor.drId, "patientId": patient.patientID, "status": 0]
+        //"addingTime": timestamp
+        
+        networkManager.AMJSONArray("http://34.196.107.188:8081/MhealthWeb/webresources/patient/patientdrlink", httpMethod: "POST", jsonData: data, reqId: 2, caller: self)
+        
     }
     // Response in case of invitation sent
     
     func setDictResponse(resp: NSDictionary, reqId: Int) {
-        
+        if resp.count == 0 {
+            let alertControlle:UIAlertController = UIAlertController(title: NSLocalizedString("Success", comment: ""), message: NSLocalizedString("Invitation was sent sucessfully", comment: ""), preferredStyle: .Alert)
+            
+            let action:UIAlertAction =  UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .Cancel, handler: { (UIAlertAction) in
+                self.navigationController?.popViewControllerAnimated(true)
+            })
+            alertControlle.addAction(action)
+            self.presentViewController(alertControlle, animated: true, completion: nil)
+            
+            
+        }else{
+            let alertControlle:UIAlertController = UIAlertController(title: NSLocalizedString("Failed", comment: ""), message: NSLocalizedString("Invitation failed to send", comment: ""), preferredStyle: .Alert)
+            
+            let action:UIAlertAction =  UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .Cancel, handler: { (UIAlertAction) in
+            })
+            alertControlle.addAction(action)
+            self.presentViewController(alertControlle, animated: true, completion: nil)
+        }
     }
     
     func setArrayResponse(resp: NSArray, reqId: Int) {
-        let alertControlle:UIAlertController = UIAlertController(title:NSLocalizedString("Success", comment: "") , message: NSLocalizedString("Invitation was sent sucessfully", comment: ""), preferredStyle: .Alert)
         
-        let action:UIAlertAction =  UIAlertAction(title: "OK", style: .Cancel, handler: { (UIAlertAction) in
-            self.navigationController?.popViewControllerAnimated(true)
-        })
-        alertControlle.addAction(action)
-        self.presentViewController(alertControlle, animated: true, completion: nil)
 
     }
 

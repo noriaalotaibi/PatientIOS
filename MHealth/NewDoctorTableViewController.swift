@@ -8,6 +8,7 @@
 
 import UIKit
 import Whisper
+import SwiftSpinner
 
 
 class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
@@ -59,10 +60,17 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISea
     
     override func viewDidAppear(animated: Bool) {
         // Check Internet
+        
         if (Networking.isInternetAvailable()) {
             let networkManager = Networking()
             networkManager.logging = true
-            networkManager.AMGetArrayData("http://34.196.107.188:8080/mHealthWS/ws/doctor", params: [:], reqId: 1, caller: self)
+            networkManager.AMGetArrayData("http://34.196.107.188:8081/MhealthWeb/webresources/doctor", params: [:], reqId: 1, caller: self)
+            
+            //  Spinner
+            
+            SwiftSpinner.show("Retrieving Data...")
+            SwiftSpinner.setTitleFont(UIFont(name: "Futura", size: 22.0))
+    
         } else {
             let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
@@ -73,7 +81,6 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISea
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -163,6 +170,7 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISea
             print("My Doctors Set!")
         }
         self.tableView.reloadData()
+        SwiftSpinner.hide()
     }
     
     
