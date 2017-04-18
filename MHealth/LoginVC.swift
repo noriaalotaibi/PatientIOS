@@ -141,17 +141,19 @@ class LoginVC: VideoSplashViewController , NetworkCaller {
         self.restartForeground = true
 
         
-        
-        // Painter
-//        
-//        let painter:AYPainter = AYPainter()
-//        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
-//        painter.paint(self.view)
-//        
-        // END Painter
+        if NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) != nil{
+            
+            let patient:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser)  as! NSDictionary
+            var p:Patient=Patient()
+            p.loadDictionary(patient)
+            UsernameTF.text = p.email
+            PasswordTF.text=p.password
+            LoginButton(UIButton())
+            
+            
+            
+        }
 
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -161,8 +163,15 @@ class LoginVC: VideoSplashViewController , NetworkCaller {
             let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
+            
+            
+            
+            
+           
+            
         }
-    }
+        
+            }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

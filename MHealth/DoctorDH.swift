@@ -22,7 +22,7 @@ class DoctorDH: NSObject, DataHolder {
     public var cvUrl:String = ""
     public var location:String = ""
     
-    var gender:Character = "M"
+    public var gender:String = "M"
     
     // for post
     func toDictionary() -> NSDictionary {
@@ -40,7 +40,7 @@ class DoctorDH: NSObject, DataHolder {
         values.setValue(cvUrl, forKey: "cvUrl")
         values.setValue(location, forKey: "location")
         
-        //values.setValue(gender, forKey: "gender")
+        values.setValue(gender, forKey: "gender")
         
         return values
     }
@@ -60,7 +60,7 @@ class DoctorDH: NSObject, DataHolder {
         self.cvUrl = values.valueForKey("cvUrl") as! String
         self.location = values.valueForKey("location") as! String
         
-        //self.gender = values.valueForKey("location") as! Character
+        self.gender = values.valueForKey("gender") as! String
         
         
         

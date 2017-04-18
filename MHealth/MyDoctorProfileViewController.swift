@@ -18,6 +18,7 @@ class MyDoctorProfileViewController: UIViewController {
     @IBOutlet weak var labelSpecialty: UILabel!
     @IBOutlet weak var labelLocation: UILabel!
     
+    @IBOutlet weak var labelGender: UILabel!
     @IBAction func sendReport(sender: UIButton) {
         
         
@@ -41,6 +42,7 @@ class MyDoctorProfileViewController: UIViewController {
         labelName.text = myDoctor.firstName
         labelSpecialty.text = myDoctor.specialtyId
         labelLocation.text = myDoctor.location
+        labelGender.text = myDoctor.gender
         
         // Painter
         

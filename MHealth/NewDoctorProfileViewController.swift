@@ -20,12 +20,14 @@ class NewDoctorProfileViewController: UIViewController, NetworkCaller {
     @IBOutlet weak var labelSpecialty: UILabel!
     @IBOutlet weak var labelLocation: UILabel!
 
+    @IBOutlet weak var labelGender: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         labelName.text = newDoctor.firstName
         labelSpecialty.text = newDoctor.specialtyId
         labelLocation.text = newDoctor.location
+       labelGender.text = newDoctor.gender
         
         callerManager = DoctorFunctions.myInstance()
         callerManager?.callerInvitation = self
