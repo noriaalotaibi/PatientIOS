@@ -36,10 +36,10 @@ class DoctorFunctions: NSObject, NetworkCaller {
         networkManager.logging = true
         
         
-        let data: NSDictionary = ["drId": doctor.drId, "patientId": patient.patientID, "status": 0]
+        //let data: NSDictionary = ["drId": doctor.drId, "patientId": patient.patientID, "status": 0]
         //"addingTime": timestamp
         
-        networkManager.AMJSONArray("http://34.196.107.188:8081/MhealthWeb/webresources/patientdrlink/", httpMethod: "POST", jsonData: data, reqId: 2, caller: self)
+        //networkManager.AMGetDictData("http://34.196.107.188:8081/MhealthWeb/webresources/getPr/\(patient.patientID)", httpMethod: "GET", reqId: 2, caller: self)
         
     }
     

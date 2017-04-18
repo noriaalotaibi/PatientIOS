@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import Whisper
+import SwiftSpinner
 
 
 class HospitalTableViewController: UITableViewController, NetworkCaller,  UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate,CLLocationManagerDelegate {
@@ -71,6 +72,12 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
             let networkManager = Networking()
             networkManager.logging = true
             networkManager.AMGetArrayData(Const.URLs.Hospital, params: [:], reqId: 1, caller: self)
+            
+            //  Spinner
+            
+            SwiftSpinner.show("Retrieving Data...")
+            SwiftSpinner.setTitleFont(UIFont(name: "Futura", size: 22.0))
+            
         } else {
             let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
@@ -191,6 +198,7 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
             
         }
         self.tableView.reloadData()
+        SwiftSpinner.hide()
     }
     
     

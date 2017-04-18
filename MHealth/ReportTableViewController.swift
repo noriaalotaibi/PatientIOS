@@ -8,6 +8,7 @@
 
 import UIKit
 import Whisper
+import SwiftSpinner
 
 class ReportTableViewController: UITableViewController, NetworkCaller,  UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
 
@@ -60,12 +61,13 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
             
             loggedInPatient.loadDictionary(patient);
             
-            // Logged in patient doctor IDs
-            for doctor in MyDoctorsCache.myInstance().getDoctors() {
-                let data: NSDictionary = ["patientId": loggedInPatient.patientID, "drId": doctor.drId]
-                
-                networkManager.AMJSONArray("http://34.196.107.188:8081/MhealthWeb/webresources/getpatientreport", httpMethod: "POST", jsonData: data, reqId: 1, caller: self)
-            }
+            networkManager.AMGetArrayData("http://34.196.107.188:8081/MhealthWeb/webresources/patientreport/getPr/\(loggedInPatient.patientID)", params: [:], reqId: 1, caller: self)
+            
+            //  Spinner
+            
+            SwiftSpinner.show("Retrieving Data...")
+            SwiftSpinner.setTitleFont(UIFont(name: "Futura", size: 22.0))
+            
         } else {
             //askk
             let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
@@ -175,6 +177,7 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
             
         }
         self.tableView.reloadData()
+        SwiftSpinner.hide()
     }
     
     
