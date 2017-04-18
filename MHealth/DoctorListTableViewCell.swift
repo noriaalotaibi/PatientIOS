@@ -54,8 +54,8 @@ class DoctorListTableViewCell: UITableViewCell {
         img.sd_setImageWithURL( NSURL(string: doctor.imageUrl), placeholderImage: UIImage(named: placeholder))
         name.text = doctorData.firstName + doctorData.lastName
         specialty.text = doctorData.specialtyId;
-        gender.text = "";
-        gender.text?.append(doctorData.gender);
+        gender.text = doctor.gender
+//        gender.text?.append(doctor.gender)
     }
     
 }
