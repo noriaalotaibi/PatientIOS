@@ -32,15 +32,27 @@ class ResetPass: UIViewController ,NetworkCaller {
         
 //        networkManager.AMJSONDictionary(Const.URLs.ResetPassword, httpMethod: "POST", jsonData: values, reqId: 0, caller: self)
 
+        var valid = true
         
-        
-        if !Validator().validateEmail(email)
+        if !( Validator().validateEmail(email) )
         {
             print("please enter a valid email")
+            valid = false
             return
         }
         
-        networkManager.AMJSONDictionary(Const.URLs.ResetPassword, httpMethod: "POST", jsonData: ["username":email, "civilid":civil], reqId: 3, caller: self)
+        if  !( Validator().validateCivilId(civil) ) {
+            
+            var alert = UIAlertView(title: NSLocalizedString("Civil ID", comment: ""), message: NSLocalizedString("Invalid Civil ID", comment: ""), delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+            
+            valid = false
+            return
+        }
+
+        if (valid) {
+            networkManager.AMJSONDictionary(Const.URLs.ResetPassword, httpMethod: "POST", jsonData: ["username":email, "civilid":civil], reqId: 3, caller: self)
+        }
         
         
         

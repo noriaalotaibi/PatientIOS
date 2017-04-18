@@ -99,6 +99,23 @@ class Validator: NSObject {
         return true
     }
     
+    
+    func validatePassword(password: NSString?) -> Bool {
+        if (password == nil) {
+            return false
+        }
+        
+        let passwordStr = password!
+        
+        if (passwordStr.length <= 8) {
+            return false
+        }
+        
+        //var civilIdRegex = NSRegularExpression.init(pattern: regex, options: nil)
+        
+        return true
+    }
+    
     func validateCivilId(civilId: NSString?) -> Bool {
         if (civilId == nil) {
             return false

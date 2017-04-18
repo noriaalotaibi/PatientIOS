@@ -36,7 +36,6 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
         //searchController.searchBar.scopeButtonTitles = ["Doctor Name"]
         searchController.searchBar.delegate = self
         
-        
         // Painter
         
         let painter:AYPainter = AYPainter()
@@ -65,7 +64,7 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
             for doctor in MyDoctorsCache.myInstance().getDoctors() {
                 let data: NSDictionary = ["patientId": loggedInPatient.patientID, "drId": doctor.drId]
                 
-                networkManager.AMJSONArray("http://34.196.107.188:8080/mHealthWS/ws/getpatientreport/", httpMethod: "POST", jsonData: data, reqId: 1, caller: self)
+                networkManager.AMJSONArray("http://34.196.107.188:8081/MhealthWeb/webresources/getpatientreport", httpMethod: "POST", jsonData: data, reqId: 1, caller: self)
             }
         } else {
             //askk
