@@ -75,6 +75,7 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
         modifiedPatient.emergencyNum=emergencyNum!
         modifiedPatient.nationality=nationality!
         modifiedPatient.password=password!
+        modifiedPatient.gender=gender
         
         var valid = true
         
