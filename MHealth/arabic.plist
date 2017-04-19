@@ -2,8 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Invalid Password or Username</key>
+	<string>اسم المستخدم او كلمة المرور غير صحيح</string>
+	<key>Invalid</key>
+	<string>غير صحيح</string>
+	<key>username</key>
+	<string>اسم المستخدم</string>
+	<key>password</key>
+	<string>كلمة المرور</string>
+	<key>Language has been changed into English</key>
+	<string>تم تغيير اللغة الى الانجليزية</string>
+	<key>Language has been changed into Arabic</key>
+	<string>تم تغيير اللغة الى العربية</string>
 	<key>Profile failed to update</key>
-	<string></string>
+	<string>لم تتم عملية تحديث الملف الشخصي</string>
 	<key>Sending Report ..</key>
 	<string>جاري ارسال التقرير ..</string>
 	<key>Cancel</key>
@@ -24,5 +36,7 @@
 	<string>خطأ</string>
 	<key>Updated</key>
 	<string>تم التحديث</string>
+	<key>Language</key>
+	<string>اللغة</string>
 </dict>
 </plist>

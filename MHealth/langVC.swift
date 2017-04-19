@@ -11,10 +11,14 @@ import Whisper
 
 
 class langVC: UIViewController {
+    
+    var title1 = Langs.arabicTitleForString("Language")
+    var message = Langs.arabicTitleForString("Language has been changed into Arabic")
+    var okButton = Langs.arabicTitleForString("OK")
     @IBAction func ArabicButton(sender: AnyObject) {
         NSUserDefaults.standardUserDefaults().setObject(["ar"], forKey: "AppleLanguages")
         
-        var alert = UIAlertView(title: NSLocalizedString("Language" , comment: ""), message: NSLocalizedString("Language has been changed into Arabic" , comment: ""), delegate: self, cancelButtonTitle:NSLocalizedString("OK" , comment: "") )
+        var alert = UIAlertView(title: title1, message: message, delegate: self, cancelButtonTitle:okButton)
         alert.show()
 
     }
@@ -23,8 +27,13 @@ class langVC: UIViewController {
     
     @IBAction func EnglishButton(sender: AnyObject) {
         
+        var title2 = Langs.arabicTitleForString("Language")
+        var message2 = Langs.arabicTitleForString("Language has been changed into English")
+        var okButton2 = Langs.arabicTitleForString("OK")
+        
           NSUserDefaults.standardUserDefaults().setObject(["en"], forKey: "AppleLanguages")
-        var alert = UIAlertView(title: NSLocalizedString("Language" , comment: ""), message: NSLocalizedString("Language has been changed into English" , comment: ""), delegate: self, cancelButtonTitle:NSLocalizedString("OK" , comment: "") )
+       
+        var alert = UIAlertView(title:title2, message: message2, delegate: self, cancelButtonTitle:okButton2 )
         alert.show()
 //        let userDefaults =  NSUserDefaults.standardUserDefaults()
 //        if sender.tag == 1
@@ -45,9 +54,9 @@ class langVC: UIViewController {
 
         // Painter
         
-        let painter:AYPainter = AYPainter()
-        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
-        painter.paint(self.view)
+//        let painter:AYPainter = AYPainter()
+//        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
+//        painter.paint(self.view)
         
         // END Painter
     
@@ -57,8 +66,11 @@ class langVC: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        
+        var connTitle=Langs.arabicTitleForString("No Internet Connection")
         if (!Networking.isInternetAvailable()) {
-            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            let message = Message(title: connTitle, textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         }
