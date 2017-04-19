@@ -50,8 +50,10 @@ class HospitalProfile: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        var noNetwork = Langs.arabicTitleForString("No Internet Connection")
         if (!Networking.isInternetAvailable()) {
-            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            let message = Message(title: noNetwork, textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         }

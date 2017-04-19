@@ -109,7 +109,6 @@ class MyReportViewController: UITableViewController {
         cell.textLabel?.text = theSelected
         cell.imageView?.image = UIImage(named:reportIcons[indexPath.section])
         
-        
         var itemSize = CGSizeMake(35, 35)
         if (self.currentPatientReport?.pain) == true && indexPath.section == (reportTitles.count-1){
             itemSize = CGSizeMake(50, 40)
