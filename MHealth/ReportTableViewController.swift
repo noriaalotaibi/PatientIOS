@@ -151,7 +151,7 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
     
     
     func setDictResponse(resp:NSDictionary, reqId:Int) {
-        if (reqId == 1) {
+        /*if (reqId == 1) {
             print( resp )
             
             let report:PatientReportDH = PatientReportDH()
@@ -160,10 +160,13 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
             
         }
         
-        self.tableView.reloadData()
+        self.tableView.reloadData()*/
     }
     
     func setArrayResponse(resp:NSArray, reqId:Int) {
+        
+        allReports.removeAll()
+        filteredReports.removeAll()
         // set doctors
         if (reqId == 1) {
             print( resp )

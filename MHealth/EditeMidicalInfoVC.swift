@@ -175,7 +175,7 @@ class EditeMidicalInfoVC: UIViewController, NetworkCaller{
             alert.show()
         }
         else {
-            
+    
             var alert = UIAlertView(title: NSLocalizedString("Error" , comment: ""), message: NSLocalizedString("Profile updates" , comment: ""), delegate: self, cancelButtonTitle:NSLocalizedString("OK" , comment: "") )
             alert.show()
             //NSLocalizedString("Updated" , comment: "")
