@@ -17,14 +17,14 @@ class MyReportViewController: UITableViewController {
     
     var currentPatientReport:PatientReportDH?
     
-    var bloodPressure=Langs.arabicTitleForString("Blood pressure")
-    var heartRate=Langs.arabicTitleForString("Heart rate")
-    var sugarLevel=Langs.arabicTitleForString("Sugar level")
-    var fever=Langs.arabicTitleForString("Fever")
-    var caughing=Langs.arabicTitleForString("Caughing")
-    var dizziness=Langs.arabicTitleForString("Dizziness")
-    var nauseous=Langs.arabicTitleForString("Nauseous")
-    var headache=Langs.arabicTitleForString("Headache")
+//    var bloodPressure=Langs.arabicTitleForString("Blood pressure")
+//    var heartRate=Langs.arabicTitleForString("Heart rate")
+//    var sugarLevel=Langs.arabicTitleForString("Sugar level")
+//    var fever=Langs.arabicTitleForString("Fever")
+//    var caughing=Langs.arabicTitleForString("Caughing")
+//    var dizziness=Langs.arabicTitleForString("Dizziness")
+//    var nauseous=Langs.arabicTitleForString("Nauseous")
+//    var headache=Langs.arabicTitleForString("Headache")
     
     var reportTitles:[String] = [NSLocalizedString("Blood pressure", comment: ""),
                                  NSLocalizedString("Heart rate", comment: ""),
