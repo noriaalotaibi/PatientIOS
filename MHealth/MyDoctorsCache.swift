@@ -47,9 +47,7 @@ class MyDoctorsCache: NSObject, NetworkCaller {
             loggedInPatient.loadDictionary(patient);
             var ID = loggedInPatient.patientID
             print("Patient ID \(ID)")
-            // testing
-           // ID = 2
-            //
+
             networkManager.AMGetArrayData("http://34.196.107.188:8081/MhealthWeb/webresources/patient/accepteddoctor/\(ID)", params: [:], reqId: 1, caller: self)
         }
         

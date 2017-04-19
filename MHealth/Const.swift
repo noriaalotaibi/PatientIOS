@@ -16,6 +16,7 @@ class Const: NSObject {
         static let EditStatus:String = BASE + "/newdonationrecord/editStatus"
         static let Patients:String = BASE + "/patient"
         static let PatientLogin:String = BASE + "/patient/login"
+        static let PatientInvitationRequest:String = BASE + "/patientdrlink"
         static let ReportURL:String = BASE + "/report"
         static let ResetPassword:String = BASE + "/patient/reset"
         static let Hospital:String = BASE + "/hospital"

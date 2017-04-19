@@ -110,6 +110,10 @@ class Networking: NSObject {
         var result:OutputResult = OutputResult(status: true)
         Alamofire.request(.POST, url, parameters: params).validate().responseJSON { response in
             
+            if self.logging {
+                let outMessage = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
+                print(outMessage)
+            }
             switch response.result {
             case .Success:
                 if let value = response.result.value {
