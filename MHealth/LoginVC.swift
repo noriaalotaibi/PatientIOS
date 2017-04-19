@@ -134,7 +134,7 @@ class LoginVC: VideoSplashViewController , NetworkCaller,UITextFieldDelegate {
         UsernameTF.delegate = self
         PasswordTF.delegate = self
         
-        let url = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("heart", ofType: "mp4")!)
+        let url = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("mm", ofType: "mp4")!)
         
         self.videoFrame = view.frame
         self.fillMode = .ResizeAspectFill
