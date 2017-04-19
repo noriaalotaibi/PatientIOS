@@ -60,5 +60,5 @@
 
 "Phone Number" = "رقم الهاتف";
 "Invalid Phone Number" = "رقم الهاتف غير صحيح";
-"Failed to update the profile" = " الملف الشخصيفشلت عملية تحديث";
+"Failed to update the profile" ="فشلت عملية تحديث الملف الشخصي";
 "Profile updated" = "تم تحديث الملف الشخصي";

@@ -167,16 +167,23 @@ class EditeMidicalInfoVC: UIViewController, NetworkCaller{
         
         if loginError == 200 {
             
+            
             print(loginError)
             
             NSUserDefaults.standardUserDefaults().setValue(valuesDict, forKey: Const.UserDefaultsKeys.loggedinUser)
+        
             
-            var alert = UIAlertView(title: NSLocalizedString("Updated" , comment: ""), message: NSLocalizedString("Profile updates" , comment: ""), delegate: self, cancelButtonTitle: NSLocalizedString("OK" , comment: ""))
+            var title = Langs.arabicTitleForString("Updated");Langs.arabicTitleForString("Error")
+            var message = Langs.arabicTitleForString("Profile has been updated")
+            
+            var cancelButt = Langs.arabicTitleForString("OK")
+            var alert = UIAlertView(title: title, message: message, delegate: self, cancelButtonTitle:
+            cancelButt)
             alert.show()
         }
         else {
             
-            var alert = UIAlertView(title: NSLocalizedString("Error" , comment: ""), message: NSLocalizedString("Profile updates" , comment: ""), delegate: self, cancelButtonTitle:NSLocalizedString("OK" , comment: "") )
+            var alert = UIAlertView(title: title, message: NSLocalizedString("Profile updates" , comment: ""), delegate: self, cancelButtonTitle:NSLocalizedString("OK" , comment: "") )
             alert.show()
             //NSLocalizedString("Updated" , comment: "")
         }
@@ -187,7 +194,7 @@ class EditeMidicalInfoVC: UIViewController, NetworkCaller{
         super.viewDidLoad()
        var blood = 0
         
-        
+     //   let title = NSLocalizedString("Updated", comment: "")
        
         
         let net:Networking = Networking()

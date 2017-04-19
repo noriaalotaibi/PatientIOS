@@ -15,6 +15,8 @@
 		433A49351E9B5EA600642266 /* HospitalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433A49341E9B5EA600642266 /* HospitalCache.swift */; };
 		433A49391E9B797100642266 /* HospitalProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433A49381E9B797100642266 /* HospitalProfile.swift */; };
 		4341DC881E9E2C5C001172A1 /* gifFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4341DC871E9E2C5C001172A1 /* gifFramework.swift */; };
+		434CEC851EA74679003BF09D /* arabic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 434CEC841EA74679003BF09D /* arabic.plist */; };
+		434CEC871EA7468E003BF09D /* Langs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434CEC861EA7468E003BF09D /* Langs.swift */; };
 		437F36AC1E93D18E006AC55E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437F36AB1E93D18E006AC55E /* Alert.swift */; };
 		438C5D761E9F7F3000B3F60B /* Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C5D751E9F7F3000B3F60B /* Customization.swift */; };
 		438C5D7D1E9FB0DE00B3F60B /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 438C5D7F1E9FB0DE00B3F60B /* Localization.strings */; };
@@ -86,6 +88,8 @@
 		433A49341E9B5EA600642266 /* HospitalCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalCache.swift; sourceTree = "<group>"; };
 		433A49381E9B797100642266 /* HospitalProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalProfile.swift; sourceTree = "<group>"; };
 		4341DC871E9E2C5C001172A1 /* gifFramework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gifFramework.swift; sourceTree = "<group>"; };
+		434CEC841EA74679003BF09D /* arabic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = arabic.plist; sourceTree = "<group>"; };
+		434CEC861EA7468E003BF09D /* Langs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Langs.swift; sourceTree = "<group>"; };
 		437F36AB1E93D18E006AC55E /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		438C5D751E9F7F3000B3F60B /* Customization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customization.swift; sourceTree = "<group>"; };
 		438C5D791E9FB05A00B3F60B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
@@ -331,6 +335,8 @@
 				437F36AB1E93D18E006AC55E /* Alert.swift */,
 				52CC05131E6B41EC00BC93A9 /* Printer.swift */,
 				51EF73B11E6FDD3F00706551 /* DoctorFunctions.swift */,
+				434CEC841EA74679003BF09D /* arabic.plist */,
+				434CEC861EA7468E003BF09D /* Langs.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -428,6 +434,7 @@
 				51F5394B1EA14694004793AB /* BlueTheme.plist in Resources */,
 				52CC04FB1E6B2F2600BC93A9 /* Assets.xcassets in Resources */,
 				5160DFA61E9F7BFE005B3912 /* ReportTableViewCell.xib in Resources */,
+				434CEC851EA74679003BF09D /* arabic.plist in Resources */,
 				51BA460D1E9A91D4000E1753 /* DoctorListTableViewCell.xib in Resources */,
 				52CC050C1E6B40FC00BC93A9 /* Podfile in Resources */,
 				4399ED651E9E38A900EE6766 /* heart.mp4 in Resources */,
@@ -500,6 +507,7 @@
 				698FB7AD1E9A28580088238E /* HospitalDH.swift in Sources */,
 				52CC05101E6B413900BC93A9 /* DataHolder.swift in Sources */,
 				51BA460C1E9A91D4000E1753 /* DoctorListTableViewCell.swift in Sources */,
+				434CEC871EA7468E003BF09D /* Langs.swift in Sources */,
 				51F539481EA14684004793AB /* AYPainter.swift in Sources */,
 				52CC05161E6B4A4100BC93A9 /* UserDH.swift in Sources */,
 				51EF73B41E6FEF8800706551 /* PatientReportViewController.swift in Sources */,
