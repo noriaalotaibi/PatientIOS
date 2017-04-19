@@ -71,7 +71,8 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
             
         } else {
             //askk
-            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+             var connTitle=Langs.arabicTitleForString("No Internet Connection")
+            let message = Message(title: connTitle, textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         }

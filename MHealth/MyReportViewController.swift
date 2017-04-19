@@ -17,6 +17,15 @@ class MyReportViewController: UITableViewController {
     
     var currentPatientReport:PatientReportDH?
     
+    var bloodPressure=Langs.arabicTitleForString("Blood pressure")
+    var heartRate=Langs.arabicTitleForString("Heart rate")
+    var sugarLevel=Langs.arabicTitleForString("Sugar level")
+    var fever=Langs.arabicTitleForString("Fever")
+    var caughing=Langs.arabicTitleForString("Caughing")
+    var dizziness=Langs.arabicTitleForString("Dizziness")
+    var nauseous=Langs.arabicTitleForString("Nauseous")
+    var headache=Langs.arabicTitleForString("Headache")
+    
     var reportTitles:[String] = [NSLocalizedString("Blood pressure", comment: ""),
                                  NSLocalizedString("Heart rate", comment: ""),
                                  NSLocalizedString("Sugar level", comment: ""),
@@ -62,8 +71,9 @@ class MyReportViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+         var connTitle=Langs.arabicTitleForString("No Internet Connection")
         if (!Networking.isInternetAvailable()) {
-            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            let message = Message(title: connTitle, textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         }
