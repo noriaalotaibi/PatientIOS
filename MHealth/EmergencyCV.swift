@@ -142,22 +142,29 @@ class EmergencyCV: UIViewController , NetworkCaller, UIAlertViewDelegate {
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        var title1=Langs.arabicTitleForString("No Internet Connection")
+        var title2=Langs.arabicTitleForString("Confirmation")
+        var title3=Langs.arabicTitleForString("OK")
+        var title4=Langs.arabicTitleForString("Cancel")
+        var message=Langs.arabicTitleForString("Send Emergency Report?")
+        
         if (!Networking.isInternetAvailable()) {
-            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            let message = Message(title: title1, textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         } else {
-            let alert = UIAlertController(title: NSLocalizedString("Confirmation" , comment: ""), message: NSLocalizedString("Send Emergency Report?" , comment: ""), preferredStyle: .ActionSheet)
+            let alert = UIAlertController(title: title2, message: message, preferredStyle: .ActionSheet)
             
             
             
-            let confirmAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) {
+            let confirmAction = UIAlertAction(title: title3, style: UIAlertActionStyle.Default) {
                 UIAlertAction in
                 self.startTimer()
             }
             
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) {
+            let cancelAction = UIAlertAction(title: title4, style: UIAlertActionStyle.Cancel) {
                 UIAlertAction in
                 NSLog("Cancel Pressed")
             }

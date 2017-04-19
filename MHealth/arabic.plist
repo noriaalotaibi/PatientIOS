@@ -2,6 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Profile failed to update</key>
+	<string></string>
+	<key>Sending Report ..</key>
+	<string>جاري ارسال التقرير ..</string>
+	<key>Cancel</key>
+	<string>الغاء</string>
+	<key>Send Emergency Report?</key>
+	<string>ارسال حالة طوارئ؟</string>
+	<key>Confirmation</key>
+	<string>تأكيد</string>
+	<key>No Internet Connection</key>
+	<string>لا يوجد اتصال بالشبكة</string>
 	<key>Emergency Case Canceled</key>
 	<string>تم الغاء حالة الطوارىء</string>
 	<key>OK</key>

@@ -165,6 +165,14 @@ class EditeMidicalInfoVC: UIViewController, NetworkCaller, UITextFieldDelegate{
         print(loginError)
         
         
+        var title = Langs.arabicTitleForString("Updated")
+        var title2 = Langs.arabicTitleForString("Error")
+        var message = Langs.arabicTitleForString("Profile has been updated")
+        var message2 = Langs.arabicTitleForString("Profile failed to update")
+        
+        var cancelButt = Langs.arabicTitleForString("OK")
+    
+
         if loginError == 200 {
             
             
@@ -172,18 +180,13 @@ class EditeMidicalInfoVC: UIViewController, NetworkCaller, UITextFieldDelegate{
             
             NSUserDefaults.standardUserDefaults().setValue(valuesDict, forKey: Const.UserDefaultsKeys.loggedinUser)
         
-            
-            var title = Langs.arabicTitleForString("Updated");Langs.arabicTitleForString("Error")
-            var message = Langs.arabicTitleForString("Profile has been updated")
-            
-            var cancelButt = Langs.arabicTitleForString("OK")
-            var alert = UIAlertView(title: title, message: message, delegate: self, cancelButtonTitle:
+                       var Balert = UIAlertView(title: title, message: message, delegate: self, cancelButtonTitle:
             cancelButt)
-            alert.show()
+            Balert.show()
         }
         else {
             
-            var alert = UIAlertView(title: title, message: NSLocalizedString("Profile updates" , comment: ""), delegate: self, cancelButtonTitle:NSLocalizedString("OK" , comment: "") )
+            var alert = UIAlertView(title: title2, message: message2, delegate: self, cancelButtonTitle:cancelButt )
             alert.show()
             //NSLocalizedString("Updated" , comment: "")
         }
