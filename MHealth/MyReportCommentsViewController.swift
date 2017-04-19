@@ -46,7 +46,7 @@ class MyReportCommentsViewController: UIViewController, UITextViewDelegate  {
         self.patientCommentBox.text = self.currentReport?.comments
         self.RecommendationBox.text = self.currentReport?.drcomment
         RecommendationBox.delegate = self
-        
+        patientCommentBox.delegate = self
         // Painter
         
         let painter:AYPainter = AYPainter()

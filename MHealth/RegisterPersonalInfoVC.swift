@@ -9,7 +9,7 @@
 import UIKit
 import Whisper
 
-class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
+class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate {
 
     let networkManeger:Networking = Networking()
     
@@ -111,6 +111,18 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fNameTF.delegate = self
+        
+        mNameTF.delegate = self
+        PhoneNumberTF.delegate = self
+        EmergencyNumberTF.delegate = self
+        
+        lNameTF.delegate = self
+        CivilIDTF.delegate = self
+        dateTextField.delegate = self
+        NationalityTF.delegate = self
+
+        
         // Painter
         
         let painter:AYPainter = AYPainter()
@@ -119,6 +131,14 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate {
         
         // END Painter
         
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     override func viewDidAppear(animated: Bool) {

@@ -9,7 +9,7 @@
 import UIKit
 import Whisper
 
-class EditeMidicalInfoVC: UIViewController, NetworkCaller{
+class EditeMidicalInfoVC: UIViewController, NetworkCaller, UITextFieldDelegate{
     
     var valuesDict:NSDictionary = NSDictionary()
     var picker1selection = ""
@@ -104,8 +104,8 @@ class EditeMidicalInfoVC: UIViewController, NetworkCaller{
     
     
     
-    @IBOutlet weak var AllergiesUpdatedTF: UITextField!
     @IBOutlet weak var AsthmaOutlet: UISegmentedControl!
+    @IBOutlet weak var AllergiesUpdatedTF: UITextField!
 
     @IBOutlet weak var MedicationsUpdatedTF: UITextField!
     
@@ -190,9 +190,20 @@ class EditeMidicalInfoVC: UIViewController, NetworkCaller{
 
     }
 
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
        var blood = 0
+        
+        
+        AllergiesUpdatedTF.delegate = self
+        MedicationsUpdatedTF.delegate = self
         
      //   let title = NSLocalizedString("Updated", comment: "")
        

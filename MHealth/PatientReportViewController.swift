@@ -9,7 +9,7 @@
 import UIKit
 import Whisper
 
-class PatientReportViewController: UIViewController, NetworkCaller {
+class PatientReportViewController: UIViewController, NetworkCaller, UITextViewDelegate, UITextFieldDelegate {
     
     var myDoctor:DoctorDH = DoctorDH()
     
@@ -63,7 +63,21 @@ class PatientReportViewController: UIViewController, NetworkCaller {
         
         // END Painter
         
+        patientComments.delegate = self
+        painLocation.delegate = self
         
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -72,6 +86,9 @@ class PatientReportViewController: UIViewController, NetworkCaller {
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         }
+    }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {

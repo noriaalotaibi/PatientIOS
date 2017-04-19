@@ -9,7 +9,7 @@
 import UIKit
 import Whisper
 
-class EditPersonalInfoVC: UIViewController , NetworkCaller {
+class EditPersonalInfoVC: UIViewController , NetworkCaller, UITextFieldDelegate {
   var bDay=""
     var valuesDict:NSDictionary = NSDictionary()
     var gender:String = ""
@@ -171,8 +171,27 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller {
     }
     
   
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
    override func viewDidLoad() {
         super.viewDidLoad()
+    
+    FnameLB.delegate = self
+    dateTextField.delegate = self
+    LnameLB.delegate = self
+    CivilIDLB.delegate = self
+    
+    EmailLB.delegate = self
+    PasswordLB.delegate = self
+    PhoneLB.delegate = self
+    EmergencyLB.delegate = self
+    NationalityLB.delegate = self
+    
     
     
     let net:Networking = Networking()

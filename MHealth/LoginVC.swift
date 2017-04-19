@@ -10,7 +10,7 @@ import UIKit
 import VideoSplashKit
 import Whisper
 
-class LoginVC: VideoSplashViewController , NetworkCaller {
+class LoginVC: VideoSplashViewController , NetworkCaller,UITextFieldDelegate {
 
     @IBAction func ForgetPassword(sender: AnyObject) {
     }
@@ -126,6 +126,8 @@ class LoginVC: VideoSplashViewController , NetworkCaller {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UsernameTF.delegate = self
+        PasswordTF.delegate = self
         
         let url = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("heart", ofType: "mp4")!)
         
@@ -154,6 +156,14 @@ class LoginVC: VideoSplashViewController , NetworkCaller {
             
         }
 
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     override func viewDidAppear(animated: Bool) {

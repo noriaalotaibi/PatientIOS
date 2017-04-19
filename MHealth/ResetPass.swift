@@ -9,7 +9,7 @@
 import UIKit
 import Whisper
 
-class ResetPass: UIViewController ,NetworkCaller {
+class ResetPass: UIViewController ,NetworkCaller,UITextFieldDelegate {
 
     
     
@@ -62,8 +62,10 @@ class ResetPass: UIViewController ,NetworkCaller {
 
         // Do any additional setup after loading the view.
         
-        // Painter
+        emailTF.delegate = self
+        CivilidTF.delegate = self
         
+        // Painter
         let painter:AYPainter = AYPainter()
         painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
         painter.paint(self.view)
@@ -71,7 +73,13 @@ class ResetPass: UIViewController ,NetworkCaller {
         // END Painter
         
     }
-    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     override func viewDidAppear(animated: Bool) {
         if (!Networking.isInternetAvailable()) {
             let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
