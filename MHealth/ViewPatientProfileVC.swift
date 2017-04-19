@@ -8,6 +8,7 @@
 
 import UIKit
 import Whisper
+import SwiftSpinner
 
 class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     @IBOutlet weak var LnameLabel: UILabel!
@@ -28,6 +29,8 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
 
     var newPatient:Patient = Patient()
 
+    var tempImageHolder:UIImage?
+    
     @IBOutlet weak var patientImage: UIImageView!
     
     @IBAction func logoutButton(sender: UIButton) {
@@ -85,7 +88,7 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
 
         
         
-        self.patientImage.image = image
+        tempImageHolder = image
         self.dismissViewControllerAnimated(true, completion: nil)
         
         let reach = Reach()
@@ -94,10 +97,10 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         }else{
-            //SwiftSpinner.show(NSLocalizedString("Uploading...", comment: ""))
+            SwiftSpinner.show(NSLocalizedString("Uploading...", comment: ""))
             
             
-            let params:[String:AnyObject] = ["appID": "patient" , "imgData": strBase64]
+            let params:[String:AnyObject] = ["appID": "patient" , "imgData": strBase64 , "title":"" , "description":""]
             
             networkManager.AMPostDictData(Const.URLs.UploadImage, params: params, reqId: 5, caller: self)
         }
@@ -180,7 +183,23 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
     
     func setDictResponse(resp: NSDictionary, reqId: Int) {
 
+        SwiftSpinner.hide()
+        
+        if resp.valueForKey("Error") != nil && reqId == 5 {
+            
+            let alert:UIAlertController = Alert().getAlert(NSLocalizedString("Error", comment: ""), msg: "Image size is too big, try different image")
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+            
+        }else if resp.valueForKey("Error") != nil && reqId == 6{
+            let alert:UIAlertController = Alert().getAlert(NSLocalizedString("Error", comment: ""), msg: "Cannot update profile, try again later")
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+        }
+        
+        
         if reqId == 5 {
+            print("response Upload image")
             if (resp.valueForKey("errorMsgEn") != nil) {
                 let result:String = resp.valueForKey("errorMsgEn") as! String
                 if result.lowercaseString == "Done".lowercaseString{
@@ -199,7 +218,7 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
                 }
             }
         }else if reqId == 6{
-            
+            print("response update profile")
             if (resp.valueForKey("errorMsgEn") == nil){
                 let alert:UIAlertController = Alert().getAlert(NSLocalizedString("Error", comment: ""), msg: NSLocalizedString("Can't update profile right now", comment: ""))
                 self.presentViewController(alert, animated: true, completion: nil)
@@ -224,6 +243,7 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
             
             NSUserDefaults.standardUserDefaults().setObject(updatedPatient!.toDictionary(), forKey: Const.UserDefaultsKeys.loggedinUser)
             
+            self.patientImage.image = tempImageHolder
             if Validator().verifyUrl(updatedPatient!.imageUrl)
             {
                 let url:NSURL = NSURL(string: updatedPatient!.imageUrl)!
@@ -259,7 +279,7 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         }else{
-           // SwiftSpinner.show(NSLocalizedString("Connecting...", comment: ""))
+            SwiftSpinner.show(NSLocalizedString("Connecting...", comment: ""))
             networkManager.AMJSONDictionary(url, httpMethod: "PUT", jsonData: newPatient.toDictionary(), reqId: 6, caller: self)
         }
     }
