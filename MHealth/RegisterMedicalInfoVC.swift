@@ -9,7 +9,7 @@
 import UIKit
 import Whisper
 
-class RegisterMedicalInfoVC: UIViewController , NetworkCaller {
+class RegisterMedicalInfoVC: UIViewController , NetworkCaller, UITextFieldDelegate {
 
     
     var picker1selection = "A+"
@@ -216,6 +216,9 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        allergiesTF.delegate = self
+        medicationTF.delegate = self
+        
         setSelectedBloodTypeButton(1)
 
         
@@ -228,6 +231,14 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller {
         // END Painter
         
      }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     override func viewDidAppear(animated: Bool) {
         if (!Networking.isInternetAvailable()) {

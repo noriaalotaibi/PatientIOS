@@ -2,7 +2,7 @@ import UIKit
 import Whisper
 
 
-class Reg1VC: UIViewController , NetworkCaller {
+class Reg1VC: UIViewController , NetworkCaller , UITextFieldDelegate{
 
     struct current {
         static var newPatient:Patient = Patient()
@@ -101,10 +101,21 @@ class Reg1VC: UIViewController , NetworkCaller {
         
         }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        emailTF.delegate = self
+        passwordTF.delegate = self
+        confirmPassTF.delegate = self
         
         // Painter
         
