@@ -29,7 +29,9 @@ class LoginVC: VideoSplashViewController , NetworkCaller,UITextFieldDelegate {
         
         
         // Read username and password from fields
-    
+        var connTitile=Langs.arabicTitleForString("No Internet Connection")
+        var userLocalization=Langs.arabicTitleForString("username")
+        var passLocalization=Langs.arabicTitleForString("password")
 
         var username = UsernameTF.text
         
@@ -38,7 +40,7 @@ class LoginVC: VideoSplashViewController , NetworkCaller,UITextFieldDelegate {
         // Send username and password to service for verification
         
         
-        let values:[String:AnyObject] = [NSLocalizedString( "username", comment: ""):username!, NSLocalizedString( "password", comment: ""):password!]
+       let values:[String:AnyObject] = [NSLocalizedString( "username", comment: ""):username!, NSLocalizedString( "password", comment: ""):password!]
         // NSLocalizedString( "Sending Report ..", comment: "")
         
         print(username)
@@ -52,7 +54,7 @@ class LoginVC: VideoSplashViewController , NetworkCaller,UITextFieldDelegate {
             // PatientContainer.getInstance().loggedInPatient.patientID = patientID
         }
         else {
-            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            let message = Message(title: connTitile, textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         }
@@ -81,7 +83,10 @@ class LoginVC: VideoSplashViewController , NetworkCaller,UITextFieldDelegate {
         
            print(loginError)
             
-            var alert = UIAlertView(title:NSLocalizedString("Invalid", comment: "") , message: NSLocalizedString("Invalid Password or Username" , comment: ""), delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "") )
+            var invalidTitle = Langs.arabicTitleForString("Invalid")
+            var invalidMessage = Langs.arabicTitleForString("Invalid Password or Username")
+            var invalidButton = Langs.arabicTitleForString("OK")
+            var alert = UIAlertView(title:invalidTitle, message: invalidMessage, delegate: self, cancelButtonTitle:invalidButton )
             alert.show()
         }
         else {
@@ -170,7 +175,9 @@ class LoginVC: VideoSplashViewController , NetworkCaller,UITextFieldDelegate {
         
         super.viewDidAppear(true)
         if (!Networking.isInternetAvailable()) {
-            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            
+            var connTitle=Langs.arabicTitleForString("No Internet Connection")
+            let message = Message(title: connTitle, textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
             
