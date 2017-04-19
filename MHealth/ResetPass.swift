@@ -42,8 +42,10 @@ class ResetPass: UIViewController ,NetworkCaller,UITextFieldDelegate {
         }
         
         if  !( Validator().validateCivilId(civil) ) {
-            
-            var alert = UIAlertView(title: NSLocalizedString("Civil ID", comment: ""), message: NSLocalizedString("Invalid Civil ID", comment: ""), delegate: self, cancelButtonTitle: "OK")
+            var CivilTitle = Langs.arabicTitleForString("Civil ID")
+            var civilMsg = Langs.arabicTitleForString("Invalid Civil ID")
+            var cancelButton = Langs.arabicTitleForString("OK")
+            var alert = UIAlertView(title: CivilTitle, message: civilMsg, delegate: self, cancelButtonTitle: cancelButton )
             alert.show()
             
             valid = false
@@ -81,8 +83,9 @@ class ResetPass: UIViewController ,NetworkCaller,UITextFieldDelegate {
         self.view.endEditing(true)
     }
     override func viewDidAppear(animated: Bool) {
+        var noNetwork = Langs.arabicTitleForString("No Internet Connection")
         if (!Networking.isInternetAvailable()) {
-            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            let message = Message(title: noNetwork, textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         }
