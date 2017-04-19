@@ -11,7 +11,6 @@ import Whisper
 
 class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate {
 
-    let networkManeger:Networking = Networking()
     
     var bDay=""
     @IBOutlet weak var fNameTF: UITextField!

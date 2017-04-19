@@ -9,7 +9,7 @@
 import UIKit
 import Whisper
 
-class ViewMedicalInfoVC: UIViewController , NetworkCaller {
+class ViewMedicalInfoVC: UIViewController  {
     @IBOutlet weak var BloodTypeLabel: UILabel!
     @IBOutlet weak var DiabetesLabel: UILabel!
     @IBOutlet weak var AsthmaLabel: UILabel!
@@ -57,14 +57,7 @@ class ViewMedicalInfoVC: UIViewController , NetworkCaller {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func setArrayResponse(resp: NSArray, reqId: Int) {
-        print(resp)
-    }
-    
-    func setDictResponse(resp: NSDictionary, reqId: Int) {
-        
-        
-    }
+
     
 
 }

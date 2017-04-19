@@ -8,7 +8,7 @@
 
 import UIKit
 import Whisper
-
+import SwiftSpinner
 class NewDoctorProfileViewController: UIViewController, NetworkCaller {
     
     var newDoctor:DoctorDH = DoctorDH()
@@ -76,7 +76,8 @@ class NewDoctorProfileViewController: UIViewController, NetworkCaller {
         if (Networking.isInternetAvailable()) {
             let networkManager = Networking()
             networkManager.logging = true
-                
+            SwiftSpinner.show("Connecting...")
+            SwiftSpinner.setTitleFont(UIFont(name: "Futura", size: 22.0))
             networkManager.AMJSONDictionary(Const.URLs.PatientInvitationRequest, httpMethod: "POST", jsonData: data, reqId: 2, caller: self)
         } else {
             let message = Message(title:NSLocalizedString("No Internet Connection", comment: "") , textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
@@ -90,6 +91,7 @@ class NewDoctorProfileViewController: UIViewController, NetworkCaller {
     
     func setDictResponse(resp: NSDictionary, reqId: Int) {
         print(resp)
+        SwiftSpinner.hide()
         if resp.count == 0 {
             let alertControlle:UIAlertController = UIAlertController(title: NSLocalizedString("Success", comment: ""), message: NSLocalizedString("Invitation was sent sucessfully", comment: ""), preferredStyle: .Alert)
             

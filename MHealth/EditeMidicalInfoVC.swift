@@ -8,7 +8,7 @@
 
 import UIKit
 import Whisper
-
+import SwiftSpinner
 class EditeMidicalInfoVC: UIViewController, NetworkCaller, UITextFieldDelegate{
     
     var valuesDict:NSDictionary = NSDictionary()
@@ -150,6 +150,8 @@ class EditeMidicalInfoVC: UIViewController, NetworkCaller, UITextFieldDelegate{
         print("request:")
         print(valuesDict)
         networkManager.logging = true
+        SwiftSpinner.show("Connecting...")
+        SwiftSpinner.setTitleFont(UIFont(name: "Futura", size: 22.0))
         networkManager.AMJSONDictionary(Const.URLs.Patients + "/" + "\(patient.patientID)", httpMethod: "PUT", jsonData: valuesDict, reqId: 1, caller: self)
     
     }
@@ -158,7 +160,7 @@ class EditeMidicalInfoVC: UIViewController, NetworkCaller, UITextFieldDelegate{
     }
     
     func setDictResponse(resp: NSDictionary, reqId: Int) {
-        
+        SwiftSpinner.hide()
         print(resp)
         
         let loginError:Int = resp.valueForKey("errorCode") as! Int

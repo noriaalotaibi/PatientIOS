@@ -9,7 +9,7 @@
 import UIKit
 import VideoSplashKit
 import Whisper
-
+import SwiftSpinner
 class LoginVC: VideoSplashViewController , NetworkCaller,UITextFieldDelegate {
 
     @IBAction func ForgetPassword(sender: AnyObject) {
@@ -48,6 +48,8 @@ class LoginVC: VideoSplashViewController , NetworkCaller,UITextFieldDelegate {
         networkManager.logging = true
  
         if (Networking.isInternetAvailable()) {
+            SwiftSpinner.show("Connecting...")
+            SwiftSpinner.setTitleFont(UIFont(name: "Futura", size: 22.0))
             networkManager.AMJSONDictionary(Const.URLs.PatientLogin, httpMethod: "POST", jsonData: values, reqId: 0, caller: self)
             PatientContainer.getInstance().loggedInPatient.email = username
             PatientContainer.getInstance().loggedInPatient.password = password!
@@ -74,7 +76,7 @@ class LoginVC: VideoSplashViewController , NetworkCaller,UITextFieldDelegate {
     
     func setDictResponse(resp: NSDictionary, reqId: Int) {
         print("Get dict resp \(resp)")
-        
+        SwiftSpinner.hide()
         let loginError:Int = resp.valueForKey("errorCode") as! Int
         print(loginError)
         

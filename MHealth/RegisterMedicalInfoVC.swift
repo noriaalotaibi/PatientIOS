@@ -8,7 +8,7 @@
 
 import UIKit
 import Whisper
-
+import SwiftSpinner
 class RegisterMedicalInfoVC: UIViewController , NetworkCaller, UITextFieldDelegate {
 
     
@@ -164,6 +164,8 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller, UITextFieldDelega
         print(values)
         
         if (Networking.isInternetAvailable()) {
+            SwiftSpinner.show("Connecting...")
+            SwiftSpinner.setTitleFont(UIFont(name: "Futura", size: 22.0))
             networkManager.AMJSONDictionary(Const.URLs.Patients, httpMethod: "POST", jsonData: values, reqId: 1, caller: self)
 
             self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
@@ -190,7 +192,7 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller, UITextFieldDelega
     func setDictResponse(resp: NSDictionary, reqId: Int) {
         print("resp:")
        print(resp)
-        
+        SwiftSpinner.hide()
         let registerationStatus:Int = resp.valueForKey("errorCode") as! Int
         print(registerationStatus)
         

@@ -8,7 +8,7 @@
 
 import UIKit
 import Whisper
-
+import SwiftSpinner
 class EditPersonalInfoVC: UIViewController , NetworkCaller, UITextFieldDelegate {
   var bDay=""
     var valuesDict:NSDictionary = NSDictionary()
@@ -119,6 +119,8 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller, UITextFieldDelegate 
         if (Networking.isInternetAvailable() && valid) {
             print("values for update")
             print(valuesDict)
+            SwiftSpinner.show("Connecting...")
+            SwiftSpinner.setTitleFont(UIFont(name: "Futura", size: 22.0))
             networkManager.AMJSONDictionary(Const.URLs.Patients + "/" + "\(patient.patientID)", httpMethod: "PUT", jsonData: valuesDict, reqId: 1, caller: self)
         } else {
             let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
@@ -146,7 +148,7 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller, UITextFieldDelegate 
     func setDictResponse(resp: NSDictionary, reqId: Int) {
         print("response: ")
         print(resp)
-        
+        SwiftSpinner.hide()
         
         let loginError:Int = resp.valueForKey("errorCode") as! Int
         print(loginError)

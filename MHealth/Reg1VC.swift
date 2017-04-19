@@ -1,6 +1,6 @@
 import UIKit
 import Whisper
-
+import SwiftSpinner
 
 class Reg1VC: UIViewController , NetworkCaller , UITextFieldDelegate{
 
@@ -82,6 +82,8 @@ class Reg1VC: UIViewController , NetworkCaller , UITextFieldDelegate{
         
         print("request values: ")
         print(values)
+        SwiftSpinner.show("Connecting...")
+        SwiftSpinner.setTitleFont(UIFont(name: "Futura", size: 22.0))
         networkManager.AMJSONDictionary(Const.URLs.Patients, httpMethod: "POST", jsonData: values, reqId: 1, caller: self)
         
         //print(values)
@@ -103,7 +105,7 @@ class Reg1VC: UIViewController , NetworkCaller , UITextFieldDelegate{
        print("response")
         print(resp)
         
-        
+        SwiftSpinner.hide()
         }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

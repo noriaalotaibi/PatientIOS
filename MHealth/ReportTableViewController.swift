@@ -61,12 +61,13 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
             
             loggedInPatient.loadDictionary(patient);
             
+            SwiftSpinner.show("Retrieving Data...")
+            SwiftSpinner.setTitleFont(UIFont(name: "Futura", size: 22.0))
+            
             networkManager.AMGetArrayData("http://34.196.107.188:8081/MhealthWeb/webresources/patientreport/getPr/\(loggedInPatient.patientID)", params: [:], reqId: 1, caller: self)
             
             //  Spinner
             
-            SwiftSpinner.show("Retrieving Data...")
-            SwiftSpinner.setTitleFont(UIFont(name: "Futura", size: 22.0))
             
         } else {
             //askk

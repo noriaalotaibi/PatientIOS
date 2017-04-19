@@ -71,12 +71,12 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
         if (Networking.isInternetAvailable()) {
             let networkManager = Networking()
             networkManager.logging = true
-            networkManager.AMGetArrayData(Const.URLs.Hospital, params: [:], reqId: 1, caller: self)
-            
             //  Spinner
             
             SwiftSpinner.show("Retrieving Data...")
             SwiftSpinner.setTitleFont(UIFont(name: "Futura", size: 22.0))
+            
+            networkManager.AMGetArrayData(Const.URLs.Hospital, params: [:], reqId: 1, caller: self)
             
         } else {
             let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)

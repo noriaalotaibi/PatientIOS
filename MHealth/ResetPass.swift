@@ -8,7 +8,7 @@
 
 import UIKit
 import Whisper
-
+import SwiftSpinner
 class ResetPass: UIViewController ,NetworkCaller,UITextFieldDelegate {
 
     
@@ -53,6 +53,8 @@ class ResetPass: UIViewController ,NetworkCaller,UITextFieldDelegate {
         }
 
         if (valid) {
+            SwiftSpinner.show("Connecting...")
+            SwiftSpinner.setTitleFont(UIFont(name: "Futura", size: 22.0))
             networkManager.AMJSONDictionary(Const.URLs.ResetPassword, httpMethod: "POST", jsonData: ["username":email, "civilid":civil], reqId: 3, caller: self)
         }
         
@@ -102,7 +104,7 @@ class ResetPass: UIViewController ,NetworkCaller,UITextFieldDelegate {
     }
     
     func setDictResponse(resp: NSDictionary, reqId: Int) {
-     
+     SwiftSpinner.hide()
         if (resp.valueForKey("errorMsgEn") == nil){
             
             print("Error Connection to server Error")

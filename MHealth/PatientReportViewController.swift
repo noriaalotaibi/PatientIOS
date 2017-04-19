@@ -8,7 +8,7 @@
 
 import UIKit
 import Whisper
-
+import SwiftSpinner
 class PatientReportViewController: UIViewController, NetworkCaller, UITextViewDelegate, UITextFieldDelegate {
     
     var myDoctor:DoctorDH = DoctorDH()
@@ -202,6 +202,8 @@ class PatientReportViewController: UIViewController, NetworkCaller, UITextViewDe
         print(reportDic)
         
         if (Networking.isInternetAvailable()) {
+            SwiftSpinner.show("Retrieving Data...")
+            SwiftSpinner.setTitleFont(UIFont(name: "Futura", size: 22.0))
             networkManager.AMJSONDictionary(Const.URLs.PatientReport, httpMethod: "POST", jsonData: reportDic, reqId: 0, caller: self)
         } else {
             let message = Message(title:NSLocalizedString("No Internet Connection", comment: "") , textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
@@ -217,7 +219,7 @@ class PatientReportViewController: UIViewController, NetworkCaller, UITextViewDe
     }
     
     func setDictResponse(resp: NSDictionary, reqId: Int) {
-        
+        SwiftSpinner.hide()
         print("response send report")
         print(resp)
         if resp.count == 0 {
