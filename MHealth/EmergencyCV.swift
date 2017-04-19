@@ -19,7 +19,7 @@ import Whisper
 
 
 
-class EmergencyCV: UIViewController , NetworkCaller {
+class EmergencyCV: UIViewController , NetworkCaller, UIAlertViewDelegate {
     
     
     
@@ -117,14 +117,14 @@ class EmergencyCV: UIViewController , NetworkCaller {
         
     }
     
+    func startTimer() {
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(timerAction), userInfo: nil , repeats: true)
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
     
-        
-        
-        
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(timerAction), userInfo: nil , repeats: true)
         
         
         // Painter
@@ -137,6 +137,8 @@ class EmergencyCV: UIViewController , NetworkCaller {
         
         
         
+        
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -144,6 +146,26 @@ class EmergencyCV: UIViewController , NetworkCaller {
             let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
+        } else {
+            let alert = UIAlertController(title: NSLocalizedString("Confirmation" , comment: ""), message: NSLocalizedString("Send Emergency Report?" , comment: ""), preferredStyle: .ActionSheet)
+            
+            
+            
+            let confirmAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) {
+                UIAlertAction in
+                self.startTimer()
+            }
+            
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) {
+                UIAlertAction in
+                NSLog("Cancel Pressed")
+            }
+            
+            alert.addAction(confirmAction)
+            alert.addAction(cancelAction)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
     

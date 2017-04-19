@@ -156,6 +156,9 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISea
     }
     
     func setArrayResponse(resp:NSArray, reqId:Int) {
+        allDoctors.removeAll()
+        filteredDoctors.removeAll()
+        
         // set doctors
         if (reqId == 1) {
             print( resp )

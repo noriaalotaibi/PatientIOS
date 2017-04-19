@@ -185,6 +185,8 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
     }
     
     func setArrayResponse(resp:NSArray, reqId:Int) {
+        allHospitals.removeAll()
+        filteredHospitals.removeAll()
         // set doctors
         if (reqId == 1) {
             print( resp )
