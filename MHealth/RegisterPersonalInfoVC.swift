@@ -46,7 +46,13 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, UITextFiel
     @IBOutlet weak var RegNextButtonOutlet: UIButton!
     
     @IBAction func reg2Button(sender: AnyObject) {
-        
+        var emptyTitle = Langs.arabicTitleForString("Empty Fields")
+        var emptyMsg = Langs.arabicTitleForString("Please fill all the missing fields")
+        var CivilTitle = Langs.arabicTitleForString("Civil ID")
+        var civilMsg = Langs.arabicTitleForString("Invalid Civil ID")
+        var phoneTitle = Langs.arabicTitleForString("Phone Number")
+        var phoneMsg = Langs.arabicTitleForString("Invalid Phone Number")
+        var cancelButton = Langs.arabicTitleForString("OK")
         var valid = true
         
         var fname = fNameTF.text
@@ -59,7 +65,7 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, UITextFiel
         var status:Bool=true
         
         if fname == "" || lname == "" || nationality == "" || civilId == "" || phone == ""  {
-            var alert = UIAlertView(title: NSLocalizedString("Empty Fields", comment: "") , message:NSLocalizedString("Please fill all the missing fields", comment: "")  , delegate: self, cancelButtonTitle:NSLocalizedString("OK", comment: "")  )
+            var alert = UIAlertView(title: emptyTitle , message: emptyMsg  , delegate: self, cancelButtonTitle: cancelButton  )
             
             alert.show()
             
@@ -68,20 +74,20 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, UITextFiel
         }
         else if  !( Validator().validateCivilId(civilId) ) {
             
-            var alert = UIAlertView(title: NSLocalizedString("Civil ID", comment: ""), message: NSLocalizedString("Invalid Civil ID", comment: ""), delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: CivilTitle, message: civilMsg, delegate: self, cancelButtonTitle: cancelButton)
             alert.show()
             
             valid = false
             return
         }
         else if !( Validator().validatePhoneNumber(phone) ) {
-            var alert = UIAlertView(title: NSLocalizedString("Phone Number", comment: ""), message: NSLocalizedString("Invalid Phone Number", comment: "") , delegate: self, cancelButtonTitle: NSLocalizedString("OK", comment: ""))
+            var alert = UIAlertView(title: phoneTitle, message: phoneMsg , delegate: self, cancelButtonTitle: cancelButton)
             alert.show()
             
             valid = false
         }
         else if !( Validator().validateEmergencyPhoneNumber(emergency) ) {
-            var alert = UIAlertView(title: NSLocalizedString("Phone Number", comment: ""), message: NSLocalizedString("Invalid Phone Number", comment: "") , delegate: self, cancelButtonTitle: NSLocalizedString("OK", comment: ""))
+            var alert = UIAlertView(title:phoneTitle, message: phoneMsg , delegate: self, cancelButtonTitle: cancelButton)
             alert.show()
             
             valid = false
@@ -142,8 +148,11 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, UITextFiel
     }
     
     override func viewDidAppear(animated: Bool) {
+        var noInternet = Langs.arabicTitleForString("No Internet Connection")
+        
         if (!Networking.isInternetAvailable()) {
-            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            
+            let message = Message(title: noInternet, textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         }
