@@ -16,7 +16,7 @@
 
 import UIKit
 import Whisper
-
+import SwiftSpinner
 
 
 class EmergencyCV: UIViewController , NetworkCaller, UIAlertViewDelegate {
@@ -92,11 +92,9 @@ class EmergencyCV: UIViewController , NetworkCaller, UIAlertViewDelegate {
         
         
         timer.invalidate()
-        
-        
         var label = Langs.arabicTitleForString("Emergency Case Canceled")
         Label.text = label
-        
+       
         
         
     }
@@ -110,10 +108,10 @@ class EmergencyCV: UIViewController , NetworkCaller, UIAlertViewDelegate {
     
     
     func setDictResponse(resp: NSDictionary, reqId: Int) {
-        
-        
-        
+        SwiftSpinner.hide()
         print(resp)
+        Label.text = "Report sent"
+
         
     }
     
@@ -135,12 +133,13 @@ class EmergencyCV: UIViewController , NetworkCaller, UIAlertViewDelegate {
         
         // END Painter
         
-        
-        
-        
-        
     }
-    
+    override func viewDidDisappear(animated: Bool) {
+        timer.invalidate()
+        counter = 10
+        Label.text = ""
+
+    }
     override func viewDidAppear(animated: Bool) {
         
         var title1=Langs.arabicTitleForString("No Internet Connection")
@@ -149,31 +148,16 @@ class EmergencyCV: UIViewController , NetworkCaller, UIAlertViewDelegate {
         var title4=Langs.arabicTitleForString("Cancel")
         var message=Langs.arabicTitleForString("Send Emergency Report?")
         
+
+        
         if (!Networking.isInternetAvailable()) {
       
             let message = Message(title: title1, textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         } else {
-            let alert = UIAlertController(title: title2, message: message, preferredStyle: .ActionSheet)
-            
-            
-            
-            let confirmAction = UIAlertAction(title: title3, style: UIAlertActionStyle.Default) {
-                UIAlertAction in
-                self.startTimer()
-            }
-            
-            
-            let cancelAction = UIAlertAction(title: title4, style: UIAlertActionStyle.Cancel) {
-                UIAlertAction in
-                NSLog("Cancel Pressed")
-            }
-            
-            alert.addAction(confirmAction)
-            alert.addAction(cancelAction)
-            
-            self.presentViewController(alert, animated: true, completion: nil)
+            startTimer()
+
         }
     }
     
@@ -181,21 +165,12 @@ class EmergencyCV: UIViewController , NetworkCaller, UIAlertViewDelegate {
         
         print("Time is now \(counter) ")
         
-        
-        
         if counter != 0 {
-            
             counter -= 1
-            
-            
-            
             Label.text = NSLocalizedString("\(counter)", comment: "")
-            
-        }
-            
-        else{
-            var label2 = Langs.arabicTitleForString("Sending Report ..")
-            Label.text = label2
+        }else{
+            timer.invalidate()
+            Label.text = Langs.arabicTitleForString("Sending Report ..")
             
             let patientId:Int = 0
             
@@ -219,10 +194,10 @@ class EmergencyCV: UIViewController , NetworkCaller, UIAlertViewDelegate {
             
             let values = [NSLocalizedString( "family", comment: ""):family ,NSLocalizedString( "hospital", comment: "") :hospital , NSLocalizedString("doctors" , comment: ""):doctors]
             
-            Networking().AMGetArrayData(Const.URLs.ReportURL, params: values, reqId: 0 , caller: self)
             
-            timer.invalidate()
-            
+            SwiftSpinner.show(NSLocalizedString("Connecting...", comment: ""))
+            Networking().AMGetDictData(Const.URLs.ReportURL, params: values, reqId: 0 , caller: self)
+
         }
         
     }
