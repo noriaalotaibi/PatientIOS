@@ -94,8 +94,8 @@ class EmergencyCV: UIViewController , NetworkCaller, UIAlertViewDelegate {
         timer.invalidate()
         
         
-        
-        Label.text = NSLocalizedString("Emergency Case Canceled", comment: "")
+        var label = Langs.arabicTitleForString("Emergency Case Canceled")
+        Label.text = label
         
         
         
