@@ -70,14 +70,14 @@ class NewDoctorProfileViewController: UIViewController, NetworkCaller {
 
         // Send Invitation Request
         
-        let data: NSDictionary = ["drId": newDoctor.drId, "patientId": patient.patientID, "status": 0]
+        let data: NSDictionary = ["drId": newDoctor.drId, "patientId": patient.patientID, "status": "0"]
         //"addingTime": timestamp
         
         if (Networking.isInternetAvailable()) {
             let networkManager = Networking()
             networkManager.logging = true
-            
-            networkManager.AMPostDictData("http://34.196.107.188:8081/MhealthWeb/webresources/patientdrlink/", params: [:], reqId: 2, caller: self)
+                
+            networkManager.AMJSONDictionary(Const.URLs.PatientInvitationRequest, httpMethod: "POST", jsonData: data, reqId: 2, caller: self)
         } else {
             let message = Message(title:NSLocalizedString("No Internet Connection", comment: "") , textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
@@ -89,6 +89,7 @@ class NewDoctorProfileViewController: UIViewController, NetworkCaller {
     // Response in case of invitation sent
     
     func setDictResponse(resp: NSDictionary, reqId: Int) {
+        print(resp)
         if resp.count == 0 {
             let alertControlle:UIAlertController = UIAlertController(title: NSLocalizedString("Success", comment: ""), message: NSLocalizedString("Invitation was sent sucessfully", comment: ""), preferredStyle: .Alert)
             
