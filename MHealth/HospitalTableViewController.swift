@@ -210,13 +210,13 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
         
         filteredHospitals = allHospitals.filter { hospital in
             if scope == searchController.searchBar.scopeButtonTitles![0] {
-                return hospital.hospitalName.lowercaseString.containsString(searchText)
+                return hospital.hospitalName.lowercaseString.containsString(searchText.lowercaseString)
             } else if scope == searchController.searchBar.scopeButtonTitles![1] {
-                return hospital.hospitalName.lowercaseString.containsString(searchText)
-                && hospital.hospitalType == searchController.searchBar.scopeButtonTitles![1]
+                return hospital.hospitalName.lowercaseString.containsString(searchText.lowercaseString)
+                && hospital.hospitalType.lowercaseString == searchController.searchBar.scopeButtonTitles![1].lowercaseString
             } else if scope == searchController.searchBar.scopeButtonTitles![2] {
-                return hospital.hospitalName.lowercaseString.containsString(searchText)
-                    && hospital.hospitalType == searchController.searchBar.scopeButtonTitles![2]
+                return hospital.hospitalName.lowercaseString.containsString(searchText.lowercaseString)
+                    && hospital.hospitalType.lowercaseString == searchController.searchBar.scopeButtonTitles![2].lowercaseString
             }
             
             return true
