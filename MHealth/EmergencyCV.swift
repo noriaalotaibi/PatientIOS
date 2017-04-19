@@ -150,6 +150,7 @@ class EmergencyCV: UIViewController , NetworkCaller, UIAlertViewDelegate {
         var message=Langs.arabicTitleForString("Send Emergency Report?")
         
         if (!Networking.isInternetAvailable()) {
+      
             let message = Message(title: title1, textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
@@ -193,8 +194,8 @@ class EmergencyCV: UIViewController , NetworkCaller, UIAlertViewDelegate {
         }
             
         else{
-            
-            Label.text = NSLocalizedString( "Sending Report ..", comment: "")
+            var label2 = Langs.arabicTitleForString("Sending Report ..")
+            Label.text = label2
             
             let patientId:Int = 0
             
