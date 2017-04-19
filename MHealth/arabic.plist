@@ -2,6 +2,32 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Failed</key>
+	<string>فشلت</string>
+	<key>Success</key>
+	<string>تم</string>
+	<key>Phone Number</key>
+	<string>رقم الهاتف</string>
+	<key>Invalid Phone Number</key>
+	<string>رقم الهاتف غير صحيح</string>
+	<key>Invalid Civil ID</key>
+	<string>الرقم المدني غبر صحيح</string>
+	<key>Civil ID</key>
+	<string>الرقم المدني</string>
+	<key>Please fill all the missing fields</key>
+	<string>يرجى اكمال الحقول الفارغة</string>
+	<key>Empty Fields</key>
+	<string>الحقول فارغة</string>
+	<key>Password is invalid, minimum of 8 characters</key>
+	<string>كلمة المرور غير صحيحة، يجب ان لا يقل عن ٨ رموز</string>
+	<key>Password do not match</key>
+	<string>كلمة المرور لا تتطابق</string>
+	<key>Please enter a valid email</key>
+	<string>برجى ادخال بريد الكتروني صحيح</string>
+	<key>Password</key>
+	<string>كلمة المرور</string>
+	<key>Email</key>
+	<string>البريد الالكتروني</string>
 	<key>Invalid Password or Username</key>
 	<string>اسم المستخدم او كلمة المرور غير صحيح</string>
 	<key>Invalid</key>

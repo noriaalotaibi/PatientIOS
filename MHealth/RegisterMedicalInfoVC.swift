@@ -169,7 +169,9 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller, UITextFieldDelega
             self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
             
         } else {
-            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            var noNetwork = Langs.arabicTitleForString("No Internet Connection")
+            let message = Message(title: noNetwork, textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         }
@@ -192,19 +194,25 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller, UITextFieldDelega
         let registerationStatus:Int = resp.valueForKey("errorCode") as! Int
         print(registerationStatus)
         
+        var title = Langs.arabicTitleForString("Register")
+        var msg1 = Langs.arabicTitleForString("Done")
+        
+        var title2 = Langs.arabicTitleForString("Error")
+        var msg2 = Langs.arabicTitleForString("no complete")
+        var cancelButton = Langs.arabicTitleForString("OK")
         
         if registerationStatus == 200 {
             
             print(registerationStatus)
             
            // NSUserDefaults.standardUserDefaults().setValue(valuesDict, forKey: Const.UserDefaultsKeys.loggedinUser)
-            
-            var alert = UIAlertView(title: NSLocalizedString("Register" , comment: ""), message: NSLocalizedString("Done" , comment: ""), delegate: self, cancelButtonTitle: NSLocalizedString("OK" , comment: ""))
+        
+            var alert = UIAlertView(title: title, message: msg1, delegate: self, cancelButtonTitle: cancelButton)
             alert.show()
         }
         else {
             
-            var alert = UIAlertView(title: NSLocalizedString("Error" , comment: ""), message: NSLocalizedString("no complete" , comment: ""), delegate: self, cancelButtonTitle:NSLocalizedString("OK" , comment: "") )
+            var alert = UIAlertView(title: title2, message: msg2, delegate: self, cancelButtonTitle:cancelButton)
             alert.show()
             //NSLocalizedString("Updated" , comment: "")
         }
@@ -241,8 +249,9 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller, UITextFieldDelega
     }
     
     override func viewDidAppear(animated: Bool) {
+        var noConnection =  Langs.arabicTitleForString("No Internet Connection")
         if (!Networking.isInternetAvailable()) {
-            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            let message = Message(title: noConnection, textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         }
