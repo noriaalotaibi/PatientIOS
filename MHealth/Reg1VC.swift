@@ -39,12 +39,17 @@ class Reg1VC: UIViewController , NetworkCaller , UITextFieldDelegate{
         var email = emailTF.text
         var password = passwordTF.text
         var confirmPass = confirmPassTF.text
+        var emailTitle = Langs.arabicTitleForString("Email")
+         var passTitle = Langs.arabicTitleForString("Password")
+        var emailMsg = Langs.arabicTitleForString("Please enter a valid email")
+        var passMsg = Langs.arabicTitleForString("Password do not match")
+        var passMsg2 = Langs.arabicTitleForString("Password is invalid, minimum of 8 characters")
+        var cancelButton = Langs.arabicTitleForString("OK")
         
         
         if !(Validator().validateEmail(email!)){
-            
-            
-            var alert = UIAlertView(title: "Email", message: "Please enter a valid email", delegate: self, cancelButtonTitle: "OK")
+           
+            var alert = UIAlertView(title: emailTitle, message: emailMsg, delegate: self, cancelButtonTitle: cancelButton)
             alert.show()
             
             valid = false
@@ -53,14 +58,14 @@ class Reg1VC: UIViewController , NetworkCaller , UITextFieldDelegate{
 
         if password != confirmPass{
             
-            var alert = UIAlertView(title: "Password", message: "Password do not match", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: passTitle , message: passMsg , delegate: self, cancelButtonTitle: cancelButton)
             alert.show()
             
             valid = false
         }
         
         if !(Validator().validatePassword(password)) {
-            var alert = UIAlertView(title: "Password", message: "Password is invalid, minimum of 8 characters", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: passTitle , message: passMsg2 , delegate: self, cancelButtonTitle: cancelButton)
             alert.show()
             
             valid = false
@@ -129,7 +134,8 @@ class Reg1VC: UIViewController , NetworkCaller , UITextFieldDelegate{
     
     override func viewDidAppear(animated: Bool) {
         if (!Networking.isInternetAvailable()) {
-            let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
+            var noNetwork = Langs.arabicTitleForString("No Internet Connection")
+            let message = Message(title: noNetwork, textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
         }
