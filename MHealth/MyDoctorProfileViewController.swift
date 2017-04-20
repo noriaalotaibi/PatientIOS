@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 import Whisper
 
 class MyDoctorProfileViewController: UIViewController {
@@ -43,6 +44,7 @@ class MyDoctorProfileViewController: UIViewController {
         labelSpecialty.text = myDoctor.specialtyId
         labelLocation.text = myDoctor.location
         labelGender.text = myDoctor.gender
+        imgProfile.sd_setImageWithURL( NSURL(string: myDoctor.imageUrl), placeholderImage: UIImage(named: "mhealth"))
         
         // Painter
         

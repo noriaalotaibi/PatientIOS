@@ -57,6 +57,7 @@ class ReportTableViewCell: UITableViewCell {
             responseImage.image = UIImage(named: "Message Filled-50")
             
         } else {
+            //Langs.arabicTitleForString
             status.text = NSLocalizedString("Replied", comment: "")
             responseImage.image = UIImage(named: "Feedback-50")
             

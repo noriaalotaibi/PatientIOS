@@ -28,6 +28,7 @@ class NewDoctorProfileViewController: UIViewController, NetworkCaller {
         labelSpecialty.text = newDoctor.specialtyId
         labelLocation.text = newDoctor.location
        labelGender.text = newDoctor.gender
+       imgProfile.sd_setImageWithURL( NSURL(string: newDoctor.imageUrl), placeholderImage: UIImage(named: "mhealth"))
         
         callerManager = DoctorFunctions.myInstance()
         callerManager?.callerInvitation = self
