@@ -32,8 +32,7 @@ class DoctorListTableViewCell: UITableViewCell {
         img.layer.borderWidth = 2.0
         img.layer.masksToBounds = true
         img.layer.cornerRadius = img.frame.size.height/2
-        //img.layer.borderColor = UIColor.init(red: (255.0/255.0), green: 0.0, blue: 0.0, alpha: 0.75).CGColor
-            //UIColor.init(red: 0, green: (191.0/255.0), blue: (255.0/255.0), alpha: 0.7).CGColor
+        img.layer.borderColor = UIColor.init(red: (63.0/255.0), green: (202.0/255.0), blue: (221.0/255.0), alpha: 0.75).CGColor
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

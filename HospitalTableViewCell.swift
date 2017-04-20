@@ -35,7 +35,7 @@ class HospitalTableViewCell: UITableViewCell{
         
         hospitalPicture.layer.borderWidth = 2.0
         hospitalPicture.layer.masksToBounds = true
-        // hospitalPicture.layerborderColor = Customization().UIColorFromRGB(0x4C9DB9).CGColor
+        hospitalPicture.layer.borderColor = UIColor.init(red: (63.0/255.0), green: (202.0/255.0), blue: (221.0/255.0), alpha: 0.75).CGColor
         hospitalPicture.layer.cornerRadius = hospitalPicture.frame.size.height/2
     }
     
