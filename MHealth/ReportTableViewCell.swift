@@ -53,7 +53,8 @@ class ReportTableViewCell: UITableViewCell {
         // Response status
         if (report.drcomment == "" || report.drcomment.isEmpty) {
 
-            status.text = NSLocalizedString("Pending Response", comment: "")
+            
+            status.text = Langs.arabicTitleForString("Pending Response")
             responseImage.image = UIImage(named: "Message Filled-50")
             
         } else {

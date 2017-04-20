@@ -135,6 +135,11 @@ class LoginVC: VideoSplashViewController , NetworkCaller,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if ((NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.langKey) as? String) == nil) {
+            NSUserDefaults.standardUserDefaults().setObject("en", forKey: Const.UserDefaultsKeys.langKey)
+        }
+
+        
         UsernameTF.delegate = self
         PasswordTF.delegate = self
         

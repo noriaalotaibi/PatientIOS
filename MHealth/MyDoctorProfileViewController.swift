@@ -18,6 +18,7 @@ class MyDoctorProfileViewController: UIViewController {
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelSpecialty: UILabel!
     @IBOutlet weak var labelLocation: UILabel!
+    @IBOutlet weak var genderLocal: UILabel!
     
     @IBOutlet weak var labelGender: UILabel!
     @IBAction func sendReport(sender: UIButton) {
@@ -45,6 +46,9 @@ class MyDoctorProfileViewController: UIViewController {
         labelLocation.text = myDoctor.location
         labelGender.text = myDoctor.gender
         imgProfile.sd_setImageWithURL( NSURL(string: myDoctor.imageUrl), placeholderImage: UIImage(named: "mhealth"))
+        
+        
+        genderLocal.text = Langs.arabicTitleForString("Gender")
         
         // Painter
         

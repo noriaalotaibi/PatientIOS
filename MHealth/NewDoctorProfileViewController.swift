@@ -14,12 +14,14 @@ class NewDoctorProfileViewController: UIViewController, NetworkCaller {
     var newDoctor:DoctorDH = DoctorDH()
     var callerManager:DoctorFunctions? = nil
 
+    
 
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelSpecialty: UILabel!
     @IBOutlet weak var labelLocation: UILabel!
 
+    @IBOutlet weak var localGender: UILabel!
     @IBOutlet weak var labelGender: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +35,11 @@ class NewDoctorProfileViewController: UIViewController, NetworkCaller {
         callerManager = DoctorFunctions.myInstance()
         callerManager?.callerInvitation = self
         
-        // Painter
+        localGender.text=Langs.arabicTitleForString("Gender")
         
-//        let painter:AYPainter = AYPainter()
-//        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
-//        painter.paint(self.view)
+        //labelGender.text=Langs.arabicTitleForString("Gender")
         
-        // END Painter
+
         
     }
     

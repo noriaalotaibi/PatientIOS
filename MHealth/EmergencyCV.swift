@@ -110,7 +110,7 @@ class EmergencyCV: UIViewController , NetworkCaller, UIAlertViewDelegate {
     func setDictResponse(resp: NSDictionary, reqId: Int) {
         SwiftSpinner.hide()
         print(resp)
-        Label.text = "Report sent"
+        Label.text = Langs.arabicTitleForString("Report sent")
 
         
     }

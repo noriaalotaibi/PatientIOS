@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Gender</key>
+	<string>الجنس</string>
+	<key>Report sent</key>
+	<string>تم ارسال التقرير</string>
 	<key>Replied</key>
 	<string>تم الرد</string>
 	<key>Pending Response</key>
@@ -69,30 +73,30 @@
 	<key>Language</key>
 	<string>اللغة</string>
 	<key>Register</key>
-	<string>Register</string>
+	<string>تسجيل</string>
 	<key>Done</key>
-	<string>Done</string>
+	<string>تم</string>
 	<key>no complete</key>
-	<string>no complete</string>
+	<string>غير مكتمل</string>
 	<key>Invalid Civil ID, must be 12 number</key>
-	<string>Invalid Civil ID, must be 12 number</string>
+	<string>الرقم المدني غير صحيح، يجب ان لا يقل عن ١٢ رمز</string>
 	<key>Blood pressure</key>
-	<string>Blood pressure</string>
+	<string>ضغط الدم</string>
 	<key>Heart rate</key>
-	<string>Heart rate</string>
+	<string>نبضات القلب</string>
 	<key>Sugar level</key>
-	<string>Sugar level</string>
+	<string>مستوى السكر</string>
 	<key>Fever</key>
-	<string>Fever</string>
+	<string>حراره</string>
 	<key>Caughing</key>
-	<string>Caughing</string>
+	<string>كحه</string>
 	<key>Dizziness</key>
-	<string>Dizziness</string>
+	<string>دوار</string>
 	<key>Nauseous</key>
-	<string>Nauseous1</string>
+	<string>غثيان</string>
 	<key>Headache</key>
-	<string>Headache1</string>
+	<string>صداع</string>
 	<key>Pain location</key>
-	<string>Pain location</string>
+	<string>موقع الالم</string>
 </dict>
 </plist>

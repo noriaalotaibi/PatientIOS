@@ -17,7 +17,7 @@ class langVC: UIViewController {
     var okButton = Langs.arabicTitleForString("OK")
     @IBAction func ArabicButton(sender: AnyObject) {
         NSUserDefaults.standardUserDefaults().setObject(["ar"], forKey: "AppleLanguages")
-        
+        NSUserDefaults.standardUserDefaults().setObject("ar", forKey: Const.UserDefaultsKeys.langKey)
         var alert = UIAlertView(title: title1, message: message, delegate: self, cancelButtonTitle:okButton)
         alert.show()
 
@@ -32,7 +32,8 @@ class langVC: UIViewController {
         var okButton2 = Langs.arabicTitleForString("OK")
         
           NSUserDefaults.standardUserDefaults().setObject(["en"], forKey: "AppleLanguages")
-       
+        NSUserDefaults.standardUserDefaults().setObject("en", forKey: Const.UserDefaultsKeys.langKey)
+
         var alert = UIAlertView(title:title2, message: message2, delegate: self, cancelButtonTitle:okButton2 )
         alert.show()
 //        let userDefaults =  NSUserDefaults.standardUserDefaults()
