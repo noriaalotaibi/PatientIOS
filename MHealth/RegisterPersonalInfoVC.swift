@@ -15,7 +15,6 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, UITextFiel
     var bDay=""
     @IBOutlet weak var fNameTF: UITextField!
     
-    @IBOutlet weak var mNameTF: UITextField!
     @IBOutlet weak var PhoneNumberTF: UITextField!
     @IBOutlet weak var EmergencyNumberTF: UITextField!
     
@@ -48,7 +47,11 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, UITextFiel
         var emptyTitle = Langs.arabicTitleForString("Empty Fields")
         var emptyMsg = Langs.arabicTitleForString("Please fill all the missing fields")
         var CivilTitle = Langs.arabicTitleForString("Civil ID")
-        var civilMsg = Langs.arabicTitleForString("Invalid Civil ID")
+        
+        
+ //       var civilMsg = Langs.arabicTitleForString("Invalid Civil ID")
+        var civilMsg = Langs.arabicTitleForString("Invalid Civil ID, must be 12 number")
+
         var phoneTitle = Langs.arabicTitleForString("Phone Number")
         var phoneMsg = Langs.arabicTitleForString("Invalid Phone Number")
         var cancelButton = Langs.arabicTitleForString("OK")
@@ -63,7 +66,7 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, UITextFiel
         var deleted:Int=0
         var status:Bool=true
         
-        if fname == "" || lname == "" || nationality == "" || civilId == "" || phone == ""  {
+        if fname == "" || lname == "" || nationality == "" || civilId == "" || phone == "" || emergency == ""  || self.bDay == ""{
             var alert = UIAlertView(title: emptyTitle , message: emptyMsg  , delegate: self, cancelButtonTitle: cancelButton  )
             
             alert.show()
@@ -118,7 +121,6 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, UITextFiel
         
         fNameTF.delegate = self
         
-        mNameTF.delegate = self
         PhoneNumberTF.delegate = self
         EmergencyNumberTF.delegate = self
         

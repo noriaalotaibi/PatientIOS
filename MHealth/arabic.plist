@@ -68,5 +68,31 @@
 	<string>تم التحديث</string>
 	<key>Language</key>
 	<string>اللغة</string>
+	<key>Register</key>
+	<string>Register</string>
+	<key>Done</key>
+	<string>Done</string>
+	<key>no complete</key>
+	<string>no complete</string>
+	<key>Invalid Civil ID, must be 12 number</key>
+	<string>Invalid Civil ID, must be 12 number</string>
+	<key>Blood pressure</key>
+	<string>Blood pressure</string>
+	<key>Heart rate</key>
+	<string>Heart rate</string>
+	<key>Sugar level</key>
+	<string>Sugar level</string>
+	<key>Fever</key>
+	<string>Fever</string>
+	<key>Caughing</key>
+	<string>Caughing</string>
+	<key>Dizziness</key>
+	<string>Dizziness</string>
+	<key>Nauseous</key>
+	<string>Nauseous1</string>
+	<key>Headache</key>
+	<string>Headache1</string>
+	<key>Pain location</key>
+	<string>Pain location</string>
 </dict>
 </plist>

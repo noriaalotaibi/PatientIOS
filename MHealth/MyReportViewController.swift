@@ -17,23 +17,16 @@ class MyReportViewController: UITableViewController {
     
     var currentPatientReport:PatientReportDH?
     
-//    var bloodPressure=Langs.arabicTitleForString("Blood pressure")
-//    var heartRate=Langs.arabicTitleForString("Heart rate")
-//    var sugarLevel=Langs.arabicTitleForString("Sugar level")
-//    var fever=Langs.arabicTitleForString("Fever")
-//    var caughing=Langs.arabicTitleForString("Caughing")
-//    var dizziness=Langs.arabicTitleForString("Dizziness")
-//    var nauseous=Langs.arabicTitleForString("Nauseous")
-//    var headache=Langs.arabicTitleForString("Headache")
+    var bloodPressure=Langs.arabicTitleForString("Blood pressure")
+    var heartRate=Langs.arabicTitleForString("Heart rate")
+    var sugarLevel=Langs.arabicTitleForString("Sugar level")
+    var fever=Langs.arabicTitleForString("Fever")
+    var caughing=Langs.arabicTitleForString("Caughing")
+    var dizziness=Langs.arabicTitleForString("Dizziness")
+    var nauseous=Langs.arabicTitleForString("Nauseous")
+    var headache=Langs.arabicTitleForString("Headache")
     
-    var reportTitles:[String] = [NSLocalizedString("Blood pressure", comment: ""),
-                                 NSLocalizedString("Heart rate", comment: ""),
-                                 NSLocalizedString("Sugar level", comment: ""),
-                                 NSLocalizedString("Fever", comment: ""),
-                                 NSLocalizedString("Caughing", comment: ""),
-                                 NSLocalizedString("Dizziness", comment: ""),
-                                 NSLocalizedString("Nauseous", comment: ""),
-                                 NSLocalizedString("Headache", comment: "")]
+    var reportTitles:[String] = []
     
     
     
@@ -44,6 +37,14 @@ class MyReportViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        reportTitles = [self.bloodPressure,
+        self.heartRate,
+        self.sugarLevel,
+        self.fever,
+        self.caughing,
+        self.dizziness,
+        self.nauseous,
+        self.headache]
         
         let button1 = UIBarButtonItem(image: nil, style: .Plain, target: self, action: #selector(openReplyController))
         button1.title = NSLocalizedString("View Reply", comment: "")
@@ -57,7 +58,9 @@ class MyReportViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         if (self.currentPatientReport?.pain) == true {
-            reportTitles.append(NSLocalizedString("Pain location", comment: ""))
+            var painLocation=Langs.arabicTitleForString("Pain location")
+
+            reportTitles.append(painLocation)
         }
         
         

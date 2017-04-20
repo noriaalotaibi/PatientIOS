@@ -90,6 +90,8 @@ class LoginVC: VideoSplashViewController , NetworkCaller,UITextFieldDelegate {
             var invalidButton = Langs.arabicTitleForString("OK")
             var alert = UIAlertView(title:invalidTitle, message: invalidMessage, delegate: self, cancelButtonTitle:invalidButton )
             alert.show()
+            NSUserDefaults.standardUserDefaults().setValue(nil, forKey: Const.UserDefaultsKeys.patientId)
+            NSUserDefaults.standardUserDefaults().setValue(nil, forKey: Const.UserDefaultsKeys.loggedinUser)
         }
         else {
             let nextScreen:UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBar") as! UITabBarController
