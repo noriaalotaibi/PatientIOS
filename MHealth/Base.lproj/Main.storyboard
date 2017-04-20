@@ -145,7 +145,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="eSR-YW-S8W" kind="relationship" relationship="rootViewController" id="hog-wJ-ZCo"/>
+                        <segue destination="eSR-YW-S8W" kind="relationship" relationship="rootViewController" id="8NR-fN-vCx"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="evk-Gl-bz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -171,10 +171,10 @@
             </objects>
             <point key="canvasLocation" x="-130.5" y="1993.5"/>
         </scene>
-        <!--EmergencyCV-->
+        <!--Emergency-->
         <scene sceneID="f7g-Gb-w4r">
             <objects>
-                <viewController id="eSR-YW-S8W" customClass="EmergencyCV" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Emergency" id="eSR-YW-S8W" customClass="EmergencyCV" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SB6-ox-S2Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,7 +261,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="iK3-3t-A9H"/>
+                    <navigationItem key="navigationItem" title="Emergency" id="iK3-3t-A9H"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="DoctorsSwitch" destination="IT3-6T-fBc" id="6On-pi-3S7"/>
@@ -272,7 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBb-Q9-Ovo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1362.5" y="1106.5"/>
+            <point key="canvasLocation" x="1115.5" y="1238.5"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="cl3-T0-BYJ">
