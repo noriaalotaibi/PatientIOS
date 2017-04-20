@@ -59,7 +59,6 @@ class Validator: NSObject {
     
     func validatePhoneNumber(phoneNumber: NSString?) -> Bool {
         
-        print("PhoneNumber :\(phoneNumber)")
         if (phoneNumber == nil || phoneNumber == "") {
             return false
         }
@@ -108,7 +107,7 @@ class Validator: NSObject {
         
         let passwordStr = password!
         
-        if (passwordStr.length <= 8) {
+        if (passwordStr.length < 8) {
             return false
         }
         
@@ -124,7 +123,7 @@ class Validator: NSObject {
         
         let civilIdStr = civilId!
         
-        if (civilIdStr.length <= 8 || civilIdStr == "" ) {
+        if (civilIdStr.length != 12) {
             return false
         }
         

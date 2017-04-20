@@ -68,5 +68,13 @@
 	<string>تم التحديث</string>
 	<key>Language</key>
 	<string>اللغة</string>
+	<key>Register</key>
+	<string>Register</string>
+	<key>Done</key>
+	<string>Done</string>
+	<key>no complete</key>
+	<string>no complete</string>
+	<key>Invalid Civil ID, must be 12 number</key>
+	<string>Invalid Civil ID, must be 12 number</string>
 </dict>
 </plist>

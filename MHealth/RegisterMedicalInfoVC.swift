@@ -35,8 +35,6 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller, UITextFieldDelega
     }
     
     
-    @IBOutlet weak var AsthmaSegment: UISegmentedControl!
-    
     @IBAction func AsthmaSegment(sender: AnyObject) {
         if sender.selectedSegmentIndex == 0 {
             
@@ -50,9 +48,6 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller, UITextFieldDelega
     
     
     
-    
-    
-    @IBOutlet weak var DiabetesPicker: UIPickerView!
     
     let DiabetesPickerOptions = ["Type One" ,"Type Two" , "No" ]
     
@@ -139,7 +134,6 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller, UITextFieldDelega
         var allergies=allergiesTF.text
         var medication=medicationTF.text
       
-        
         
         Reg1VC.current.newPatient.bloodType=bloodType
      //   Reg1VC.current.newPatient.diabetes = (diabetes)

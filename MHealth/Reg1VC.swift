@@ -34,9 +34,8 @@ class Reg1VC: UIViewController , NetworkCaller , UITextFieldDelegate{
     
     @IBAction func Register1Button(sender: AnyObject) {
         
-        var valid = true
         
-        var email = emailTF.text
+        var email = emailTF.text!
         var password = passwordTF.text
         var confirmPass = confirmPassTF.text
         var emailTitle = Langs.arabicTitleForString("Email")
@@ -47,12 +46,12 @@ class Reg1VC: UIViewController , NetworkCaller , UITextFieldDelegate{
         var cancelButton = Langs.arabicTitleForString("OK")
         
         
-        if !(Validator().validateEmail(email!)){
+        if !(Validator().validateEmail(email)){
            
             var alert = UIAlertView(title: emailTitle, message: emailMsg, delegate: self, cancelButtonTitle: cancelButton)
             alert.show()
             
-            valid = false
+            return
             
         }
 
@@ -61,37 +60,35 @@ class Reg1VC: UIViewController , NetworkCaller , UITextFieldDelegate{
             var alert = UIAlertView(title: passTitle , message: passMsg , delegate: self, cancelButtonTitle: cancelButton)
             alert.show()
             
-            valid = false
+            return
         }
         
         if !(Validator().validatePassword(password)) {
             var alert = UIAlertView(title: passTitle , message: passMsg2 , delegate: self, cancelButtonTitle: cancelButton)
             alert.show()
             
-            valid = false
+            return
         }
         
         
-        current.newPatient.email=email!
+        current.newPatient.email=email
         current.newPatient.password=password!
         current.newPatient.gender=gender
         
         
         let networkManager:Networking = Networking()
-        let values = current.newPatient.toDictionary()
         
         print("request values: ")
-        print(values)
         
         //print(values)
   
-        if (valid) {
             SwiftSpinner.show("Validating Username...")
             SwiftSpinner.setTitleFont(UIFont(name: "Futura", size: 22.0))
-            
-            networkManager.AMJSONDictionary(Const.URLs.Patients+"/email/\(email)", httpMethod: "GET", jsonData: [:], reqId: 1, caller: self)
-            
-        }
+        let url:String = Const.URLs.Patients+"/email/\(email)"
+        print("url: \(url)")
+        networkManager.AMGetDictData(url, params: [:], reqId: 1, caller: self)
+        //networkManager.AMJSONDictionary(url, httpMethod: "GET", jsonData: [:], reqId: 1, caller: self)
+        
     }
     
     
@@ -101,16 +98,35 @@ class Reg1VC: UIViewController , NetworkCaller , UITextFieldDelegate{
     }
 
     func setDictResponse(resp: NSDictionary, reqId: Int) {
-        if resp.count == 0 {
-            // email doesn't exist
+        print("response: ")
+        print(resp)
+        
+        SwiftSpinner.hide()
+        
+        if resp.valueForKey("Error") != nil {
+            var cancelButton = Langs.arabicTitleForString("OK")
+            
+            var alert = UIAlertView(title: "Connection Error", message: "Please try again.", delegate: self, cancelButtonTitle: cancelButton)
+            alert.show()
+            return
+        }
+        if resp.valueForKey("patientId") != nil {
+            // email exist
+            var cancelButton = Langs.arabicTitleForString("OK")
+
+            var alert = UIAlertView(title: "Email already exist", message: "Please try another email.", delegate: self, cancelButtonTitle: cancelButton)
+            alert.show()
+            
+            return
+            
         } else {
             let reply:RegisterPersonalInfoVC = self.storyboard?.instantiateViewControllerWithIdentifier("RegisterPersonalInfo") as! RegisterPersonalInfoVC
             
             self.navigationController?.pushViewController(reply, animated: true)
         }
         
-        SwiftSpinner.hide()
-        }
+        
+    }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
