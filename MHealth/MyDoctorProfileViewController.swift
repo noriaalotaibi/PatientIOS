@@ -44,19 +44,26 @@ class MyDoctorProfileViewController: UIViewController {
         labelName.text = myDoctor.firstName
         labelSpecialty.text = myDoctor.specialtyId
         labelLocation.text = myDoctor.location
-        labelGender.text = myDoctor.gender
-        imgProfile.sd_setImageWithURL( NSURL(string: myDoctor.imageUrl), placeholderImage: UIImage(named: "mhealth"))
         
         
-        genderLocal.text = Langs.arabicTitleForString("Gender")
+        var placeholder = "dr"
+        var genderNSString = NSString()
+        genderNSString = myDoctor.gender
+        labelGender.text = "N/A"
         
-        // Painter
+        if (genderNSString != "") {
+            if (genderNSString.substringToIndex(1).lowercaseString == "f") {
+                labelGender.text = "Female"
+                placeholder = "doctor_profile"
+            } else {
+                labelGender.text = "Male"
+            }
+        }
         
-//        let painter:AYPainter = AYPainter()
-//        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
-//        painter.paint(self.view)
+        imgProfile.sd_setImageWithURL( NSURL(string: myDoctor.imageUrl), placeholderImage: UIImage(named: placeholder))
         
-        // END Painter
+        
+        //genderLocal.text = Langs.arabicTitleForString("Gender")
         
     }
     

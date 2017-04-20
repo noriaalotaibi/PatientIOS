@@ -43,18 +43,26 @@ class DoctorListTableViewCell: UITableViewCell {
     
     func updateCellData(doctor: DoctorDH) {
         doctorData = doctor;
-        var placeholder = ""
-        if doctor.gender == "f" || doctor.gender == "F" {
-            placeholder = "doctor_profile"
-        } else {
-            placeholder = "dr"
+
+        
+        name.text = doctorData.firstName + doctorData.lastName
+        specialty.text = doctorData.specialtyId;
+    
+        var genderNSString = NSString()
+        genderNSString = doctorData.gender
+        gender.text = "N/A"
+        
+        var placeholder = "dr"
+        if (genderNSString != "") {
+            if (genderNSString.substringToIndex(1).lowercaseString == "f") {
+                gender.text = "Female"
+                placeholder = "doctor_profile"
+            } else {
+                gender.text = "Male"
+            }
         }
         
         img.sd_setImageWithURL( NSURL(string: doctor.imageUrl), placeholderImage: UIImage(named: placeholder))
-        name.text = doctorData.firstName + doctorData.lastName
-        specialty.text = doctorData.specialtyId;
-        gender.text = doctor.gender
-//        gender.text?.append(doctor.gender)
     }
     
 }

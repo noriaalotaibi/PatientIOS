@@ -29,15 +29,29 @@ class NewDoctorProfileViewController: UIViewController, NetworkCaller {
         labelName.text = newDoctor.firstName
         labelSpecialty.text = newDoctor.specialtyId
         labelLocation.text = newDoctor.location
-       labelGender.text = newDoctor.gender
-       imgProfile.sd_setImageWithURL( NSURL(string: newDoctor.imageUrl), placeholderImage: UIImage(named: "mhealth"))
+
+        var genderNSString = NSString()
+        genderNSString = newDoctor.gender
+        labelGender.text = "N/A"
+        
+        var placeholder = "dr"
+        if (genderNSString != "") {
+            if (genderNSString.substringToIndex(1).lowercaseString == "f") {
+                labelGender.text = "Female"
+                placeholder = "doctor_profile"
+            } else {
+                labelGender.text = "Male"
+            }
+        }
+        
+        imgProfile.sd_setImageWithURL( NSURL(string: newDoctor.imageUrl), placeholderImage: UIImage(named: placeholder))
         
         callerManager = DoctorFunctions.myInstance()
         callerManager?.callerInvitation = self
         
         localGender.text=Langs.arabicTitleForString("Gender")
         
-        //labelGender.text=Langs.arabicTitleForString("Gender")
+
         
 
         
