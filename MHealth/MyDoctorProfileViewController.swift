@@ -17,6 +17,7 @@ class MyDoctorProfileViewController: UIViewController {
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelSpecialty: UILabel!
     @IBOutlet weak var labelLocation: UILabel!
+    @IBOutlet weak var genderLocal: UILabel!
     
     @IBOutlet weak var labelGender: UILabel!
     @IBAction func sendReport(sender: UIButton) {
@@ -43,6 +44,8 @@ class MyDoctorProfileViewController: UIViewController {
         labelSpecialty.text = myDoctor.specialtyId
         labelLocation.text = myDoctor.location
         labelGender.text = myDoctor.gender
+        
+        genderLocal.text = Langs.arabicTitleForString("Gender")
         
         // Painter
         

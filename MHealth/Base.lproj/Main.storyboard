@@ -2040,6 +2040,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="genderLocal" destination="2Im-CL-yur" id="xDy-S8-vaW"/>
                         <outlet property="labelGender" destination="8VW-Ad-LDX" id="YeN-JR-Uv3"/>
                         <outlet property="labelLocation" destination="cXb-mC-CsB" id="0AH-QR-abc"/>
                         <outlet property="labelName" destination="aIz-2S-5u3" id="xsU-NF-fwX"/>
@@ -2146,7 +2147,7 @@
                                 <rect key="frame" x="20" y="371" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zdu-mV-yJL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zdu-mV-yJL">
                                 <rect key="frame" x="76" y="371" width="265" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -2162,6 +2163,7 @@
                         <outlet property="labelLocation" destination="onW-1m-lw5" id="fXe-G5-6At"/>
                         <outlet property="labelName" destination="phC-4X-TA6" id="Cdb-gW-NiH"/>
                         <outlet property="labelSpecialty" destination="LZK-M0-eiP" id="8Yj-o5-dzb"/>
+                        <outlet property="localGender" destination="Zdu-mV-yJL" id="ZBs-Yc-pC2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wxM-Ps-glz" userLabel="First Responder" sceneMemberID="firstResponder"/>
