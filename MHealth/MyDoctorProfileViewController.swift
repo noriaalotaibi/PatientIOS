@@ -45,6 +45,7 @@ class MyDoctorProfileViewController: UIViewController {
         labelLocation.text = myDoctor.location
         labelGender.text = myDoctor.gender
         
+        
         genderLocal.text = Langs.arabicTitleForString("Gender")
         
         // Painter
