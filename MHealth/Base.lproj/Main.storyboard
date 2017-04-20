@@ -100,7 +100,7 @@
             <objects>
                 <navigationController id="LmI-C5-Pfy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Doctor" image="doctor-2" selectedImage="doctor-2" id="NPf-ZA-pxf">
-                        <inset key="imageInsets" minX="7" minY="10" maxX="7" maxY="9"/>
+                        <inset key="imageInsets" minX="7" minY="11" maxX="7" maxY="10"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nZJ-0y-QJj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -157,7 +157,7 @@
             <objects>
                 <navigationController id="oJa-Qw-FbX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Hospitals" image="hospital (2)" id="1Rz-Dd-0uf">
-                        <inset key="imageInsets" minX="9" minY="11" maxX="8" maxY="11"/>
+                        <inset key="imageInsets" minX="9" minY="12" maxX="8" maxY="11"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="F2x-o4-Yf4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1203,7 +1203,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7jM-5R-cag">
-                                <rect key="frame" x="77" y="544" width="190" height="45"/>
+                                <rect key="frame" x="83" y="548" width="190" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.2470588235" green="0.79215686269999996" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="16"/>
@@ -1215,27 +1215,27 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allergies:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bu6-c1-V3A">
-                                <rect key="frame" x="62" y="361" width="293" height="21"/>
+                                <rect key="frame" x="67" y="372" width="293" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diabetes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="apm-Yi-1GC">
-                                <rect key="frame" x="55" y="220" width="300" height="21"/>
+                                <rect key="frame" x="60" y="231" width="300" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="6PW-wR-n3o">
-                                <rect key="frame" x="77" y="395" width="261" height="30"/>
+                                <rect key="frame" x="82" y="406" width="261" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="2N7-J1-7SF">
-                                <rect key="frame" x="77" y="469" width="261" height="30"/>
+                                <rect key="frame" x="82" y="480" width="261" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1248,7 +1248,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="oTi-xa-3m4">
-                                <rect key="frame" x="77" y="323" width="278" height="29"/>
+                                <rect key="frame" x="82" y="334" width="278" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="No"/>
@@ -1260,7 +1260,7 @@
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Rxf-cV-jh9">
-                                <rect key="frame" x="77" y="249" width="278" height="29"/>
+                                <rect key="frame" x="82" y="260" width="278" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="No "/>
@@ -1272,7 +1272,7 @@
                                 </connections>
                             </segmentedControl>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifying-glass (1)" id="uIl-PB-7o3">
-                                <rect key="frame" x="10" y="395" width="31" height="30"/>
+                                <rect key="frame" x="15" y="406" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop-counter" id="vqv-mv-Tev">
@@ -1280,7 +1280,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inhalator" id="inc-7W-Wbs">
-                                <rect key="frame" x="10" y="316" width="31" height="30"/>
+                                <rect key="frame" x="15" y="327" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medicine" id="BrO-Kf-nfy">
@@ -1288,37 +1288,29 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diabetes" id="Cfh-ep-mei">
-                                <rect key="frame" x="10" y="247" width="31" height="30"/>
+                                <rect key="frame" x="15" y="258" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medicine" id="PCn-lM-AG7">
-                                <rect key="frame" x="10" y="464" width="31" height="35"/>
+                                <rect key="frame" x="15" y="475" width="31" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medication:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Pv-Dz-X6s">
-                                <rect key="frame" x="62" y="433" width="293" height="21"/>
+                                <rect key="frame" x="67" y="444" width="293" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asthma:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Fq-DD-Wdr">
-                                <rect key="frame" x="55" y="285" width="300" height="21"/>
+                                <rect key="frame" x="60" y="296" width="300" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9Fr-xl-Zyb">
-                                <rect key="frame" x="29" y="113" width="36" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="a_plus"/>
-                                <connections>
-                                    <action selector="BloodTypeButton:" destination="dXr-Tt-Sos" eventType="touchUpInside" id="Nhh-qI-sL6"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="riG-eo-EIQ">
-                                <rect key="frame" x="183" y="113" width="36" height="40"/>
+                                <rect key="frame" x="203" y="113" width="36" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="b_plus"/>
                                 <connections>
@@ -1326,7 +1318,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TFW-Mp-fBS">
-                                <rect key="frame" x="29" y="166" width="36" height="40"/>
+                                <rect key="frame" x="44" y="166" width="36" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="o_plus"/>
                                 <connections>
@@ -1334,7 +1326,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MyP-YO-WY2">
-                                <rect key="frame" x="102" y="166" width="36" height="40"/>
+                                <rect key="frame" x="117" y="166" width="36" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="o_minus"/>
                                 <connections>
@@ -1342,7 +1334,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Llj-I4-dfY">
-                                <rect key="frame" x="183" y="166" width="36" height="40"/>
+                                <rect key="frame" x="203" y="166" width="36" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="ab_plus"/>
                                 <connections>
@@ -1350,7 +1342,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CjU-Up-DgP">
-                                <rect key="frame" x="262" y="166" width="36" height="40"/>
+                                <rect key="frame" x="283" y="166" width="36" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="ab_minus"/>
                                 <connections>
@@ -1358,7 +1350,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3ih-uf-H7d">
-                                <rect key="frame" x="262" y="113" width="36" height="40"/>
+                                <rect key="frame" x="283" y="113" width="36" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="b_minus"/>
                                 <connections>
@@ -1366,11 +1358,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TVo-cX-QGH">
-                                <rect key="frame" x="102" y="113" width="36" height="40"/>
+                                <rect key="frame" x="117" y="113" width="36" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="a_minus"/>
                                 <connections>
                                     <action selector="BloodTypeButton:" destination="dXr-Tt-Sos" eventType="touchUpInside" id="xqg-cx-pxw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9Fr-xl-Zyb">
+                                <rect key="frame" x="44" y="113" width="36" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="a_plus"/>
+                                <connections>
+                                    <action selector="BloodTypeButton:" destination="dXr-Tt-Sos" eventType="touchUpInside" id="Nhh-qI-sL6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1669,15 +1669,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email-3" highlightedImage="email" id="4bh-ja-GeU">
-                                <rect key="frame" x="10" y="457" width="39" height="36"/>
+                                <rect key="frame" x="14" y="455" width="39" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitleddd" id="Dq6-oU-2rm">
-                                <rect key="frame" x="10" y="201" width="39" height="38"/>
+                                <rect key="frame" x="14" y="207" width="39" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" id="W7D-Sx-hfp">
-                                <rect key="frame" x="10" y="390" width="39" height="37"/>
+                                <rect key="frame" x="14" y="389" width="39" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Frr-oQ-Ri7">
@@ -1709,7 +1709,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="telephone-3" id="nFs-PO-xZN">
-                                <rect key="frame" x="10" y="330" width="39" height="36"/>
+                                <rect key="frame" x="14" y="328" width="39" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Information:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0XS-40-F3X">
@@ -1726,12 +1726,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info" highlightedImage="email" id="QyP-89-9Ii">
-                                <rect key="frame" x="14" y="520" width="30" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock (1)" highlightedImage="email" id="zB7-GZ-vph">
-                                <rect key="frame" x="10" y="270" width="39" height="37"/>
+                                <rect key="frame" x="14" y="269" width="39" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General used" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="lwh-Q0-O8n">
@@ -1741,6 +1737,10 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info" highlightedImage="email" id="QyP-89-9Ii">
+                                <rect key="frame" x="15" y="515" width="37" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -2213,7 +2213,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </switch>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Specify Location" textAlignment="natural" minimumFontSize="17" id="3jn-k3-dXo">
-                                        <rect key="frame" x="63" y="261" width="239" height="30"/>
+                                        <rect key="frame" x="63" y="261" width="280" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -2276,7 +2276,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="T0U-2q-rPr">
-                                        <rect key="frame" x="8" y="182" width="333" height="56"/>
+                                        <rect key="frame" x="8" y="182" width="335" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2418,7 +2418,7 @@
             <objects>
                 <navigationController id="s2g-SY-v8g" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Reports" image="form-1" selectedImage="form-1" id="rbh-TU-cTP">
-                        <inset key="imageInsets" minX="8" minY="11" maxX="9" maxY="10"/>
+                        <inset key="imageInsets" minX="8" minY="11" maxX="9" maxY="11"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rq6-pQ-Pjx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

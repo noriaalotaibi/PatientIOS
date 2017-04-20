@@ -32,14 +32,11 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="M3H-Pt-MlS">
-                        <rect key="frame" x="105" y="66" width="27" height="26"/>
-                    </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hospital-1" translatesAutoresizingMaskIntoConstraints="NO" id="5xY-pp-r5z">
                         <rect key="frame" x="8" y="34" width="83" height="79"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder (1)" translatesAutoresizingMaskIntoConstraints="NO" id="XM7-Ub-xSY">
-                        <rect key="frame" x="108" y="100" width="27" height="26"/>
+                        <rect key="frame" x="108" y="100" width="25" height="24"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IND-Kg-bk8">
                         <rect key="frame" x="143" y="102" width="224" height="21"/>
@@ -47,6 +44,9 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="M3H-Pt-MlS">
+                        <rect key="frame" x="110" y="69" width="20" height="20"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
