@@ -50,11 +50,12 @@ class ReportTableViewCell: UITableViewCell {
         if (report.drcomment == "" || report.drcomment.isEmpty) {
             // loooooooooooooook
             // hereeeeeeeeeeeeeeeeeeeeeee
-            status.text = NSLocalizedString("Pending Response", comment: "")
-            
+            //status.text = NSLocalizedString("Pending Response", comment: "")
+            status.text=Langs.arabicTitleForString("Pending Response")
             
         } else {
-            status.text = NSLocalizedString("Replied", comment: "")
+            //status.text = NSLocalizedString("Replied", comment: "")
+            status.text=Langs.arabicTitleForString("Replied")
 
             
         }
