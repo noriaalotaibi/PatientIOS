@@ -166,7 +166,10 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
     }
     
     func setArrayResponse(resp:NSArray, reqId:Int) {
-        
+        if (resp.count == 0) {
+            
+        } else {
+
         allReports.removeAll()
         filteredReports.removeAll()
         // set doctors
@@ -182,6 +185,8 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
             
         }
         self.tableView.reloadData()
+            
+        }
         SwiftSpinner.hide()
     }
     

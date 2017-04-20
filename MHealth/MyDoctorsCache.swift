@@ -59,7 +59,10 @@ class MyDoctorsCache: NSObject, NetworkCaller {
     }
     
     func setArrayResponse(resp:NSArray, reqId:Int) {
-        
+        if (resp.count == 0) {
+            
+        } else {
+            
         // set doctors
         if (reqId == 1) {
             print( resp )
@@ -72,6 +75,9 @@ class MyDoctorsCache: NSObject, NetworkCaller {
             
         }
         self.caller?.setArrayResponse(resp, reqId: reqId)
+            
+        }
+        
     }
     
 

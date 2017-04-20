@@ -185,9 +185,13 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
     }
     
     func setArrayResponse(resp:NSArray, reqId:Int) {
+        if (resp.count == 0) {
+            
+        } else {
+
         allHospitals.removeAll()
         filteredHospitals.removeAll()
-        // set doctors
+            
         if (reqId == 1) {
             print( resp )
             
@@ -199,8 +203,12 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
             }
             
         }
-        self.tableView.reloadData()
+            self.tableView.reloadData()
+        }
+
         SwiftSpinner.hide()
+            
+        
     }
     
     

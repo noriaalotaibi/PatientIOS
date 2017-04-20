@@ -81,7 +81,7 @@ class LoginVC: VideoSplashViewController , NetworkCaller,UITextFieldDelegate {
         print(loginError)
         
         
-        if loginError == 1 {
+        if loginError == 1 || resp.count == 0 {
         
            print(loginError)
             

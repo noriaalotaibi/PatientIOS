@@ -190,7 +190,13 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller, UITextFieldDelega
     }
     
     func setDictResponse(resp: NSDictionary, reqId: Int) {
-        print("resp:")
+        if (resp.count == 0 ) {
+            
+        }
+        else {
+            
+        
+       print("resp:")
        print(resp)
         SwiftSpinner.hide()
         let registerationStatus:Int = resp.valueForKey("errorCode") as! Int
@@ -217,6 +223,8 @@ class RegisterMedicalInfoVC: UIViewController , NetworkCaller, UITextFieldDelega
             var alert = UIAlertView(title: title2, message: msg2, delegate: self, cancelButtonTitle:cancelButton)
             alert.show()
             //NSLocalizedString("Updated" , comment: "")
+        }
+            
         }
 
         
