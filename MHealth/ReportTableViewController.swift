@@ -38,12 +38,7 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
         searchController.searchBar.delegate = self
         
         // Painter
-        
-        let painter:AYPainter = AYPainter()
-        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
-        painter.paint(self.view)
-        
-        // END Painter
+               // END Painter
         
         
         

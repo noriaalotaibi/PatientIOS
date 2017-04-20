@@ -54,8 +54,6 @@
 		51EF73B41E6FEF8800706551 /* PatientReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF73B31E6FEF8800706551 /* PatientReportViewController.swift */; };
 		51EF73B61E70130200706551 /* PatientDH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF73B51E70130200706551 /* PatientDH.swift */; };
 		51EF73B81E7014D000706551 /* PatientContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF73B71E7014D000706551 /* PatientContainer.swift */; };
-		51F539481EA14684004793AB /* AYPainter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F539461EA14684004793AB /* AYPainter.swift */; };
-		51F539491EA14684004793AB /* AYTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F539471EA14684004793AB /* AYTheme.swift */; };
 		51F5394B1EA14694004793AB /* BlueTheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51F5394A1EA14694004793AB /* BlueTheme.plist */; };
 		51F5B19D1E6D351A0081F860 /* DoctorDH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F5B19C1E6D351A0081F860 /* DoctorDH.swift */; };
 		51F5B19F1E6D357F0081F860 /* MyDoctorsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F5B19E1E6D357F0081F860 /* MyDoctorsCache.swift */; };
@@ -131,8 +129,6 @@
 		51EF73B31E6FEF8800706551 /* PatientReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientReportViewController.swift; sourceTree = "<group>"; };
 		51EF73B51E70130200706551 /* PatientDH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientDH.swift; sourceTree = "<group>"; };
 		51EF73B71E7014D000706551 /* PatientContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientContainer.swift; sourceTree = "<group>"; };
-		51F539461EA14684004793AB /* AYPainter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYPainter.swift; sourceTree = "<group>"; };
-		51F539471EA14684004793AB /* AYTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYTheme.swift; sourceTree = "<group>"; };
 		51F5394A1EA14694004793AB /* BlueTheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BlueTheme.plist; sourceTree = "<group>"; };
 		51F5B19C1E6D351A0081F860 /* DoctorDH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorDH.swift; sourceTree = "<group>"; };
 		51F5B19E1E6D357F0081F860 /* MyDoctorsCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDoctorsCache.swift; sourceTree = "<group>"; };
@@ -262,8 +258,6 @@
 		52CC04F21E6B2F2400BC93A9 /* MHealth */ = {
 			isa = PBXGroup;
 			children = (
-				51F539461EA14684004793AB /* AYPainter.swift */,
-				51F539471EA14684004793AB /* AYTheme.swift */,
 				4341DC871E9E2C5C001172A1 /* gifFramework.swift */,
 				52CC050E1E6B411100BC93A9 /* Utils */,
 				52CC050D1E6B410B00BC93A9 /* Entities */,
@@ -512,7 +506,6 @@
 				52CC05101E6B413900BC93A9 /* DataHolder.swift in Sources */,
 				51BA460C1E9A91D4000E1753 /* DoctorListTableViewCell.swift in Sources */,
 				434CEC871EA7468E003BF09D /* Langs.swift in Sources */,
-				51F539481EA14684004793AB /* AYPainter.swift in Sources */,
 				52CC05161E6B4A4100BC93A9 /* UserDH.swift in Sources */,
 				51EF73B41E6FEF8800706551 /* PatientReportViewController.swift in Sources */,
 				52CC05081E6B407E00BC93A9 /* OutputResult.swift in Sources */,
@@ -554,7 +547,6 @@
 				433A49391E9B797100642266 /* HospitalProfile.swift in Sources */,
 				511FE9391E9D507C009EA3C0 /* HospitalTableViewCell.swift in Sources */,
 				DEDC642D1E9F774B004F108C /* MyReportViewController.swift in Sources */,
-				51F539491EA14684004793AB /* AYTheme.swift in Sources */,
 				51F5B19F1E6D357F0081F860 /* MyDoctorsCache.swift in Sources */,
 				51EF73B61E70130200706551 /* PatientDH.swift in Sources */,
 				518EBBB91E718F540095F797 /* EditeMidicalInfoVC.swift in Sources */,

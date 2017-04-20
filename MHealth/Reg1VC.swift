@@ -130,10 +130,7 @@ class Reg1VC: UIViewController , NetworkCaller , UITextFieldDelegate{
         
         // Painter
         
-        let painter:AYPainter = AYPainter()
-        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
-        painter.paint(self.view)
-        
+              
         // END Painter
         
     }

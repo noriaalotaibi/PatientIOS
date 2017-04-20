@@ -59,11 +59,7 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
         
         // Painter
         
-        let painter:AYPainter = AYPainter()
-        painter.setTheme(AYTheme.loadThemeFromFile("BlueTheme"))
-        painter.paint(self.view)
-        
-       
+             
     }
     
     override func viewDidAppear(animated: Bool) {
