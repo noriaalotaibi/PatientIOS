@@ -156,6 +156,11 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISea
     }
     
     func setArrayResponse(resp:NSArray, reqId:Int) {
+        
+        if (resp.count == 0) {
+            
+        } else {
+            
         allDoctors.removeAll()
         filteredDoctors.removeAll()
         
@@ -174,6 +179,8 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISea
         }
         self.tableView.reloadData()
         SwiftSpinner.hide()
+            
+        }
     }
     
     

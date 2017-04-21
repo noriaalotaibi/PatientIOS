@@ -194,7 +194,7 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
         
         filteredReports = allReports.filter { report in
             
-            return searchText.lowercaseString.containsString(report.name.lowercaseString)
+            return report.name.lowercaseString.containsString(searchText.lowercaseString)
             /*if (scope == searchController.searchBar.scopeButtonTitles![0]) {
                 return searchText.lowercaseString.containsString(report.name.lowercaseString)
             } else {
