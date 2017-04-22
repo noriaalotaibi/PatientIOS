@@ -168,6 +168,10 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
             
         }
         
+        self.patientImage.layer.borderWidth = 2.0
+        self.patientImage.layer.masksToBounds = true
+        self.patientImage.layer.cornerRadius = self.patientImage.frame.size.height/2
+        self.patientImage.layer.borderColor = UIColor.init(red: (63.0/255.0), green: (202.0/255.0), blue: (221.0/255.0), alpha: 0.75).CGColor
         
         // PAINTER
         
