@@ -35,7 +35,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logout" translatesAutoresizingMaskIntoConstraints="NO" id="w5q-c7-Nej">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Feedback-50" translatesAutoresizingMaskIntoConstraints="NO" id="w5q-c7-Nej">
                         <rect key="frame" x="319" y="64" width="32" height="32"/>
                     </imageView>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TaG-Bl-sKK">
@@ -55,7 +55,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Feedback-50" width="50" height="50"/>
         <image name="doctor" width="64" height="64"/>
-        <image name="logout" width="64" height="64"/>
     </resources>
 </document>
