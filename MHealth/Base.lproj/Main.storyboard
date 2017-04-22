@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="i4y-dx-2IP">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="i4y-dx-2IP">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -11,7 +11,7 @@
                 <tabBarController storyboardIdentifier="TabBar" id="kse-Ae-fwn" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="zRR-0Y-SaR"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="IXb-4F-KsY">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="IXb-4F-KsY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -99,13 +99,10 @@
         <scene sceneID="oEJ-KE-O68">
             <objects>
                 <navigationController id="LmI-C5-Pfy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Doctor" image="doctor-2" selectedImage="doctor-2" id="NPf-ZA-pxf">
-                        <inset key="imageInsets" minX="9" minY="11" maxX="8" maxY="11"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Doctor" image="doctor-2" selectedImage="doctor-2" id="NPf-ZA-pxf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nZJ-0y-QJj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.2470588235" green="0.79215686269999996" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Nb7-lc-E60" kind="relationship" relationship="rootViewController" id="H1U-EY-DJ4"/>
@@ -119,13 +116,10 @@
         <scene sceneID="Bd2-N6-r5u">
             <objects>
                 <navigationController id="ONn-M3-HWV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="avatar (1)" selectedImage="avatar (1)" id="jm6-0z-748">
-                        <inset key="imageInsets" minX="9" minY="12" maxX="9" maxY="12"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Profile" image="avatar (1)" selectedImage="avatar (1)" id="jm6-0z-748"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DBc-Ri-sd4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.2470588235" green="0.79215686269999996" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="HS8-aE-rcw" kind="relationship" relationship="rootViewController" id="bN9-lk-enA"/>
@@ -139,9 +133,7 @@
         <scene sceneID="p3T-dv-goQ">
             <objects>
                 <navigationController id="l8K-tz-Y3W" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Emergency" image="ambulance" id="IeE-Kc-IlR">
-                        <inset key="imageInsets" minX="9" minY="11" maxX="8" maxY="11"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Emergency" image="ambulance" id="IeE-Kc-IlR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PTI-YA-lrP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -158,13 +150,10 @@
         <scene sceneID="1tf-NQ-3Ex">
             <objects>
                 <navigationController id="oJa-Qw-FbX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Hospitals" image="hospital (2)" id="1Rz-Dd-0uf">
-                        <inset key="imageInsets" minX="9" minY="12" maxX="8" maxY="11"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Hospitals" image="hospital (2)" id="1Rz-Dd-0uf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="F2x-o4-Yf4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.2470588235" green="0.79215686269999996" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="eEQ-fm-foG" kind="relationship" relationship="rootViewController" id="RGG-BJ-Z9X"/>
@@ -2511,13 +2500,10 @@
         <scene sceneID="B7W-Tc-1oL">
             <objects>
                 <navigationController id="s2g-SY-v8g" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Reports" image="form-1" selectedImage="form-1" id="rbh-TU-cTP">
-                        <inset key="imageInsets" minX="8" minY="11" maxX="9" maxY="11"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="My Reports" image="form-1" selectedImage="form-1" id="rbh-TU-cTP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rq6-pQ-Pjx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.2470588235" green="0.79215686269999996" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="scO-cW-Yax" kind="relationship" relationship="rootViewController" id="jdP-Ni-8ip"/>
@@ -2701,7 +2687,7 @@
         <image name="ab_minus" width="82" height="104"/>
         <image name="ab_plus" width="82" height="104"/>
         <image name="ambulance" width="64" height="64"/>
-        <image name="avatar (1)" width="64" height="64"/>
+        <image name="avatar (1)" width="30" height="30"/>
         <image name="b_minus" width="82" height="104"/>
         <image name="b_plus" width="82" height="104"/>
         <image name="bpiconnn" width="170" height="159"/>
