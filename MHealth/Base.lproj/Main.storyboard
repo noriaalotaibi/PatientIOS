@@ -41,7 +41,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uQT-j6-csA" id="1af-qi-peF">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -76,7 +76,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pvf-rF-MzF" id="Qnb-KE-01G">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -457,7 +457,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cqm-Ka-oIe"/>
+                    <navigationItem key="navigationItem" id="cqm-Ka-oIe">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="egr-X5-feq">
+                            <connections>
+                                <action selector="backToLogin:" destination="oCR-2N-sup" id="9i4-fr-kc1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="confirmPassTF" destination="a4M-1q-eZN" id="nq6-gZ-YrY"/>
                         <outlet property="emailTF" destination="GIh-GY-9Sb" id="3j8-ue-mRD"/>
@@ -1869,10 +1875,10 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="58" id="EVc-vM-cbG">
-                                <rect key="frame" x="0.0" y="49.5" width="375" height="58"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EVc-vM-cbG" id="Mqg-sZ-dcx">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="57.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -2506,10 +2512,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aJH-zr-KMF">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aJH-zr-KMF" id="XXa-Sc-fGW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -2555,7 +2561,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oRt-s6-XGe" id="cWd-0t-Tvy">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -2715,7 +2721,7 @@
         <image name="a_plus" width="82" height="103"/>
         <image name="ab_minus" width="82" height="104"/>
         <image name="ab_plus" width="82" height="104"/>
-        <image name="ambulance" width="64" height="64"/>
+        <image name="ambulance" width="30" height="30"/>
         <image name="avatar (1)" width="30" height="30"/>
         <image name="b_minus" width="82" height="104"/>
         <image name="b_plus" width="82" height="104"/>
@@ -2724,18 +2730,18 @@
         <image name="clock (1)" width="64" height="64"/>
         <image name="diabetes" width="243" height="180"/>
         <image name="dizziness" width="64" height="64"/>
-        <image name="doctor-2" width="64" height="64"/>
+        <image name="doctor-2" width="30" height="30"/>
         <image name="doctor_profile" width="64" height="64"/>
         <image name="drop-counter" width="64" height="64"/>
         <image name="email" width="50" height="50"/>
         <image name="email-3" width="64" height="64"/>
         <image name="fever" width="64" height="64"/>
         <image name="flag" width="64" height="64"/>
-        <image name="form-1" width="64" height="64"/>
+        <image name="form-1" width="30" height="30"/>
         <image name="genders" width="64" height="64"/>
         <image name="gendersss" width="64" height="64"/>
         <image name="headache" width="64" height="64"/>
-        <image name="hospital (2)" width="64" height="64"/>
+        <image name="hospital (2)" width="30" height="30"/>
         <image name="hospital-3" width="64" height="64"/>
         <image name="id-card" width="64" height="64"/>
         <image name="info" width="64" height="64"/>

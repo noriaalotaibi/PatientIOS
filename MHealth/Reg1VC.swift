@@ -31,6 +31,9 @@ class Reg1VC: UIViewController , NetworkCaller , UITextFieldDelegate{
         }
     }
     
+    @IBAction func backToLogin(sender: AnyObject) {
+        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     @IBAction func Register1Button(sender: AnyObject) {
         
