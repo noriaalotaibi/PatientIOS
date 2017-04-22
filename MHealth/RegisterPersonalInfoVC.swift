@@ -66,7 +66,7 @@ class RegisterPersonalInfoVC: UIViewController, UIPickerViewDelegate, UITextFiel
         var deleted:Int=0
         var status:Bool=true
         
-        if fname == "" || lname == "" || nationality == "" || civilId == "" || phone == "" || emergency == ""  || self.bDay == ""{
+        if fname == "" || lname == "" || nationality == "" || civilId == "" || phone == "" || self.bDay == ""{
             var alert = UIAlertView(title: emptyTitle , message: emptyMsg  , delegate: self, cancelButtonTitle: cancelButton  )
             
             alert.show()

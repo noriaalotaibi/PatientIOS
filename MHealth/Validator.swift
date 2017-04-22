@@ -65,8 +65,13 @@ class Validator: NSObject {
         
         let phoneNumberString = phoneNumber!
         
-        // has extension? length must be  5 + 8 (Kuwait) /9 (Other)
-        if phoneNumberString.substringToIndex(2) == "00"  {
+        if (phoneNumberString.length > 15) {
+            return false
+        }
+        
+        // has extension? length must be  5 + 8 (Kuwait) / 10 (KSA) /
+        
+        /*if phoneNumberString.substringToIndex(2) == "00"  {
             if !( phoneNumberString.length == 13 || phoneNumberString.length == 14) {
                 return false
             }
@@ -75,7 +80,7 @@ class Validator: NSObject {
             if !( phoneNumberString.length == 8) {
                 return false
             }
-        }
+        }*/
         
         return true
     }
@@ -83,7 +88,7 @@ class Validator: NSObject {
     func validateEmergencyPhoneNumber(phoneNumber: NSString?) -> Bool {
         
         if (phoneNumber == nil) {
-            return false
+            return true
         }
         
         let phoneNumberString = phoneNumber!

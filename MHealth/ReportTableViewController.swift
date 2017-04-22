@@ -175,6 +175,7 @@ class ReportTableViewController: UITableViewController, NetworkCaller,  UISearch
                 let report:PatientReportDH = PatientReportDH()
                 
                 report.loadDictionary( resp.objectAtIndex(i) as! NSDictionary )
+                
                 allReports.append(report)
             }
             

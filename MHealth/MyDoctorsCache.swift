@@ -70,7 +70,11 @@ class MyDoctorsCache: NSObject, NetworkCaller {
             for i in 0..<resp.count {
                 let doctor:DoctorDH = DoctorDH()
                 doctor.loadDictionary( resp.objectAtIndex(i) as! NSDictionary )
-                self.addDoctor(doctor)
+                
+                // filtering dummy data
+                //if (doctor.drId == 19 || doctor.drId == 20) {
+                    self.addDoctor(doctor)
+                //}
             }
             
         }

@@ -8,7 +8,7 @@ class Reg1VC: UIViewController , NetworkCaller , UITextFieldDelegate{
         static var newPatient:Patient = Patient()
     
     }
-    
+
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var confirmPassTF: UITextField!
@@ -33,7 +33,6 @@ class Reg1VC: UIViewController , NetworkCaller , UITextFieldDelegate{
     
     
     @IBAction func Register1Button(sender: AnyObject) {
-        
         
         var email = emailTF.text!
         var password = passwordTF.text
@@ -170,16 +169,6 @@ class Reg1VC: UIViewController , NetworkCaller , UITextFieldDelegate{
         
     }
     
-    
-    
-    
-    func validateEmail(enteredEmail:String) -> Bool {
-        
-        let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
-        return emailPredicate.evaluateWithObject(enteredEmail)
-        
-    }
 
     
 }

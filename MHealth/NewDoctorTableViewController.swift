@@ -160,6 +160,12 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISea
         if (resp.count == 0) {
             
         } else {
+        
+        var isMyDoctor = false
+        var myDoctorIds = [NSInteger]()
+        for myDoctor in MyDoctorsCache.myInstance().getDoctors() {
+                myDoctorIds.append(myDoctor.drId)
+        }
             
         allDoctors.removeAll()
         filteredDoctors.removeAll()
@@ -172,8 +178,11 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISea
                 let doctor:DoctorDH = DoctorDH()
                 
                 doctor.loadDictionary( resp.objectAtIndex(i) as! NSDictionary )
+                
                 allDoctors.append(doctor)
+                
             }
+                
             
             print("My Doctors Set!")
         }
