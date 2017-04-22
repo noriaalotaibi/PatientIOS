@@ -108,7 +108,10 @@ class ViewPatientProfileVC: UIViewController, NetworkCaller,UINavigationControll
     }
     
 
-    @IBAction func UpdateProfile(sender: AnyObject) {}
+    @IBAction func UpdateProfile(sender: AnyObject) {
+    
+        
+    }
     
     @IBAction func ViewMedicalInfoButton(sender: AnyObject) {
          print("user clicked More")
