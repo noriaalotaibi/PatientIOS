@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key></key>
+	<string></string>
+	<key>Edit Profile</key>
+	<string>تعديل الملف الشخصي</string>
+	<key>Reports</key>
+	<string>التقارير</string>
 	<key>Gender</key>
 	<string>الجنس</string>
 	<key>Report sent</key>
