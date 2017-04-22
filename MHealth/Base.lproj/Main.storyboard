@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="i4y-dx-2IP">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="i4y-dx-2IP">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -41,7 +41,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uQT-j6-csA" id="1af-qi-peF">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -76,7 +76,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pvf-rF-MzF" id="Qnb-KE-01G">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -99,7 +99,7 @@
         <scene sceneID="oEJ-KE-O68">
             <objects>
                 <navigationController id="LmI-C5-Pfy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Doctor" image="doctor-2" selectedImage="doctor-2" id="NPf-ZA-pxf"/>
+                    <tabBarItem key="tabBarItem" title="Doctor" image="doctor-mobile" selectedImage="doctor-mobile" id="NPf-ZA-pxf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nZJ-0y-QJj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -116,7 +116,7 @@
         <scene sceneID="Bd2-N6-r5u">
             <objects>
                 <navigationController id="ONn-M3-HWV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="avatar (1)" selectedImage="avatar (1)" id="jm6-0z-748"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="icon-1" selectedImage="icon-1" id="jm6-0z-748"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DBc-Ri-sd4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1928,7 +1928,7 @@
                                 <rect key="frame" x="0.0" y="113.5" width="375" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EVc-vM-cbG" id="Mqg-sZ-dcx">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="57.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -2577,7 +2577,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aJH-zr-KMF" id="XXa-Sc-fGW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -2597,7 +2597,7 @@
         <scene sceneID="B7W-Tc-1oL">
             <objects>
                 <navigationController id="s2g-SY-v8g" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Reports" image="form-1" selectedImage="form-1" id="rbh-TU-cTP"/>
+                    <tabBarItem key="tabBarItem" title="My Reports" image="form-1" selectedImage="Report" id="rbh-TU-cTP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rq6-pQ-Pjx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2623,7 +2623,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oRt-s6-XGe" id="cWd-0t-Tvy">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -2789,6 +2789,7 @@
     <resources>
         <image name="Edit-20-2" width="20" height="20"/>
         <image name="Passwordd" width="50" height="50"/>
+        <image name="Report" width="30" height="30"/>
         <image name="Services-50" width="50" height="50"/>
         <image name="Untitleddd" width="64" height="64"/>
         <image name="a_minus" width="81" height="103"/>
@@ -2796,7 +2797,6 @@
         <image name="ab_minus" width="82" height="104"/>
         <image name="ab_plus" width="82" height="104"/>
         <image name="ambulance" width="30" height="30"/>
-        <image name="avatar (1)" width="30" height="30"/>
         <image name="b_minus" width="82" height="104"/>
         <image name="b_plus" width="82" height="104"/>
         <image name="bpiconnn" width="170" height="159"/>
@@ -2804,7 +2804,7 @@
         <image name="clock (1)" width="64" height="64"/>
         <image name="diabetes" width="243" height="180"/>
         <image name="dizziness" width="64" height="64"/>
-        <image name="doctor-2" width="30" height="30"/>
+        <image name="doctor-mobile" width="30" height="30"/>
         <image name="doctor_profile" width="64" height="64"/>
         <image name="drop-counter" width="64" height="64"/>
         <image name="email" width="50" height="50"/>
@@ -2817,6 +2817,7 @@
         <image name="headache" width="64" height="64"/>
         <image name="hospital (2)" width="30" height="30"/>
         <image name="hospital-3" width="64" height="64"/>
+        <image name="icon-1" width="30" height="30"/>
         <image name="id-card" width="64" height="64"/>
         <image name="info" width="64" height="64"/>
         <image name="inhalator" width="64" height="64"/>
