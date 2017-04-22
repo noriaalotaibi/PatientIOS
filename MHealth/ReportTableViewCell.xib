@@ -15,7 +15,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="doctor" translatesAutoresizingMaskIntoConstraints="NO" id="LHs-oX-9Mc">
-                        <rect key="frame" x="8" y="23" width="73" height="78"/>
+                        <rect key="frame" x="8" y="23" width="78" height="78"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Doctor Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWK-OV-h0u">
                         <rect key="frame" x="105" y="31" width="279" height="21"/>
