@@ -33,10 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSFontAttributeName : UIFont(name: "Verdana-Bold", size: CGFloat(21.0))!
         ]
         
-        UITabBar.appearance().tintColor = UIColor.whiteColor()
+        UITabBar.appearance().tintColor = Customization().hexStringToUIColor("#3FCADD")
         
         
-        UITabBar.appearance().barTintColor = Customization().hexStringToUIColor("#3FCADD")
+        UITabBar.appearance().barTintColor = UIColor.whiteColor()
         return true
     }
 
