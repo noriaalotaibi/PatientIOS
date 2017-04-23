@@ -956,7 +956,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="3jJ-fM-C5l" userLabel="background picture">
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-background" id="3jJ-fM-C5l" userLabel="background picture">
                                 <rect key="frame" x="0.0" y="64" width="375" height="179"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -2961,6 +2961,7 @@
         <image name="ambulance" width="30" height="30"/>
         <image name="b_minus" width="82" height="104"/>
         <image name="b_plus" width="82" height="104"/>
+        <image name="blue-background" width="2880" height="1800"/>
         <image name="bpiconnn" width="170" height="159"/>
         <image name="cardiogram" width="64" height="64"/>
         <image name="clock (1)" width="64" height="64"/>
