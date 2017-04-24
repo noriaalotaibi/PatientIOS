@@ -674,7 +674,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9A2E775B3980EE75173FA376 /* Pods-MHealth.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				INFOPLIST_FILE = MHealth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.pifss.patient;
@@ -686,7 +686,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 20300A90085D875DF02F3899 /* Pods-MHealth.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				INFOPLIST_FILE = MHealth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.pifss.patient;

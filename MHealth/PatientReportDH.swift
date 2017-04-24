@@ -104,7 +104,7 @@ class PatientReportDH: NSObject, DataHolder {
         valuesArray.addObject(dizziness)
         valuesArray.addObject(nauseous)
         valuesArray.addObject(headache)
-        valuesArray.addObject("\(pain)")
+     
         valuesArray.addObject(painlocation)
         return valuesArray
         

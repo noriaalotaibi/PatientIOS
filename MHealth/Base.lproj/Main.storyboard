@@ -38,7 +38,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uQT-j6-csA">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uQT-j6-csA" id="1af-qi-peF">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -63,7 +63,7 @@
             </objects>
             <point key="canvasLocation" x="1115.5" y="483.5"/>
         </scene>
-        <!--All Doctors-->
+        <!--Doctors-->
         <scene sceneID="5sR-F3-azM">
             <objects>
                 <tableViewController storyboardIdentifier="NewDoctorTable" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FEJ-2S-rsy" customClass="NewDoctorTableViewController" customModule="MHealth" sceneMemberID="viewController">
@@ -73,7 +73,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pvf-rF-MzF">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pvf-rF-MzF" id="Qnb-KE-01G">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -86,7 +86,7 @@
                             <outlet property="delegate" destination="FEJ-2S-rsy" id="Shp-FG-nNC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="All Doctors" id="CEe-6u-EDY"/>
+                    <navigationItem key="navigationItem" title="Doctors" id="CEe-6u-EDY"/>
                     <connections>
                         <segue destination="IZF-Eu-rql" kind="push" id="sMP-wm-ksJ"/>
                     </connections>
@@ -948,7 +948,7 @@
             </objects>
             <point key="canvasLocation" x="-4394" y="740"/>
         </scene>
-        <!--View Patient ProfileVC-->
+        <!--Profile-->
         <scene sceneID="Spt-Rj-2mw">
             <objects>
                 <viewController storyboardIdentifier="ViewProfile" id="HS8-aE-rcw" customClass="ViewPatientProfileVC" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
@@ -1031,8 +1031,8 @@
                                 <rect key="frame" x="8" y="334" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ioe-iP-vQU">
-                                <rect key="frame" x="260" y="251" width="100" height="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ioe-iP-vQU">
+                                <rect key="frame" x="184" y="251" width="176" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
@@ -1197,7 +1197,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QbM-fK-z9F">
+                    <navigationItem key="navigationItem" title="Profile" id="QbM-fK-z9F">
                         <barButtonItem key="leftBarButtonItem" image="Services-50" style="plain" id="th8-0l-Epd">
                             <inset key="imageInsets" minX="-2" minY="5" maxX="4" maxY="4"/>
                             <connections>
@@ -1237,7 +1237,7 @@
             </objects>
             <point key="canvasLocation" x="522.5" y="-1095.5"/>
         </scene>
-        <!--View Medical InfoVC-->
+        <!--Medical Info.-->
         <scene sceneID="Acx-WU-WVx">
             <objects>
                 <viewController storyboardIdentifier="viewMedicalInfo" id="cuO-kS-psx" customClass="ViewMedicalInfoVC" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
@@ -1388,7 +1388,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="h8x-HB-kJ8"/>
+                    <navigationItem key="navigationItem" title="Medical Info." id="h8x-HB-kJ8"/>
                     <connections>
                         <outlet property="AllergiesLabel" destination="m6M-3C-W53" id="1uj-kQ-Hvu"/>
                         <outlet property="AsthmaLabel" destination="njp-vB-QTv" id="w2s-u4-rqd"/>
@@ -1401,7 +1401,7 @@
             </objects>
             <point key="canvasLocation" x="528.5" y="-246.5"/>
         </scene>
-        <!--Edite Midical InfoVC-->
+        <!--Medical Info.-->
         <scene sceneID="NdB-bU-BfE">
             <objects>
                 <viewController id="dXr-Tt-Sos" customClass="EditeMidicalInfoVC" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
@@ -1585,7 +1585,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="vhn-th-EBC"/>
+                    <navigationItem key="navigationItem" title="Medical Info." id="vhn-th-EBC"/>
                     <connections>
                         <outlet property="AllergiesUpdatedTF" destination="6PW-wR-n3o" id="FsL-UJ-TAM"/>
                         <outlet property="AsthmaOutlet" destination="oTi-xa-3m4" id="cDE-6W-FrN"/>
@@ -1605,7 +1605,7 @@
             </objects>
             <point key="canvasLocation" x="1249.5" y="-246.5"/>
         </scene>
-        <!--Edit Personal InfoVC-->
+        <!--Personal Info.-->
         <scene sceneID="EAY-lq-bsq">
             <objects>
                 <viewController id="sS7-NO-V86" customClass="EditPersonalInfoVC" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
@@ -1805,7 +1805,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Yfi-1E-xOb"/>
+                    <navigationItem key="navigationItem" title="Personal Info." id="Yfi-1E-xOb"/>
                     <connections>
                         <outlet property="CivilIDLB" destination="CDQ-gN-N5i" id="a2U-Fa-pJc"/>
                         <outlet property="EmailLB" destination="ash-PK-A5Y" id="65Y-0H-Npg"/>
@@ -2013,7 +2013,7 @@
             </objects>
             <point key="canvasLocation" x="1269.5" y="2822.5"/>
         </scene>
-        <!--Hospital Table View Controller-->
+        <!--Hospitals-->
         <scene sceneID="mU3-uT-ljW">
             <objects>
                 <tableViewController storyboardIdentifier="Hospitals" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eEQ-fm-foG" customClass="HospitalTableViewController" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
@@ -2023,7 +2023,7 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="58" id="EVc-vM-cbG">
-                                <rect key="frame" x="0.0" y="50" width="375" height="58"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EVc-vM-cbG" id="Mqg-sZ-dcx">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
@@ -2036,7 +2036,7 @@
                             <outlet property="delegate" destination="eEQ-fm-foG" id="rxc-BR-gCv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="fG5-Nn-a2C"/>
+                    <navigationItem key="navigationItem" title="Hospitals" id="fG5-Nn-a2C"/>
                     <connections>
                         <segue destination="2OE-bD-vUy" kind="push" id="DnU-qb-rxH"/>
                     </connections>
@@ -2223,10 +2223,10 @@
             </objects>
             <point key="canvasLocation" x="1902.5" y="2033.5"/>
         </scene>
-        <!--My Doctor Profile View Controller-->
+        <!--My Doctor Profile-->
         <scene sceneID="xpq-yA-M5s">
             <objects>
-                <viewController storyboardIdentifier="MyDoctorProfile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3XP-Rx-6jl" customClass="MyDoctorProfileViewController" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyDoctorProfile" title="My Doctor Profile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3XP-Rx-6jl" customClass="MyDoctorProfileViewController" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bpD-7O-x6q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2362,10 +2362,10 @@
             </objects>
             <point key="canvasLocation" x="2568.5" y="483.5"/>
         </scene>
-        <!--New Doctor Profile View Controller-->
+        <!--New Doctor Profile-->
         <scene sceneID="ba3-kk-dYF">
             <objects>
-                <viewController storyboardIdentifier="NewDoctorProfile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IZF-Eu-rql" customClass="NewDoctorProfileViewController" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewDoctorProfile" title="New Doctor Profile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IZF-Eu-rql" customClass="NewDoctorProfileViewController" customModule="MHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BB0-wS-1OJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2737,7 +2737,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aJH-zr-KMF">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aJH-zr-KMF" id="XXa-Sc-fGW">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>

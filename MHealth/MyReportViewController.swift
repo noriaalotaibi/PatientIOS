@@ -59,7 +59,8 @@ class MyReportViewController: UITableViewController {
         
         if (self.currentPatientReport?.pain) == true {
             var painLocation=Langs.arabicTitleForString("Pain location")
-
+            print("painLocation")
+            print(painLocation)
             reportTitles.append(painLocation)
         }
         
@@ -96,7 +97,7 @@ class MyReportViewController: UITableViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1 //reportTitles.count
+        return reportTitles.count
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -116,10 +117,7 @@ class MyReportViewController: UITableViewController {
         cell.textLabel?.text = theSelected
         cell.imageView?.image = UIImage(named:reportIcons[indexPath.section])
         
-        var itemSize = CGSizeMake(35, 35)
-        if (self.currentPatientReport?.pain) == true && indexPath.section == (reportTitles.count-1){
-            itemSize = CGSizeMake(50, 40)
-        }
+  
         
         /*UIGraphicsBeginImageContextWithOptions(itemSize, false, UIScreen.mainScreen().scale)
         let imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height)

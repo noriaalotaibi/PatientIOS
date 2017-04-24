@@ -76,7 +76,7 @@ class EditPersonalInfoVC: UIViewController , NetworkCaller, UITextFieldDelegate 
         modifiedPatient.nationality=nationality!
         modifiedPatient.password=password!
         modifiedPatient.gender=gender
-        
+        modifiedPatient.dateOfBirth = self.bDay
         var valid = true
         
         if fname == "" || lname == "" || nationality == "" || civilId == "" || phoneNum == ""  {
