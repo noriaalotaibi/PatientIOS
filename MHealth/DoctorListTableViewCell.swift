@@ -45,7 +45,7 @@ class DoctorListTableViewCell: UITableViewCell {
         doctorData = doctor;
 
         
-        name.text = doctorData.firstName + doctorData.lastName
+        name.text = doctorData.firstName + " " + doctorData.lastName
         specialty.text = doctorData.specialtyId;
     
         var genderNSString = NSString()

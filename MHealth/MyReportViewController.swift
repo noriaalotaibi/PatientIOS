@@ -32,7 +32,7 @@ class MyReportViewController: UITableViewController {
     
     var reportIcons:[String] = ["bpiconnn","cardiogram","diabetes",
                                 "fever","cough","dizziness",
-                                "nauseous","headache","painn"]
+                                "nauseous","headache", "painn"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

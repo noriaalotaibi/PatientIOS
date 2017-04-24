@@ -36,7 +36,12 @@ class MyDoctorsCache: NSObject, NetworkCaller {
     override init() {
         // get doctors as array
         super.init()
+        updateCache()
         
+        
+    }
+    
+    public func updateCache() {
         if (Networking.isInternetAvailable()) {
             let networkManager = Networking()
             networkManager.logging = true
@@ -45,13 +50,11 @@ class MyDoctorsCache: NSObject, NetworkCaller {
             let patient:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
             
             loggedInPatient.loadDictionary(patient);
-            var ID = loggedInPatient.patientID
+            let ID = loggedInPatient.patientID
             print("Patient ID \(ID)")
-
+            
             networkManager.AMGetArrayData("http://34.196.107.188:8081/MhealthWeb/webresources/patient/accepteddoctor/\(ID)", params: [:], reqId: 1, caller: self)
         }
-        
-        
     }
     
     func setDictResponse(resp:NSDictionary, reqId:Int) {
@@ -67,14 +70,13 @@ class MyDoctorsCache: NSObject, NetworkCaller {
         if (reqId == 1) {
             print( resp )
             
+            
+            myDoctors.removeAll()
             for i in 0..<resp.count {
                 let doctor:DoctorDH = DoctorDH()
                 doctor.loadDictionary( resp.objectAtIndex(i) as! NSDictionary )
                 
-                // filtering dummy data
-                //if (doctor.drId == 19 || doctor.drId == 20) {
-                    self.addDoctor(doctor)
-                //}
+                self.addDoctor(doctor)
             }
             
         }

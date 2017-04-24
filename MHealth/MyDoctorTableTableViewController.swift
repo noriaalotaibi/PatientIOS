@@ -72,6 +72,8 @@ class MyDoctorTableViewController: UITableViewController, NetworkCaller,  UISear
             let message = Message(title: NSLocalizedString("No Internet Connection", comment: ""), textColor: UIColor.whiteColor(), backgroundColor: UIColor.redColor(), images: nil)
             Whisper(message, to: self.navigationController!, action: .Show)
             Silent(self.navigationController!, after: 3.0)
+        } else {
+            MyDoctorsCache.myInstance().updateCache()
         }
     }
 
