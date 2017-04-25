@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Please check your email for the new password</key>
+	<string>يرجى التحقق من البريد الالكتروني لكلمة المرور الجديدة</string>
 	<key>Profile</key>
 	<string>الملف الشخصي</string>
 	<key>Blood pressure</key>

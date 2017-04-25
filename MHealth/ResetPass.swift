@@ -108,24 +108,24 @@ class ResetPass: UIViewController ,NetworkCaller,UITextFieldDelegate {
         if (resp.valueForKey("errorMsgEn") == nil){
             
             print("Error Connection to server Error")
+            var cancelButton = Langs.arabicTitleForString("OK")
             
+            var alert = UIAlertView(title:"", message: "" , delegate: self, cancelButtonTitle: cancelButton)
             return
         }
         
         
         let responseMessage:String = resp.valueForKey("errorMsgEn") as! String
         
-        if responseMessage != "Done"
-        {
-            print("Invalid email address")
-            
-            return
-        }
-        else
-        {
-            print("password is sent")
 
-        }
+            print("password is sent")
+            var cancelButton = Langs.arabicTitleForString("OK")
+        
+                var massageE = Langs.arabicTitleForString("Please check your email for the new password")
+            var alert = UIAlertView(title:"Successful", message: massageE , delegate: self, cancelButtonTitle: cancelButton)
+            alert.show()
+
+        
     }
     
 
