@@ -106,5 +106,7 @@
 	<string>حراره</string>
 	<key>Pain location</key>
 	<string>موقع الالم</string>
+	<key>Emergency</key>
+	<string> الطوارىء</string>
 </dict>
 </plist>

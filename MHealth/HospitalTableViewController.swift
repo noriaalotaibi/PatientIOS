@@ -32,6 +32,7 @@ class HospitalTableViewController: UITableViewController, NetworkCaller,  UISear
         self.tableView.rowHeight = 125
         
         
+        
         // Search Bar
         
         searchController.searchResultsUpdater = self

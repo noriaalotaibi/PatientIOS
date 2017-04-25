@@ -62,11 +62,18 @@ class NewDoctorTableViewController: UITableViewController, NetworkCaller,  UISea
         // Check Internet
         
         if (Networking.isInternetAvailable()) {
+            
+            let loggedInPatient = Patient()
+            let patient:NSDictionary = NSUserDefaults.standardUserDefaults().valueForKey(Const.UserDefaultsKeys.loggedinUser) as! NSDictionary
+            
+            loggedInPatient.loadDictionary(patient);
+            let ID = loggedInPatient.patientID
+            
             let networkManager = Networking()
             networkManager.logging = true
             SwiftSpinner.show("Connecting...")
             SwiftSpinner.setTitleFont(UIFont(name: "Futura", size: 22.0))
-            networkManager.AMGetArrayData("http://34.196.107.188:8081/MhealthWeb/webresources/doctor/adddr/2", params: [:], reqId: 1, caller: self)
+            networkManager.AMGetArrayData("http://34.196.107.188:8081/MhealthWeb/webresources/doctor/adddr/\(ID)", params: [:], reqId: 1, caller: self)
             
             //  Spinner
             
