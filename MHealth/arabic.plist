@@ -2,106 +2,106 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key></key>
-	<string></string>
-	<key>Edit Profile</key>
-	<string>تعديل الملف الشخصي</string>
-	<key>Reports</key>
-	<string>التقارير</string>
-	<key>Gender</key>
-	<string>الجنس</string>
+	<key>Profile</key>
+	<string>الملف الشخصي</string>
+	<key>Blood pressure</key>
+	<string>ضغط الدم</string>
 	<key>Report sent</key>
 	<string>تم ارسال التقرير</string>
-	<key>Replied</key>
-	<string>تم الرد</string>
-	<key>Pending Response</key>
-	<string>جاري الرد</string>
-	<key>Failed</key>
-	<string>فشلت</string>
-	<key>Success</key>
-	<string>تم</string>
-	<key>Phone Number</key>
-	<string>رقم الهاتف</string>
-	<key>Invalid Phone Number</key>
-	<string>رقم الهاتف غير صحيح</string>
-	<key>Invalid Civil ID</key>
-	<string>الرقم المدني غبر صحيح</string>
+	<key>Cancel</key>
+	<string>الغاء</string>
+	<key>Caughing</key>
+	<string>كحه</string>
+	<key>Headache</key>
+	<string>صداع</string>
 	<key>Civil ID</key>
 	<string>الرقم المدني</string>
-	<key>Please fill all the missing fields</key>
-	<string>يرجى اكمال الحقول الفارغة</string>
-	<key>Empty Fields</key>
-	<string>الحقول فارغة</string>
-	<key>Password is invalid, minimum of 8 characters</key>
-	<string>كلمة المرور غير صحيحة، يجب ان لا يقل عن ٨ رموز</string>
-	<key>Password do not match</key>
-	<string>كلمة المرور لا تتطابق</string>
-	<key>Please enter a valid email</key>
-	<string>برجى ادخال بريد الكتروني صحيح</string>
-	<key>Password</key>
-	<string>كلمة المرور</string>
-	<key>Email</key>
-	<string>البريد الالكتروني</string>
-	<key>Invalid Password or Username</key>
-	<string>اسم المستخدم او كلمة المرور غير صحيح</string>
 	<key>Invalid</key>
 	<string>غير صحيح</string>
-	<key>username</key>
-	<string>اسم المستخدم</string>
-	<key>password</key>
+	<key>Updated</key>
+	<string>تم التحديث</string>
+	<key>Password</key>
 	<string>كلمة المرور</string>
+	<key>Language</key>
+	<string>اللغة</string>
+	<key>Email</key>
+	<string>البريد الالكتروني</string>
+	<key>Send Emergency Report?</key>
+	<string>ارسال حالة طوارئ؟</string>
+	<key>Edit Profile</key>
+	<string>تعديل الملف الشخصي</string>
+	<key>Heart rate</key>
+	<string>نبضات القلب</string>
+	<key>Pending Response</key>
+	<string>جاري الرد</string>
+	<key>Register</key>
+	<string>تسجيل</string>
+	<key>Invalid Civil ID, must be 12 number</key>
+	<string>الرقم المدني غير صحيح، يجب ان لا يقل عن ١٢ رمز</string>
+	<key>Please fill all the missing fields</key>
+	<string>يرجى اكمال الحقول الفارغة</string>
+	<key>No Internet Connection</key>
+	<string>لا يوجد اتصال بالشبكة</string>
 	<key>Language has been changed into English</key>
 	<string>تم تغيير اللغة الى الانجليزية</string>
+	<key>Sugar level</key>
+	<string>مستوى السكر</string>
+	<key>Invalid Phone Number</key>
+	<string>رقم الهاتف غير صحيح</string>
+	<key>Confirmation</key>
+	<string>تأكيد</string>
+	<key>Failed</key>
+	<string>فشلت</string>
+	<key>username</key>
+	<string>اسم المستخدم</string>
+	<key>Sending Report ..</key>
+	<string>جاري ارسال التقرير ..</string>
+	<key>Phone Number</key>
+	<string>رقم الهاتف</string>
+	<key>Invalid Civil ID</key>
+	<string>الرقم المدني غبر صحيح</string>
 	<key>Language has been changed into Arabic</key>
 	<string>تم تغيير اللغة الى العربية</string>
 	<key>Profile failed to update</key>
 	<string>لم تتم عملية تحديث الملف الشخصي</string>
-	<key>Sending Report ..</key>
-	<string>جاري ارسال التقرير ..</string>
-	<key>Cancel</key>
-	<string>الغاء</string>
-	<key>Send Emergency Report?</key>
-	<string>ارسال حالة طوارئ؟</string>
-	<key>Confirmation</key>
-	<string>تأكيد</string>
-	<key>No Internet Connection</key>
-	<string>لا يوجد اتصال بالشبكة</string>
-	<key>Emergency Case Canceled</key>
-	<string>تم الغاء حالة الطوارىء</string>
-	<key>OK</key>
-	<string>تم</string>
-	<key>Profile has been updated</key>
-	<string>تم تحديث الملف الشخصي</string>
+	<key>Gender</key>
+	<string>الجنس</string>
+	<key>Reports</key>
+	<string>التقارير</string>
+	<key>Empty Fields</key>
+	<string>الحقول فارغة</string>
 	<key>Error</key>
 	<string>خطأ</string>
-	<key>Updated</key>
-	<string>تم التحديث</string>
-	<key>Language</key>
-	<string>اللغة</string>
-	<key>Register</key>
-	<string>تسجيل</string>
+	<key>OK</key>
+	<string>تم</string>
+	<key>Password do not match</key>
+	<string>كلمة المرور لا تتطابق</string>
 	<key>Done</key>
 	<string>تم</string>
-	<key>no complete</key>
-	<string>غير مكتمل</string>
-	<key>Invalid Civil ID, must be 12 number</key>
-	<string>الرقم المدني غير صحيح، يجب ان لا يقل عن ١٢ رمز</string>
-	<key>Blood pressure</key>
-	<string>ضغط الدم</string>
-	<key>Heart rate</key>
-	<string>نبضات القلب</string>
-	<key>Sugar level</key>
-	<string>مستوى السكر</string>
-	<key>Fever</key>
-	<string>حراره</string>
-	<key>Caughing</key>
-	<string>كحه</string>
 	<key>Dizziness</key>
 	<string>دوار</string>
+	<key>Replied</key>
+	<string>تم الرد</string>
+	<key>Success</key>
+	<string>تم</string>
 	<key>Nauseous</key>
 	<string>غثيان</string>
-	<key>Headache</key>
-	<string>صداع</string>
+	<key>Password is invalid, minimum of 8 characters</key>
+	<string>كلمة المرور غير صحيحة، يجب ان لا يقل عن ٨ رموز</string>
+	<key>Invalid Password or Username</key>
+	<string>اسم المستخدم او كلمة المرور غير صحيح</string>
+	<key>Please enter a valid email</key>
+	<string>برجى ادخال بريد الكتروني صحيح</string>
+	<key>password</key>
+	<string>كلمة المرور</string>
+	<key>Emergency Case Canceled</key>
+	<string>تم الغاء حالة الطوارىء</string>
+	<key>Profile has been updated</key>
+	<string>تم تحديث الملف الشخصي</string>
+	<key>no complete</key>
+	<string>غير مكتمل</string>
+	<key>Fever</key>
+	<string>حراره</string>
 	<key>Pain location</key>
 	<string>موقع الالم</string>
 </dict>

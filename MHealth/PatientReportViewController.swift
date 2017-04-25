@@ -127,14 +127,14 @@ class PatientReportViewController: UIViewController, NetworkCaller, UITextViewDe
         
         newReport.comments = self.patientComments.text
         
-        if self.coughingSwitch.selected == true {
+        if self.coughingSwitch.on == true {
             newReport.coughing = NSLocalizedString("YES", comment: "")
         }else{
             newReport.coughing = NSLocalizedString("NO", comment: "")
         }
         
         
-        if self.dizzinessSwitch.selected == true {
+        if self.dizzinessSwitch.on == true {
             newReport.dizziness = NSLocalizedString("YES", comment: "")
         }else{
             newReport.dizziness = NSLocalizedString("NO", comment: "")
@@ -144,13 +144,13 @@ class PatientReportViewController: UIViewController, NetworkCaller, UITextViewDe
         newReport.drId = myDoctor.drId 
         newReport.drcomment = ""
         
-        if self.feverSwitch.selected == true {
+        if self.feverSwitch.on == true {
             newReport.fever = NSLocalizedString("YES", comment: "")
         }else{
             newReport.fever = NSLocalizedString("NO", comment: "")
         }
         
-        if self.headacheSwitch.selected == true {
+        if self.headacheSwitch.on == true {
             newReport.headache = NSLocalizedString("YES", comment: "")
         }else{
             newReport.headache = NSLocalizedString("NO", comment: "")
@@ -163,8 +163,8 @@ class PatientReportViewController: UIViewController, NetworkCaller, UITextViewDe
         }else{
             newReport.heartbeatRate = NSLocalizedString("Low", comment: "")
         }
-        
-        if self.nauseousSwitch.selected == true {
+
+        if self.nauseousSwitch.on == true {
             newReport.nauseous = NSLocalizedString("YES", comment: "")
         }else{
             newReport.nauseous = NSLocalizedString("NO", comment: "")
